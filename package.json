@@ -1,0 +1,27 @@
+{
+  "name": "my_fpw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-jade": "^0.5.1",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsman53/my_fpw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alsman53/my_fpw/issues"
+  },
+  "homepage": "https://github.com/alsman53/my_fpw#readme"
+}
