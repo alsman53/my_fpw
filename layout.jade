@@ -1,0 +1,29 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, intial-scale=1, shrink-to-fit=no')
+    //- script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin="anonymous")
+    //- link(rel="stylesheet" href="https://stackpath.bootstrap/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous")
+    link(href="https://necolas.github.io/normalize.css/8.0.0/normalize.css", rel="stylesheet")
+    link(href="css/main.css", rel="stylesheet")
+    block title
+     title Default
+  body
+  - var designTypes = ["Game", "Web", "Spatial", "Graphic"];
+    header
+      a(href="index.html")
+        img(src="_imgs/Ali_logo_draft_2.png", alt="lOGO")
+      nav
+      
+        a(href="photography.html") Photography
+        a(href="works.html") Design Projects
+        div#dropdown
+          for i in designTypes
+           a(href=i+"_design.html") = #{i} Projects
+        a(src="imgs/instagram-icon-13-256.png", href="https://instagram.com/hisbeardedness", alt="main instagram")
+        a(href="https://instagram.com/hisbeardedness" ) 
+          img(src="imgs/instagram-logo-white-300x300.png", alt="experimental instagram")
+    main
+    block content
+    footer

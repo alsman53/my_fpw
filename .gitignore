@@ -3,4 +3,3 @@ node_modules/
 html5-boilerplate/
 css/stylusCompiler
 js/main.ts
-*.jade
