@@ -1,0 +1,30 @@
+extends ./layout.jade
+
+block title
+  title Ali R
+block content
+      section.homepage_sections#landing
+        h1 Ali Rasheed
+        h2 Photography Web-Design Video-Games
+
+     
+      section#photography
+
+        h2 Photography
+        - var photoTypes = ["Landscape", "Street", "Portrait"];
+        for name in photoTypes
+          div.container
+            h3= name
+            img(src= name + ".jpg", alt="", srcset="")
+      section
+       h2 Design Projects 
+       each val, index in {charrette:"Design Charette - Fall 2018",cheetah:"Mechanical Cheetah",website:"Personal Projects & Process"}  
+        a(href=index+".html" id=index)
+          div.container
+            h3= val
+            img(src=index+".jpg", alt="", srcset="")
+
+      //- section.homepage_sections#vid_game
+      //- section.homepage_sections#web_design
+      //- section.homepage_sections
+    
