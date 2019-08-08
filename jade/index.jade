@@ -4,16 +4,16 @@ block title
   title Ali R
 block content
       section.homepage_sections#landing
-        h1 Ali Rasheed
-        h2 Photography Web-Design Video-Games
-
-     
-      section#photography
-
+        div.img-container
+          img(src="imgs/4.jpg", alt="", srcset="")
+          h1.real.centered(data-content='Ali') Ali Rasheed
+          h1.fake.centered(data-content='Ali') Ali Rasheed
+        //-  h2 Photography Web-Design Video-Games
+      section#photog
         h2 Photography
         - var photoTypes = ["Landscape", "Street", "Portrait"];
         for name in photoTypes
-          div.container
+          div.img-container
             h3= name
             img(src= name + ".jpg", alt="", srcset="")
       section

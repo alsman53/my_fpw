@@ -12,20 +12,17 @@ html(lang='en')
     block title
      title Default
   body
-  - var designTypes = ["Photography","Design", "Other Projects"];
+  - var designTypes = ["Photography","Design","Other Projects","Medium"];
     header
       //- a(href="index.html")
       //-   img(src="_imgs/Ali_logo_draft_2.png", alt="lOGO")
-      nav
-      
-        a(href="photog") Photography
-        a(href="design.html") Design Projects
-        a(href="about.html") Me
-        
-        a(href="https://instagram.com/hisbeardedness", alt="main instagram")
-          img(src="/imgs/instagram-icon-13-256.png", alt="" id="instagram")
-  
+      nav.grid-container.-10x1
+        a(href="https://ali-rasheed.github.io" id="nav-name") Ali Rasheed
+        each val, index in {photog:"Photography", design: "Design Projects", otherProj:"Miscellaneous", blog: "Medium"}
+          a(href="index.html#"+index, class="nav-item") #{val}
+        a(href="https://instagram.com/hisbeardedness", alt="main instagram" class="nav-item")
+          img(src="/imgs/instagram-icon-13-256.png", alt="" id="instagram" )
     main
-    block content
+      block content
     footer
     script(src="js/main.js")

@@ -33,22 +33,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		'css_output_location': 'build/css',
-		// miniclean:{
-		// 	uglify:{
-		// 		files:["build/css"],
-		// 		tasks: ['uglify']
-		// 	}
-
-		// 	folder: ['path/to/dir/'],
-		// 	folder_v2: ['path/to/dir/**'],
-		// 	contents: ['path/to/dir/*'],
-		// 	subfolders: ['path/to/dir/*/'],
-		// 	css: ['path/to/dir/*.css'],
-		// 	all_css: ['path/to/dir/**/*.css']
-		// 	js: ['path/to/dir/*.js', '!path/to/dir/*.min.js']
-
-		//    },
+		'css_output_location': 'ali-rasheed.github.io/css',
 
 		jade: {
 			compile: {
@@ -60,20 +45,21 @@ module.exports = function (grunt) {
 					expand: true, // Enable dynamic expansion.
 					cwd: 'jade/', // Src matches are relative to this path.
 					src: ['*.jade'], // Actual pattern(s) to match.
-					dest: 'build', // Destination path prefix.
+					dest: 'ali-rasheed.github.io', // Destination path prefix.
 					ext: '.html',
 				}]
 			}
 		},
 		copy: {
 			main: {
-				options: {flatten: true}, 
+				options: { flatten: true },
 				files: [
-					{expand: true, src: ['css/**'], dest: 'build/css' ,
-					// cwd: 'css/',      // Src matches are relative to this path.
-					// src: ['**/*.js'], // Actual pattern(s) to match.
-			 },
-					{ expand: true,src: ['js/**'], dest: 'build/js' }
+					{
+						// expand: true, src: ['css/**'], dest: 'ali-rasheed.github.io/',
+						// cwd: 'css/',      // Src matches are relative to this path.
+						// src: ['**/*.js'], // Actual pattern(s) to match.
+					},
+					{ expand: true, src: ['js/**'], dest: 'ali-rasheed.github.io/' }
 				]
 			}
 		},
