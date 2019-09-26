@@ -1,0 +1,50 @@
+//- ////////MIXINS/////////
+mixin img-lazyloaded-lg(name,sequence)
+  figure(class=name+" img-cont element-item" ) 
+    //- figcaption "Sed ut perspiciatis unde omnis iste natus error sit voluptatem ccusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt  explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora 
+    img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"/"+name+"_"+sequence+"-1500.jpg", onerror="hide()") 
+mixin img-folder-lazyloaded-lg(name,sequence,folder)
+  figure.img-cont
+mixin img-cap-lazyloaded-lg(name,sequence,caption) 
+  figure.img-cont
+    img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"_"+sequence+"-1500.jpg", alt=name, onerror="hide()") 
+    figcaption = caption
+
+//- ///////////ARRAYS///////// 
+doctype  
+html(lang='en')
+  head
+    include ./includes/head1.pug
+    title Photography - Ali Rasheed
+  body#darkregion
+    header.gallery
+      include ./includes/nav1.pug  
+      #nav-mobile-placeholder.gallery
+
+
+    main.gallery 
+      #btn-cont.portfolioFilter.clearfix.filter-button-group.button-group
+        button(data-filter="*" class="current") 
+          .glow All Categories
+        button(data-filter=".Human" data-multifilter="Human")
+          .glow Human
+        button(data-filter=".Anthropogenic-Landscape") 
+          .glow Anthropogenic Landscape
+        button(data-filter=".Natural-Landscape") 
+          .glow Natural Landscape
+        button(data-filter=".Architectural") 
+          .glow Architectural
+        button(data-filter=".Still-Life") 
+          .glow Still Life
+      section.photography-grid.portfolioContainer
+        - for(var i=1; i<20; i++)
+          //- img(class="lazy", src="", onerror="this.style.display=none") 
+          +img-lazyloaded-lg("Human",i)
+          +img-lazyloaded-lg("Anthropogenic-Landscape",i)
+          +img-lazyloaded-lg("Architectural",i)
+          +img-lazyloaded-lg("Still-Life",i)
+          +img-lazyloaded-lg("Natural-Landscape",i)
+          
+          
+    footer
+      include ./includes/footer2.pug

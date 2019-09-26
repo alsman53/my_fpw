@@ -1,0 +1,30 @@
+doctype
+html(lang='en')
+  head
+    include ./includes/head1.pug
+    title Ali R 
+  body#darkregion
+    #preloader-wrapper
+      #preloader
+    header.index#nav-bar
+      include ./includes/nav1.pug
+    main.index
+      #landing-intro(data-aos="")
+        h1#landing-name Aliasger <br> Rasheed
+        h2 Product Designer ⨯ Photographer
+      section#project-grid.grid
+        a(id=photography class="gridItem" href="photography.html")
+          img(src="imgs/projects/photography"+".jpg", alt="", srcset="")
+          h3 Photography   
+        a(id=charette class="gridItem" href="charette.html")
+          img(src="imgs/projects/charette"+".jpg", alt="", srcset="")
+          h3 Hearth      
+        a(id=headset class="gridItem" href="gakko.html")
+          img(src="imgs/projects/gakko"+".jpg", alt="", srcset="")
+          h3 Gakko Camps 2019 - Kagoshima, Japan
+        a(id=headset class="gridItem" href="headset.html")
+          img(src="imgs/projects/headset"+".jpg", alt="", srcset="")
+          h3 Kamishiba VR Headset
+    footer
+     include ./includes/footer1.pug
+     

@@ -11,17 +11,22 @@ module.exports = function (grunt) {
 				tasks: ['stylus']
 			},
 			jade: {
-				files: ['jade/*.jade'],
-				tasks: ['jade']
+				files: ['pug/**/*.pug'],
+				tasks: ['pug']
 			}
 		},
 
 		stylus: {
-			copy: {
-
-			},
 			compile: {
 				options: {
+					// sourcemap: {
+					// 	// inline: true,
+					// 	// comment: true
+					// },
+					// cwd: 'stylus',  // set working folder / root to copy
+					// src: '**/*', 
+					expand: true,
+					// dest: 'ali-rasheed.github.io/css',
 					compress: false,
 					paths: ['stylus'],
 					import: [
@@ -29,52 +34,49 @@ module.exports = function (grunt) {
 					]
 				},
 				files: {
-					'<%= css_output_location %>/main.css': ['stylus/*.styl']
+					'ali-rasheed.github.io/css/main.css': ['stylus/*.styl']
 				}
 			}
 		},
-		'css_output_location': 'ali-rasheed.github.io/css',
 
-		jade: {
+		// 'css_output_location': 'ali-rasheed.github.io/css',
+
+		pug: {
 			compile: {
 				options: {
-					// pretty: true,
+					pretty: true,
 					// compress: true
 				},
 				files: [{
 					expand: true, // Enable dynamic expansion.
-					cwd: 'jade/', // Src matches are relative to this path.
-					src: ['*.jade'], // Actual pattern(s) to match.
+					cwd: 'pug/', // Src matches are relative to this path.
+					src: ['**/*.pug'], // Actual pattern(s) to match.
 					dest: 'ali-rasheed.github.io', // Destination path prefix.
 					ext: '.html',
 				}]
 			}
 		},
-		copy: {
-			main: {
-				options: { flatten: true },
-				files: [
-					{
-						// expand: true, src: ['css/**'], dest: 'ali-rasheed.github.io/',
-						// cwd: 'css/',      // Src matches are relative to this path.
-						// src: ['**/*.js'], // Actual pattern(s) to match.
-					},
-					{ expand: true, src: ['js/**'], dest: 'ali-rasheed.github.io/' }
-				]
+		purgecss: {
+			my_target: {
+				options: {
+					content: ['./src/**/*.html']
+				},
+				files: {
+					'dist/app.css': ['src/css/app.css']
+				}
 			}
 		},
-
 
 	});
 
 	// Load grunt plugins.
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-jade');
+	// grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.registerTask('default', ['watch']);
-	grunt.loadNpmTasks('grunt-contrib-copy');
-
+	grunt.loadNpmTasks('grunt-contrib-pug');
+	// grunt.loadNpmTasks('grunt-contrib-copy');
 	// grunt.registerTask(['copy']);
-
+	grunt.loadNpmTasks('grunt-purgecss');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 };
