@@ -1,20 +1,55 @@
-.flex-b{
-display: flex
-}
+////////////////GLOBAL GRID 
+.flex-b
+    display: flex
+
 .grid
     display: grid
 
+
+    // grid-template  
+
+/////////////NAV POSITIONING
+nav
+    box-sizing: border-box
+    z-index 4
+    #nav-name
+        left: 0
+        height: 100%
+        position: fixed
+    #adjuster-cont
+        position: fixed
+        top: 0
+        right: 0
+        left: 0
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 3rem
+    #nav-cont
+        position fixed
+        right: 0
+        display: flex
+
+        flex-direction: column
+        height: 100%
+        // align-items: center
+        justify-content: center
+        flex-wrap: nowrap
+        .nav-item
+            transform: rotate(180deg)
+            // flex-shrink: 1
+
+
 .index .grid-item
     display: grid
-    grid-template-columns: repeat(20,5vw)
-    grid-template-rows: 50% 50%
+    grid-template-columns: repeat(18,1fr)
+    grid-template-rows: repeat(5, 20%)
     // margin: 10vh 5vw
     a
-        grid-column: 10/-2 
-        img
+        grid-column:10/18
     h1
         grid-column: 2/12
 
 .index main
     display: grid
-    grid-template k 

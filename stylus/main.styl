@@ -6,7 +6,7 @@
          @font-face
             font-family family
             font-weight weight
-            font-style style
+            font-style style 
             // src url(file(font, 'eot', path))
                // url(file(font, 'eot?#iefix', path)) format("embedded-opentype"),
             src url(file(font, 'otf', path)) format("opentype"),
@@ -15,16 +15,10 @@
             
    /////////////////FONTS///////////////////
    // font-face(Space Mono, SpaceMono-Regular,font, normal, normal)
-   // font-face(Space Mono, SpaceMono-Bold, fonts, bold, normal)
-   // font-face(League Spartan, LeagueSpartan-Bold, fonts, bold, normal)
-   // font-face(Transport, Transport Heavy, fonts, normal, normal)
-   // font-face(Space Grotesk, SpaceGrotesk-Bold, fonts, 700, normal)
+   
    font-face(Space Grotesk, SpaceGrotesk-Regular, fonts,  400, normal)
    font-face(Space Grotesk, SpaceGrotesk-Medium, fonts,500, normal)
    font-face(Space Grotesk, SpaceGrotesk-SemiBold, fonts, 600, normal)
-   // font-face("Mazius Display", MaziusDisplay-Regular,fonts, 400, normal)
-   // font-face("Mazius Display Italic", MaziusDisplay-Italic,fonts, 400, normal)
-   // font-face("Mazius Display Extra Italic", MaziusDisplay-ExtraItalic,fonts,400,normal) 
 ///////////////////VARIABLES/////////////////////
    :root{
       --bg-col-b: white
@@ -77,12 +71,33 @@
       // font-style: normal   
    header
       h1
-         font-size: 2rem;
+         font-size: 1.2rem;
+         font-family: var(--s-std-font)
+      h2
+         font-size: 1.2rem
+         font-family: var(--s-std-font)
+
    h1
       font-size: 10rem
       // font-family: Mazius Display Extra Italic
       // font-weight: 400;
-/////////////NAV STYLING///////////////////
+/*
+----------------NAV STYLING---------------------
+*/
+
+
+#nav-name, .nav-item
+   text-align: center
+   writing-mode: sideways-lr
+   padding: .5rem
+#adjuster-cont
+   #adjust
+      padding: 2rem
+
+/*------------------------------------------------MAIN---------------------------------*/
+main
+   margin: 0 5vw 
 
 .maskable
-   object-fit: cover;
+   object-fit: cover
+   
