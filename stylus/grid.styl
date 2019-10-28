@@ -8,11 +8,11 @@
 /////////////NAV POSITIONING
 nav
     box-sizing: border-box
-    z-index 20
     #nav-name
         left: 0
         height: 100%
         position: fixed
+        top: 0
     #adjuster-cont
         position: fixed
         top: 0
@@ -26,16 +26,19 @@ nav
     #nav-cont
         position fixed
         right: 0
+        top 0
         display: flex
 
-        flex-direction: column
+        // flex-direction: column
         height: 100%
-        // align-items: center
+        align-items: center
         justify-content: center
         flex-wrap: nowrap
-        max-width 10vw
+        // max-width 10vw/
+
         .nav-item
-            transform: rotate(180deg)
+            margin: 0.5rem
+            // transform: rotate(90deg)
             // flex-shrink: 1
 
 
@@ -55,13 +58,12 @@ nav
         &::before
             grid-row 1/-1
             grid-column: 1/-1
-            z-index 11
     
 
     h1
         grid-column: 1/-1
         grid-row: 1/3
-        mix-blend-mode: brighten
+        // mix-blend-mode: brighten
     .hover-overlay
         grid-row 1/-1
         grid-column: 1/-1
@@ -71,9 +73,22 @@ nav
     // grid-row-gap: 5rem
 
 main.about
+    margin-top: 15vh
     grid-template-columns:  repeat(18,minmax(50px,1fr))
-    grid-template-rows: repeat(10,10%)
-    min-height: 80vh
-    
-    ul
-        grid-column: 1/8
+    grid-template-rows: repeat(8,minmax(5%,10%))
+    min-height: 40vh
+    grid-gap: 1rem
+    h1
+        grid-column: 2/span 2
+        // line-height: 1em
+        // grid-row: span 2
+    section
+        grid-column: 2/span 7
+        grid-row: span 2
+    img 
+        grid-column: 16/11
+        // grid-row: 1/3
+    aside
+        grid-column: 16/11
+        grid-row: 4/7
+        h1

@@ -3,7 +3,7 @@ html(lang='en')
   head
     include ./includes/head1.pug
     title Ali R - Photographer ⨯ Designer
-  body.index
+  body.index#darkregion
     //- #preloader-wrapper
     //-   #preloader 
     header
@@ -27,7 +27,12 @@ html(lang='en')
         h1 Gakko Camps 2019
       section.grid-item
         a(id=headset href="headset.html")
-          img(src="imgs/projects/headset"+".jpg", alt="", srcset="").maskable
+          img(src="imgs/projects/headset"+".jpg", alt="", srcset="").maskable.saturate
         h1 Kamishiba VR Headset
+      section.grid-item
+        a(id=posterjam href="posterjam.html")
+          img(src="imgs/projects/posterjam"+".png", alt="", srcset="").maskable
+        h1 Posterjam
+
     footer
       include ./includes/footer1.pug

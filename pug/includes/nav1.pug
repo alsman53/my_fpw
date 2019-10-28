@@ -4,10 +4,10 @@ nav
         h1#nav-h1 Ali Rasheed 
         h2#nav-h2 Photographer ⨯ Product Designer
     #adjuster-cont    
-        a#adjust(class="fas fa-adjust", href="javascript:void(0);",onclick="darkMdeSwitch()") 
+        a#adjust(class="fas fa-adjust", href="javascript:void(0);",onclick="darkModeSwitch(this)") 
     #nav-cont
         each val, index in {index: "Work", about:"About"}
-            a(class="nav-item", href=index+".html") #{val}
+            a(class="nav-item in-txt", href=index+".html") #{val}
     //- a#mobilebutton.icon(href='javascript:void(0);', onclick='myFunction()')
     //-     span
     //-     span
