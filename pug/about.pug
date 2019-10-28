@@ -6,12 +6,28 @@ html(lang='en')
   body#darkregion
     header
       include ./includes/nav1.pug
-    main
-      section.homepage#landing
+    main.about.grid
       h1 Hi
-      img(src="imgs/profile-pic.jpg", alt="")
-      p As you can see from ^, my name is Aliasger Rasheed and you're on my site. I am a web and industri  al design student passionate about working on projects that aim to be timeless, and exist to create positive social and environmental impacts. My work is influenced by an obsession with typography and a fascination for the nature of systems and mechanics.
-      a(href="https://instagram.com/hisbeardedness")
-        img(src="/imgs/instagram-icon-13-256.png" id="instagram")
+      img(src="imgs/profile-pic-cropped.jpg", alt="").prof
+      //- p I am a web and industrial design student passionate about working on projects that aim to be timeless, and exist to create positive social and environmental impacts. My work is influenced by an obsession with typography and a fascination for the nature of systems and mechanics.
+      
+      h2 What I want to design
+      ul
+        li Education focused design enable students to take control of their own learning process, and push the limits of how education is understood.
+        li Work that has long-term impact
+        li 
+      h2 Some Things I like to obsess over
+      ul
+        li Lists
+        li Intentionality, thought processes and themes in real-life and animated cinema
+        li open source type design 
+        li Manipulating memory through photography and editing
+        li Understanding the mechanisms behind different writing systems, fictional and otherwise 
+
+      h2 Site references
+      p I used open source fonts #[a.space-g(href="https://github.com/floriankarsten/space-grotesk") Space Grotesk] from Colophon Foundry and #[a.mazius(href="http://collletttivo.it/") Mazius Display] from Colllectttivo
+
+      a(href="https://instagram.com/hisbeardedness" class="fab fa-instagram" aria-hidden="true")
+        
     footer
      include ./includes/footer1.pug 

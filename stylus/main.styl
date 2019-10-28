@@ -1,4 +1,6 @@
-//////////////////////IMPORTS////////////////////////
+/*
+-------------------IMPORTS-------------------
+*/
       file(name, ext, path)
          path + '/' + name + '.' + ext
 
@@ -14,90 +16,173 @@
                url(file(font, 'woff', path)) format("woff") 
             
    /////////////////FONTS///////////////////
-   // font-face(Space Mono, SpaceMono-Regular,font, normal, normal)
-   
+   font-face(Space Grotesk, SpaceGrotesk-Light, fonts, 300, normal)
    font-face(Space Grotesk, SpaceGrotesk-Regular, fonts,  400, normal)
    font-face(Space Grotesk, SpaceGrotesk-Medium, fonts,500, normal)
    font-face(Space Grotesk, SpaceGrotesk-SemiBold, fonts, 600, normal)
-///////////////////VARIABLES/////////////////////
+   font-face(Space Grotesk, SpaceGrotesk-Bold, fonts, 700, normal)
+/*
+-------------------VARIABLES------------------
+*/
    :root{
-      --bg-col-b: white
-      --bg-col-d: #c4c4c4 
-      --primary-col: #DB00FF 
-      --secondary-col-b: white
-      --secondary-col-w: black
-      --unselectedCol-w: #999
-      --bg-col: rgb(30,30,30) 
-      --unselectedCol: #888888
-      --mobileP: 400px  
+      --bg-col-w: #c4c4c4 
+      --txt-col-w: #333
+      --sy-col-w: #DB00FF
+      --py-col-w: #DE38C8
+      --sy-col-w: #FF2079
+
+      --bg-col-b: black
+      --txt-col-b: #333
+      --py-col-b: #c4c4c4
+      --sy-col-b: #DB00FF
+      --sy-col-b: #DB00FF
+      --sy-col-b: #DB00FF
+
+      --unselected-col-w: #999
+      --unselected-col-b: #888888
+
+      --mobileP: 400px
       --mobileL: 768px
       --laptopMDPI: 1280px
-      --laptopHiDPI: 1440px 
-      --p-std-font: "Mazius Display Regular";
-      --s-std-font: "Space Grotesk";
-      --t-std-font: "Mazius Display Italic";
-      --q-std-font: "Mazius Display Extra Italic";
+      --laptopHiDPI: 1440px
+
+      --p-std-font: "Mazius Display Regular"
+      --s-std-font: "Space Grotesk"
+      --t-std-font: "Mazius Display Italic"
+      --q-std-font: "Mazius Display Extra Italic"
+
       --p-std-weight: normal
       --s-std-weight: bold
       }
-//////////////// MEDIA QUERY MIXINS////////////////
-   widerthan(var) 
+/*
+------------------- MEDIA QUERY MIXINS -------------------
+*/
+   widerthan(var)
       --condition: 'screen and (min-width: %s)' % var
       @media --condition
          {block} 
 
    narrowerthan(var)
       --condition: 'screen and (max-width: %s)' % var
-      @media --condition 
+      @media --condition
          {block}
     
-////////////////////ACCESSIBILITY///////////////////////
-.elmnt-invis {
-  position: absolute !important;
-  height: 1px; width: 1px; 
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-}
-//////////////GLOBAL STYLING/////////////////  
+/*------------------- ACCESSIBILITY -------------------*/
+   .elmnt-invis 
+      position: absolute !important;
+      height: 1px; width: 1px; 
+      overflow: hidden;
+      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px);
+
+
+/*
+------------------- RESET DEFAULTS ------------------- */
+a
+   color: var(--p-col-w)
+   text-decoration: none
+   
+/*------------------- GLOBAL STYLING -------------------*/  
+*
+   font-family: var(--s-std-font)
+   .saturate
+      // filter: saturate(100%)
+      filter: sepia(50%)
    h1,   h3,   h4,   h5, figcaption 
       font-family: var(--p-std-font)
       font-weight: 400
+      color: var(--txt-col-w)
    p
       font-family: var(--s-std-font)
    h2
-      font-family: var(--t-std-font);
+      font-family: var(--t-std-font)
       font-weight: 400 
       // font-style: normal   
    header
       h1
          font-size: 1.2rem;
-         font-family: var(--s-std-font)
+         // font-family: var(--s-std-font)
       h2
          font-size: 1.2rem
-         font-family: var(--s-std-font)
+         // font-family: var(--s-std-font)
 
    h1
-      font-size: 10rem
+      font-size: 8rem
       // font-family: Mazius Display Extra Italic
       // font-weight: 400;
 /*
-----------------NAV STYLING---------------------
+---------------- NAV STYLING ---------------------
 */
+nav 
+   *
+      text-rendering: geometricPrecision;
+   background-color: var(--bg-col-w)
+   #adjust
+      color white
+      // font-family: var(--t-std-font)
+      mix-blend-mode:  difference
 
+ 
 
 #nav-name, .nav-item
    text-align: center
    writing-mode: sideways-lr
-   padding: .5rem
+   padding:1rem
+#nav-h2
+      line-height: 0
 #adjuster-cont
    #adjust
       padding: 2rem
 
-/*------------------------------------------------MAIN---------------------------------*/
+/*
+------------------------------------------------ MAIN ---------------------------------
+*/
 main
-   margin: 0 5vw 
+   margin: 5vh 10vw 0vh 10vw 
+   padding-top: 5vh
+   
+.index
+   .grid-item
+      overflow: visible
+      h1
+         margin: 0
+         padding: 0
+         z-index: 10
+         transition: color 0.3s ease-out
+      a
+         display: grid
+         grid: 100%/100%
+         &::before
+            content: ''
+            background: var(--sy-col-w)
+            mix-blend-mode: hue
+            opacity 0
+            transition: opacity 300ms ease-out
+      &:hover
+         h1
+            color: var(--sy-col-w) 
+            // filter:brightness(80%)
+         ::before
+            opacity 1
+
+   .hover-overlay
+      // background-blend-mode: hue;
+
 
 .maskable
    object-fit: cover
    
+img 
+   // max-width: 100%
+   // max-height: 100%
+   // min-width 100%
+   width: 100%
+
+main.about
+   h1
+      margin: 0
+      padding 0
+.mazius
+   font-family: var(--q-std-font)
+.space-g
+   font-weight: 700
