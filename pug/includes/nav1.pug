@@ -1,15 +1,13 @@
 nav#topNav.grid 
-    a(href="https://ali-rasheed.github.io" id="nav-name")
-        //- div#nav-name 
-        h1#nav-name Ali Rasheed
-            //- h2 Photographer Industrial Designer
-                
-    a#adjust(href="javascript:void(0);", onclick="darkModeSwitch()") #[i(class="fas fa-adjust")]      
     #mobileOverlay
-    each val, index in {index: "Work",photography:"Photography", about:"About"}
-        a(href=index+".html", class="nav-item") #{val}
+    a(id="nav-name" href="https://ali-rasheed.github.io")
+        h1#nav-name Ali Rasheed 
+        h2 Photographer ⨯ Industrial Designer
+    a#adjust(class="fas fa-adjust", href="javascript:void(0);", onclick="darkMdeSwitch()") 
+    each val, index in {index: "Work", about:"About"}
+        a(class="nav-item", href=index+".html") #{val}
     a#mobilebutton.icon(href='javascript:void(0);', onclick='myFunction()')
-        span
-        span
-        span
-    
+    //-     span
+    //-     span
+    //-     span
+      

@@ -1,0 +1,454 @@
+//////////////////////IMPORTS////////////////////////
+// @import 'font-face'
+// FONTS
+   /* font-face(Chronos Serif, ChronosSerif-Stroked, fonts, normal, normal)
+   font-face(Lulu Monospace, LuluMonospace-Regular, fonts, normal, normal)
+   font-face(MODULAR, MODULAR-4, fonts, normal, normal)
+   font-face(MODULAR, MODULAR-14, fonts, bold, normal)
+   font-face(MODULAR, MODULAR-Outline14, fonts, normal, italic)
+   */
+   // font-face(Space Mono, SpaceMono-Regular, fonts, normal, normal)
+   // font-face(Space Mono, SpaceMono-Bold, fonts, bold, normal)
+   // font-face(League Spartan, LeagueSpartan-Bold, fonts, bold, normal)
+   // font-face(Transport, Transport Heavy, fonts, normal, normal)
+   // font-face(Space Grotesk, SpaceGrotesk-Bold, fonts, 700, normal)
+   font-face(Space Grotesk, SpaceGrotesk-SemiBold, fonts, 600, normal)
+   font-face(Space Grotesk, SpaceGrotesk-Medium, fonts, 500, normal)
+   font-face(Space Grotesk, SpaceGrotesk-Regular, fonts, 400, normal)
+///////////////////VARIABLES/////////////////////
+   $bg-col-w = white
+   $secondary-col-w= black
+   $unselectedCol-w = #999
+   $p-std-weight-w = regular
+   $bg-col = rgb(30,30,30) 
+   $primaryCol = #DB00FF 
+   // $primaryCol = #B200FF
+   $secondaryCol = white
+   $unselectedCol = #888888
+   $mobileP = 400px  
+   $mobileL = 768px
+   $laptopMDPI = 1280px
+   $laptopHiDPI = 1440px 
+   $s-std-font = "roboto-condensed" 
+   $p-std-font = "IBM plex mono"
+   $p-std-font = "league spartan"
+   $p-std-font = "space mono"
+   $s-std-font = "Space Grotesk"   
+   $p-std-weight = 400
+   $s-std-weight = bold
+//////////////// MEDIA QUERY MIXINS////////////////
+   widerthan(var)
+      $condition = 'screen and (min-width: %s)' % var
+      @media $condition
+         {block}
+`
+   narrowerthan(var)
+      $condition = 'screen and (max-width: %s)' % var
+      @media $condition 
+         {block}
+    
+//////////////GLOBAL STYLING/////////////////
+   *
+      box-sizing: border-box
+   html   
+      scroll-behavior: smooth 
+      font-rendering: geometricPrecision
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+      line-height: 1.4;
+      color: white
+      a:link, :visited
+         text-decoration:none
+         color: $secondaryCol
+   header, main
+      background-color: $bg-col
+   p
+      font-family: $s-std-font
+      font-size: .8rem
+   h1, h2, h3
+      color: $secondaryCol
+      // text-transform: uppercase
+      font-family: $s-std-font
+      font-size: 1em
+      margin 0 
+   div, a
+      font-family: $s-std-font
+   #preloader-wrapper
+      margin 0
+      position: fixed;
+      // width 100%
+      // height 100%
+      // min-height: 100%
+      top: 0; 
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color:$bg-col
+      z-index: 999999;
+   #preloader
+      width: 5rem;
+      height: 5rem;
+      margin: 0;
+      background: transparent;
+      border-top: 4px solid $primaryCol
+      border-right: 4px solid transparent;
+      border-radius: 50%;
+      -webkit-animation: 1s spin linear infinite;
+      animation: 1s spin linear infinite;
+////////////////STANDARD GRID///////////////////
+   .grid
+      // border:1rem 1rem 1rem 1rem solid red 
+      display: grid 
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+      img 
+         object-fit: cover;
+      #topNav 
+         grid-template-columns:  repeat(auto-fill, minmax(100px,1fr));
+         grid-auto-flow: column 
+      .charette
+         grid-template-columns: repeat(12, 1fr)
+   .proj-sect
+      display: grid
+
+      grid-column: 1/-1
+//////////////////NAV/////////////////
+   header 
+      position: fixed
+      width 100%
+      transition: top 0.5s;
+      transition-delay: 1s;
+   nav
+      font-weight: sStdWt      
+      padding 2rem
+      padding-top: 1.5rem
+      z-index 2
+      width: 100%
+      #nav-name
+         grid-column: 1/5
+         order 0
+         &:hover
+            -webkit-text-stroke: 0.5px white;
+            -webkit-text-fill-color: rgba(255,255,255,0);
+            text-shadow: 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+      .nav-item
+         text-align: center
+         font-size: 1.2rem
+         order: 0
+         margin-bottom: auto
+         &:hover
+            -webkit-text-stroke: 0.5px white;
+            -webkit-text-fill-color: rgba(255,255,255,0);
+            text-shadow: 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+      #adjust
+         order: 1
+      h1
+         font-size: 1.3rem
+         margin 0
+         font-weight: normal
+      h2 
+         margin 0
+         font-weight: normal
+         font-size: 0.9rem 
+      a 
+         &:not(:first-child):not(:last-child)
+            display none
+         &.icon
+            display block
+            grid-column: -1/-2 
+            vertical-align: top
+            position: relative
+            margin-left: auto
+            margin-top: 0
+            -webkit-transform: rotate(0deg)
+            -moz-transform: rotate(0deg)
+            -o-transform: rotate(0deg)
+            transform: rotate(0deg)
+            -webkit-transition: .5s ease-in-out
+            -moz-transition: .5s ease-in-out
+            -o-transition: .5s ease-in-out
+            transition: .5s ease-in-out
+            cursor: pointer
+            min-width 2rem
+            $hamburger = 4px
+            span
+               display: block
+               position: absolute
+               height: $hamburger
+               width: 2rem
+               background:$secondaryCol
+               border-radius: 1px
+               opacity: 1
+               left: 0
+               -webkit-transform: rotate(0deg)
+               -moz-transform: rotate(0deg)
+               -o-transform: rotate(0deg)
+               transform: rotate(0deg) 
+               -webkit-transition: .25s ease-in-out
+               -moz-transition: .25s ease-in-out 
+               -o-transition: .25s ease-in-out
+               transition: .25s ease-in-out
+               &:nth-child(1) 
+                  top: 0px
+               &:nth-child(2) 
+                  top: $hamburger*2
+               &:nth-child(3)
+                  top: $hamburger*4
+            &.open 
+               span:nth-child(1) 
+                  top: $hamburger*2;
+                  -webkit-transform: rotate(135deg)
+                  -moz-transform: rotate(135deg)
+                  -o-transform: rotate(135deg)
+                  transform: rotate(135deg)
+               span:nth-child(2) 
+                  opacity: 0;
+                  left: 60px
+               span:nth-child(3)
+                  top: $hamburger*2;
+                  -webkit-transform: rotate(-135deg)
+                  -moz-transform: rotate(-135deg)
+                  -o-transform: rotate(-135deg);
+                  transform: rotate(-135deg)
+      &.responsive.grid 
+         a 
+            float none
+            text-align left
+            &:not(:first-child):not(:last-child) 
+               display: block !important
+            &.icon
+               i.fa.fa-times
+                  display: block !important
+               i.fa.fa-bars
+                  display none !important 
+         position: absolute;
+         width: 100vw
+         height: 100vh
+   #btn-cont 
+      padding-left: 5%
+      padding-right: 5%
+      button
+         border-width: 2px 
+         color:$unselectedCol
+         font-size: 0.9rem
+         padding 0
+         background-color:transparent
+         border-radius: 5px
+         margin-top: 0.1rem
+         margin-bottom: 0.1rem 
+         border-color: $unselectedCol
+         &:hover
+            box-shadow:inset 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+            border-color: white
+         .glow
+            font-family: $s-std-font
+            font-weight: 200 
+            display inline-block
+            padding 0.2rem
+            border-radius: 5px
+            vertical-align: center 
+            &:hover
+               font-weight: 900
+               -webkit-text-stroke: 1px white;
+               -webkit-text-fill-color: rgba(255,255,255,0);
+               text-shadow: 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+               box-shadow: 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+         &.current
+            box-shadow:inset 0px 0px 7px #DB00FF
+            border-color: white 
+            .glow
+               font-weight: 900
+               -webkit-text-stroke: 0.5px white;
+               -webkit-text-fill-color: rgba(255,255,255,0);
+               text-shadow: 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+               box-shadow: 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+   #mobileOverlay
+      position: absolute
+      width 100vw
+      height 100vh
+      // z-index 3;
+      // background: $bg-col
+
+#nav-mobile-placeholder
+   &.charette
+      height 8rem    
+   &.gallery
+      height: 5rem
+      width: 100%
+#mobilebutton
+   z-index: 5
+ ///--------------MAIN---------------////
+main
+   // padding 1rem
+   background-color: $bg-col
+p
+ margin 0
+ padding-bottom: 2rem
+ padding-top: 0.5rem 
+#project-grid
+   &.grid
+      grid-template-columns: repeat(12,1fr)
+   .gridItem 
+      padding: 0rem 1.6rem 0rem 1.6rem  
+      margin: 0.5rem 0rem 0.5rem 0rem
+      height 70vh
+      width 100vw
+      position relative
+      grid-column: 1/-1
+      overflow: hidden
+      img   
+         object-fit: cover
+         height: inherit
+         width: 100% 
+.overlay
+   z-index 2
+   opacity 0
+   background-color: #002d2d;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   &.open
+      opacity 100%
+
+#model3d
+   width 100%
+   padding 1rem
+.img-cont
+   margin 0
+   padding 0
+   position static !important //overtake Isotope
+   img 
+      max-width 100%
+      line-height: 0
+      padding-bottom: 3rem
+      padding-top: 3rem
+
+main.gallery
+   background-color: #1e1e1e 
+.photography-grid
+   min-height auto !important
+
+   &:after 
+      // content: '';
+      // display: block;
+      // clear: both;
+//-----------------FOOTER--------------------
+footer 
+   //  height 1rem  
+   background-color: $bg-col
+   text-align: center
+   p
+      display: inline-block
+      padding-bottom: 1rem
+      padding-left: 0.2rem
+      padding 0.5rem 0.7rem
+      border: 1px solid $primaryCol
+      background-color: $bg-col
+      color: $primaryCol 
+      margin: 1rem
+    // ---------------BRIGHTMODE-----------
+.dark 
+   main.gallery
+      background-color:$bg-col-w
+   color: $secondary-col-w!important
+   a:link, :visited 
+      text-decoration:none 
+      color: $secondary-col-w !important
+   h1, h2, h3, h4 
+      color: $secondary-col-w !important
+   header, main 
+      background-color:$bg-col-w
+
+
+//----------------Responsive----------
++widerthan($mobileL)
+   nav
+      z-index: 3;
+      // border dotted
+      &.grid
+         display: flex
+         position relative
+      a
+         &.nav-item
+            order: 2 
+         &:not(:first-child):not(:last-child)
+            display block
+            padding: 0 1.2rem 0 1.2rem  
+         &.icon 
+            float none
+            display none !important
+         &:nth-child(2)
+            margin-left: auto 
+         &:nth-child(3)
+            padding-right: 0rem 
+         &:nth-child(2)
+            padding-right: 0rem 
+         &#adjust  
+            order: 1 
+            padding-top: 0.25rem 
+   #project-grid
+      margin: 0rem 2rem 0rem 2rem 
+      &.grid  
+         grid-row-gap: 2rem
+         grid-column-gap: 2rem
+      .gridItem
+         grid-column: span 4
+         padding: 0rem 0rem 0rem 0rem
+         width: 100%
+   #landing-intro
+      display: block
+      text-align: center
+      // height 80vh
+      width min-content 
+      margin auto 
+      padding: 20vh auto
+      // padding 20vh 0vh 
+      // padding 1rem
+      &:hover
+         fill: $secondaryCol  
+         // animation: neon6 1.5s forwards;
+         animation: flicker 1.5s linear; 
+         // -webkit-text-stroke: 0.5px white;
+         // -webkit-text-fill-color: rgba(255,255,255,0);
+         // text-shadow: 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+      h2
+         display: inline-block
+         font-size: 3vw 
+         font-family: $s-std-font 
+   h1#landing-name
+      display inline-block
+      font-size: 13vw  
+      margin 0 auto
+      vertical-align: middle
+      line-height: 0.9em
+      font-style: italic
+      color $secondaryCol
+      font-family: $p-std-font   
+      // transition: 0.6s;
+      &:hover
+         // // -webkit-text-fill-color: rgba(255,255,255,0);  
+         // // -webkit-text-fill-color: $bg-col
+         // fill: $secondaryCol  
+         // // -webkit-text-stroke: 0.2rem white
+         // // animation: neon6 1.5s ease-in-out  alternate;
+         // // -webkit-text-stroke: 0.5px white;
+         // // -webkit-text-fill-color: rgba(255,255,255,0);
+         // text-shadow: 0px 0px 7px #DB00FF, 0px 0px 12px #DB00FF;
+
++widerthan($mobileL)
+   #nav-mobile-placeholder.index{
+      height: 6rem;}
+   .blah 
+      display: none
+   #project-grid
+      .gridItem
+         // grid-column: 2/5
++widerthan($laptopMDPI)
+   .blah
+      display: none
++widerthan($laptopHiDPI)
+   main
+      aside
+         grid-column: none  
+   #project-grid
+      margin 0rem 12vw 0rem 12vw
+// @import keyframes
