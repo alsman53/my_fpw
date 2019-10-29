@@ -14,25 +14,30 @@ html(lang='en')
       //-   h1#landing-name Aliasger <br> Rasheed
       //-   h2 Product Designer ⨯ Photographer
       section.grid-item
-        a(id=photography href="photography.html")
+        a(id=photography href="photography.html").proj-link
           img(src="imgs/projects/photography"+".jpg", alt="", srcset="").maskable
-        h1 Photography   
+        a(id=photography href="photography.html")
+          h1 Photography   
       section.grid-item
-        a(id=charette href="charette.html")
+        a(id=charette href="charette.html").proj-link
           img(src="imgs/charette/hearth-underlit"+".jpg", alt="", srcset="").maskable.saturate
-        h1 Charette 
+        a(id=photography href="photography.html")
+          h1 Charette 
       section.grid-item
-        a(id=headset href="gakko.html")
+        a(id=headset href="gakko.html").proj-link
           img(src="imgs/projects/gakko"+".jpg", alt="", srcset="").maskable
-        h1 Gakko Camps 2019
+        a(id=photography href="photography.html")
+          h1 Gakko Camps 2019
       section.grid-item
-        a(id=headset href="headset.html")
+        a(id=headset href="headset.html").proj-link
           img(src="imgs/projects/headset"+".jpg", alt="", srcset="").maskable.saturate
-        h1 Kamishiba VR Headset
+        a(id=photography href="photography.html")
+          h1 Kamishiba VR Headset
       section.grid-item
-        a(id=posterjam href="posterjam.html")
+        a(id=posterjam href="posterjam.html").proj-link
           img(src="imgs/projects/posterjam"+".png", alt="", srcset="").maskable
-        h1 Posterjam
+        a(id=photography href="photography.html")
+          h1 Posterjam
 
     footer
       include ./includes/footer1.pug
