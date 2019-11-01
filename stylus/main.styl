@@ -102,6 +102,15 @@ a
       font-family: var(--t-std-font)
       font-weight: 400 
       // font-style: normal   
+   h1 
+      font-size: 7.5rem
+      // font-family: Mazius Display Extra Italic
+      // font-weight: 400;
+   ::selection, ::-moz-selection
+      background-color var(--py-col)
+/*
+---------------- NAV STYLING ---------------------
+*/
    header
       h1
          font-size: 1.2rem;
@@ -109,14 +118,7 @@ a
       h2
          font-size: 1.2rem
          // font-family: var(--s-std-font)
-
-   h1
-      font-size: 7.5rem
-      // font-family: Mazius Display Extra Italic
-      // font-weight: 400;
-/*
----------------- NAV STYLING ---------------------
-*/
+ 
 nav 
    // background-color: var(--bg-col)
    z-index 20
@@ -126,24 +128,28 @@ nav
       writing-mode: vertical-rl
       padding:1rem
       transform: rotate(180deg)
-   #nav-h2
-         // line-height: 0
+      h1
+         font-family: var(--s-std-font)
+      h2
+         font-family: var(--s-std-font)
          min-width 1rem
          margin: 0
+         font-weight: 300
    #nav-cont
       writing-mode: vertical-rl 
       .nav-item
          // padding 1rem
          max-width min-content
          max-height: min-content
+         font-size: 1.2em
    #adjuster-cont
       #adjust
          // padding: 3rem
          color var(--txt-col)
          // font-family: var(--t-std-font)
          // mix-blend-mode:  difference
-
- 
+         &:hover
+            color: grey
 
 
 /*
@@ -208,24 +214,20 @@ main.about
       h1 
          font-size: 2.5rem
       p  
-         // font-size: 1.1rem
          a
             text-align: center 
-      .fa-instagram
-         // font-size 2rem
-         // height 3rem;
+      // .fa-instagram
 
 .mazius
    font-family: var(--q-std-font)
 .space-g
    font-weight: 700
 ul 
-   // margin-top: 0
-   list-style-type: square
+   list-style-type none 
+   padding-left: 0em;
    li
       line-height: 1.2rem
       padding-bottom: 0.5rem
-      // font-size: 1.2rem
    // list-style-image: url('bullet.png')
 // ali-rasheed.github.io\imgs\bullet.png
 
@@ -235,8 +237,8 @@ footer
    justify-content: center
    align-items: center
    p
-      border-radius: 0.1rem
-      border: var(--py-col) solid 1px
+      // border-radius: 0.1rem
+      // border: var(--py-col) solid 1px
       padding 1rem
    h1
       font-size: 5rem
@@ -259,5 +261,5 @@ a.in-txt
          background-size: 4px 1.1em;
       // background
 
-
+ 
 

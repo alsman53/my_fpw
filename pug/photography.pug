@@ -33,13 +33,13 @@ html(lang='en')
         button(data-filter=".Natural-Landscape") 
           .glow Natural Landscape
         button(data-filter=".Architectural") 
-          .glow Architectural
+          .glow Architectural 
         button(data-filter=".Still-Life") 
           .glow Still Life
       section.photography-grid.portfolioContainer
+
         - for(var i=1; i<20; i++)
-          //- img(class="lazy", src="", onerror="this.style.display=none") 
-          +img-lazyloaded-lg("Human",i)
+         +img-lazyloaded-lg("Human",i)
           +img-lazyloaded-lg("Anthropogenic-Landscape",i)
           +img-lazyloaded-lg("Architectural",i)
           +img-lazyloaded-lg("Still-Life",i)
