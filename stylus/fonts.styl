@@ -1,0 +1,18 @@
+      file(name, ext, path)
+         path + '/' + name + '.' + ext
+
+      font-face(family, font=family, path='fonts', weight='normal', style='normal')
+         @font-face
+            font-family family
+            font-weight weight
+            font-style style 
+            src url(file(font, 'otf', path)) format("opentype"),
+               url(file(font, 'woff2', path)) format("woff2"),
+               url(file(font, 'woff', path)) format("woff") 
+            
+   /* ///////////////FONTS///////////////////// */
+   font-face(Space Grotesk, SpaceGrotesk-Light, fonts ,300, normal)
+   font-face(Space Grotesk, SpaceGrotesk-Regular, fonts ,400, normal)
+   font-face(Space Grotesk, SpaceGrotesk-Medium, fonts ,500, normal)
+   font-face(Space Grotesk, SpaceGrotesk-SemiBold, fonts , 600, normal)
+   font-face(Space Grotesk, SpaceGrotesk-Bold, fonts ,700, normal)

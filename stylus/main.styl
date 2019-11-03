@@ -1,60 +1,13 @@
-/*
--------------------IMPORTS-------------------
-*/
-      file(name, ext, path)
-         path + '/' + name + '.' + ext
 
-      font-face(family, font=family, path='fonts', weight='normal', style='normal')
-         @font-face
-            font-family family
-            font-weight weight
-            font-style style 
-            // src url(file(font, 'eot', path))
-               // url(file(font, 'eot?#iefix', path)) format("embedded-opentype"),
-            src url(file(font, 'otf', path)) format("opentype"),
-               url(file(font, 'woff2', path)) format("woff2"),
-               url(file(font, 'woff', path)) format("woff") 
-            
-   /////////////////FONTS///////////////////
-   font-face(Space Grotesk, SpaceGrotesk-Light, fonts, 300, normal)
-   font-face(Space Grotesk, SpaceGrotesk-Regular, fonts,  400, normal)
-   font-face(Space Grotesk, SpaceGrotesk-Medium, fonts,500, normal)
-   font-face(Space Grotesk, SpaceGrotesk-SemiBold, fonts, 600, normal)
-   font-face(Space Grotesk, SpaceGrotesk-Bold, fonts, 700, normal)
-/*
--------------------VARIABLES------------------
-*/
-   :root
-      --bg-col: #fbfbfb 
-      --txt-col: #333
-      --sy-col: #DB00FF
-      --py-col: #DE38C8
-      --py-col: #FF2079
+pycol = var(--py-col)
+sycol = var(--sy-col)
+textcol = var(--txt-col)
 
-      --unselected-col-w: #999
-      --unselected-col-b: #888888
-
-      --mobileP: 400px
-      --mobileL: 768px
-      --laptopMDPI: 1280px
-      --laptopHiDPI: 1440px
-
-      --p-std-font: "Mazius Display Regular"
-      --s-std-font: "Space Grotesk"
-      --t-std-font: "Mazius Display Italic"
-      --q-std-font: "Mazius Display Extra Italic"
-
-      --p-std-weight: normal
-      --s-std-weight: bold
-      
-
-/*------------DARK MODE------------*/
-   [data-theme="dark"] 
-      --bg-col: #222222
-      --txt-col:#fbfbfb 
- 
-/*
-------------------- MEDIA QUERY MIXINS -------------------
+pfont = var(--p-std-font)
+sfont = var(--s-std-font)
+tfont = var(--t-std-font)
+qfont = var(--q-std-font)
+/*------------------- MEDIA QUERY MIXINS -------------------
 */
    widerthan(var)
       condition = 'screen and (min-width: %s)' % var
@@ -83,20 +36,20 @@ a
    
 /*------------------- GLOBAL STYLING -------------------*/  
    *
-      font-family: var(--s-std-font)
+      font-family: sfont
    body, main,footer,header
       background-color: var(--bg-col)
    .saturate
       // filter: saturate(100%)
       filter: sepia(50%)
    h1,h2,h3,h4,h5,h6,figcaption,p,li,a
-      color: var(--txt-col)
+      color: textcol
       
    h1,   h3,   h4,   h5, figcaption 
       font-family: var(--p-std-font)
       font-weight: 400
    p,li, a 
-      font-family: var(--s-std-font)
+      font-family: sfont
 
    h2
       font-family: var(--t-std-font)
@@ -107,18 +60,16 @@ a
       // font-family: Mazius Display Extra Italic
       // font-weight: 400;
    ::selection, ::-moz-selection
-      background-color var(--py-col)
+      background-color pycol
 /*
 ---------------- NAV STYLING ---------------------
 */
    header
       h1
          font-size: 1.2rem;
-         // font-family: var(--s-std-font)
       h2
          font-size: 1.2rem
-         // font-family: var(--s-std-font)
- 
+  
 nav 
    // background-color: var(--bg-col)
    z-index 20
@@ -129,9 +80,9 @@ nav
       padding:1rem
       transform: rotate(180deg)
       h1
-         font-family: var(--s-std-font)
+         font-family: sfont
       h2
-         font-family: var(--s-std-font)
+         font-family: sfont
          min-width 1rem
          margin: 0
          font-weight: 300
@@ -145,7 +96,7 @@ nav
    #adjuster-cont
       #adjust
          // padding: 3rem
-         color var(--txt-col)
+         color textcol
          // font-family: var(--t-std-font)
          // mix-blend-mode:  difference
          &:hover
@@ -180,13 +131,13 @@ main
          &::before
             content: ''
             z-index 9
-            background: var(--py-col)
+            background: pycol
             mix-blend-mode: hue
             opacity 0
             transition: opacity 300ms ease-out
       &:hover
          h1
-            color: var(--py-col) 
+            color: pycol 
          ::before
             opacity 1
 
@@ -211,12 +162,11 @@ main.about
    h2
       font-size: 3rem
    aside
-      h1 
-         font-size: 2.5rem
       p  
          a
-            text-align: center 
-      // .fa-instagram
+            text-align: center
+      h1 
+         font-size: 2.5rem
 
 .mazius
    font-family: var(--q-std-font)
@@ -238,14 +188,14 @@ footer
    align-items: center
    p
       // border-radius: 0.1rem
-      // border: var(--py-col) solid 1px
+      // border: pycol solid 1px
       padding 1rem
    h1
       font-size: 5rem
       // width: min-content
 a.in-txt
    background:
-      linear-gradient(to bottom, var(--py-col) 0%,var(--py-col) 100%);
+      linear-gradient(to bottom, pycol 0%,pycol 100%);
    background-position: 0 100%;
    background-repeat: repeat-x;
    background-size: 4px .15em;
