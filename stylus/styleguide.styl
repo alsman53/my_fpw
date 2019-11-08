@@ -1,0 +1,33 @@
+.styl-gd
+    h1.main-heading
+        text-align: center;
+    div
+        h1.main-heading
+            text-align: left 
+    #palette
+        display: grid
+        text-align: center
+        margin-left:auto
+        margin-right auto
+        align-content: center
+        align-items: center;
+        justify-items: center; 
+        // grid-template: 50px/ 50px 50px 50px
+        grid-template-columns: 1fr 1fr 1fr 
+        grid-column-gap: 25px
+    h1:first-child
+        text-align: center
+.pal-col:first-child
+    background-color: var(--magenta)
+.pal-col:last-child
+    background-color: var(--black)
+.pal-col:nth-child(2)
+    background-color: var(--white)
+
+.pal-col
+    border solid grey 3px
+    width: 200px
+    height 200px
+h1,h2,h3,h4,h5,h6
+    margin-top: 0
+    margin-bottom: 0.4em
