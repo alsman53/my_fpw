@@ -9,34 +9,35 @@ html(lang='en')
     header
       include ./includes/nav1.pug
     main
-      //- #nav-mobile-placeholder.index 
-      //- #landing-intro(data-aos="")
-      //-   h1#landing-name Aliasger <br> Rasheed
-      //-   h2 Product Designer ⨯ Photographer
-      section.grid-item
-        a(id=photography href="photography.html").proj-link
-          img(src="imgs/projects/photography"+".jpg", alt="", srcset="").maskable
-        a(id=photography href="photography.html")
-          h1 Photography   
+      //- section.grid-item
+      //-   a(id=photography href="photography.html").proj-link
+      //-     img(src="imgs/projects/photography"+".jpg", alt="", srcset="").maskable
+      //-   a(id=photography href="photography.html")
+      //-     h1 Photography   
       section.grid-item
         a(id=charette href="charette.html").proj-link
           img(src="imgs/charette/hearth-underlit"+".jpg", alt="", srcset="").maskable.saturate
-        a(id=photography href="photography.html")
+        a(href="charette.html")
           h1 Charette 
-      section.grid-item
-        a(id=headset href="gakko.html").proj-link
+        h2.genre
+        
+      section.grid-item#gakko
+        a( href="gakko.html").proj-link
           img(src="imgs/projects/gakko"+".jpg", alt="", srcset="").maskable
-        a(id=photography href="photography.html")
+        a(href="gakko.html")
           h1 Gakko Camps 2019
-      section.grid-item
-        a(id=headset href="headset.html").proj-link
+        h2.genre
+
+      section.grid-item#headset 
+        a(href="headset.html").proj-link
           img(src="imgs/projects/headset"+".jpg", alt="", srcset="").maskable.saturate
-        a(id=photography href="photography.html")
-          h1 Kamishiba VR Headset
-      section.grid-item
-        a(id=posterjam href="posterjam.html").proj-link
+        a(href="photography.html")
+          h1 Kamishiba Headset
+          
+      section.grid-item#posterjam
+        a(href="posterjam.html").proj-link
           img(src="imgs/projects/posterjam"+".png", alt="", srcset="").maskable
-        a(id=photography href="posterjam.html")
+        a(href="posterjam.html")
           h1 Posterjam
 
     footer

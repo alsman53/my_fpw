@@ -55,12 +55,12 @@ nav
     grid-template-rows: repeat(5,20%)
     max-height: 100vh
     a.proj-link
-        grid-column:10/18
+        grid-column:9/19
         grid-row: 1/-1
         display: grid
         // grid: 100%/100%
-        img 
-            grid-row: 1/-1  
+        img
+            grid-row: 1/-1
             grid-column: 1/-1
         &::before
             grid-row 1/-1
@@ -75,7 +75,8 @@ nav
 
 .index main
     display: grid
-    // grid-row-gap: 5rem
+    grid-template-rows: auto
+    grid-row-gap: 10vh
 
 main.about
     margin-top: 15vh
