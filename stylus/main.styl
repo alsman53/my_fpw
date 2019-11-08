@@ -108,7 +108,7 @@ nav
 */
 main
    margin-left: 13vw
-   margin-right: 13vw
+   margin-right: 10vw
    margin-top: 5vh
 
    // padding-top: 5vh
@@ -116,12 +116,13 @@ main
 .index
    .grid-item
       overflow: visible
-      margin-top: 10vh 
+      // margin-top: 10vh 
       h1
          margin: 0
          padding: 0
          z-index: 10
          transition: color 0.3s ease-out
+         font-size: 10rem
 
 
          +narrowerthan(--laptopMDPI)
@@ -194,21 +195,22 @@ footer
       font-size: 5rem
       // width: min-content
 a.in-txt
-   background:
-      linear-gradient(to bottom, pycol 0%,pycol 100%);
+   background:linear-gradient(to bottom, pycol 0%,pycol 100%);
    background-position: 0 100%;
    background-repeat: repeat-x;
    background-size: 4px .15em;
    // color: #000;
    text-decoration: none;
-   transition: background-size .2s
-   &:hover 
+   transition: background-size .3s
+   &:hover
       background-size: 4px 1.1em;
    &.nav-item
       background-size:  0.1em
       background-repeat: repeat-y
+      // transition: background-size .3s
+
       &:hover
-         background-size: 4px 1.1em;
+         background-size: 1em;
       // background
 
  

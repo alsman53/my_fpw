@@ -1,12 +1,19 @@
 /* ////////////////GLOBAL GRID 
  */.flex-b
     display: flex
-
 .grid
     display: grid
-
+.x2c
+    grid-template-columns: 1fr 1fr
+.x24c
+    grid-template-columns repeat(24,1fr)
+.x12c
+    grid-template-columns repeat(12,1fr)
+.span-col  
+    grid-column: span all
 /* /////////////NAV POSITIONING
- */nav
+ */
+nav
     box-sizing: border-box
     #nav-name
         left: 0
@@ -83,10 +90,20 @@ main.about
     section
         grid-column: 2/span 7
         grid-row: span 2
-    img 
+    img
         grid-column: 16/11
         // grid-row: 1/3
     aside
         grid-column: 16/11
         grid-row: 4/7
-        
+#project
+    // grid-template-rows: 
+    margin-left: 12vw
+    margin-right: 12vw
+    grid-gap: 1rem
+    figure
+        grid-column: 6/13
+    section.proj-sect
+        grid-column: 1/6
+    aside
+        grid-column: 9/13 
