@@ -4,7 +4,8 @@
 */
 :root
     --magenta:#FF2079
-    --purple:#DB00FF
+    --magenta-rgba: rgba(255, 32, 121,0.6)
+    --purple-rgba:rgba(222, 38, 249,0.5)
     --grey:hsl(0,0%,20%)
     --white:hsl(0, 0%, 98%);
     --black:hsl(0, 0%, 13%)
@@ -13,6 +14,7 @@
     --txt-col: var(--black)
     --sy-col: var(--purple)
     --py-col: var(--magenta)
+    --py-col-rgb: 255,32,121;
 
     --mobileP: 400px
     --mobileL: 768px
@@ -26,10 +28,16 @@
 
     --p-std-weight: normal
     --s-std-weight: bold
+
+/*------------DARK MODE------------*/
 [data-theme = "dark"]
     --bg-col: var(--black)
     --txt-col: var(--white)
+
     
-
-/*------------DARK MODE------------*/
-
+@media screen and (prefers-color-scheme: light)
+    --bg-col: var(--white)
+    --txt-col: var(--black)
+@media screen and (prefers-color-scheme: dark)
+    --bg-col: var(--black)
+    --txt-col: var(--white) 
