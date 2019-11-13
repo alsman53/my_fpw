@@ -1,83 +1,33 @@
+widerthan(var)
+   condition = 'screen and (min-width: %s)' % var
+   @media condition
+      {block}
+
+narrowerthan(var)
+   condition = 'screen and (max-width: %s)' % var
+   @media condition
+      {block}
+
 /* ////////////////GLOBAL GRID 
  */.flex-b
     display: flex
 .grid
     display: grid
+    box-sizing: border-box
 .x2c
     grid-template-columns: 1fr 1fr
 .x24c
     grid-template-columns repeat(24,1fr)
+.x18c
+    grid-template-columns repeat(18,minmax(3%,6%))
 .x12c
     grid-template-columns repeat(12,1fr)
 .span-col  
     grid-column: span all
+._1rem
+    grid-gap: 1rem
 /* /////////////NAV POSITIONING
  */
-nav
-    box-sizing: border-box
-    #nav-name
-        left: 0
-        height: 100%
-        position: fixed
-        top: 0
-    #adjuster-cont
-        position: fixed
-        top: 0
-        right: 0
-        left: 0
-        width: 100%
-        display: flex
-        align-items: center
-        justify-content: center
-        height: 3rem
-    #nav-cont
-        position fixed
-        right: 0
-        top 0
-        display: flex
-
-        // flex-direction: column
-        height: 100%
-        align-items: center
-        justify-content: center
-        flex-wrap: nowrap
-        // max-width 10vw/
-
-        .nav-item
-            margin: 0.5rem
-            // transform: rotate(90deg)
-            // flex-shrink: 1
-
-
-.index .grid-item
-    display: grid
-    grid-template-columns: repeat(18,1fr)
-    grid-template-rows: repeat(5,20%)
-    max-height: 100vh
-    a.proj-link
-        grid-column:9/19
-        grid-row: 1/-1
-        display: grid
-        // grid: 100%/100%
-        img
-            grid-row: 1/-1
-            grid-column: 1/-1
-        &::before
-            grid-row 1/-1
-            grid-column: 1/-1
-    a
-        grid-column: 1/-1
-        grid-row: 1/3
-        // mix-blend-mode: brighten
-    .hover-overlay
-        grid-row 1/-1
-        grid-column: 1/-1 
-
-.index main
-    display: grid
-    grid-template-rows: auto
-    grid-row-gap: 10vh
-
 main.about
     margin-top: 15vh
     grid-template-columns:  repeat(18,minmax(50px,1fr))
@@ -97,14 +47,193 @@ main.about
     aside
         grid-column: 16/11
         grid-row: 4/7
+
+
 #project
-    // grid-template-rows: 
-    margin-left: 12vw
-    margin-right: 12vw
+    margin-left: 4vw
+    margin-right: 4vw
     grid-gap: 1rem
+
+    +narrowerthan(1550px)
+        margin-left: 2vw
+        margin-right: 2vw
+        margin-top: 4rem
+    +narrowerthan(1000px)
+        margin-right: 8vw
+        margin-left: 8vw
     figure
-        grid-column: 6/13
-    section.proj-sect
-        grid-column: 1/6
-    aside
-        grid-column: 9/13 
+        // margin: 0
+    h2,h3
+        margin: 0
+    
+    section 
+        margin-bottom: 5rem
+        overflow: none
+        grid-gap: 1rem
+        p
+            margin-top: 0
+    #intro-sect
+        #cover-image
+            grid-row: 1/span 1
+            grid-column: 8/18
+            margin: 0
+            height: 100%
+            // max-height: 75vh
+            
+        .main-heading 
+            grid-row:2/span 1
+            grid-column: 2/span all
+            margin 0
+            align-self: end
+            height: min-content
+            display inline
+        #summary
+            grid-row: 3/span 1
+            grid-column: 2/span 6
+            +narrowerthan(1850px)
+                grid-column-end: span 8
+        +narrowerthan(1000px)
+            .main-heading,#summary
+                grid-column-start:1
+            #summary
+                grid-column-end: span 10
+            #cover-image
+                grid-column-end: 19
+        +narrowerthan(850px)
+            .main-heading,#summary
+                grid-column-start:1
+            #summary
+                grid-column-end: span all
+            #cover-image
+                grid-column-end: 19
+                grid-column-start: 1
+                
+                
+    .l-sect,.r-sect,.ml-sect,.mr-sect,.m-sect
+        align-self: end
+  
+    h2, h3
+        grid-column-end: span 10
+        +narrowerthan(1000px)
+            grid-column-end: span 8
+        +narrowerthan(900px) 
+            grid-column-end: span 10 
+        +narrowerthan(850px)
+            grid-column-end: span all
+
+    h2,h3,p,figure
+        &.l-sect    
+            grid-column-start: 2
+        &.ml-sect
+            grid-column-start: 4
+        &.m-sect
+            grid-column-start: 7
+        &.mr-sect
+            grid-column-start: 9
+        &.r-sect
+            grid-column-start: 11
+        +narrowerthan(1000px)
+            &.l-sect    
+                grid-column-start: 1
+            &.ml-sect
+                grid-column-start: 3
+            &.m-sect
+                grid-column-start: 6
+            &.mr-sect
+                grid-column-start: 10
+            &.r-sect
+                grid-column-start: 12
+        +narrowerthan(900px)   
+            &.l-sect    
+                grid-column-start: 1
+            &.ml-sect
+                grid-column-start: 1
+            &.m-sect
+                grid-column-start: 4
+            &.mr-sect
+                grid-column-start: 9
+            &.r-sect
+                grid-column-start: 9  
+        +narrowerthan(850px)
+            &.l-sect    
+            &.ml-sect
+            &.m-sect
+            &.mr-sect
+            &.r-sect
+                grid-column-start: 4
+    p
+        &.l-sect
+            grid-column-end: span 6
+        &.r-sect
+            grid-column-end: span 6
+        &.ml-sect
+            grid-column-end: span 6
+        &.m-sect
+            grid-column-end: span 6 
+        &.mr-sect
+            grid-column-end: span 6
+    +narrowerthan(1000px)
+        p 
+            &.l-sect
+                grid-column-end: span 7
+            &.r-sect
+                grid-column-end: span 7
+            &.ml-sect
+                grid-column-end: span 8
+            &.m-sect
+                grid-column-end: span 7
+            &.mr-sect
+                grid-column-end: span 7
+
+    +narrowerthan(1300px)
+        p
+            grid-column-end:  span 7
+    +narrowerthan(900px)
+        p 
+            &.l-sect
+                grid-column-end: span 9
+            &.r-sect
+                grid-column-end: span 9
+            &.ml-sect
+                grid-column-end: span 9
+            &.m-sect
+                grid-column-end: span 9
+            &.mr-sect
+                grid-column-end: span 9 
+    +narrowerthan(850px)
+        p  
+            &.l-sect
+            &.r-sect
+            &.ml-sect
+            &.m-sect
+            &.mr-sect
+                grid-column-end: span 12
+
+    figure.l-sect 
+    figure.r-sect
+    figure.ml-sect
+    figure.mr-sect
+        grid-column-end: span 7
+    figure.m-sect 
+        grid-column-end span 8
+        grid-column-start: 6
+    +narrowerthan(900px)
+        figure.l-sect 
+        figure.r-sect
+        figure.ml-sect
+        figure.mr-sect
+            grid-column-end: span 10
+        figure.m-sect 
+            grid-column-end span 10
+            grid-column-start: 5
+        // figure.r-sect 
+            // grid-column-start: 11 
+    +narrowerthan(850px)
+        figure.l.sect,
+                figure.l-sect 
+        figure.r-sect
+        figure.ml-sect
+        figure.mr-sect
+        figure.m-sect 
+            grid-column-start: 2
+            grid-column-end: 18
