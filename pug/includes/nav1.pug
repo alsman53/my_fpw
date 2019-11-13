@@ -1,15 +1,14 @@
 nav
     #mobileOverlay
-    a(id="nav-name" href="https://ali-rasheed.github.io")
-        h1#nav-h1 Ali Rasheed 
-        h2#nav-h2 Photographer ⨯ Product Designer
-    #adjuster-cont    
-        a#adjust(class="fas fa-adjust", href="javascript:void(0);",onclick="darkModeSwitch(this)") 
-    #nav-cont
-        each val, index in {index: "Design", photography: "Photography", about:"About"} 
-            a(class="nav-item in-txt", href=index+".html") #{val}
-    //- a#mobilebutton.icon(href='javascript:void(0);', onclick='myFunction()')
-    //-     span
-    //-     span
-    //-     span
-         
+    ul(id="nav-name")
+        li#nav-h1 Ali Rasheed 
+        li#nav-h2  #[a.in-txt.nav-item(href="/photography.html") Photography] ⨯ #[a.in-txt.nav-item(href="") Product Design]
+    #nav-cont.before-place-holder    
+        //- a#adjust(class="fas fa-adjust", href="javascript:void(0);", onclick="darkModeSwitch(this)") 
+        a(class="nav-item ", href="about.html") About
+        input(type="checkbox", name="modeToggle" id="adjust") 
+        label#modeLbl(for="adjust").in-txt
+        
+        //- each val, index in {about:"About"} 
+        //-     a(class="nav-item", href=index+"") #{val}
+                
