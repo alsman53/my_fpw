@@ -9,23 +9,23 @@ tfont = var(--t-std-font)
 qfont = var(--q-std-font)
 /*------------------- MEDIA QUERY MIXINS -------------------
 */
-   widerthan(var)
-      condition = 'screen and (min-width: %s)' % var
-      @media condition
-         {block}
+widerthan(var)
+   condition = 'screen and (min-width: %s)' % var
+   @media condition
+      {block}
 
-   narrowerthan(var)
-      condition = 'screen and (max-width: %s)' % var
-      @media condition
-         {block}
+narrowerthan(var)
+   condition = 'screen and (max-width: %s)' % var
+   @media condition
+      {block}
     
 /*------------------- ACCESSIBILITY -------------------*/
-   .elmnt-invis 
-      position: absolute !important;
-      height: 1px; width: 1px; 
-      overflow: hidden;
-      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-      clip: rect(1px, 1px, 1px, 1px);
+.elmnt-invis 
+   position: absolute !important;
+   height: 1px; width: 1px; 
+   overflow: hidden;
+   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+   clip: rect(1px, 1px, 1px, 1px);
 
 
 /*
@@ -35,183 +35,127 @@ a
    text-decoration: none
    
 /*------------------- GLOBAL STYLING -------------------*/  
-   *
-      font-family: sfont
-   body, main,footer,header
-      background-color: var(--bg-col)
-   .saturate
-      // filter: saturate(100%)
-      filter: sepia(50%)
-   h1,h2,h3,h4,h5,h6,figcaption,p,li,a
-      color: textcol
-      
-   h1,   h3,   h4,   h5, figcaption 
-      font-family: var(--p-std-font)
-      font-weight: 400
-   p,li, a 
-      font-family: sfont
+py-col-rgb = var(--py-col-rgb)
 
-   h2
-      font-family: var(--t-std-font)
-      font-weight: 400 
-      // font-style: normal   
-   h1 
-      font-size: 7.5rem
-      // font-family: Mazius Display Extra Italic
-      // font-weight: 400;
-   ::selection, ::-moz-selection
-      background-color pycol
-/*
----------------- NAV STYLING ---------------------
-*/
-   header
-      h1
-         font-size: 1.2rem;
-      h2
-         font-size: 1.2rem
-  
-nav 
-   // background-color: var(--bg-col)
-   z-index 20
-
-   #nav-name
-      text-align: center
-      writing-mode: vertical-rl
-      padding:1rem
-      transform: rotate(180deg)
-      h1
-         font-family: sfont
-      h2
-         font-family: sfont
-         min-width 1rem
-         margin: 0
-         font-weight: 300
-   #nav-cont
-      writing-mode: vertical-rl 
-      .nav-item
-         // padding 1rem
-         max-width min-content
-         max-height: min-content
-         font-size: 1.2em
-   #adjuster-cont
-      #adjust
-         // padding: 3rem
-         color textcol
-         // font-family: var(--t-std-font)
-         // mix-blend-mode:  difference
-         &:hover
-            color: grey
+*
+   font-family: sfont
+body, main,footer,header
+   background-color: var(--bg-col)
 
 
-/*
------------------------------------------------- MAIN ---------------------------------
-*/
-main
-   margin-left: 13vw
-   margin-right: 10vw
-   margin-top: 5vh
+.saturate
+   filter: sepia(50%)
 
-   // padding-top: 5vh
+h1, h2, h3, h4, h5, h6, figcaption, p, li, a
+   color: textcol
    
-.index
-   .grid-item
-      overflow: visible
-      // margin-top: 10vh 
-      h1
-         margin: 0
-         padding: 0
-         z-index: 10
-         transition: color 0.3s ease-out
-         font-size: 10rem
+h1,   h3,   h4,   h5, figcaption 
+   font-family: var(--p-std-font)
+   font-weight: 400 
 
+p,li, a 
+   font-family: var(-s-std-font)
 
-         +narrowerthan(--laptopMDPI)
-            font-size: 2rem
-      a
-         display: grid
-         &::before
-            content: ''
-            z-index 9
-            background: pycol
-            mix-blend-mode: hue
-            opacity 0
-            transition: opacity 300ms ease-out
-      &:hover
-         h1
-            color: pycol 
-         ::before
-            opacity 1
+h2
+   font-family: var(--p-std-font)
+   font-weight: 400 
+h3
+   font-family: var(--q-std-font)
+   font-weight: 400 
+h1 
+   font-size: 7.5rem
+::selection, ::-moz-selection
+   background-color var(--purple-rgba) 
+p
+   font-size 1.05rem
 
-   .hover-overlay
-      // background-blend-mode: hue;
+main
+   margin-top: 5rem
+#project
+   h1
+      font-size: 7.5rem
+      z-index 2
+      +narrowerthan(900px)
+         font-size: 6.5rem
+   h2 
+      font-size: 3.5rem
+      +narrowerthan(900px)
+         font-size: 3rem 
+   h3
+      font-size: 2.5rem
+   #summary
+      font-size: 1.25rem
+   #cover-image
+      
+      z-index 1
+      img
+         width 100%
+      // &::before
+      //    width: 100px
+      //    height: 100px
+      //    display: block
+      //    content ""
+      //    z-index 2
+      //    background: var(--py-col) 
+      //    mix-blend-mode: hue
+      //    opacity 0
+      //    transition: opacity 300ms ease-out
+      //    &:hover
+      //       opacity 1
 
-
+   
 .maskable
    object-fit: cover
-   
-img 
-   // max-width: 100%
-   // max-height: 100%
-   // min-width 100%
    width: 100%
+   height 100%
 
-main.about
-   h1, h2
-      margin: 0
-      padding 0
-      align-self: end
-   h2
-      font-size: 3rem
-   aside
-      p  
-         a
-            text-align: center
-      h1 
-         font-size: 2.5rem
+.magenta-hover
+   display: grid 
+   img 
+      grid-area: 1/1/-1/-1
+   &::before
+      grid-area: 1/1/-1/-1
+      z-index 2
+      background: var(--py-col) 
+      opacity: 0
+   &:hover
+      ::before
+         opacity 1
 
-.mazius
-   font-family: var(--q-std-font)
-.space-g
-   font-weight: 700
+.proj-img
+   margin 0 
+   margin-top: 1.5rem
+   margin-bottom: 1.5rem 
+   max-width: 80vw
+
 ul 
    list-style-type none 
    padding-left: 0em;
    li
       line-height: 1.2rem
       padding-bottom: 0.5rem
-   // list-style-image: url('bullet.png')
-// ali-rasheed.github.io\imgs\bullet.png
 
-footer 
-   text-align: center
-   display: flex
-   justify-content: center
-   align-items: center
-   p
-      // border-radius: 0.1rem
-      // border: pycol solid 1px
-      padding 1rem
-   h1
-      font-size: 5rem
-      // width: min-content
+
+.before-place-holder
+   ::before 
+      content: " "
+      width: 1px;
+      height: 1px 
+
 a.in-txt
    background:linear-gradient(to bottom, pycol 0%,pycol 100%);
    background-position: 0 100%;
    background-repeat: repeat-x;
    background-size: 4px .15em;
-   // color: #000;
    text-decoration: none;
    transition: background-size .3s
-   &:hover
+   &:hover, &.active
       background-size: 4px 1.1em;
-   &.nav-item
-      background-size:  0.1em
-      background-repeat: repeat-y
-      // transition: background-size .3s
-
-      &:hover
-         background-size: 1em;
-      // background
+   // &.nav-item
+   //    background-size:  0.1em
+   //    // background-repeat: repeat-y
+   //    &:hover,&:active
+   //       background-size: 1em;
 
  
 
