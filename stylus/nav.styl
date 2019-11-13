@@ -1,0 +1,97 @@
+nav 
+   z-index 20
+
+   #nav-name
+      position: fixed
+      right: 0 
+      top 0
+      text-align: center
+      overflow-wrap: none
+      white-space: nowrap;
+      // writing-mode: vertical-rl
+      // transform: rotate(180deg)
+      padding:0rem
+      margin-right: 3rem
+      max-width min-content
+      #nav-h1
+         font-family: sfont
+         font-size: 1.2rem;
+         text-align: right
+
+      #nav-h2
+         font-family: sfont
+         min-width 1rem
+         margin: 0
+         font-weight: 300
+         font-size: 1.2rem
+         text-align: right 
+
+
+
+   input#adjust[type=checkbox]
+      display: none;  /* to hide the checkbox itself */
+
+   input[type=checkbox]#adjust+ label:before
+      display: inline-block;
+      letter-spacing: 10px;
+      content: "\f1d1"
+      font-family: "Font Awesome 5 Brands";
+      color: var(--txt-col)
+      // animation: changeLetterToDark 3s linear
+      &:hover 
+         color: var(--py-col)
+
+       /* unchecked icon */ 
+
+   input[type=checkbox]#adjust:checked + label:before
+      letter-spacing: 5px 
+      font-family: "Font Awesome 5 Brands";
+      // content: ""
+      // animation: changeLetterToLight 3s linear
+      content: "\f50e"
+
+   input[type=checkbox]#adjust + label::after
+      content: "Dark Side"
+      color: var(--txt-col)
+      &:hover 
+         color: var(--py-col)
+
+   input[type=checkbox]#adjust:checked + label::after
+      content: "Light Side"
+      &:hover 
+         color: var(--py-col)
+      
+   input[type=checkbox]#adjust:checked + label:hover::before ,  input[type=checkbox]#adjust:checked + label:hover::after
+   input[type=checkbox]#adjust + label:hover::before ,  input[type=checkbox]#adjust + label:hover::after
+      color: var(--py-col)
+   // #adjuster-cont
+   //    &:hover
+   //       label::after
+   //       label::before
+   //          color: var(--py-col)
+   label#modeLbl
+      display: flex
+      justify-content: space-between
+ 
+ /*--------------positioning------------------*/
+   box-sizing: border-box
+   #nav-name
+      left: 0
+      height: 100%
+      position: fixed
+      top: 0
+   #nav-cont
+      box-sizing: border-box
+      position: fixed
+      // top: 0
+      right: 0
+      // left: 0
+      bottom: 0rem
+      padding 1rem
+      display: flex
+      align-items: center
+      justify-content: space-between
+      height: 100%
+      width: 3rem
+      writing-mode: vertical-rl
+   // transform: rotate(180deg)
