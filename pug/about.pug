@@ -6,9 +6,9 @@ html(lang='en')
   body#darkregion
     header
       include ./includes/nav1.pug
-    main.about.grid
+    main#about.grid.x18c
       h1 Hi
-      img(src="imgs/profile-pic-cropped.jpg", alt="").prof
+      img(src="imgs/profile-pic-cropped.jpg", alt="").prof#treeLeaves
       //- p I am a web and industrial design student 
       
       section
@@ -25,15 +25,17 @@ html(lang='en')
           li Manipulating memory through photography and editing
           li Understanding the mechanisms behind different writing systems, fictional and otherwise 
       aside
-        h1 Site references
+        h2 Ways to Find Me 
+        ul
+          li 
+            //- |#[a(href="https://instagram.com/hisbeardedness" class="fab fa-instagram" aria-hidden="true")] 
+            |#[a.in-txt(href="https://instagram.com/hisbeardedness") "curated" photography instagram]
+          li Resume over #[a.in-txt(href="#") here]
+          li Connect on inkedIn
+        h3 Site references
         p 
           | I used open source fonts #[a.space-g.in-txt(href="https://github.com/floriankarsten/space-grotesk")  Space Grotesk] from Colophon Foundry and 
           |#[a.mazius.in-txt(href="http://collletttivo.it/") Mazius Display] from Colllectttivo
-        h1 Ways to Find Me 
-        ul
-          li #[a(href="https://instagram.com/hisbeardedness" class="fab fa-instagram" aria-hidden="true")] My "curated" mainly landscape instagram 
-          li Resume over #[a.in-txt(href="#") here]
-          li Connect on inkedIn
         
     footer
      include ./includes/footer1.pug 

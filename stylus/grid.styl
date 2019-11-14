@@ -21,33 +21,47 @@ narrowerthan(var)
 .x18c
     grid-template-columns repeat(18,minmax(3%,6%))
 .x12c
-    grid-template-columns repeat(12,1fr)
+    grid-template-columns repeat(12,minmax(1fr,7%))
 .span-col  
-    grid-column: span all
-._1rem
+    grid-column: 1/ span all
+._1rem 
     grid-gap: 1rem
 /* /////////////NAV POSITIONING
  */
-main.about
-    margin-top: 15vh
-    grid-template-columns:  repeat(18,minmax(50px,1fr))
-    grid-template-rows: repeat(8,minmax(5%,10%))
-    min-height: 40vh
-    grid-gap: 1rem
-    h1
-        grid-column: 2/span 2
-        // line-height: 1em
-        // grid-row: span 2
-    section
-        grid-column: 2/span 7
-        grid-row: span 2
-    img
-        grid-column: 16/11
-        // grid-row: 1/3
-    aside
-        grid-column: 16/11
-        grid-row: 4/7
+main#about
+    grid-auto-rows: min-content
+    grid-template-columns: repeat(auto-fill, minmax(400px,1fr))
+    margin: 20vh 20vw 2rem 10vw 
+    // grid-template-columns:  repeat(18,minmax(50px,1fr))
+    // grid-template-rows: repeat(8,minmax(5%,10%))
+    // min-height: 40vh
+    grid-gap: 2rem
 
+    h1,h2,h3,h4,h5 
+        margin 0
+    h1
+        // grid-column: 2/span 2
+        // grid-row: span 2
+        // grid-column: 3/span all
+    
+    section
+        // grid-column-start: span 2
+        // grid-column: span   
+        p,li
+            max-width:  400px
+        
+    img.prof
+        // grid-column: 15/13
+        // grid-row: 1/3
+        object-fit: cover 
+        width: 100%
+        max-width: 8rem
+    aside
+        // grid-column: 16/11
+        // grid-row: 4/7
+    ul
+        list-style-position: inside;
+        list-style-image: 
 
 #project
     margin-left: 4vw
@@ -121,7 +135,7 @@ main.about
         +narrowerthan(850px)
             grid-column-end: span all
 
-    h2,h3,p,figure
+    h2,h3,p,figure, #hierarchy div , div, ul
         &.l-sect    
             grid-column-start: 2
         &.ml-sect
@@ -161,7 +175,7 @@ main.about
             &.mr-sect
             &.r-sect
                 grid-column-start: 4
-    p
+    p , #hierarchy div , div, ul
         &.l-sect
             grid-column-end: span 6
         &.r-sect

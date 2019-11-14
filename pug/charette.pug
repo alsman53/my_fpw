@@ -6,10 +6,10 @@ html(lang='en')
   body#darkregion 
     header
       include ./includes/nav1.pug 
-      #nav-mobile-placeholder.charette 
-    main.grid.charette
-      section#summary.proj-sect
-        img(data-src="ali-rasheed.github.io\imgs\charette\space-sequence-cr.jpg", alt="") 
+    main.grid#project
+      section#intro-sect.x18c.grid
+        #cover-image.magenta-hover 
+          img(data-src="imgs/charette/hearth-underlit.jpg", alt="") 
         h1 hearth: an architectonic form
         p Conceived with the goal of joining two distinct programs, a women’s shelter and a fire-man’s hall, as a symbol of strength for the greater community. 
       aside#skills-used
@@ -34,3 +34,24 @@ html(lang='en')
      
     footer 
      include ./includes/footer1.pug
+
+      //-      section#intro-sect.x18c.grid
+      //-   #cover-image.magenta-hover 
+      //-     img(src="https://via.placeholder.com/1600x900").maskable
+      
+      //-   h1.main-heading Project name
+      //-   p#summary Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
+      
+      
+      //- section.x18c.grid
+      
+      //-   h2.sect-h.l-sect Left Section
+      //-   p.l-sect 
+      //-     |  It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. 
+      //-   figure.magenta-hover.l-sect.proj-img
+      //-     img(src="https://via.placeholder.com/1600x900").maskable      
+      //-   h2.sect-h.r-sect Right Section  
+      //-   p.r-sect 
+      //-     | The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.
+      //-   figure.magenta-hover.r-sect.proj-img
+      //-     img(src="https://via.placeholder.com/1600x900").maskable

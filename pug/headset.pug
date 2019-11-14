@@ -1,13 +1,52 @@
-
 doctype
 html(lang='en')
   head
     include ./includes/head1.pug
-    title Kamishiba Headset - Ali Rasheed
-  body#darkregion
+    title Kamishiba Headset
+  body#darkregion 
     header
-      include ./includes/nav1.pug
-    main
-      section.summary.proj-sect stuff
-    footer
-      include ./includes/footer1.pug
+      include ./includes/nav1.pug 
+    main#project
+      section#intro-sect.x18c.grid
+        #cover-image.magenta-hover 
+          img(src="imgs/headset/kamishiba_1.png").maskable
+      
+        h1.main-heading Kamishiba VR Headset
+        p#summary A VR headset designed for Kabuki Theater tourism for an industrial design course, IAT 336 Materials In Design.
+
+      
+      
+      section.x18c.grid
+      
+
+        h2.sect-h.l-sect Task  
+        p.l-sect 
+          |Over 4 weeks, we needed find a client or industry which had a need that could be fulfulled through the use of VR. Once this was determined, we needed to design the headset through which the VR service would be experienced.
+
+        figure.magenta-hover.ml-sect.proj-img
+          img(src="imgs/headset/kamishiba_2.png").maskable
+        h2.sect-h.mr-sect Contribution
+        p.mr-sect 
+          |Along with initial modelling with my team-mates, I developed the final iteration of the headset. I digitally modelled the headset, as well as creating the 
+
+      section.x18c.grid
+        div.m-sect
+          <iframe src="https://3dwarehouse.sketchup.com/embed/e3504c96-a203-4843-ae50-00071cb4b894" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
+      
+      section.x18c.grid
+        h2.sect-h.m-sect Process
+        p.m-sect 
+          | Our process began through sketching out the headset, exploring different mechanisms for holding the smartphone, interfacing the headset with the users head, while keeping in mind the size and material constraints.
+        figure.magenta-hover.m-sect.proj-img
+          img(src="imgs/headset/kamishiba_4.png").maskable
+
+      
+      section.x18c.grid
+        h3.r-sect Team
+        ul.r-sect 
+          li Aliasger Rasheed
+          li Christy Chan
+          li Jessie Lee
+      
+    footer 
+     include ./includes/footer1.pug
