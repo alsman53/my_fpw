@@ -1,29 +1,56 @@
-nav 
-   z-index 20
+widerthan(var)
+    condition = 'screen and (min-width: %s)' % var
+    @media condition
+        {block}
 
+narrowerthan(var)
+    condition = 'screen and (max-width: %s)' % var
+    @media condition
+        {block}
+
+
+nav 
+   font-weight: 300
+   z-index 40
+   .nav-item
+      // mix-blend-mode: difference
+   a[name = "side-nav"], #nav-h2
+      // opacity 0
+   #side-nav
+      opacity 0 
+      transition: opacity .2s ease-out
    #nav-name
-      position: fixed
-      right: 0 
-      top 0
+      // display: flex
+      // justify-content: flex-end
+      z-index inherit
+      // position: fixed
+      // right: 0 
+      // top 0
+      // width: 100vw 
       text-align: center
       overflow-wrap: none
       white-space: nowrap;
       // writing-mode: vertical-rl
       // transform: rotate(180deg)
       padding:0rem
-      margin-right: 3rem
-      max-width min-content
+      margin-right: 5vw
+      // max-width 100%
+      text-align: right 
       #nav-h1
-         // font-family: sfont
-         font-size: 1.2rem;
-         text-align: right
+         a
+            // font-family: var(--p-std-font)
+            font-size: 1.2rem;
+            text-align: right
+            font-weight: 400
+         
 
       #nav-h2
          // font-family: sfont
          min-width 1rem
          margin: 0
-         font-weight: 300
-         font-size: 1.2rem
+         // font-family: var(--p-std-font)
+         // font-weight: 400
+         font-size: 1rem
          text-align: right 
 
 
@@ -33,26 +60,23 @@ nav
 
    input[type=checkbox]#adjust+ label:before
       display: inline-block;
+
       letter-spacing: 10px;
-      content: "\f1d1"
       font-family: "Font Awesome 5 Brands";
+      font-size: 1.4em;
+      content: "\f1d1"
+
       transform: rotate(90deg)
       color: var(--txt-col)
       height: 1em
-      width: 1em
+      // width: 1em
       margin-bottom: .4rem
 
-      // animation: changeLetterToDark 3s linear
       &:hover 
          color: var(--py-col)
-
-       /* unchecked icon */ 
-
    input[type=checkbox]#adjust:checked + label:before
       letter-spacing: 5px 
       font-family: "Font Awesome 5 Brands";
-      // content: ""
-      // animation: changeLetterToLight 3s linear
       content: "\f50e"
 
    input[type=checkbox]#adjust + label::after
@@ -69,11 +93,7 @@ nav
    input[type=checkbox]#adjust:checked + label:hover::before ,  input[type=checkbox]#adjust:checked + label:hover::after
    input[type=checkbox]#adjust + label:hover::before ,  input[type=checkbox]#adjust + label:hover::after
       color: var(--py-col)
-   // #adjuster-cont
-   //    &:hover
-   //       label::after
-   //       label::before
-   //          color: var(--py-col)
+
    label#modeLbl
       display: flex
       justify-content: space-between
@@ -81,22 +101,30 @@ nav
  /*--------------positioning------------------*/
    box-sizing: border-box
    #nav-name
-      left: 0
-      height: 100%
-      position: fixed
-      top: 0
+      // left: 0
+      // height: 100%
+      // position: fixed
+      // top: 0
+
    #nav-cont
       box-sizing: border-box
       position: fixed
-      // top: 0
+      top: 0
       right: 0
       // left: 0
       bottom: 0rem
-      padding 1rem
+      margin 1rem
+      +narrowerthan(450px)
+         margin-right: 0.9rem
+      +narrowerthan(375px)
+         margin-right: 0.8rem
+   
       display: flex
       align-items: center
       justify-content: space-between
-      height: 100%
-      width: 3rem
+      max-height: 100vh
+      max-width: 100%
       writing-mode: vertical-rl
+      box-sizing: border-box
+      // width 2rem
    // transform: rotate(180deg)
