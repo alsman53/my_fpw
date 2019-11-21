@@ -5,18 +5,20 @@
 :root
     --magenta: hsl(298, 100%, 56%) 
     --magenta:#FF2079
-    --magenta-rgba: rgba(255, 32, 121,0.6)
+    --magenta-light: #FF4B93
+    --magenta-dark: #C21359 
     --purple-rgba:rgba(222, 38, 249,0.5)
+    
     --grey:hsl(0,0%,20%)
-    --white:hsl(0, 0%, 98%);
-    --black:hsl(137,47%, 6%)
-    --dark-white: hsl(336, 2%, 92%)
-    --light-black: hsl(204, 2, 17%)
+    --light-white: #fff
+    --light-black:#0B0B0B
+    --dark-white: #E5E5E5
+    --dark-black: #1e1e1e
 
     
-    --bg-col: var(--white)
-    --txt-col: var(--black)
-    --sy-col: var(--purple)
+    --bg-col: var(--light-white)
+    --txt-col: var(--light-black)
+    --sy-col: var(--magenta-light)
     --py-col: var(--magenta)
     --py-col-rgb: 255,32,121;
 
@@ -27,19 +29,23 @@
 
     --p-std-font: "Mazius Display Regular"
     --s-std-font: "Space Grotesk"
+    --s-std-font: "HK Grotesk"
     --t-std-font: "Mazius Display Italic"
     --q-std-font: "Mazius Display Extra Italic"
 
     --p-std-weight: normal
-    --s-std-weight: bold
+    --s-std-weight: 400
     --fa-primary-color: var(--text-col)
-    --fa-secondary-color: var(--magenta-rgba) 
+    --fa-secondary-color: var(--magenta-light) 
     --fa-secondary-opacity: 1
+    --slct-col var(--magenta-light)
 /*------------DARK MODE------------*/
 [data-theme = "dark"]
-    --bg-col: var(--light-black)
+    --bg-col: var(--dark-black)
     --txt-col: var(--dark-white) 
-    
+    --slct-col var(--magenta)
+    --s-std-weight: 300 
+
 @media screen and (prefers-color-scheme: light)
     --bg-col: var(--white)
     --txt-col: var(--black)

@@ -15,7 +15,7 @@ html(lang='en')
   head
     include ./includes/head1.pug
     title Photography - Ali Rasheed
-  body#darkregion
+  body
     header.gallery
       include ./includes/nav1.pug  
       #nav-mobile-placeholder.gallery
@@ -35,14 +35,15 @@ html(lang='en')
           .glow Architectural 
         button(data-filter=".Still-Life") 
           .glow Still Life
+
       section.photography-grid.portfolioContainer
 
         - for(var i=1; i<20; i++)
-         +img-lazyloaded-lg("Human",i)
-          +img-lazyloaded-lg("Anthropogenic-Landscape",i)
-          +img-lazyloaded-lg("Architectural",i)
-          +img-lazyloaded-lg("Still-Life",i)
-          +img-lazyloaded-lg("Natural-Landscape",i)
+            +img-lazyloaded-lg("Human",i)
+            +img-lazyloaded-lg("Anthropogenic-Landscape",i)
+            +img-lazyloaded-lg("Architectural",i)
+            +img-lazyloaded-lg("Still-Life",i)
+            +img-lazyloaded-lg("Natural-Landscape",i)
           
           
     footer
