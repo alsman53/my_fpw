@@ -20,7 +20,7 @@ narrowerthan(var)
 .x24c
     grid-template-columns repeat(24,1fr)
 .x18c
-    grid-template-columns repeat(18,minmax(3%,6%))
+    grid-template-columns repeat(18,minmax(0,1fr))
 .x12c
     grid-template-columns repeat(12,minmax(1fr,7%))
 .span-col  
@@ -31,25 +31,53 @@ narrowerthan(var)
  */
 main#about
     grid-auto-rows: min-content
-    grid-template-columns: repeat(auto-fill, minmax(400px,1fr))
-    margin: 20vh 20vw 2rem 10vw 
+    grid-template-columns: repeat(12, minmax(1rem,1fr))
+    margin: 15vh 13vw 2rem 12vw 
+    text-overflow: none 
+    
+    +narrowerthan(1050px)
+        grid-template-columns: repeat(8, minmax(1rem,1fr))
+    +narrowerthan(900px)
+        margin-left: 5vw
+        margin-right: 10vw
+    +narrowerthan(450px)
+        margin-left: 1rem
+        margin-right: 2.5rem
+        font-size: 0.9rem
+        grid-template-columns: repeat(4, minmax(1rem,1fr))
+
     // grid-template-columns:  repeat(18,minmax(50px,1fr))
     // grid-template-rows: repeat(8,minmax(5%,10%))
     // min-height: 40vh
-    grid-gap: 2rem
+    grid-gap: 1.5rem
+    
+    .main-heading
+        display: flex
+        flex-wrap: wrap
 
-    h1,h2,h3,h4,h5 
+        p
+            align-self end 
+        h1
+            margin-right: 1rem
+
+    h1,h2,h3,h4
         margin 0
-    h1
+        
+    h1, .main-heading
         // grid-column: 2/span 2
         // grid-row: span 2
-        // grid-column: 3/span all
+        grid-column-start: 1
+        grid-column-end: span all    
     
     section
-        // grid-column-start: span 2
-        // grid-column: span   
-        p,li
-            max-width:  400px
+        // grid-column-start:1
+        grid-column-end: span 4 
+        
+        p,li,ul
+            // max-width:  400px  
+            overflow: hidden
+            width 100% 
+            min-width 0
         
     img.prof
         // grid-column: 15/13
@@ -57,9 +85,9 @@ main#about
         object-fit: cover 
         width: 100%
         max-width: 8rem
-    aside
-        // grid-column: 16/11
-        // grid-row: 4/7
+        grid-column-end: span 2
+        margin-left: auto
+        // justify-self: end
     ul
         list-style-position: inside;
         // list-style-image: 
@@ -77,9 +105,12 @@ main#about
         margin-right: 8vw
         margin-left: 8vw
     figure
-        // margin: 0
     h2,h3
         margin: 0
+    figure 
+        img
+            width: 100%
+
     
     section 
         margin-bottom: 5rem
@@ -93,7 +124,6 @@ main#about
             grid-column: 8/18
             margin: 0
             height: 100%
-            // max-height: 75vh
             
         .main-heading 
             grid-row:2/span 1
@@ -127,7 +157,7 @@ main#about
     .l-sect,.r-sect,.ml-sect,.mr-sect,.m-sect
         align-self: end
   
-    h2, h3
+    h2, h3,h4
         grid-column-end: span 10
         +narrowerthan(1000px)
             grid-column-end: span 8
@@ -136,7 +166,9 @@ main#about
         +narrowerthan(850px)
             grid-column-end: span all
 
-    h2,h3,p,figure, #hierarchy div , div, ul
+
+
+    h2,h3,h4,p,figure, #hierarchy div , div, ul, 
         &.l-sect    
             grid-column-start: 2
         &.ml-sect
@@ -175,7 +207,14 @@ main#about
             &.m-sect
             &.mr-sect
             &.r-sect
-                grid-column-start: 4
+                grid-column-start: 2
+        +narrowerthan(650px)
+            &.l-sect    
+            &.ml-sect
+            &.m-sect
+            &.mr-sect
+            &.r-sect
+                grid-column-start: 1
     p , #hierarchy div , div, ul
         &.l-sect
             grid-column-end: span 6
@@ -187,6 +226,15 @@ main#about
             grid-column-end: span 6 
         &.mr-sect
             grid-column-end: span 6
+
+    +narrowerthan(1300px) 
+        p           
+            &.l-sect
+            &.r-sect
+            &.ml-sect
+            &.m-sect
+            &.mr-sect
+                grid-column-end:  span 7
     +narrowerthan(1000px)
         p 
             &.l-sect
@@ -199,20 +247,12 @@ main#about
                 grid-column-end: span 7
             &.mr-sect
                 grid-column-end: span 7
-
-    +narrowerthan(1300px)
-        p
-            grid-column-end:  span 7
     +narrowerthan(900px)
         p 
             &.l-sect
-                grid-column-end: span 9
             &.r-sect
-                grid-column-end: span 9
             &.ml-sect
-                grid-column-end: span 9
             &.m-sect
-                grid-column-end: span 9
             &.mr-sect
                 grid-column-end: span 9 
     +narrowerthan(850px)
@@ -222,7 +262,23 @@ main#about
             &.ml-sect
             &.m-sect
             &.mr-sect
-                grid-column-end: span 12
+                grid-column-end: span 12   
+    +narrowerthan(650px)
+        p  
+            &.l-sect
+            &.r-sect
+            &.ml-sect
+            &.m-sect
+            &.mr-sect
+                grid-column-end: span 15 
+    +narrowerthan(650px)
+        p  
+            &.l-sect
+            &.r-sect
+            &.ml-sect
+            &.m-sect
+            &.mr-sect
+                grid-column-end: span 17
 
     figure.l-sect 
     figure.r-sect
@@ -244,11 +300,18 @@ main#about
         // figure.r-sect 
             // grid-column-start: 11 
     +narrowerthan(850px)
-        figure.l.sect,
-                figure.l-sect 
+        figure.l.sect
         figure.r-sect
         figure.ml-sect
         figure.mr-sect
         figure.m-sect 
             grid-column-start: 2
             grid-column-end: 18
+    +narrowerthan(650px)
+        figure.l-sect
+        figure.r-sect
+        figure.ml-sect
+        figure.mr-sect
+        figure.m-sect 
+            grid-column-start: 1
+            grid-column-end: 19
