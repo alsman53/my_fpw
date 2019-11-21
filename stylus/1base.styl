@@ -3,14 +3,15 @@
 -------------------VARIABLES------------------
 */
 :root
+    --magenta: hsl(298, 100%, 56%) 
     --magenta:#FF2079
     --magenta-rgba: rgba(255, 32, 121,0.6)
     --purple-rgba:rgba(222, 38, 249,0.5)
     --grey:hsl(0,0%,20%)
     --white:hsl(0, 0%, 98%);
-    --black:hsl(0, 0%, 13%)
-    --dark-white: hsl(0,0%,95%)
-    --light-black: hsl(0,0%,20%)
+    --black:hsl(137,47%, 6%)
+    --dark-white: hsl(336, 2%, 92%)
+    --light-black: hsl(204, 2, 17%)
 
     
     --bg-col: var(--white)
@@ -31,12 +32,13 @@
 
     --p-std-weight: normal
     --s-std-weight: bold
-
+    --fa-primary-color: var(--text-col)
+    --fa-secondary-color: var(--magenta-rgba) 
+    --fa-secondary-opacity: 1
 /*------------DARK MODE------------*/
 [data-theme = "dark"]
-    --bg-col: var(--black)
-    --txt-col: var(--white)
-
+    --bg-col: var(--light-black)
+    --txt-col: var(--dark-white) 
     
 @media screen and (prefers-color-scheme: light)
     --bg-col: var(--white)

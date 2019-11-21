@@ -1,7 +1,7 @@
       file(name, ext, path)
          path + '/' + name + '.' + ext
 
-      font-face(family, font=family, path='fonts', weight='normal', style='normal')
+      font-face(family, font=family, path='.../webfonts', weight='normal', style='normal')
          @font-face
             font-family family
             font-weight weight
@@ -11,8 +11,18 @@
                url(file(font, 'woff', path)) format("woff") 
             
    /* ///////////////FONTS///////////////////// */
-   font-face(Space Grotesk, SpaceGrotesk-Light, fonts ,300, normal)
-   font-face(Space Grotesk, SpaceGrotesk-Regular, fonts ,400, normal)
-   font-face(Space Grotesk, SpaceGrotesk-Medium, fonts ,500, normal)
-   font-face(Space Grotesk, SpaceGrotesk-SemiBold, fonts , 600, normal)
-   font-face(Space Grotesk, SpaceGrotesk-Bold, fonts ,700, normal) 
+
+
+
+
+   font-face(Space Grotesk, SpaceGrotesk-Light, "/webfonts", 300, normal)
+   font-face(Space Grotesk, SpaceGrotesk-Regular, "/webfonts", 400, normal)
+   font-face(Space Grotesk, SpaceGrotesk-Medium, "/webfonts", 500, normal)
+   font-face(Space Grotesk, SpaceGrotesk-SemiBold, "/webfonts", 600, normal)
+   font-face(Space Grotesk, SpaceGrotesk-Bold, "/webfonts", 700, normal) 
+
+   font-face(HK Grotesk, hkgrotesk-light-webfont, "/webfonts", 300, normal)
+   font-face(HK Grotesk, hkgrotesk-regular-webfont, "/webfonts", 400, normal)
+   font-face(HK Grotesk, hkgrotesk-medium-webfont, "/webfonts", 500, normal)
+   font-face(HK Grotesk, hkgrotesk-light-webfont, "/webfonts/hk-grotesk", 600, normal)
+   font-face(HK Grotesk, hkgrotesk-light-webfont, "/webfonts", 700, normal)  

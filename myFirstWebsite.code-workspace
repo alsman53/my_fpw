@@ -2,6 +2,12 @@
     "folders": [
         {
             "path": "."
+        },
+        {
+            "path": "ali-rasheed.github.io"
         }
-    ]
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "ali-rasheed.github.io"
+    }
 }
