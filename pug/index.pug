@@ -8,35 +8,45 @@ html(lang='en')
       include ./includes/nav1.pug
     main
       //- section.grid-item
-      //-   a(id=photography href="photography.html").proj-link
+      //-   a(id=photography href="photography.html").proj-img-link
       //-     img(src="imgs/projects/photography"+".jpg", alt="", srcset="").maskable
       //-   a(id=photography href="photography.html")
       //-     h1 Photography   
       section.grid-item
-        a(id=charette href="charette.html").proj-link
+        a(id=charette href="charette.html").proj-img-link
           img(src="imgs/charette/hearth-underlit"+".jpg", alt="", srcset="").maskable.saturate
-        a(href="charette.html")
-          h1 Charette 
-        h2.genre
+        a(href="charette.html").proj-title
+          h1 Hearth 
+        ul.genre
+          li Photography
+          li 3D Modelling
         
       section.grid-item#gakko
-        a( href="gakko.html").proj-link
+        a( href="gakko.html").proj-img-link
           img(src="imgs/projects/gakko"+".jpg", alt="", srcset="").maskable
-        a(href="gakko.html")
+        a(href="gakko.html").proj-title
           h1 Gakko Camps 2019
-        h2.genre
+        ul.genre
+          li Type Design
+          li Visual Design
 
       section.grid-item#headset 
-        a(href="headset.html").proj-link
+        a(href="headset.html").proj-img-link
           img(src="imgs/projects/headset"+".jpg", alt="", srcset="").maskable.saturate
-        a(href="photography.html")
+        a(href="headset.html").proj-title
           h1 Kamishiba Headset
+        ul.genre
+          li Industrial Design
+          li 3D Modelling
+          
           
       section.grid-item#posterjam
-        a(href="posterjam.html").proj-link
+        a(href="posterjam.html").proj-img-link
           img(src="imgs/projects/posterjam"+".png", alt="", srcset="").maskable
-        a(href="posterjam.html")
+        a(href="posterjam.html").proj-title
           h1 Posterjam
+        ul.genre
+          li Graphic Design
 
     footer
       include ./includes/footer1.pug
