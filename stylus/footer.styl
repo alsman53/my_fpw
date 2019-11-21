@@ -1,12 +1,21 @@
+widerthan(var)
+    condition = 'screen and (min-width: %s)' % var
+    @media condition
+        {block}
+
+narrowerthan(var)
+    condition = 'screen and (max-width: %s)' % var
+    @media condition
+        {block}
+
 footer 
-   text-align: center
-   display: flex
-   justify-content: center
-   align-items: center
-   p
-      // border-radius: 0.1rem
-      // border: pycol solid 1px
-      padding 1rem
-   h1
-      font-size: 5rem
-      // width: min-content
+    margin-right: 10vw
+    text-align: center
+    display: flex
+    justify-content: center
+    align-items: center
+    p
+        font-size: 0.9rem
+        padding 1rem
+        +narrowerthan(500px)
+            font-size: 0.7rem
