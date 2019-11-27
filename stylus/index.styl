@@ -13,7 +13,7 @@ narrowerthan(var)
         grid-template-columns: 1fr
         display: grid
         // grid-template-rows: repeat(7,40vh)
-        grid-gap: 5rem
+        grid-gap: 7rem
         margin-left: 3vw
         margin-right: 5vw
         +narrowerthan(900px)
@@ -27,7 +27,7 @@ narrowerthan(var)
 
 
 
-   .grid-item 
+    .grid-item 
         ul.genre
             display: flex
             grid-column-end: span all
@@ -35,17 +35,22 @@ narrowerthan(var)
             grid-row-start 2
             margin-top: 0
             z-index: 10
-            +narrowerthan(500px)
-                max-height: 50vh
+            flex-wrap: wrap
+            height 100%
             li
                 margin-right: 1rem
                 transition: color 0.3s ease-out
                 font-size: 1.25rem
+                // line-height: 2em
+                margin-bottom: 1em
                 // grid-column-end: span 4
                 // writing-mode: vertical-rl
+            +narrowerthan(500px)
+                // max-height: 50vh
         a.proj-title
             z-index 50
             h1
+                line-height 0.26em
                 margin: 0
                 padding: 0
                 z-index: 10
@@ -87,7 +92,6 @@ narrowerthan(var)
             li
                 color: var(--py-col)
             a.proj-img-link::after
-
                 opacity 1      
                 +narrowerthan(500px)
                     opacity 0
@@ -97,9 +101,9 @@ narrowerthan(var)
         align-items: flex-start
         display: grid
         grid-template-columns: repeat(18,1fr)
-        grid-template-rows: repeat(5,1fr)
-        grid-row-gap: 0.2rem
-        height: 30rem
+        grid-template-rows: repeat(6,1fr)
+        // grid-row-gap: 0.2rem
+        height: 39rem
         +narrowerthan(500px)
             height 40vh
         // max-height:m
@@ -107,15 +111,12 @@ narrowerthan(var)
             grid-column: 1/-1
             grid-row: 1/2
         a.proj-img-link
-            grid-column:8/span all
-            +narrowerthan(500px)
-                grid-column-start: 1
-
+            grid-column:7/span all
             grid-row: 1/span all
             display: grid
-            // max-height: 50vh
-            // @media (orientation landscape)
-                
+            +narrowerthan(500px)
+                grid-column-start: 1
+ 
             img
                 grid-row: 1/-1
                 grid-column: 1/-1
@@ -124,14 +125,8 @@ narrowerthan(var)
                 width: 100%
                 height 100%
             &::after
-                // position: absolute
-                // top: 0
-                // bottom: 0
-                // right: 0
-                // left 0
                 grid-row 1/-1
                 grid-column: 1/-1
-            // mix-blend-mode: brighten
         .hover-overlay
             grid-row 1/-1
             grid-column: 1/-1 

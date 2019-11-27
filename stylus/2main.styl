@@ -42,7 +42,7 @@ button
 /*------------------- GLOBAL STYLING -------------------*/  
 py-col-rgb = var(--py-col-rgb)
 html
-   line-height: 1
+   // line-height: 1
 *
    font-family: sfont
    // font-feature-settings: "ss01", "ss02", "ss03", "ss04", "ss05", "ss06"
@@ -66,7 +66,6 @@ h1,   h3
 
 p,li, a 
    font-family: var(-s-std-font)
-   line-height: 1.25rem
    font-weight: var(--s-std-weight)
 
 h1 
@@ -75,22 +74,49 @@ h2
    font-family: var(--p-std-font)
    font-weight: 400 
    font-size: 3.0rem
+   // line-height: 1.4em     
 h3
    font-family: var(--q-std-font)
    font-weight: 400 
    font-size: 2rem
+   line-height: 1.4em
 h4
    font-family: var(-s-std-font)
    margin-bottom: 0.5rem
-   font-weight: 600
-   font-size: 1.5rem
+   font-weight: 500
+   font-size: 1.2rem
+   // margin-top: 
 small
    font-size: 0.8em
    // font-weight: 600
 large
    font-size: 1.25em
 p
-   font-size 1.0rem
+   font-size 1.05rem
+   line-height: 1.25rem
+
+
+ul 
+   list-style-type none 
+   padding-left: 0em;
+   margin-top: 0.2rem
+   margin-bottom: 0.5rem
+   li
+      line-height: 1.4rem
+      padding-bottom: 0.4rem
+      font-size: 1.05em
+      // margin-top: 0.5rem
+      span 
+         // text-align: 
+         box-sizing: border-box
+         margin-right: 0rem   
+
+         // height: 1rem   
+         font-size: 1.2em   
+         // text-align: center 
+         min-width  2rem
+         &:before,&:after
+            width 40px
 
 main
    margin-top: 5rem
@@ -192,16 +218,6 @@ main
    // margin-bottom: 1.5rem 
    // max-width: 80vw
 
-ul 
-   list-style-type none 
-   padding-left: 0em;
-   li
-      line-height: 1.2rem
-      padding-bottom: 0.5rem
-      span 
-         margin-right: 1rem   
-         height: 1em   
-
 
 .before-place-holder
    &::before 
@@ -225,10 +241,6 @@ a.in-txt, button.in-txt
       &:hover,&.active
          background-size: 1em 1px;
 
-.copy
-   // content: "/f0c5"
-
-
 
 .model-3d
    margin auto, auto
@@ -239,6 +251,13 @@ main#about
       
    h2
       font-size: 2.5rem
-   aside
-      h2
-         
+
+hr
+   height 0.1rem
+   position: relative
+   box-sizing: border-box
+   width: 8vw
+   // margin 
+   padding 0
+   display inline
+   border solid var(--txt-col) 1px 

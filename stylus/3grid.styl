@@ -27,12 +27,19 @@ narrowerthan(var)
     grid-column: 1/ span all
 ._1rem 
     grid-gap: 1rem
+._2rem 
+    grid-gap: 2rem
+._3rem 
+    grid-gap: 3rem
+._4rem 
+    grid-gap: 4rem
+    
 /* /////////////NAV POSITIONING
  */
 main#about
     grid-auto-rows: min-content
     grid-template-columns: repeat(12, minmax(1rem,1fr))
-    margin: 15vh 13vw 2rem 12vw 
+    margin: 13vh 13vw 2rem 12vw 
     text-overflow: none 
     
     +narrowerthan(1050px)
@@ -49,7 +56,7 @@ main#about
     // grid-template-columns:  repeat(18,minmax(50px,1fr))
     // grid-template-rows: repeat(8,minmax(5%,10%))
     // min-height: 40vh
-    grid-gap: 1.5rem
+    // grid-gap: 1.5rem
     
     .main-heading
         display: flex
@@ -109,11 +116,11 @@ main#about
         margin: 0
     figure 
         img
-            width: 100%
+            width: 100%   
 
     
     section 
-        margin-bottom: 5rem
+        margin-bottom: 2rem
         overflow: none
         grid-gap: 1rem
         p
@@ -132,9 +139,15 @@ main#about
             align-self: end
             height: min-content
             display inline
+        hr
+            grid-row: 4
+            grid-column-start: 2
+            +narrowerthan(1000px)
+                grid-column-start: 1
         #summary
             grid-row: 3/span 1
             grid-column: 2/span 6
+        
             +narrowerthan(1850px)
                 grid-column-end: span 8
         +narrowerthan(1000px)
@@ -152,7 +165,9 @@ main#about
             #cover-image
                 grid-column-end: 19
                 grid-column-start: 1
-                
+    iframe
+        min-height: 25rem
+        width 100%
                 
     .l-sect,.r-sect,.ml-sect,.mr-sect,.m-sect
         align-self: end
@@ -168,7 +183,7 @@ main#about
 
 
 
-    h2,h3,h4,p,figure, #hierarchy div , div, ul, 
+    h2,h3,h4,p,figure, #hierarchy div , div, ul 
         &.l-sect    
             grid-column-start: 2
         &.ml-sect
@@ -202,10 +217,10 @@ main#about
             &.r-sect
                 grid-column-start: 9  
         +narrowerthan(850px)
-            &.l-sect    
-            &.ml-sect
-            &.m-sect
-            &.mr-sect
+            &.l-sect,    
+            &.ml-sect,
+            &.m-sect,
+            &.mr-sect,
             &.r-sect
                 grid-column-start: 2
         +narrowerthan(650px)
@@ -279,6 +294,15 @@ main#about
             &.m-sect
             &.mr-sect
                 grid-column-end: span 17
+    aside
+        p
+            &.l-sect
+            &.r-sect
+            &.ml-sect
+            &.m-sect
+            &.mr-sect
+                grid-column-end: span 4
+        
 
     figure.l-sect 
     figure.r-sect
