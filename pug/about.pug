@@ -1,3 +1,10 @@
+mixin faList(content)
+  li.flex-b
+    span()&attributes(attributes)
+    = content
+    block
+
+
 doctype
 html(lang='en')
   head
@@ -6,81 +13,86 @@ html(lang='en')
   body#darkregion
     header
       include ./includes/nav1.pug
-    main#about.grid.x18c
+    main#about.grid.x12c._3rem   
       div.main-heading
         h1 Hi
-        p I'm Ali and to get to the point...
+        p I’m Ali, a designer and photographer studying at Simon Fraser University in Vancouver. I am currently looking for internship opportunities, especially in the education-focused design sphere.
       
         img(src="imgs/profile-pic-cropped.jpg", alt="").prof#treeLeaves
       //- p I am a web and industrial design student 
-      
       section
-        h2 What I want to design 
+        h2 I appreciate
         ul
-          li.flex-b     
-            span.fad.fa-award
-            | Education focused design enable students to take control of their own learning process, and push the limits of how education is understood.
-          li.flex-b     
-            span.fad.fa-hourglass-half
-            | Work that has long-term impact
-      section
-        h2 I like to obsess over
-        ul
-          li.flex-b  
-            span.fad.fa-list
-            |Lists
-          li.flex-b     
-            span.fad.fa-film-alt
-            |Intentionality, thought processes and themes in real-life and animated cinema
-          li.flex-b  
-            span.fad.fa-font
-            | #[a.in-txt(href="https://www.theleagueofmoveabletype.com") Open]
-            | -
-            |#[a.in-txt(href="http://www.collletttivo.it/") source ]
-            |&nbsp;
-            |#[a.in-txt(href="https://open-foundry.com/fonts") type ]
-            |&nbsp;
-            |#[a.in-txt(href="https://dotcolon.net/") design ]
-          li.flex-b
-            span.fad.fa-sliders-h
-            div
-              | How photography and directed editing can affect 
+          +faList("lists")(class="fad fa-list")
+          +faList("intentionality, direction of thought and themes in live-action & animated cinema")(class="fad fa-film-alt")
+
+          +faList("")(class="fad fa-font")
+            |<a class="in-txt" href="https://www.theleagueofmoveabletype.com"> open </a>
+            | - 
+            |<a class="in-txt" href="http://www.collletttivo.it/">  source</a>
+            | &nbsp;
+            |<a class="in-txt" href="https://open-foundry.com/fonts"> type </a>
+            | &nbsp; 
+            | <a class="in-txt" href="https://dotcolon.net/"> design</a>
+            
+     
+          +faList("how photography and editing can manipulate memory.")(class="fad fa-sliders-h")
               //- |#[a.in-txt(href="https://www.diyphotography.net/this-is-how-photography-is-affecting-our-moods-and-memory/") memory ]
-              |memory
-          li.flex-b
-            span.fad.fa-feather-alt
-            | Learning different writing systems, fictional and otherwise, and the orthography behind them.
+            
+          +faList("Learning different writing systems, fictional and otherwise, and the orthography behind them.")(class="fad fa-feather-alt")
+      section
+        h2 I strive to design things
+        ul
+          +faList("that are long-lasting and sustainable.")(class="fad fa-hourglass-half")
+
+          +faList("that are cherished")(class="fad fa-hands-heart")
+          
+          +faList("")(class="fad fa-sparkles") 
+            div
+              | that create 
+              |#[a.in-txt(href="http://www.nendo.jp/") !]
+              | moments.       
+              
+          +faList("that are beautiful.")(class="fad fa-atom")
+
+
+          +faList("that enable learners to take better control of their own learning process.")(class="fad fa-award")
       section
         h2 Ways to find me 
         ul
           li 
             span.fad.fa-copy
             | copy/paste my email
-            button(on-click= "copyToClipboard('#email')" class='in-txt' id='email' aria-hidden='true' type='button') aliasgerrasheed@sfu.ca
+            input(type="text" value="aliasgerrasheed@sfu.ca" id="email")
+            button(onclick= "copyToClipboard('#email')" class='in-txt' id='emailCopy' aria-hidden='true' type='button') aliasgerrasheed@sfu.ca
           li
             span.fab.fa-instagram
             |#[a.in-txt(href="https://instagram.com/hisbeardedness") Photography ]
           li
             span.fab.fa-instagram
-            |#[a.in-txt(href="https://instagram.com/hisbeardedness") Design/photo-experiments]
+            |#[a.in-txt(href="https://instagram.com/ar_experiments") Design|photo-experiments]
           li
             span.fad.fa-file-alt
-            | Take a gander at my resume #[a.in-txt(href="#") here]
+            | Take a gander at my resume #[a.in-txt(href="assets/Aliasger_Rasheed_Resume.pdf") here]
           li
             span.fab.fa-linkedin
             | Connect on
             |#[a.in-txt(href="https://www.linkedin.com/in/aliasger-rasheed/") Linkedin]
-      section 
+      section#references
         h3 Site references
         ul
           li.flex-b
             span.fab.fa-osi
-            div I used open source fonts #[a.space-g.in-txt(href="https://github.com/floriankarsten/space-grotesk")  Space Grotesk] from Colophon Foundry and #[a.mazius.in-txt(href="http://collletttivo.it/") Mazius Display] from Colllectttivo (yup, its spelled that way).
-            
+            div I used open source fonts #[a.space-g.in-txt(href="https://hanken.co/collections/free/products/hk-grotesk")  HK Grotesk] from Hanken Design Co. and #[a.mazius.in-txt(href="http://collletttivo.it/") Mazius Display] from Colllectttivo (yup, its spelled that way).
           li.flex-b
             span.fab.fa-font-awesome-alt
             | Icons are from&nbsp;
             |#[a.in-txt(href="fontawesome.com/") Font Awesome]
+          +faList("")(class="fal fa-circle") 
+            div
+              | Some documentation images from 
+              |#[a.in-txt(href="/gakko.html") Gakko 2019]
+              | are taken from Gakko's image archive.
         
     footer
-     include ./includes/footer1.pug 
+     include ./includes/footer1.pug  

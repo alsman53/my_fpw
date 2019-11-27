@@ -1,7 +1,7 @@
 //- ////////MIXINS/////////
 mixin img-lazyloaded-lg(name,sequence)
   figure(class=name+" img-cont element-item" ) 
-    img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"/"+name+"_"+sequence+"-1500.jpg", onerror="hide()") 
+    img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"/"+name+"_"+sequence+"-1500.jpg", onerror="hide()" alt="A "+ name+ " image") 
 mixin img-folder-lazyloaded-lg(name,sequence,folder)
   figure.img-cont
 mixin img-cap-lazyloaded-lg(name,sequence,caption) 

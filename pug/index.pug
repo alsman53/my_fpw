@@ -12,15 +12,6 @@ html(lang='en')
       //-     img(src="imgs/projects/photography"+".jpg", alt="", srcset="").maskable
       //-   a(id=photography href="photography.html")
       //-     h1 Photography   
-      section.grid-item
-        a(id=charette href="charette.html").proj-img-link
-          img(src="imgs/charette/hearth-underlit"+".jpg", alt="", srcset="").maskable.saturate
-        a(href="charette.html").proj-title
-          h1 Hearth 
-        ul.genre
-          li Photography
-          li 3D Modelling
-        
       section.grid-item#gakko
         a( href="gakko.html").proj-img-link
           img(src="imgs/projects/gakko"+".jpg", alt="", srcset="").maskable
@@ -29,12 +20,25 @@ html(lang='en')
         ul.genre
           li Type Design
           li Visual Design
+          li Instructional Design
+
+          
+      section.grid-item
+        a(id=charette href="charette.html").proj-img-link
+          img(src="imgs/charette/hearth-underlit"+".jpg", alt="", srcset="").maskable.saturate
+        a(href="charette.html").proj-title
+          h1 Hearth 
+        ul.genre
+          li Photography
+          li 3D Modelling
+          li Model Making
+        
 
       section.grid-item#headset 
         a(href="headset.html").proj-img-link
           img(src="imgs/projects/headset"+".jpg", alt="", srcset="").maskable.saturate
         a(href="headset.html").proj-title
-          h1 Kamishiba Headset
+          h1 Kamishibai Headset
         ul.genre
           li Industrial Design
           li 3D Modelling
@@ -46,7 +50,7 @@ html(lang='en')
         a(href="posterjam.html").proj-title
           h1 Posterjam
         ul.genre
-          li Graphic Design
+          li Visual Design
 
     footer
       include ./includes/footer1.pug
