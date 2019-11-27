@@ -1,3 +1,9 @@
+mixin faList(content)
+
+  li.flex-b
+    span()&attributes(attributes)
+    = content
+
 doctype
 html(lang='en')
   head
@@ -9,44 +15,67 @@ html(lang='en')
     main#project
       section#intro-sect.x18c.grid
         #cover-image.magenta-hover 
-          img(src="imgs/headset/kamishiba_1.png").maskable
+          img(src="imgs/headset/materials.png" alt="materials used in headset").maskable
       
-        h1.main-heading Kamishiba VR Headset
-        p#summary A VR headset designed for Kabuki Theater tourism for an industrial design course, IAT 336 Materials In Design.
+        h1.main-heading Kamishibai VR Headset
+        p#summary 
+          large 
+            |Kabuki theater form is an important cultural icon of the Japanese arts, however it is not widely recognised as such by international tourists. Kamishibai is a VR headset created to allow potential spectators to experience Kabuki theatre and thus make a more informed decision on whether to purchase tickets. 
+          hr  
+      
 
-      
       
       section.x18c.grid
-      
-
         h2.sect-h.l-sect Task  
         p.l-sect 
-          |Over 4 weeks, we needed find a client or industry which had a need that could be fulfulled through the use of VR. Once this was determined, we needed to design the headset through which the VR service would be experienced.
-
-        figure.magenta-hover.ml-sect.proj-img
-          img(src="imgs/headset/kamishiba_2.png").maskable
-        h2.sect-h.mr-sect Contribution
-        p.mr-sect 
-          |Along with initial modelling with my team-mates, I developed the final iteration of the headset. I digitally modelled the headset, as well as creating the 
+          |Over 4 weeks, we needed to find a client or industry which had a need that could be fulfilled through the use of VR. Once this was determined, we needed to design the headset through which the VR service would be experienced.
+          //- hr
 
       section.x18c.grid
-        div.m-sect
-          <iframe src="https://3dwarehouse.sketchup.com/embed/e3504c96-a203-4843-ae50-00071cb4b894" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
+        div.r-sect
+          <iframe src="https://3dwarehouse.sketchup.com/embed/e3504c96-a203-4843-ae50-00071cb4b894" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen alt=" "></iframe>
+        h3.r-sect When
+        p.r-sect Spring 2019   
+        //- hr
+
+
+      section.x18c.grid
+        h2.sect-h.ml-sect Contribution  
+        p.ml-sect 
+          |Along with initial modelling with my team-mates, I developed the final iteration of the headset through digital 3D modelling in Trimble Sketchup. 
+          |For the physical model, I coordinated the main housing’s construction as I was most familiar with wood-working and the intricacies of the model’s joinery. 
+        figure.magenta-hover.m-sect.proj-img
+          img(src="imgs/headset/dissection.png" alt="dissection of headset").maskable
+        p.mr-sect
+          |Based on the materials we were assigned, we determined that focusing on cultural heritage practises and artefacts was ideal. We focused on Kabuki Theater halls as the intricate fashion of Kabuki ensemble and the carved wooden theater dovetailed well with our design constraints for using cloth and wood.
+        p.mr-sect
+          |After researching the customer segments which would have the greatest need for our product, we decided upon Japanese travel and tour companies operating in cultural hubs in Japan such as Osaka and Tokyo. 
+
       
       section.x18c.grid
-        h2.sect-h.m-sect Process
-        p.m-sect 
+        h2.sect-h.l-sect Process
+        p.l-sect 
           | Our process began through sketching out the headset, exploring different mechanisms for holding the smartphone, interfacing the headset with the users head, while keeping in mind the size and material constraints.
         figure.magenta-hover.m-sect.proj-img
-          img(src="imgs/headset/kamishiba_4.png").maskable
+          img(src="imgs/headset/low-fidelity.png" alt="low fidelity iteration of headset").maskable
+        figure.magenta-hover.m-sect.proj-img
+          img(src="imgs/headset/interaction-diagram.png" alt=" interaction diagram for using headset").maskable
+        figure.magenta-hover.m-sect.proj-img
+          img(src="imgs/headset/orthographic-views.png" alt="orthographic sketches of 3D model").maskable
 
       
       section.x18c.grid
         h3.r-sect Team
         ul.r-sect 
-          li Aliasger Rasheed
-          li Christy Chan
-          li Jessie Lee
+          +faList("Aliasger Rasheed")(class="fad fa-cubes")
+          +faList("Christy Chan")(class="fad fa-edit")
+          +faList("Jessie Lee")(class="fad fa-object-group")  
+
+  
+      section.x18c.grid
+        h2.sect-h.m-sect Reflection          
+        p.m-sect  In the case of construction of the physical headset, better quality control and carefulness on my part would have resulted in a higher fidelity model. For the presentation, determining statistics that supplemented our reasoning for the product would have made our standing much stronger.
+
       
     footer 
      include ./includes/footer1.pug

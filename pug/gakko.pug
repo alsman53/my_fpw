@@ -1,13 +1,87 @@
+mixin faList(content)
 
-doctype
+  li.flex-b
+    span()&attributes(attributes)
+    = content
+
 html(lang='en')
   head
     include ./includes/head1.pug
-    title Me - Ali Rasheed
-  body#darkregion
+    title Gakko - Ali Rasheed
+  body#darkregion 
     header
-      include ./includes/nav1.pug
-    main
-    
-    footer
+      include ./includes/nav1.pug 
+    main.grid#project
+      section#intro-sect.x18c.grid
+        #cover-image.magenta-hover 
+          img(src="imgs/projects/charette.jpg", alt="") 
+        h1.main-heading Gakko Camps: Kagoshima 2019
+        p#summary 
+          large Gakko is a global educational collective that builds spaces, experiences & tools to reclaim the magic of learning. I was chosen as one of six mentors out of nearly a hundred applicants to design, co-produce and create Gakko’s annual camp in Japan from scratch for Summer 2019.  
+      section#skills-used.grid.x18c
+        h2.r-sect Contribution
+        ul.r-sect 
+          +faList("T-shirt Design")(class="fad fa-tshirt")     
+          //- li T-shirt Design
+          +faList("Experimental educational workshop development")(class="fad fa-users-class")
+          +faList("Signage")(class="fad fa-map-signs")
+          +faList("Mentoring on a large and small group scale")(class="fad fa-users")
+
+      section.grid.x18c#a-love-story
+        h2.ml-sect T-shirt Decal Design
+        p.ml-sect Every year’s Gakko camp has a signature T-Shirt with a custom decal that every person participating receives. This year, encouraged by the environmentalists that made up the creators of the camp, it was decided that we would screenprint this year’s design on existing t-shirts of the kohai and sempai. This created a constraint of having a logo that could only utilise a single colour, a constraint that had not occurred before. Though the offer of designing the logo was open to all sempai at the start of prep, my enthusiasm and initiative to produce initial mockups led to me being assigned the task.
+        p.m-sect I used previous years’ decal designs as precedent. They utilised Gakko’s Ensō logo as a structure upon which to intricate artwork was done. I did as well, but focused more on the iconography I found represented the camp at that point in time for me, and hopefully the kohai. This included:   
+        ul.mr-sect
+          +faList("The ubiquitous ocean that venue was beside")(class="fad fa-water")
+          +faList("the active volcano Sakurajima visible on the horizon")(class="fad fa-volcano ")
+          +faList("Japan being the country the camp was held. This was important twofold. Firstly, most of the kohai had previously never been to Japan, for some it being their first international trip. Secondly, as opposed to previous years where multiple camps were held cross-nationally, this years camp was held only in japan.")(class="fad fa-globe-asia")
+      section#results.grid.x18c
+        h2.mr-sect Reflection
+        p.mr-sect I believe that as the camp began, considering our responsibilites and goals as sempai, we were not generous in the beginning until we discussed it halfway through camp. Furthermore, our tendency towards favoritism limited our interaction with certain kohai, which moved away from ideals we had initially set of rigour and generosity.
+      aside.grid.x18c
+        h3.r-sect Team
+        //- p.r-sect Audrey Chow, Ethan Ma, Brendan Chow, Eliza Lim, Andrew Cabu
+        h4.r-sect Directors
+        ul.r-sect 
+          +faList("Lilly Callahan")(class="fad fa-fireplace")
+          +faList("Kenta Koga")(class="fad fa-wand-magic")
+        
+        h4.r-sect <i>Sempai</i> Mentors
+        ul.r-sect
+          +faList("Aliasger Rasheed")(class="fad fa-text")
+          +faList("Alexa Gantous")(class="fad fa-tree")
+          +faList("Giordano Margaglio")(class="fad fa-globe-europe")
+          +faList("Kay Liang")(class="fad fa-hand-holding-heart")
+          +faList("Veronica Ma")(class="fad fa-book-reader")
+          +faList("Will Hochman")(class="fad fa-film-alt")
+        h4.r-sect Coordinators 
+        ul.r-sect
+          +faList("Ian Shimizu")(class="fad fa-tree-alt")
+          +faList("Riku Kurosawa")(class="fad fa-leaf-heart")
+
+
+      //- iframe(src='https://3dwarehouse.sketchup.com/embed/e53e90c644f330ce56daeec387836953', frameborder='0', scrolling='no', marginheight='0', marginwidth='0',allowfullscreen='', id="model3d")
+     
+    footer 
      include ./includes/footer1.pug
+
+      //-      section#intro-sect.x18c.grid
+      //-   #cover-image.magenta-hover 
+      //-     img(src="https://via.placeholder.com/1600x900").maskable
+      
+      //-   h1.main-heading Project name
+      //-   p#summary Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
+      
+      
+      //- section.x18c.grid
+      
+      //-   h2.sect-h.l-sect Left Section
+      //-   p.l-sect 
+      //-     |  It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. 
+      //-   figure.magenta-hover.l-sect.proj-img
+      //-     img(src="https://via.placeholder.com/1600x900").maskable      
+      //-   h2.sect-h.r-sect Right Section  
+      //-   p.r-sect 
+      //-     | The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.
+      //-   figure.magenta-hover.r-sect.proj-img
+      //-     img(src="https://via.placeholder.com/1600x900").maskable

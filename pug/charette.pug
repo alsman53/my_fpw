@@ -1,8 +1,14 @@
+mixin faList(content)
+
+  li.flex-b
+    span()&attributes(attributes)
+    = content
+
 doctype
 html(lang='en')
   head
     include ./includes/head1.pug
-    title Me - Ali Rasheed
+    title Hearth - Ali Rasheed
   body#darkregion 
     header
       include ./includes/nav1.pug 
@@ -12,7 +18,8 @@ html(lang='en')
           img(src="imgs/charette/hearth-underlit.jpg", alt="") 
         h1.main-heading hearth: an architectonic form
         p#summary 
-          large Conceived with the goal of joining two distinct programs, a women’s shelter and a fire-man’s hall, as a symbol of strength for the greater community. 
+          large Kabuki theater form is an important cultural icon of the Japanese arts, however it is not widely recognised as such by international tourists. Kamishibai is a VR headset created to allow potential spectators to experience Kabuki theatre and thus make a more informed decision on whether to purchase tickets.
+
       section#skills-used.grid.x18c
         h2.r-sect Contribution
         p.r-sect 3D Modelling and rendering of final iterations.
@@ -25,8 +32,15 @@ html(lang='en')
         h2.mr-sect Results
         p.mr-sect Placed 2nd place. Praised for cohesive art direction and thought-out architectural program
       aside.grid.x18c
-        h2.r-sect Wrought with
-        p.r-sect Audrey Chow, Ethan Ma, Brendan Chow, Eliza Lim, Andrew Cabu
+        h3.r-sect Team
+        //- p.r-sect Audrey Chow, Ethan Ma, Brendan Chow, Eliza Lim, Andrew Cabu
+        ul.r-sect 
+          +faList("Audrey Chow")(class="fad fa-user-edit")
+          +faList("Ethan Ma")(class="fad fa-user-ninja")
+          +faList("Brendan Chow")(class="fad fa-snowboarding")
+          +faList("Eliza Lim")(class="fad fa-user-music")
+          +faList("Andrew Cabu")(class="fad fa-user-cowboy")
+          +faList("Aliasger Rasheed")(class="fad fa-user-cog")
       section#form-iteration.grid.x18c
         h2.ml-sect Form Investigations
         p.ml-sect The project was a culmination of the skills developed over the term in understanding spatial form, while increasing the expectation bar much higher than before. We began with sketching as well as physical prototyping towards developing a three-dimensional architectonic composition. 
