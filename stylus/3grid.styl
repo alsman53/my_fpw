@@ -141,6 +141,8 @@ main#about
         p
             margin-top: 0
     #intro-sect
+        hr
+            grid
         #cover-image
             grid-row: 1/span 1
             grid-column: 8/18
@@ -154,11 +156,11 @@ main#about
             align-self: end
             height: min-content
             display inline
-        hr
-            grid-row: 4
-            grid-column-start: 2
-            +narrowerthan(1000px)
-                grid-column-start: 1
+        // hr
+        //     grid-row: 4
+        //     grid-column-start: 2
+        //     +narrowerthan(1000px)
+        //         grid-column-start: 1
         #summary
             grid-row: 3/span 1
             grid-column: 2/span 6
@@ -198,7 +200,7 @@ main#about
 
 
 
-    h2,h3,h4,p,figure, #hierarchy div , div, ul 
+    h2,h3,h4,p,figure, #hierarchy div , div, ul,hr
         &.l-sect    
             grid-column-start: 2
         &.ml-sect
