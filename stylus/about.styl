@@ -10,13 +10,16 @@ main#about
 
    ul 
       list-style-type none 
-      padding-left: 0em;
+      padding-left: 0;
       li  
          // line-height: 1.2rem
          // padding-bottom: 0.5rem
    #references
-      grid-column: 9/-1
+      // grid-column: span 4/ 13
+      justify-self: end
+      flex-wrap: wrap
 div.main-heading
+   max-width 100%
    p
       width 25rem 
 #email

@@ -13,19 +13,22 @@ html(lang='en')
   body#darkregion
     header
       include ./includes/nav1.pug
-    main#about.grid.x12c._3rem   
+    main#about.grid._2rem    
       div.main-heading
         h1 Hi
         p I’m Ali, a designer and photographer studying at Simon Fraser University in Vancouver. I am currently looking for internship opportunities, especially in the education-focused design sphere.
-      
-        img(src="imgs/profile-pic-cropped.jpg", alt="").prof#treeLeaves
+        img(src="imgs/profile-pic-cropped.jpg", alt="profile image").prof#treeLeaves
       //- p I am a web and industrial design student 
       section
         h2 I appreciate
         ul
           +faList("lists")(class="fad fa-list")
-          +faList("intentionality, direction of thought and themes in live-action & animated cinema")(class="fad fa-film-alt")
-
+          +faList("")(class="fad fa-film-alt")
+            div
+              |<a class="in-txt" href="https://www.youtube.com/user/everyframeapainting">intentionality</a>, 
+              | direction of thought and 
+              |<a class="in-txt" href="https://www.youtube.com/user/Nerdwriter1">themes</a>
+              | in live-action &amp; animated cinema
           +faList("")(class="fad fa-font")
             |<a class="in-txt" href="https://www.theleagueofmoveabletype.com"> open </a>
             | - 
@@ -37,9 +40,8 @@ html(lang='en')
             
      
           +faList("how photography and editing can manipulate memory.")(class="fad fa-sliders-h")
-              //- |#[a.in-txt(href="https://www.diyphotography.net/this-is-how-photography-is-affecting-our-moods-and-memory/") memory ]
             
-          +faList("Learning different writing systems, fictional and otherwise, and the orthography behind them.")(class="fad fa-feather-alt")
+          +faList("learning different writing systems, fictional and otherwise, and the orthography behind them.")(class="fad fa-feather-alt")
       section
         h2 I strive to design things
         ul
@@ -60,11 +62,15 @@ html(lang='en')
       section
         h2 Ways to find me 
         ul
-          li 
+          li.flex-b
             span.fad.fa-copy
-            | copy/paste my email
-            input(type="text" value="aliasgerrasheed@sfu.ca" id="email")
-            button(onclick= "copyToClipboard('#email')" class='in-txt' id='emailCopy' aria-hidden='true' type='button') aliasgerrasheed@sfu.ca
+            div
+              | click to copy my email
+              input(type="text" value="aliasgerrasheed@sfu.ca" id="email")
+              
+              button(class='in-txt' id='emailCopy' aria-hidden='true' type='button' onclick="textToClipboard('aliasgerrasheed@sfu.ca')" ) aliasgerrasheed@sfu.ca 
+                //- <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+  
           li
             span.fab.fa-instagram
             |#[a.in-txt(href="https://instagram.com/hisbeardedness") Photography ]
@@ -73,7 +79,7 @@ html(lang='en')
             |#[a.in-txt(href="https://instagram.com/ar_experiments") Design|photo-experiments]
           li
             span.fad.fa-file-alt
-            | Take a gander at my resume #[a.in-txt(href="assets/Aliasger_Rasheed_Resume.pdf") here]
+            | Take a gander at my resume #[a.in-txt(href="assets/Aliasger_Rasheed_Resume.pdf") here] 
           li
             span.fab.fa-linkedin
             | Connect on
