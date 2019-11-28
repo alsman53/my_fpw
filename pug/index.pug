@@ -12,42 +12,46 @@ html(lang='en')
       //-     img(src="imgs/projects/photography"+".jpg", alt="", srcset="").maskable
       //-   a(id=photography href="photography.html")
       //-     h1 Photography   
+      - var link = "gakko.html"
       section.grid-item#gakko
-        a( href="gakko.html").proj-img-link
+        a( href=link).proj-img-link
           img(src="imgs/projects/gakko"+".jpg", alt="", srcset="").maskable
-        a(href="gakko.html").proj-title
-          h1 Gakko Camps 2019
+        a(href=link).proj-title
+          h1 Gakko 2019
         ul.genre
           li Type Design
           li Visual Design
           li Instructional Design
 
+      - var link = ""
           
       section.grid-item
-        a(id=charette href="charette.html").proj-img-link
+        a(id=charette href=link).proj-img-link
           img(src="imgs/charette/hearth-underlit"+".jpg", alt="", srcset="").maskable.saturate
-        a(href="charette.html").proj-title
+        a(href=link).proj-title
           h1 Hearth 
         ul.genre
           li Photography
           li 3D Modelling
           li Model Making
         
+      - var link = "headset.html"
 
       section.grid-item#headset 
-        a(href="headset.html").proj-img-link
+        a(href=link).proj-img-link
           img(src="imgs/projects/headset"+".jpg", alt="", srcset="").maskable.saturate
-        a(href="headset.html").proj-title
+        a(href=link).proj-title
           h1 Kamishibai Headset
         ul.genre
           li Industrial Design
           li 3D Modelling
           
+      - var link = "#"
           
       section.grid-item#posterjam
-        a(href="posterjam.html").proj-img-link
+        a(href=link).proj-img-link
           img(src="imgs/projects/posterjam"+".png", alt="", srcset="").maskable
-        a(href="posterjam.html").proj-title
+        a(href=link).proj-title
           h1 Posterjam
         ul.genre
           li Visual Design
