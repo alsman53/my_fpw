@@ -7,8 +7,10 @@ pfont = var(--p-std-font)
 sfont = var(--s-std-font)
 tfont = var(--t-std-font)
 qfont = var(--q-std-font)
-/*------------------- MEDIA QUERY MIXINS -------------------
-*/
+
+py-col-rgb = var(--py-col-rgb)
+
+/*------------------- MEDIA QUERY MIXINS -----------------*/
 widerthan(var)
    condition = 'screen and (min-width: %s)' % var
    @media condition
@@ -40,9 +42,9 @@ button
    padding: 0
    
 /*------------------- GLOBAL STYLING -------------------*/  
-py-col-rgb = var(--py-col-rgb)
+
 html
-   // line-height: 1
+
 *
    font-family: sfont
    // font-feature-settings: "ss01", "ss02", "ss03", "ss04", "ss05", "ss06"
@@ -89,7 +91,6 @@ h4
    padding-top: 1rem
 small
    font-size: 0.8em
-   // font-weight: 600
 #summary
    font-size: 1.25em
 p
@@ -102,50 +103,52 @@ ul
    padding-left: 0em;
    margin-top: 0.2rem
    margin-bottom: 0.5rem
+
    li
       line-height: 1.4rem
       padding-bottom: 0.4rem
       font-size: 1.05em
-      // margin-top: 0.5rem
        
       span 
-         // text-align: 
          box-sizing: border-box
          margin-right: 0rem   
-
-         // height: 1rem   
          font-size: 1.2em   
-         // text-align: center 
          min-width  2rem
+
          &:before,&:after
             width 40px
 
 main
    margin-top: 5rem
+
 #project
    h1
       font-size: 7.5rem
       z-index 2
+
       +narrowerthan(1300px)  
          font-size: 10vw     
+
       +narrowerthan(800px)   
          font-size: 13vw
+
       +narrowerthan(500px)   
          font-size: 15vw
    h2 
       font-size: 3.25rem
+
       +narrowerthan(900px)
          font-size: 3rem 
    h3
       font-size: 2rem
+
    #summary  
       line-height: 1.5em
-      // font-size: 1.25rem
-      min-height: 0;  /* NEW */
+      min-height: 0; 
       min-width: 0;
       *
-         overflow: hidden;  /* NEW */
-         min-width: 0;      /* NEW; needed for Firefox */
+         overflow: hidden; 
+         min-width: 0;      
       +narrowerthan(550px)
          font-size: 1.15rem
    #cover-image
@@ -153,83 +156,19 @@ main
       z-index 1
       img
          width 100%
-      // &::before
-      //    width: 100px
-      //    height: 100px
-      //    display: block
-      //    content ""
-      //    z-index 2
-      //    background: var(--py-col) 
-      //    mix-blend-mode: hue
-      //    opacity 0
-      //    transition: opacity 300ms ease-out
-      //    &:hover
-      //       opacity 1
 
-   
 .maskable
    object-fit: cover
    width: 100%
-   // height 100%
-
-// .magenta-hover
-//    display: grid 
-//    img 
-//       grid-area: 1/1/-1/-1
-//    &:hover
-//       &::before
-//          opacity 0.7
-//       &:after
-//          opacity: 0.7 
-//    &::before
-//       font-family: "Font Awesome 5 Duotone";
-//       // font-weight: 900
-//       content: "\10f065"
-//       // content: ""
-//       grid-area: 1/1/-1/-1
-//       z-index 30
-//       align-self: flex-start
-//       justify-self:end
-//       z-index 31
-//       color: var(--magenta)
-//       font-size: 2rem 
-
-//       // background-color: var(--magenta-dark)
-//       // opacity 1
-//       transition: opacity 300ms ease-out
-//       opacity 0
-//    &::after
-//       transition: opacity 300ms ease-out
-//       // transition: font-size 300ms ease-out
-//       opacity 0
-//       font-family: "Font Awesome 5 Duotone";
-//       font-weight: 500
-//       grid-area: 1/1/-1/-1
-//       align-self: start
-//       justify-self: end
-//       z-index: 31
-//       font-size: 2rem 
-//       color: white
-//       content:"\f065"
-//       mix-blend-mode: exclusion
-//       &:active
-//          // transform: scale(1.5,1.5)
-//          font-size: 10rem
-
 
 .proj-img
    margin 0 
-   // margin-top: 1.5rem
-   // margin-bottom: 1.5rem 
-   // max-width: 80vw
-
 
 .before-place-holder
    &::before 
       content: " "
       width: 1px;
-      height: 3rem 
-      
+      height: 3rem     
 
 a.in-txt, button.in-txt
    background:linear-gradient(to bottom, pycol 0%,pycol 100%);
@@ -238,11 +177,13 @@ a.in-txt, button.in-txt
    background-size: 2px 2px;
    text-decoration: none;
    transition: background-size .25s
+
    &:hover, &.active
       background-size: 2px 1.05em;
+
    &.nav-item
-      // background-size:  0.1em 1px
       background-repeat: repeat-y
+
       &:hover,&.active
          background-size: 1em 1px;
 
@@ -257,13 +198,14 @@ main#about
    h2
       font-size: 2.5rem
 
+
+main#posterjam
+
 hr
    height 0.1rem
    position: relative
    box-sizing: border-box
    width: 8vw
-   // margin 
    padding 0
    display inline
    border solid var(--txt-col) 1px 
-   // grid-row-end: -1

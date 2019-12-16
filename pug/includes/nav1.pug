@@ -1,6 +1,6 @@
 - photolink = "/photography.html"
 
-- photolink = "#"
+//- - photolink = "#"
 
 nav
     ul(id="nav-name")
@@ -12,7 +12,6 @@ nav
             | |
             |#[a.in-txt(href="/index.html") Design]
     ul#nav-cont   
-        //- a#adjust(class="fas fa-adjust", href="javascript:void(0);", onclick="darkModeSwitch(this)") 
         
         li#side-nav         
             |#[a.in-txt.nav-item.side-nav-child(href=photolink ) Photography]
@@ -24,8 +23,4 @@ nav
 
         li 
             input(type="checkbox", name="modeToggle" id="adjust") 
-            label#modeLbl(for="adjust").in-txt
-         
-        //- each val, index in {about:"About"} 
-        //-     a(class="nav-item", href=index+"") #{val}
-                  
+            label#modeLbl(for="adjust").in-txt                  
