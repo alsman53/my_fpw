@@ -27,11 +27,11 @@ module.exports = function (grunt) {
 					// src: '**/*', 
 					expand: true,
 					// dest: 'ali-rasheed.github.io/css',
-					compress: false,
+					compress: true,
 					paths: ['stylus'],
 					import: [
 						'nib/*'
-					]
+				]
 				},
 				files: {
 					'ali-rasheed.github.io/css/main.css': ['stylus/*.styl']
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 			compile: {
 				options: {
 					pretty: true,
-					// compress: true
+					compress: true
 				},
 				files: [{
 					expand: true, // Enable dynamic expansion.

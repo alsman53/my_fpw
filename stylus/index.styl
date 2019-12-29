@@ -56,7 +56,7 @@ narrowerthan(var)
                 padding: 0
                 z-index: 10
                 transition: color 0.3s ease-out
-                font-family: var(--t-std-font)
+                font-family: var(--p-std-font)
                 font-size: 9vw
                 +narrowerthan(1400px)
                     font-size: 12vw
@@ -88,11 +88,11 @@ narrowerthan(var)
                 +narrowerthan(500px)
                     background-color: var(--bg-col)
                     opacity:40%
-        &:hover
+        &:hover,&:focus,&:active
             h1
-                color: var(--py-col) 
+                color: var(--sy-col) 
             li
-                color: var(--py-col)
+                color: var(--sy-col)
             a.proj-img-link::after
                 opacity 1      
                 +narrowerthan(500px)
