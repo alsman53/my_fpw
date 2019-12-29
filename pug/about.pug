@@ -14,12 +14,12 @@ html(lang='en')
     header
       include ./includes/nav1.pug
     main#about.grid._2rem    
-      div.main-heading
+      section.main-heading
         h1 Hi
         p I’m Ali, a designer and photographer studying at Simon Fraser University in Vancouver. I am currently looking for internship opportunities, especially in the education-focused design sphere.
         img(src="imgs/profile-pic-cropped.jpg", alt="profile image").prof#treeLeaves
       //- p I am a web and industrial design student 
-      section
+      section.grid
         h2 I enjoy
         ul
           +faList("organising with lists")(class="fad fa-list")
@@ -36,14 +36,14 @@ html(lang='en')
               |<a class="in-txt" href="http://www.collletttivo.it/">source</a>
               |
               |<a class="in-txt" href="https://open-foundry.com/fonts">type</a>
-              | &nbsp;
+              |
               | <a class="in-txt" href="https://dotcolon.net/">design</a>
             
      
           +faList("exploring how photography and editing can manipulate memory.")(class="fad fa-sliders-h")
             
           +faList("learning different writing systems, fictional and otherwise, and the orthography behind them.")(class="fad fa-feather-alt")
-      section
+      section.grid
         h2 I design things
         ul
           +faList("that are long-lasting and sustainable.")(class="fad fa-hourglass-half")
@@ -60,7 +60,7 @@ html(lang='en')
 
  
           +faList("that enable learners to take better control of their own learning process.")(class="fad fa-award")
-      section
+      section.grid
         h2 To contact me 
         ul
           +faList("")(class="fad fa-copy") 
@@ -82,7 +82,7 @@ html(lang='en')
           +faList("")(class="fab fa-instagram") 
             div
               |get an insight through my #[a.in-txt(href="https://instagram.com/ar_experiments") design | photo-experiments]
-      section#references
+      section#references.grid
         h3 Site references
         ul
           li.flex-b

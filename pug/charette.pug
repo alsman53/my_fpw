@@ -5,6 +5,7 @@ mixin faList(content)
     = content
 
 doctype
+
 html(lang='en')
   head
     include ./includes/head1.pug
@@ -12,13 +13,18 @@ html(lang='en')
   body#darkregion 
     header
       include ./includes/nav1.pug 
+
     main.grid#project
-      section#intro-sect.x18c.grid
+
+      section#overview.x18c.grid
+
         #cover-image.magenta-hover 
           img(src="imgs/charette/hearth-underlit.jpg", alt="") 
-        h1.main-heading hearth: an architectonic form
+
+        h1.main-heading Hearth
+
         p#summary 
-          large Kabuki theater form is an important cultural icon of the Japanese arts, however it is not widely recognised as such by international tourists. Kamishibai is a VR headset created to allow potential spectators to experience Kabuki theatre and thus make a more informed decision on whether to purchase tickets.
+          | Kabuki theater form is an important cultural icon of the Japanese arts, however it is not widely recognised as such by international tourists. Kamishibai is a VR headset created to allow potential spectators to experience Kabuki theatre and thus make a more informed decision on whether to purchase tickets.
 
       section#skills-used.grid.x18c
         h2.r-sect Contribution
@@ -31,7 +37,7 @@ html(lang='en')
       section#results.grid.x18c
         h2.mr-sect Results
         p.mr-sect Placed 2nd place. Praised for cohesive art direction and thought-out architectural program
-      aside.grid.x18c
+      section.grid.x18c
         h3.r-sect Team
         //- p.r-sect Audrey Chow, Ethan Ma, Brendan Chow, Eliza Lim, Andrew Cabu
         ul.r-sect 

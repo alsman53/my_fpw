@@ -1,27 +1,110 @@
+widerthan(var)
+   condition = 'screen and (min-width: %s)' % var
+   @media condition
+      {block}
+
+narrowerthan(var)
+   condition = 'screen and (max-width: %s)' % var
+   @media condition
+      {block}
+
 main#about
 
-   justify-content: end  
-   h1, h2
-      // margin: 0
-      // padding 0
-      // align-self: end
-   h2
-      margin-bottom: 1rem
-      // font-size: 3rem
+    grid-column-gap: 8rem 
+    margin: 13vh 13vw 2rem 12vw 
+    +narrowerthan(900px)
+        margin-top: 4vh
+    text-overflow: none 
+    // grid-gap: 4rem
 
-   ul 
-      list-style-type none 
-      padding-left: 0;
-      li  
-         // line-height: 1.2rem
-         // padding-bottom: 0.5rem
-   #references
-      // grid-column: span 4/ 13
-      justify-self: end
-      flex-wrap: wrap
-div.main-heading
-   max-width 100%
-   p
-      width 25rem 
-#email
-   display: none   
+    +narrowerthan(1050px)
+        grid-gap: 2rem
+    +narrowerthan(900px)
+        margin-left: 5vw
+        margin-right: 10vw
+    +narrowerthan(450px)
+        grid-gap: 1rem
+
+        margin-left: 1rem
+        margin-right: 2.5rem
+        font-size: 0.9rem
+    h2
+        margin-bottom: 1rem
+
+    ul 
+        list-style-type none 
+        padding-left: 0;
+    // #references
+    //     justify-self: end
+    //     flex-wrap: wrap
+    div.main-heading
+        max-width 100%
+    #email
+        display: none   
+
+    section
+        &.grid
+            grid-template-columns: 8rem 1fr
+            grid-row-gap: 0.6rem
+            +narrowerthan(900px)
+                grid-template-columns: 1fr   
+            p,ul
+                overflow: hidden
+                width auto 
+                min-width 0
+                grid-column-start: 2
+                +narrowerthan(900px)
+                    grid-column-start: 1   
+
+            h1,h2
+                grid-column-start: 1
+                    
+        
+    
+    .main-heading
+        max-width 84vw
+        display: flex
+        flex-wrap: wrap
+        grid-column-start: 1
+        grid-column-end: span all 
+        p
+            // align-self end 
+            order 2
+            width 30rem 
+            margin 0.5rem 0rem  
+            max-width 90vw
+            +narrowerthan(800px)
+                order 3
+                font-size: 1rem
+        h1
+            margin-right: 0.9rem
+            order 1
+    img.prof
+        // grid-column: 15/13
+        // grid-row: 1/3
+        object-fit: cover 
+        width: 100%
+        max-width: 8rem
+        max-height: 8rem
+        grid-column-end: span 2
+        // grid-column-start: 10   
+        margin-left: auto
+        // justify-self: end
+        order 3
+        +narrowerthan(750px)
+            order 2
+    h1,h2,h3,h4
+        margin 0
+    ul
+        list-style-position: inside;
+        li
+            line-height: 1.5rem
+            margin-bottom: 0.5rem
+            width 28rem
+            max-width 84vw
+    // #references
+    //     li
+    //         font-size: 0.95em
+    //     grid-column-start: -1
+    //     +narrowerthan(1100px)  
+    //         grid-column-start: 1
