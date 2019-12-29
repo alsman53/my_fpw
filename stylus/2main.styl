@@ -1,6 +1,7 @@
 
 pycol = var(--py-col)
 sycol = var(--sy-col)
+tycol = var(--ty-col)
 textcol = var(--txt-col)
 
 pfont = var(--p-std-font)
@@ -59,7 +60,7 @@ body, main, footer,header
 .saturate
    filter: sepia(50%)
 
-h1, h2, h3, h4, h5, h6, figcaption, p, li, a, button, #summary, small
+h1, h2, h3, h4, h5, h6, figcaption, p, li, a, button, #summary, small,label
    color: textcol
    
 h1,   h3 
@@ -73,12 +74,12 @@ p,li, a
 h1 
    font-size: 7.5rem
 h2
-   font-family: var(--p-std-font)
+   font-family: var(--q-std-font)
    font-weight: 400 
    font-size: 3.0rem
    // line-height: 1.4em     
 h3
-   font-family: var(--q-std-font)
+   font-family: var(--p-std-font)
    font-weight: 400 
    font-size: 2rem
    line-height: 1.4em
@@ -91,32 +92,43 @@ h4
    padding-top: 1rem
 small
    font-size: 0.8em
-#summary
-   font-size: 1.25em
+strong
+   font-weight: 500
+   color: pycol  
+em
+   font-style:italic
 p
-   font-size 1.05rem
-   line-height: 1.4rem
+   font-size 1.1rem
+   line-height: 1.45rem
+   +narrowerthan(500px)
+      font-size: 1.05rem
+      line-height: 1.3rem
 
 
 ul 
-   list-style-type none 
    padding-left: 0em;
    margin-top: 0.2rem
    margin-bottom: 0.5rem
+   list-style-type none 
+ol
+   padding-left: 0em;
+   margin-top: 0.2rem
+   margin-bottom: 0.5rem
+   margin-left: 1rem
 
-   li
-      line-height: 1.4rem
-      padding-bottom: 0.4rem
-      font-size: 1.05em
-       
-      span 
-         box-sizing: border-box
-         margin-right: 0rem   
-         font-size: 1.2em   
-         min-width  2rem
+li
+   line-height: 1.5rem
+   padding-bottom: 0.4rem
+   font-size: 1.05em
+      
+   span,i 
+      box-sizing: border-box
+      margin-right: 0rem   
+      font-size: 1.2em   
+      min-width  2rem
 
-         &:before,&:after
-            width 40px
+      &:before,&:after
+         width 40px
 
 main
    margin-top: 5rem
@@ -135,14 +147,16 @@ main
       +narrowerthan(500px)   
          font-size: 15vw
    h2 
-      font-size: 3.25rem
+      font-size: 2rem
 
       +narrowerthan(900px)
          font-size: 3rem 
    h3
-      font-size: 2rem
+      font-size: 2.8rem
+      // font-family: var(--s-std-font)
+   #summary   
+      font-size: 1.2em
 
-   #summary  
       line-height: 1.5em
       min-height: 0; 
       min-width: 0;
@@ -151,6 +165,7 @@ main
          min-width: 0;      
       +narrowerthan(550px)
          font-size: 1.15rem
+         line-height: 1.3rem
    #cover-image
       
       z-index 1
@@ -170,7 +185,36 @@ main
       width: 1px;
       height: 3rem     
 
-a.in-txt, button.in-txt
+a.in-txt
+   background:linear-gradient(to bottom, pycol 0%, tycol 100%);
+   background-position: 0 100%;
+   background-repeat: repeat-x;
+   background-size: 1px 2.1px;
+   text-decoration: none;
+   transition: background-size .15s
+
+   &:hover, &:active, &:focus, &.active
+      background-size: 2px 1.25em;
+
+   &.nav-item
+      background-repeat: repeat-y
+
+      &:hover,&:active,&:focus, &.active
+         background-size: 1.25em 1px;
+
+
+a.intra-page
+   background:linear-gradient(to bottom, pycol 0%, tycol 100%);
+   background-position: 0 100%;
+   background-repeat: repeat-x;
+   background-size: 2px 2px;
+   text-decoration: none;
+   transition: background-size .25s
+
+   &:hover, &:active, &:focus
+      background-size: 2px 1.25em;
+
+input[type=radio] + label 
    background:linear-gradient(to bottom, pycol 0%,pycol 100%);
    background-position: 0 100%;
    background-repeat: repeat-x;
@@ -178,15 +222,8 @@ a.in-txt, button.in-txt
    text-decoration: none;
    transition: background-size .25s
 
-   &:hover, &.active
-      background-size: 2px 1.05em;
-
-   &.nav-item
-      background-repeat: repeat-y
-
-      &:hover,&.active
-         background-size: 1em 1px;
-
+input[type=radio]:checked + label ,input[type=radio] + label:hover 
+   background-size: 2px 1.25em;
 
 .model-3d
    margin auto, auto
@@ -199,7 +236,7 @@ main#about
       font-size: 2.5rem
 
 
-main#posterjam
+// main#posterjam
 
 hr
    height 0.1rem
@@ -209,3 +246,18 @@ hr
    padding 0
    display inline
    border solid var(--txt-col) 1px 
+
+
+* 
+   cursor: url(http://cur.cursors-4u.net/cursors/cur-11/cur1054.cur), auto !important;
+   cursor: url(http://cur.cursors-4u.net/cursors/cur-9/cur817.cur), auto !important;
+   cursor: url(http://cur.cursors-4u.net/cursors/cur-6/cur568.cur), auto !important;
+   cursor: url(http://cur.cursors-4u.net/cursors/cur-2/cur195.cur), auto !important;
+
+[data-src].element-item::before 
+   content: '';
+   display: block;
+   padding-top: 80%;    
+
+::selection
+   background  tycol 

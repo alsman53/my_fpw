@@ -3,24 +3,19 @@
 -------------------VARIABLES------------------
 */
 :root
-    --magenta: hsl(298, 100%, 56%) 
     --magenta:#FF2079
     --magenta-light: #FF4B93
     --magenta-dark: #C21359 
-    --purple-rgba:rgba(222, 38, 249,0.5)
-    
+    // --purple-rgba:rgba(222, 38, 249,0.5)
+    --purple:#d229eb
+    --purple-light:#ed6aff
+    --purple-dark:#9b04b0
     --grey:hsl(0,0%,20%)
     --light-white: #fff
     --light-black:#0B0B0B
     --dark-white: #E5E5E5
     --dark-black: #1e1e1e
 
-    
-    --bg-col: var(--light-white)
-    --txt-col: var(--light-black)
-    --sy-col: var(--magenta-light)
-    --py-col: var(--magenta)
-    --py-col-rgb: 255,32,121;
 
     --mobileP: 400px
     --mobileL: 768px
@@ -35,16 +30,30 @@
 
     --p-std-weight: normal
     --s-std-weight: 400
+
+     
+    --bg-col: var(--light-white)
+    --txt-col: var(--light-black)
+    --py-col: var(--purple)
+    --sy-col: var(--purple-dark)
+    --ty-col: var(--purple-light)
+
+
+    // --py-col-rgb: 255,32,121;
+
     --fa-primary-color: var(--txt-col)
-    --fa-secondary-color: var(--magenta) 
+    --fa-secondary-color: var(--purple) 
     --fa-secondary-opacity: 1
-    --slct-col var(--magenta-light)   
+    --slct-col var(--purple-light)   
 /*------------DARK MODE------------*/
 [data-theme = "dark"]
     --bg-col: var(--dark-black)
-    --txt-col: var(--dark-white) 
-    --slct-col var(--magenta)
+    --txt-col: var(--dark-white)   
+    --slct-col var(--purple)
     --s-std-weight: 300 
+    --sy-col: var(--purple-light)
+    --ty-col: var(--purple-dark)
+
 
 @media screen and (prefers-color-scheme: light)
     --bg-col: var(--white)
