@@ -19,13 +19,13 @@ module.exports = function (grunt) {
 		stylus: {
 			compile: {
 				options: {
-					sourcemap: {
-						inline: true,
-						comment: true
-					},
+					// sourcemap: {
+					// 	inline: true,
+					// 	comment: true
+					// },
 					// cwd: 'stylus',  // set working folder / root to copy
 					// src: '**/*', 
-					expand: true,
+					// expand: true,
 					// dest: 'ali-rasheed.github.io/css',
 					compress: true,
 					paths: ['stylus'],

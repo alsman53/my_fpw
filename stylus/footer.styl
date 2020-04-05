@@ -9,20 +9,113 @@ narrowerthan(var)
         {block}
 
 footer 
-    ul 
-        display: flex
-        justify-content:   center
-        flex-wrap: wrap
-        li
-            margin: 0.8rem 1rem  
-            // margin-right: 1rem
-    margin-right: 10vw
-    text-align: center
-    // display: flex
-    justify-content: center
-    align-items: center
-    p
-        font-size: 0.9rem
-        padding 1rem
-        +narrowerthan(500px)  
-            font-size: 0.7rem
+  // background-color: var(--txt-col) 
+  position: relative 
+  // border-style: 
+  border-top:  solid 1.5px  var(--txt-col)
+  margin-top: 5rem
+  +narrowerthan(500px)
+    margin-top: 0
+  +widerthan(1300px)
+    margin-top: 2rem
+  padding-bottom: 1rem  
+  padding-top: 1rem
+  bottom: 0
+  width: 100%
+  text-align: center
+  z-index: 1
+  margin-right: 10vw
+  justify-content: center
+  align-items: center
+  ul 
+    margin: 0 0.5rem 
+    // display: flex 
+    justify-content:   center
+    // flex-wrap: wrap
+    z-index: inherit
+    li
+      z-index: inherit
+      font-size: 1rem 
+      margin 0.5rem 
+      +narrowerthan(500px)
+        font-size: 0.95rem
+        // margin: .3rem 
+      line-height: initial
+      flex-wrap: wrap
+      justify-content: center
+
+      .email
+
+        +narrowerthan(500px)
+          flex-grow: 1
+          flex-basis: 100%
+
+      strong
+        color var(--py-col)   
+      
+      .fa,.fab,.fas
+        font-size: 1.3em
+        // color: var(--bg-col)  
+        // color: var(--sy-col) !important 
+        &:hover
+          color: var(--ty-col) 
+
+      a,button
+        align-self: center
+        // color: var(--bg-col)
+        margin 0rem 1rem 
+
+        +narrowerthan(650px)
+          margin .3rem .4rem 
+          // padding-bottom: 1rem
+
+
+
+  /* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar 
+  visibility: hidden /* Hidden by default. Visible on click */
+  width: 20rem /* Set a default minimum width */
+  max-width 80vw
+  // margin auto /* Divide value of min-width by 2 */
+  background-color: #333333/* Black background color */
+  color: #fff /* White text color */
+  text-align: center /* Centered text */
+  border-radius: 1em /* Rounded borders */
+  padding: 0.9rem /* Padding */
+  position: fixed /* Sit on top of the screen */
+  z-index: 300; /* Add a z-index if needed */
+  left: 5%/* Center the snackbar */
+  right: 5%
+  bottom: 2rem; /* 30px from the bottom */
+  font-size: 0.95rem
+
+ 
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+} 

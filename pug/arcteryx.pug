@@ -1,0 +1,171 @@
+mixin faList(content)
+  li.flex-b
+    span()&attributes(attributes)
+    = content
+    block
+mixin rM()
+  button.coll-button Read More
+
+
+doctype
+
+html(lang='en')
+    head
+        include ./includes/head1.pug
+        title Arc'teryx - Ali Rasheed
+
+    body#darkregion 
+        header
+            include ./includes/nav1.pug   
+
+        main.grid#project
+
+            section#overview.x18c.grid
+
+
+                h1.main-heading Arc'teryx
+                p#summary 
+                    |This is a 14-week client-focused 
+                    strong project I am currently doing  
+                    |within a advanced interaction design course (IAT 333). A case study will be up once the project concludes. Till then 
+                    strong please check out the research we have done so far below.
+                #cover-image.magenta-hover   
+                    img(src="imgs/arcy/reframe/1.jpg")
+
+            section.grid.x18c
+                h2.l-sect Overview
+                h3.ml-sect Project Context
+                p.ml-sect 
+                    em 
+                        strong Vancouver, Canada - Spring 2020
+                p.ml-sect
+                    |We are to work with a participant group, i.e. a Vancouver-based group or organization, performing design research -  such as ethnography and interviews - into the group and the people involved with it. Over the span of the project, a design focus is narrowed down upon, 
+                    strong finding areas for design interventions. 
+                    |Once identified and wholistically understood, this problem will designed for and presented as a proposal to the participant group.
+                
+                h3.ml-sect Personal Role
+                p.ml-sect The roles I am currently taking are 
+                    strong 
+                        |content strategy, 
+                        a(href="#research", title="title").intra-page 
+                            strong UX research
+                        |, copy-writing and visual design.
+                    //- | Tools used in our process were 
+                    //- span.fab.figma
+                    //- strong Figma
+                    //- |
+                    //- and
+
+                    //- | for prototyping, graphic design
+                 
+                h3.ml-sect The Client
+                p.ml-sect 
+                    a(href="https://arcteryx.com", title="title").in-txt Arc'teryx  
+                    |is an international outdoor clothing brand based in North Vancouver focusing on sustainabilty, good design and craftsmanship. As a brand, it is rooted in design philosophy, driven by a spirit of pioneering technology for people in the climate of the Pacific Northwest. Arc'teryx creates 
+                    strong high-performance clothing and gear for varying outdoor climate conditions as well as functional lifestyle wear
+                    | — allowing people to timelessly engage with the environment.
+
+
+            section.grid.x18c#research
+                h2.l-sect Initial Client Research
+
+                p.ml-sect
+                    |During our initial interactions with the client and through preliminary secondary research we came away with insights regarding the brand, its values, their current audience, their target audience and the functioning of their various brand stores.
+                    br
+                    |We also 
+                    strong identified areas with potential for design opportunities, and thus where we might conduct further research.
+                figure.mlmr-sect
+                    img(data-src="imgs/arcy/part-group-poster_art-direction-2_comp.jpg", alt="alt").lazy
+                    figcaption Poster detailing initial research, and general insight into Arc'teryx.
+                
+                p.ml-sect
+                    |Of those insights, we identified key ones that
+                    | 
+                    strong helped us set an initial design direction
+                    |, and provided a lens through which to illustrate our findings as well as making design decisions.
+                figure.mlmr-sect
+                    .manual-swipe   
+                        .img
+                            img(data-src="imgs/arcy/reframe/4.jpg" alt="Pre-purchase journey").lazy    
+                        .img
+                            img(data-src="imgs/arcy/reframe/2.jpg" alt="Pre-purchase journey").lazy    
+                        //- .img
+                        //-     img(data-src="imgs/arcy/persona-3.jpg" alt="Pre-purchase journey").lazy         
+                    figcaption Key Initial Insights
+
+
+            section.grid.x18c
+                h2.l-sect Illustrating Findings
+                h3.ml-sect Ethnography
+
+                figure.lr-sect
+                    img(data-src="imgs/arcy/ethno-poster.jpg", alt="alt").lazy
+                    figcaption Poster outlining ethnography - design focus, research questions and results.
+                        
+                h3.ml-sect Initial Personas
+
+                figure.ml-sect
+                    .single-item   
+                        .img
+                            img(data-src="imgs/arcy/persona-1.jpg" alt="Pre-purchase journey").lazy    
+                        .img
+                            img(data-src="imgs/arcy/persona-2.jpg" alt="Pre-purchase journey").lazy    
+                        .img
+                            img(data-src="imgs/arcy/persona-3.jpg" alt="Pre-purchase journey").lazy         
+                    figcaption Initial Personas derived from ethnographic data, user research and qualitative interviews.
+
+                h3.ml-sect Journey Mapping
+                figure.lr-sect
+                    //- .single-item   
+                    //-     .img
+                    img(data-src="imgs/arcy/pre-journey-overview.jpg" alt="Pre-purchase journey").lazy 
+                        //- .img 
+                        //-     img(data-src="imgs/arcy/pre-journey-1.jpg" alt="Pre-purchase journey section 1").lazy
+                        //- .img
+                        //-     img(data-src="imgs/arcy/pre-journey-2.jpg" alt="Pre-purchase journey section 2").lazy
+                        //- .img
+                        //-     img(data-src="imgs/arcy/pre-journey-3.jpg" alt="Pre-purchase journey section 3").lazy
+                    figcaption User journey of a customer's first Arc'teryx purchasing experience.
+                figure.lr-sect
+                    //- .single-item   
+                    //-     .img
+                    img(data-src="imgs/arcy/post-journey-overview.jpg" alt="Post-purchase journey overview").lazy
+                        //- .img
+                        //-     img(data-src="imgs/arcy/post-journey-1.jpg" alt="post-purchase journey part 1").lazy
+                        //- .img
+                        //-     img(data-src="imgs/arcy/post-journey-2.jpg" alt="post-purchase journey part 2").lazy
+                        //- .img
+                        //-     img(data-src="imgs/arcy/post-journey-3.jpg" alt="post-purchase journey part 3").lazy
+                    figcaption User journey of Arc'teryx community member through the warranty repair/replace process.
+
+            section.grid.x18c
+                h2.l-sect Current Design Focus
+                p.ml-sect 
+                    |Based off of the research we have done, insights from Arc'teryx respresentatives from the marketing, sales and aftersales departments, we are working towards designing interventions through a refined focus.
+                    //- br
+                    //- | We also identified the value proposition for the  will be for a solution designed through this focus.
+                figure.mlmr-sect
+                    .manual-swipe   
+                        .img
+                            img(data-src="imgs/arcy/reframe/18.jpg" alt="design focus").lazy 
+                        .img
+                            img(data-src="imgs/arcy/reframe/19.jpg" alt="design focus").lazy 
+                    figcaption Refined Design Focus and Value Proposition
+
+            section.grid.x18c
+                h3.m-sect Team
+                div.m-sect
+                    +faList("")(class="fad fa-ram")
+                        div
+                            a(class="in-txt" href="https://aape.design").in-txt Brendan Mckay
+                    +faList("")(class="fad fa-rabbit")
+                        div
+                            a(class="in-txt" href="https://traucy.com").in-txt Tracy Chen
+
+                    +faList("")(class="fad fa-deer")                
+                        div
+                            a(class="in-txt" href="https://www.yantimo.com/").in-txt Yan Tymoshenko
+
+            //- +faList("Aliasger Rasheed")(class="fad fa-cat") 
+        footer 
+            include ./includes/footer1.pug

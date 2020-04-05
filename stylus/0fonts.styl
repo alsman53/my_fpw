@@ -1,0 +1,33 @@
+file(name, ext, path)
+   path + '/' + name + '.' + ext
+
+font-face(family, font=family, path='.../webfonts', weight=, style)
+   @font-face
+      font-family family
+      font-style style 
+      font-weight weight
+      src url(file(font, 'woff2', path)) format("woff2"),
+         url(file(font, 'woff', path)) format("woff") 
+            
+   /* ///////////////FONTS///////////////////// */
+
+// url(file(font, 'otf', path)) format("opentype"),
+
+
+font-face(HK Grotesk,HKGrotesk-Light, "/webfonts/WEB/", 300, normal)
+font-face(HK Grotesk,HKGrotesk-Regular, "/webfonts/WEB/", 400, normal)
+font-face(HK Grotesk,HKGrotesk-Medium, "/webfonts/WEB/", 500, normal) 
+font-face(HK Grotesk,HKGrotesk-SemiBold, "/webfonts/WEB/", 600, normal) 
+
+font-face(HK Grotesk,HKGrotesk-LightItalic, "/webfonts/WEB/", 300, italic)
+font-face(HK Grotesk,HKGrotesk-Italic, "/webfonts/WEB/", 400, italic)
+font-face(HK Grotesk,HKGrotesk-MediumItalic, "/webfonts/WEB/", 500, italic)
+font-face(HK Grotesk,HKGrotesk-SemiBoldItalic,"/webfonts/WEB/", 600, italic)
+// font-face(HK Grotesk,HKGrotesk-SemiBoldItalic,"/webfonts/WEB/", 600, normal)
+
+// font-face(HK Grotesk Italic,HKGrotesk-LightItalic, "/webfonts/WEB/", 300, normal)
+// font-face(HK Grotesk Italic,HKGrotesk-Italic, "/webfonts/WEB/", 400, normal)
+// font-face(HK Grotesk Italic,HKGrotesk-MediumItalic, "/webfonts/WEB/", 500, normal)
+// font-face(HK Grotesk Italic, HKGrotesk-SemiBoldItalic,"/webfonts/WEB/", 600, normal)
+// font-face(HK Grotesk Italic,HKGrotesk-SemiBoldItalic,"/webfonts/WEB/", 600, normal)
+// webfonts\WEB\HKGrotesk-LightItalic.woff2

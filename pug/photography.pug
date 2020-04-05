@@ -1,11 +1,11 @@
 //- ////////MIXINS/////////
 mixin img-lazyloaded-lg(name,sequence)
-  figure(class=name+" img-cont element-item" ) 
-    img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"/"+name+"_"+sequence+"-1500.jpg", onerror="hide(this)" alt="A "+ name+ " image") 
+  figure(class=name+" img-cont element-item" data-groups=name) 
+    img(class="lazy grid-image", data-src="imgs/photography-lg/"+name+"/"+sequence+".jpg", onerror='hideThis(this)', src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
 
 
 mixin img-folder-lazyloaded-lg(name,sequence,folder)
-  figure.img-cont
+  figure.img-cont 
 mixin img-cap-lazyloaded-lg(name,sequence,caption) 
   figure.img-cont
     img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"_"+sequence+"-1500.jpg", alt=name, onerror="hide()") 
@@ -17,64 +17,43 @@ html(lang='en')
   head
     include ./includes/head1.pug
     title Photography - Ali Rasheed
-  body
+  body 
     header.gallery
       include ./includes/nav1.pug  
 
 
     main.gallery 
-      #btn-cont.portfolioFilter.filter-button-group.button-group
-        
-        input(type="radio", name="imgFltr", data-filter="*" checked="checked").in-txt.current#all-categories 
-        label(for="all-categories").in-txt All Categories
+      #portfolioFilter
+        input(type="radio", name="imgFltr", data-filter="*" checked="checked").current#all-categories 
+        label(for="all-categories") All Categories
 
-        input(type="radio", name="imgFltr",data-filter=".Human" value="human").in-txt#human 
-        label(for="human").in-txt Human
- 
-        input(type="radio", name="imgFltr",data-filter=".Anthropogenic-Landscape").in-txt#anthro 
-        label(for="anthro").in-txt Anthropogenic Landscape
+        input(type="radio", name="imgFltr",data-filter=".people")#human 
+        label(for="human") Human
 
-        input(type="radio", name="imgFltr",data-filter=".Natural-Landscape").in-txt#natural  
-        label(for="natural").in-txt Natural Landscape
-
-        input(type="radio", name="imgFltr",data-filter=".Architectural").in-txt#architectural 
-        label(for="architectural").in-txt Architectural  
-
-        input(type="radio", name="imgFltr",data-filter=".Still-Life").in-txt#still-life  
-        label(for="still-life").in-txt Still Life
+        input(type="radio", name="imgFltr",data-filter=".architectural")#architectural 
+        label(for="architectural") Architectural  
       
-      #slider-cont
-        input(type="range", name="column-slider" , min="1", value ="70", max="100" )#col-slider
+        input(type="radio", name="imgFltr",data-filter=".anthro")#anthro 
+        label(for="anthro") Anthropogenic Landscape
 
+        input(type="radio", name="imgFltr",data-filter=".natural")#natural  
+        label(for="natural") Natural Landscape
 
-      section.photography-grid.portfolioContainer
+        input(type="radio", name="imgFltr",data-filter=".still-life")#still-life  
+        label(for="still-life") Still Life
 
-        - for(var i=1; i<20; i++)
-          +img-lazyloaded-lg("Human",i)
-          +img-lazyloaded-lg("Anthropogenic-Landscape",i)
-          +img-lazyloaded-lg("Architectural",i)
-          +img-lazyloaded-lg("Still-Life",i)
-          +img-lazyloaded-lg("Natural-Landscape",i)
+        #sizeBtns
+          button#add.colorH +
+          button#subtract.colorH - 
+          
+      section.photography-grid#portfolioContainer
+        - for(var i=1; i<30; i++)
+          +img-lazyloaded-lg("people",i)
+          +img-lazyloaded-lg("anthro",i)
+          +img-lazyloaded-lg("architectural",i)
+          +img-lazyloaded-lg("still-life",i)
+          +img-lazyloaded-lg("natural",i)
           
           
     footer
-      
-      //- --------FONTAWESOME
-
-      //- ---------JQUERY
-      script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin="anonymous")
-
-      //- ------LAZYLOAD INTERSECTION OBESERVER BACK-COMP
-      <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
-      //- ------VANILLA LAZYLOAD
-      script(src='https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js')
-      //- -------IMAGES LOADED
-      <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-      //- ---------ISOTOPE-----------
-      script(src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js")
-
-
-
-      script(src="js/main.js")
-
-      //- include ./includes/footer1.pug  
+      include ./includes/footer2.pug

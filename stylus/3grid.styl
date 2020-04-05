@@ -8,223 +8,244 @@ narrowerthan(var)
    @media condition
       {block}
 
-/* ////////////////GLOBAL GRID 
- */
-.flex-b 
-    display: flex
-.grid
-    display: grid
-    box-sizing: border-box
-.x2c
-    // grid-template-columns: 1fr 1fr
-    columns: 5rem 2
-    margin-top: 1rem
-    // h3
-.x24c
-    grid-template-columns repeat(24,1fr)
-.x18c
-    grid-template-columns repeat(18,minmax(0,1fr))
-.x12c
-    grid-template-columns repeat(12,minmax(1fr,7%))
-.span-col  
-    grid-column: 1/ span all
-._1rem 
-    grid-gap: 1rem
-._2rem 
-    grid-gap: 2rem
-._3rem 
-    grid-gap: 3rem
-._4rem 
-    grid-gap: 4rem
-
-+widerthan(1024px)
-    .r1
-        grid-row-start: 1
-    .r2
-        grid-row-start: 2
-    .r3
-        grid-row-start: 3
-    .r4
-        grid-row-start: 4
-    .r5
-        grid-row-start: 5
-    .r6
-        grid-row-start: 6
-    .r7
-        grid-row-start: 7
-    .r8
-        grid-row-start: 8
-    .r9
-        grid-row-start: 9  
-    .r10
-        grid-row-start: 10
-    
-/* /////////////NAV POSITIONING
- */
-
-
 #project
 
-    margin-left: 4vw
-    margin-right: 4vw
-    grid-gap: 1rem
+   margin-left: 3.6vw
+   margin-right: 3.6vw
+   grid-gap: 1rem
+   margin-top: 3rem
+   +narrowerthan(1550px)
+      margin-left: 2vw
+      margin-right: 2vw
+      margin-top: 4rem
+   +narrowerthan(1000px)
+      margin-right: 8vw
+      margin-left: 8vw
+      margin-top: 2rem
+   +narrowerthan(800px)
+      margin-right: 8vw
+      margin-left: 8vw
+      margin-top: 1rem
 
-    +narrowerthan(1550px)
-        margin-left: 2vw
-        margin-right: 2vw
-        margin-top: 4rem
-    +narrowerthan(1000px)
-        margin-right: 8vw
-        margin-left: 8vw
 
-    h2,h3
-        margin: 0
-    figure 
-        max-height 65vh 
-        margin: 0
-        grid-column-end: span 7
-        div
-            display: flex
+   h2,h3
+      margin: 0
+   figure 
+      margin: 1rem 0 2rem 0
+      flex-wrap: wrap     
+                     
+       
+      div
+         display: flex
+      figcaption 
+         // text-align: center
+         width: 100%
+         margin-top:  0.5rem
 
-        img
-            max-width: 100%  
-            max-height: 100%
+      img
+         // flex-basis: 10%
+         // flex-grow: 1
+         object-fit: cover   
+         // width: 100%
+         // height auto
+         // height 
 
-    
-    section 
-        margin-bottom: 2rem
-        overflow: none
-        grid-gap: 1rem
-        p
-            align-self: start 
-            margin-top: 0
-    #overview
-        #cover-image
-            grid-row: 1/span 1
-            grid-column: 8/18
-            margin: 0
-            height: 100%
-            
-        h1,
-        h2,h3  
-            grid-column: 2/span all
-            margin 0
-            align-self: end
-            height: min-content
-            display inline
-        h2
-            margin-top: 3rem
+         max-width: 100%
+         // max-height: 100%
+         display: block
+         margin-left: auto
+         margin-right: auto
 
-        #summary, h3
-            // grid-row: 4/span 1
-            grid-column: 2/span 6
-            grid-column-start: 4
-        
-            +narrowerthan(1850px)
-                grid-column-end: span 8
-        +narrowerthan(1000px)
-            .main-heading,#summary,h2,h3
-                grid-column-start:1
-            #summary,h2,h3
-                grid-column-end: span 10
-            #cover-image
-                grid-column-end: 19
-        +narrowerthan(850px)
-            .main-heading,#summary,h2,h3
-                grid-column-start:1
-            #summary,h2,h3
-                grid-column-end: span all
-            #cover-image
-                grid-column-end: 19
-                grid-column-start: 1
-    iframe
-        min-height: 25rem
-        width 100%
-                
-    // .l-sect,.r-sect,.ml-sect,.mr-sect,.m-sect
-        // align-self: end
+   section 
+      margin-bottom: 2rem
+      overflow: none
+      grid-gap: 1rem
+      p
+         align-self: start 
+         margin-top: 0
+         margin: 0
+   #overview
+      #cover-image
+         
+         // +narrowerthan(1400px)
+         //    width: 100vw;
+         //    position: relative;
+         //    // top: -3rem
+         //    // left: -3vw;
+         //    // left 0
+         //    // right:0
+         //    left: -2vw
+
+
+         // // +narrowerthan(1550px)
+         // +narrowerthan(1000px)
+      
+         //    left: -8vw
+
+         img
+            object-fit: cover
+            height 100%
+            width: 100%
+            max-height: 88vh
+         grid-column: 1/-1
+         margin: 0
+         
+      h1,
+      h2,h3  
+         grid-column: 2/span all
+         margin 0
+         align-self: end
+         height: min-content
+         display inline
+      h2
+         margin-top: 3rem
+
+      #summary
+         // grid-row: 4/span 1 
+         grid-column: 2/-2
+         grid-column-start: 4
+         +narrowerthan(1850px)
+               grid-column-end: span 8
+      +narrowerthan(1000px)
+         .main-heading,#summary,h2,h3
+               grid-column-start:1
+         #summary,h2,h3
+               grid-column-end: span 10
+         #cover-image
+               grid-column-end: -1
+      +narrowerthan(850px)
+         .main-heading,#summary,h2,h3
+               grid-column-start:1
+         #summary,h2,h3
+               grid-column-end: span all
+         #cover-image
+               grid-column-end: -1  
+               grid-column-start: 1
+   iframe
+      min-height: 70vh   
+      max-height: 80vh
+      width 100%
   
-    h2, h3,h4
-        grid-column-end: span 10
-        +narrowerthan(1000px)
-            grid-column-end: span 8
-        +narrowerthan(900px) 
-            grid-column-end: span 10 
-        +narrowerthan(850px)
-            grid-column-end: span all
 
-    h2,h3,h4,p,figure, #hierarchy div , div, ul,ol,iframe
-        &.l-sect    
-            grid-column-start: 2
-        &.ml-sect
+   h2, h3,h4
+      grid-column-end: span 10
+      +narrowerthan(1000px)
+         grid-column-end: span 8
+      +narrowerthan(900px) 
+         grid-column-end: span 10 
+      +narrowerthan(850px)
+         grid-column-end: span all
+
+   h2,h3,h4,p,figure, #hierarchy div , div, ul,ol,iframe
+      &.l-sect    
+         grid-column-start: 2
+      &.ml-sect
+         grid-column-start: 4
+      &.m-sect
+         grid-column-start: 7
+      &.mr-sect
+         grid-column-start: 9
+      &.r-sect
+         grid-column-start: 11
+      +narrowerthan(1000px)
+         &.l-sect    
+            grid-column-start: 1
+         &.ml-sect
+            grid-column-start: 3
+         &.m-sect
+            grid-column-start: 6
+         &.mr-sect
+            grid-column-start: 10
+         &.r-sect
+            grid-column-start: 12
+      +narrowerthan(900px)   
+         &.l-sect    
+            grid-column-start: 1
+         &.ml-sect
+            grid-column-start: 1
+         &.m-sect
             grid-column-start: 4
-        &.m-sect
-            grid-column-start: 7
-        &.mr-sect
+         &.mr-sect
             grid-column-start: 9
-        &.r-sect
-            grid-column-start: 11
-        +narrowerthan(1000px)
-            &.l-sect    
-                grid-column-start: 1
-            &.ml-sect
-                grid-column-start: 3
-            &.m-sect
-                grid-column-start: 6
-            &.mr-sect
-                grid-column-start: 10
-            &.r-sect
-                grid-column-start: 12
-        +narrowerthan(900px)   
-            &.l-sect    
-                grid-column-start: 1
-            &.ml-sect
-                grid-column-start: 1
-            &.m-sect
-                grid-column-start: 4
-            &.mr-sect
-                grid-column-start: 9
-            &.r-sect
-                grid-column-start: 9  
-        +narrowerthan(850px)
-            &.l-sect,    
-            &.ml-sect,
-            &.m-sect,
-            &.mr-sect,
-            &.r-sect
-                grid-column-start: 2
-        +narrowerthan(650px)
-            &.l-sect    
-            &.ml-sect
-            &.m-sect
-            &.mr-sect
-            &.r-sect
-                grid-column-start: 1
-    p, #hierarchy div, div, ul,ol,iframe
-        &.l-sect
-            grid-column-end: span 6
-        &.r-sect
-            grid-column-end: span 6
-        &.ml-sect
-            grid-column-end: span 6
-        &.m-sect
-            grid-column-end: span 6 
-        &.mr-sect
-            grid-column-end: span 6
+         &.r-sect
+            grid-column-start: 9  
+   +narrowerthan(850px)
+      h3,h4,p,figure, #hierarchy div , div, ul,ol,iframe
+         &.l-sect,    
+         &.ml-sect,
+         &.m-sect,
+         &.mr-sect,
+         &.r-sect
+            grid-column-start: 2
+   +narrowerthan(650px)
+      h2,h3,h4,p,figure, #hierarchy div , div, ul,ol,iframe
+         &.l-sect    
+         &.ml-sect
+         &.m-sect
+         &.mr-sect
+         &.r-sect
+            grid-column-start: 1
+            grid-column-end: span all
+ 
+   .l-sect
+   .r-sect
+   .ml-sect
+   .m-sect
+   .mr-sect
+      //   margin-bottom: 1.25rem 
+      grid-column-end: span 8
 
-    // +narrowerthan(1300px) 
-        
+   +narrowerthan(1300px) 
+         .l-sect
+         .ml-sect
+         .m-sect
+         .mr-sect
+            grid-column-end: span 8
+         .r-sect
+            grid-column-end: all
+   +narrowerthan(1000px) 
+         .l-sect
+         .ml-sect
+         .m-sect
+         .mr-sect
+            grid-column-end: span 8
+
+
     // +narrowerthan(1000px)
     // +narrowerthan(900px)
     // +narrowerthan(850px)
     // +narrowerthan(650px)
     // +narrowerthan(900px)
-    +narrowerthan(850px)
-    
-        p
-            &.l-sect, &.ml-sect, &.m-sect, &.mr-sect, &.r-sect
-                grid-column-end: span 15
-    +narrowerthan(650px)
-        p,ul,ol
-            &.l-sect, &.ml-sect, &.m-sect, &.mr-sect, &.r-sect
-                grid-column-end: span 16
+   +narrowerthan(850px)
+      .l-sect, .ml-sect, .m-sect, .mr-sect, .r-sect
+         grid-column-end: span 12
+   +narrowerthan(650px)
+      .l-sect, .ml-sect, .m-sect, .mr-sect, .r-sect
+         grid-column-end: span all
+         padding-right: 1rem 
+
+   figure, iframe 
+      &.l-sect
+      &.ml-sect
+      &.m-sect
+      &.mr-sect
+      &.r-sect
+         grid-column-end: span 9
+         +narrowerthan(1080px)
+            grid-column: 2/-2 
+         +narrowerthan(650px)
+            grid-column-end: span 18
+
+      &.lr-sect
+         grid-column 2/-2
+
+      &.mlmr-sect             
+         grid-column 4/-4
+
+         +narrowerthan(1080px)
+            grid-column: 2/-2 
+         +narrowerthan(650px)
+            grid-column 1/-1
+
+      img
+         max-height: 150vh

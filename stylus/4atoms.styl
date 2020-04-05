@@ -1,0 +1,98 @@
+widerthan(var)
+   condition = 'screen and (min-width: %s)' % var
+   @media condition
+      {block}
+
+narrowerthan(var)
+   condition = 'screen and (max-width: %s)' % var
+   @media condition
+      {block}
+
+/* ////////////////GLOBAL GRID 
+ */
+.f-wrap
+    flex-wrap: wrap
+.flex-b 
+    display: flex
+.grid
+    display: grid
+    box-sizing: border-box
+.img-grid
+    display: grid
+    box-sizing: border-box
+    grid-template-columns: repeat(auto-fill,minmax(1fr,50%))
+.x2c
+    grid-template-columns: 50% 50%
+    // columns: 5rem 2
+    margin-top: 1rem
+    // h3
+.x24c
+    grid-template-columns repeat(24,1fr)
+.x18c
+    grid-template-columns repeat(18,minmax(0,1fr))
+.x12c
+    grid-template-columns repeat(12,minmax(1fr,7%))
+.span-col  
+    grid-column: 1/ span all
+._1rem 
+    grid-gap: 1rem
+._2rem 
+    grid-gap: 2rem
+._3rem 
+    grid-gap: 3rem
+._4rem 
+    grid-gap: 4rem
+
++widerthan(1024px)
+    overflow-y: hidden
+    .r1
+        grid-row-start: 1
+        flex-grow: 1
+        flex-basis: 10%
+
+    .r2
+        grid-row-start: 2
+        flex-grow: 2
+    .r3
+        grid-row-start: 3
+        flex-grow: 3
+    .r4
+        grid-row-start: 4
+    .r5
+        grid-row-start: 5
+    .r6
+        grid-row-start: 6
+    .r7
+        grid-row-start: 7
+    .r8
+        grid-row-start: 8
+    .r9 
+        grid-row-start: 9  
+    .r10
+        grid-row-start: 10
+        // flex-grow: 1
+        flex-basis: 100%
+
+    
+    .r-1
+        grid-row-end: 1
+    .r-2
+        grid-row-end: 2
+        flex-grow: 2
+    .r-3
+        grid-row-end: 3
+        flex-grow: 3
+    .r-4
+        grid-row-end: 4
+    .r-5
+        grid-row-end: 5
+    .r-6
+        grid-row-end: 6
+    .r-7
+        grid-row-end: 7
+    .r-8
+        grid-row-end: 8
+    .r-9 
+        grid-row-end: 9  
+    .r-10
+        grid-row-end: 10

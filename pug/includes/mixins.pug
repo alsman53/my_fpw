@@ -1,16 +1,13 @@
 //- ////////MIXINS/////////
-mixin img-lazyloaded-lg(name,sequence)
-  figure.img-cont
-    img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"/"+name+"_"+sequence+"-1500.jpg", alt=name, onerror="hide()") 
 mixin img-folder-lazyloaded-lg(name,sequence,folder)
   figure.img-cont
     img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+folder+"/"+name+"_"+sequence+"-1500.jpg", alt=name, onerror="hide()") 
-mixin img-cap-lazyloaded-lg(name,sequence,caption) 
-  figure.img-cont
-    img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"_"+sequence+"-1500.jpg", alt=name, onerror="hide()") 
-    figcaption = caption
 
-mixin img-cap-lazyloaded(name,caption,path)
-  figure.img-cont.regular
-    img(class="lazy" alt="name" data-src="img//"+path+".jpg", oneerror="hide()")
-    figcaption =caption
+
+mixin img-lazyloaded-lg(name,sequence)
+  figure(class=name+" img-cont element-item" data-groups=name) 
+    img(class="lazy grid-image", data-src="imgs/photography-lg/"+name+"/"+sequence+".jpg", onerror="hideThis(this);'", src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
+
+mixin grid-img(name,sequence)
+  figure(class=name+" img-cont element-item" data-groups=name) 
+    img(class="lazy grid-image", data-src="imgs/photography-lg/"+name+"/"+sequence+".jpg", onerror="hideThis(this);'", src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 

@@ -1,26 +1,29 @@
-- photolink = "/photography.html"
-
-//- - photolink = "#"
+- photolink = "/photography"
+- index ="/"
+- about ="/about"
 
 nav
     ul(id="nav-name")
-        li#nav-h1 
-            a.nav-item(href="/index.html") Ali Rasheed
-    
+        li#nav-h1    
+            a.nav-item(href="/index.html") Aliasger Rasheed
         li#nav-h2
             |#[a.in-txt(href=photolink) Photography]
             | |
-            |#[a.in-txt(href="/index.html") Design]
+            |#[a.in-txt(href=index) Design]
+            | |
+            |#[a.in-txt(href=about) Info] 
     ul#nav-cont   
         
-        li#side-nav         
-            |#[a.in-txt.nav-item.side-nav-child(href=photolink ) Photography]
-            | |
-            |#[a.in-txt.nav-item.side-nav-child(href="/index.html" ) Design ]
-
-        li 
-            a(class="nav-item in-txt", href="about.html") About
-
-        li 
+        //- li#side-nav         
+        //-     |#[a.in-txt.nav-item.side-nav-child(href=photolink) Photography]
+        //-     | |
+        //-     |#[a.in-txt.nav-item.side-nav-child(href=index ) Design]
+        //- li#top-placeholder
+        //- li
+        li#middle-placeholder   
+        li  
             input(type="checkbox", name="modeToggle" id="adjust") 
-            label#modeLbl(for="adjust").in-txt                  
+            label#modeLbl(for="adjust")                 
+        li 
+            |#[a.fas.fa-angle-double-up.nav-item#side-nav(href="#")]
+        li#middle-placeholder   

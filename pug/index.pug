@@ -1,60 +1,83 @@
-doctype
-html(lang='en')
+doctype(lang='en')
+html
   head
     include ./includes/head1.pug
-    title Ali Rasheed
+    title Aliasger Rasheed
   body.index#darkregion
+    - var end = ".html"
     header
-      include ./includes/nav1.pug
+      include ./includes/nav1.pug  
     main
-      //- section.grid-item
-      //-   a(id=photography href="photography.html").proj-img-link
-      //-     img(src="imgs/projects/photography"+".jpg", alt="").maskable
-      //-   a(id=photography href="photography.html")
-      //-     h1 Photography   
-      - var link = "gakko.html"
-      section.grid-item#gakko
+      - var link = "arcteryx" + end
+      section.grid-item
+        a(href=link).proj-title
+          h1 Arc'teryx
+        a(href=link).proj-img-link
+          img(src="imgs/projects/arcy"+".jpg", alt="").maskable
+        ul.genre
+          li A UX research and design project for product care within Arc'teryx, an international outdoor clothing brand.
+          li 
+            em Project-In-Progress
+            //- em PROJECT-IN-PROGRESS
+           
+          
+      - var link = "gakko" + end
+      section.grid-item
+        a(href=link).proj-title 
+          h1 Gakko Camps 
         a( href=link).proj-img-link
           img(src="imgs/projects/gakko"+".jpg", alt=" image of gakko logo").maskable
-        a(href=link).proj-title
-          h1 Gakko 2019
         ul.genre
-          li Type Design
-          li Visual Design
-          li Instructional Design
-
-      - var link = "charette.html"
-          
+          //- li Type Design
+          //- li Visual Design  
+          //- li Instructional Design
+          li A summer camp focusing on visual design, technology, new media/film, and social innovation. 
+ 
+      - var link = "posterjam" + end
       section.grid-item
-        a(id=charette href=link).proj-img-link
-          img(src="imgs/charette/hearth-underlit"+".jpg", alt=" Hearth Model").maskable.saturate
-        a(href=link).proj-title
-          h1 Hearth 
-        ul.genre
-          li Photography
-          li 3D Modelling
-          li Model Making
-        
-      - var link = "headset.html"
-
-      section.grid-item#headset 
-        a(href=link).proj-img-link
-          img(src="imgs/projects/headset"+".jpg", alt=" Kamishibai Headset title").maskable.saturate
-        a(href=link).proj-title
-          h1 Kamishibai
-        ul.genre
-          li Industrial Design
-          li 3D Modelling
-          
-      - var link = "posterjam.html"
-          
-      section.grid-item#posterjam
-        a(href=link).proj-img-link
-          img(src="imgs/projects/posterjam"+".png", alt="Posterjam graphic").maskable
         a(href=link).proj-title
           h1 Posterjam
+        a(href=link).proj-img-link
+          img(src="imgs/projects/posterjam"+".png", alt="Posterjam graphic").maskable
         ul.genre
-          li Visual Design
+          li An online monthly graphic design challenge
+
+      - var link = "threadstoheaven"    + end       
+      section.grid-item
+        a(href=link).proj-title
+          h1 Threads to Heaven 
+        a(href=link).proj-img-link
+          img(src="imgs/spec-design/cover"+".jpg", alt=" Threads to Heaven").maskable
+        ul.genre
+          li  A speculative design project exploring whether one can choose and design their own "good death". 
+        
+           
+      //- - var link = "charette"    + end       
+      //- section.grid-item
+      //-   a(href=link).proj-img-link
+      //-     img(src="imgs/charette/hearth-underlit"+".jpg", alt=" Hearth Model").maskable
+      //-   a(href=link).proj-title
+      //-     h1 Hearth 
+      //-   ul.genre
+      //-     li Photography
+      //-     li 3D Modelling
+      //-     li Model Making
+
+      //- - var link = "headset" + end
+
+      //- section.grid-item#headset 
+      //-   a(href=link).proj-img-link
+      //-     img(src="imgs/projects/headset"+".jpg", alt=" Kamishibai Headset title").maskable.saturate
+      //-   a(href=link).proj-title
+      //-     h1 Kamishibai
+      //-   ul.genre 
+      //-     li A VR headset designed for experiencing 
+      //-     li traditional Japanese Kabuki Theatre
+          //- li Industrial Design
+          //- li 3D Modelling
 
     footer
-      include ./includes/footer1.pug
+      include ./includes/footer1.pug 
+
+      
+      

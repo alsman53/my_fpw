@@ -1,0 +1,74 @@
+doctype(lang='en')
+html
+  head
+    include ./includes/head1.pug
+    title Ali Rasheed
+  body.index#n-grid
+    - var end = ".html"
+    header
+      include ./includes/nav1.pug  
+    main
+      - var link = "gakko" + end
+      section.grid-item#gakko
+        a( href=link).proj-img-link
+          img(src="imgs/projects/gakko"+".jpg", alt=" image of gakko logo").maskable
+        a(href=link).proj-title 
+          h1 Gakko Camps 
+        ul.genre
+          //- li Type Design
+          //- li Visual Design
+          //- li Instructional Design
+          li A summer camp focusing on design, technology, 
+          li theater, new media/film, and social innovation. 
+        
+      - var link = "arcy" + end
+      section.grid-item
+        a(href=link).proj-img-link
+          img(src="imgs/projects/arcy"+".jpg", alt="").maskable
+        a(href=link).proj-title
+          h1 Arc'teryx
+        ul.genre
+          li A design research project for  
+          li an international outdoor clothing brand 
+          li  
+            //- em Project-In-Progress
+            em PROJECT-IN-PROGRESS
+           
+      - var link = "headset" + end
+
+      //- section.grid-item#headset 
+      //-   a(href=link).proj-img-link
+      //-     img(src="imgs/projects/headset"+".jpg", alt=" Kamishibai Headset title").maskable.saturate
+      //-   a(href=link).proj-title
+      //-     h1 Kamishibai
+      //-   ul.genre
+      //-     li A VR headset designed for experiencing 
+      //-     li traditional Japanese Kabuki Theatre
+          //- li Industrial Design
+          //- li 3D Modelling
+          
+      - var link = "posterjam" + end
+      section.grid-item
+        a(href=link).proj-img-link
+          img(src="imgs/projects/posterjam"+".png", alt="Posterjam graphic").maskable
+        a(href=link).proj-title
+          h1 Posterjam
+        ul.genre
+          li An online monthly graphic design challenge
+
+ 
+      - var link = "charette"    + end       
+      //- section.grid-item
+        a(id=charette href=link).proj-img-link
+          img(src="imgs/charette/hearth-underlit"+".jpg", alt=" Hearth Model").maskable.saturate
+        a(href=link).proj-title
+          h1 Hearth 
+        ul.genre
+          li Photography
+          li 3D Modelling
+          li Model Making
+
+    footer
+      include ./includes/footer1.pug 
+
+      

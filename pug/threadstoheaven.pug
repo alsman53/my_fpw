@@ -1,0 +1,208 @@
+mixin faList(content)
+  li.flex-b
+    span()&attributes(attributes)
+    = content
+    block
+mixin rM()
+  button.coll-button Read More
+
+mixin lazyImg(content)
+   img(data-src=content data-lazy=content alt="").lazy
+
+doctype
+
+html(lang='en')
+   head
+      include ./includes/head1.pug
+      title Threads to Heaven - Ali Rasheed
+
+   body#darkregion 
+      header
+         include ./includes/nav1.pug   
+
+      main.grid#project
+
+         section#overview.x18c.grid 
+
+
+            h1.main-heading Threads to Heaven
+            p#summary                                             
+               //- |Gakko is an educational collective that runs annual summer camps created by a select group of mentors from fields ranging from design to theatre to disaster management. 
+               |A speculative and critical design project that questions the taboo nature of death in Western society, and whether one can choose and design their own "good death".  
+            #cover-image.magenta-hover 
+               img(src="imgs/spec-design/cover.jpg", alt="venue of camp")
+               //- figcaption 
+        
+         section#skills-used.grid.x18c
+            h2.ml-sect Overview
+            h3.ml-sect Project Context
+            //- h4.ml-sect Summer 2019
+            p.ml-sect 
+               em 
+                  strong Vancouver, Canada - Spring 2020
+            p.ml-sect        
+               |Death comes for us all, but the emphasis on prolonging life in Western society has led us to shy away from talking about and preparing for death. By facing death, not only can we live with passion, but also pass with passion.
+               br
+               |We explore how one’s relationship with both life and death would change by living with this fungi. We question whether death should be such a taboo topic in the Western society, and whether one can choose and design their own "good death".
+               br
+               |Our project explores a lengthy and involved process of preparing for one's own death in a symbiotic relationship with another living organism, the fungi. As one maintains and feeds the fungi with bits of oneself, such as nails, hair, and dead skin, one can also feed on the fruiting mushrooms. The fungi can then be used to return one's body to earth, cleansing and decomposing one's body to more seamlessly become part of nature. 
+               |We explore the emergent conversations and rituals around the fungi, and how this affects one’s relationship with death.
+            h3.ml-sect Contribution
+            div.ml-sect
+               p My roles included research, content strategy and visual design
+
+            //- figure.mlmr-sect
+            //-    img(data-src="imgs/gakko/image5.jpg").maskable.lazy
+            //-    figcaption "Welcome"
+   
+      
+            //- figure.mlmr-sect
+            //-    .manual-swipe
+            //-       .img
+            //-          img(data-src=".jpg" alt="").lazy
+
+         section.grid.x18c
+            h2.l-sect Project Proposals
+            p.ml-sect After choosing death as our provocation area, we proposed 3 concepts for our project
+            figure.mlmr-sect
+               .manual-swipe   
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_01.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_02.jpg" alt="b").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_03.jpg" alt="c").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_04.jpg" alt="d").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_05.jpg" alt="e").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_06.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_07.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_08.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_09.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_10.jpg" alt="a").lazy    
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_11.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_12.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_13.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_14.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_15.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_16.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_17.jpg" alt="a").lazy   
+                  .img
+                     img(data-src="imgs/spec-design/3-concepts/concepts_18.jpg" alt="a").lazy  
+                  //- .img 
+                  //-     img(data-src="imgs/arcy/persona-3.jpg" alt="Pre-purchase journey").lazy         
+               //- figcaption Key Initial Insights
+         
+         section.grid.x18c
+            h2.ml-sect Design Workbook
+            figure.mlmr-sect
+               .manual-swipe   
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_01.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_02.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_03.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_04.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_05.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_06.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_07.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_08.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_09.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_10.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_11.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_12.jpg" alt="a").lazy  
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_13.jpg" alt="a").lazy  
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_14.jpg" alt="a").lazy  
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_15.jpg" alt="a").lazy  
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_16.jpg" alt="a").lazy  
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_17.jpg" alt="a").lazy  
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_18.jpg" alt="a").lazy  
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_19.jpg" alt="a").lazy  
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_20.jpg" alt="a").lazy   
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_21.jpg" alt="a").lazy   
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_22.jpg" alt="a").lazy   
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_23.jpg" alt="a").lazy   
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_24.jpg" alt="a").lazy   
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_25.jpg" alt="a").lazy   
+                  .img
+                     img(data-src="imgs/spec-design/design-workbook/design-workbook_26.jpg" alt="a").lazy   
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_27.jpg" alt="a").lazy   
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_28.jpg" alt="a").lazy   
+                  //- .img
+                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_29.jpg" alt="a").lazy  
+               figcaption Excerpts from Design Workbook
+         section.grid.x18c
+            h2.ml-sect Final Artefacts
+            <iframe style="border: none;" class="mlmr-sect" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5IZL1IuzMVTuZeYEhT1pAY%2FThreads-to-Heaven-Websites%3Fnode-id%3D248%253A46%26viewport%3D864%252C472%252C0.06405032426118851%26scaling%3Dscale-down-width" allowfullscreen></iframe>
+         
+
+            iframe( class="lr-sect" src="https://player.vimeo.com/video/398698793?color=d229eb&byline=0&portrait=0"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen)
+            //- </div>
+
+
+
+ 
+         
+         section.grid.x18c
+            h4.m-sect
+               a(href="assets/Threads-to-Heaven_design-workbook.pdf", title="Threads to Heaven Design Workbook PDF" target="_blank").in-txt Download Design Workbook PDF
+         
+         section.grid.x18c
+            h3.m-sect Team
+
+            div.m-sect
+               +faList("David Gu")(class="fad fa-kiss-wink-heart")
+                  //- div
+                        a(class="in-txt" href="https://aape.design").in-txt 
+               +faList("Ashley Tsang")(class="fad fa-paint-brush")
+                  //- div
+                        a(class="in-txt" href="https://traucy.com").in-txt Tracy Chen
+
+               +faList("Isaaca Tsang")(class="fad fa-palette")                
+                  //- div
+                        a(class="in-txt" href="https://www.yantimo.com/").in-txt Yan Tymoshenko
+
+            //- figure.ml-sect 
+            //-    img(data-src="imgs/gakko/team.jpeg").maskable.lazy
+
+      footer 
+         include ./includes/footer1.pug
+         <script src="https://player.vimeo.com/api/player.js"></script> 

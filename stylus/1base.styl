@@ -6,37 +6,61 @@
     --magenta:#FF2079
     --magenta-light: #FF4B93
     --magenta-dark: #C21359 
-    // --purple-rgba:rgba(222, 38, 249,0.5)
+    --purple:#d229eb
     --purple:#d229eb
     --purple-light:#ed6aff
     --purple-dark:#9b04b0
+    --purple-rgb:  rgb(210, 41, 235);
+
     --grey:hsl(0,0%,20%)
     --light-white: #fff
+    --light-white-rgb: 255,255,255;
+    
     --light-black:#0B0B0B
     --dark-white: #E5E5E5
-    --dark-black: #1e1e1e
+    --dark-black: #202020
+    --dark-black: #000000
+    --dark-black: #0c0c0c
+    --dark-black-rgb: 30,30,30;
 
 
     --mobileP: 400px
     --mobileL: 768px
     --laptopMDPI: 1280px
     --laptopHiDPI: 1440px
-
+  
     --p-std-font: "Mazius Display Regular"
     --s-std-font: "Space Grotesk"
+    --s-std-font: "Happy Times at the IKOBNew Game"
     --s-std-font: "HK Grotesk"
+    // --s-std-font: "sofia-pro-soft" 
+    // --s-std-font: "sofia-pro"  
+    // --s-std-font: "sofia-pro-condensed" 
+    // --s-std-font: "english-grotesque" 
+    // --s-std-font: "Zeitung" 
+    // --s-std-font: "Zeitung-micro" 
+    
+    
+    --bg-col: var(--dark-black)
+    --bg-col-rgb: var(--dark-black-rgb)
+    --txt-col: var(--dark-white)   
+    --slct-col var(--purple)
+    --sy-col: var(--purple-light)
+    --ty-col: var(--purple-dark)
+    --s-std-weight: 300 
+    --s-bold-weight: 500 
+    --s-line-space:  1.6em
+
+
+
     --t-std-font: "Mazius Display Italic"
     --q-std-font: "Mazius Display Extra Italic"
 
-    --p-std-weight: normal
-    --s-std-weight: 400
-
+         
+    --p-std-weight: normal 
+    // --s-line-space:  1.7em 
      
-    --bg-col: var(--light-white)
-    --txt-col: var(--light-black)
     --py-col: var(--purple)
-    --sy-col: var(--purple-dark)
-    --ty-col: var(--purple-light)
 
 
     // --py-col-rgb: 255,32,121;
@@ -45,19 +69,27 @@
     --fa-secondary-color: var(--purple) 
     --fa-secondary-opacity: 1
     --slct-col var(--purple-light)   
+    footer 
+        --fa-primary-color var(--bg-col)
+
 /*------------DARK MODE------------*/
-[data-theme = "dark"]
-    --bg-col: var(--dark-black)
-    --txt-col: var(--dark-white)   
-    --slct-col var(--purple)
-    --s-std-weight: 300 
-    --sy-col: var(--purple-light)
-    --ty-col: var(--purple-dark)
+[data-theme = "light"]
+    --s-std-weight: 400
+    --s-bold-weight: 600
+    --s-line-space:  1.55em 
+    --txt-col: var(--light-black)
+    --sy-col: var(--purple-dark)
+    --ty-col: var(--purple-light)
+    --bg-col: var(--light-white)
+    --bg-col-rgb: var(--light-white-rgb)
 
-
-@media screen and (prefers-color-scheme: light)
-    --bg-col: var(--white)
-    --txt-col: var(--black)
-@media screen and (prefers-color-scheme: dark)
-    --bg-col: var(--light-black)
-    --txt-col: var(--dark-white) 
+// @media screen and (prefers-color-scheme: dark)
+//     --bg-col: var(--dark-black)
+//     --bg-col-rgb: var(--dark-black-rgb)
+//     --txt-col: var(--dark-white)   
+//     --slct-col var(--purple)
+//     --s-std-weight: 300 
+//     --s-bold-weight: 500 
+//     --sy-col: var(--purple-light)
+//     --ty-col: var(--purple-dark)
+//     --s-line-space:  1.6em

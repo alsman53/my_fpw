@@ -13,44 +13,20 @@ html(lang='en')
   body#darkregion
     header
       include ./includes/nav1.pug
-    main#about.grid._2rem    
+    main#about.grid._2rem
       section.main-heading
         h1 Hi
-        p I’m Ali, a designer and photographer studying at Simon Fraser University in Vancouver. I am currently looking for internship opportunities, especially in the education-focused design sphere.
-        img(src="imgs/profile-pic-cropped.jpg", alt="profile image").prof#treeLeaves
+        p My name's Aliasger Rasheed, but I prefer Ali. I'm a designer, photographer and maker studying at Simon Fraser University in Vancouver.  <strong>  I am currently looking for internship opportunities</strong>, especially in the education-focused design sphere.
+        //- img(src="imgs/profile-pic.jpg", alt="profile image").prof#treeLeaves 
       //- p I am a web and industrial design student 
       section.grid
-        h2 I enjoy
-        ul
-          +faList("organising with lists")(class="fad fa-list")
-          +faList("")(class="fad fa-film-alt")
-            div
-              |understanding <a class="in-txt" href="https://www.youtube.com/user/everyframeapainting">intentionality</a>,
-              |<a class="in-txt" href="https://www.youtube.com/user/Nerdwriter1">themes</a>
-              | in live-action &amp; animated cinema
-          +faList("")(class="fad fa-font")
-            div
-              |collecting and designing 
-              |<a class="in-txt" href="https://www.theleagueofmoveabletype.com"> open</a>
-              |-
-              |<a class="in-txt" href="http://www.collletttivo.it/">source</a>
-              |
-              |<a class="in-txt" href="https://open-foundry.com/fonts">type</a>
-              |
-              | <a class="in-txt" href="https://dotcolon.net/">design</a>
-            
-     
-          +faList("exploring how photography and editing can manipulate memory.")(class="fad fa-sliders-h")
-            
-          +faList("learning different writing systems, fictional and otherwise, and the orthography behind them.")(class="fad fa-feather-alt")
-      section.grid
-        h2 I design things
+        h2 I  design things...
         ul
           +faList("that are long-lasting and sustainable.")(class="fad fa-hourglass-half")
 
           +faList("that are cherished")(class="fad fa-hands-heart")
           
-          +faList("")(class="fad fa-sparkles") 
+          //- +faList("")(class="fad fa-sparkles") 
             div
               | that create 
               |#[a.in-txt(href="http://www.nendo.jp/") !]
@@ -59,44 +35,53 @@ html(lang='en')
           +faList("that are beautiful.")(class="fad fa-atom")
 
  
-          +faList("that enable learners to take better control of their own learning process.")(class="fad fa-award")
+          //- +faList("that enable people to develop self-regulated learning.")(class="fad fa-award")
       section.grid
-        h2 To contact me 
+        h2 I enjoy...
+        ul
+          +faList("organising with lists")(class="fad fa-list")
+          +faList("")(class="fad fa-font")
+            div
+              |collecting and designing open-source typefaces (
+              a(href="https://www.notion.so/alirasheed/Ali-s-Type-Resources-593ddd3a908f4475b6e73c39cf080aed", title="Foundries, Typefaces & Tools!").in-txt my resource collection
+              |)
+          +faList("")(class="fad fa-film-alt")
+            div
+              |understanding <a class="in-txt" href="https://www.youtube.com/user/everyframeapainting" title=" A video-essay writing duo called Every Frame A Painting">intentionality</a>,
+              |<a class="in-txt" href="https://www.youtube.com/user/Nerdwriter1" title="A video-essay writer called The Nerdwriter ">themes</a>
+              | in live-action &amp; animated cinema
+     
+          +faList("exploring how photography and editing can manipulate memory.")(class="fad fa-sliders-h")
+          +faList("learning about Quasars, Neutron Stars and other astrophysical phenomena.")(class="fad fa-star")
+          //- +faList("learning different writing systems, fictional and otherwise, and the orthography behind them.")(class="fad fa-feather-alt")
+
+
+      //- section.grid   
+        h2 To contact me...
         ul
           +faList("")(class="fad fa-copy") 
             div
               | click to copy my email
-              |#[input(type="text" value="aliasgerrasheed@sfu.ca" id="email")] #[button(class='in-txt' id='emailCopy' aria-hidden='true' type='button' onclick="textToClipboard('aliasgerrasheed@sfu.ca')" ) aliasgerrasheed@sfu.ca ]
+              input(type="text" value="aliasgerrasheed@outlook.ca" id="email")
+              button(class='intra-page' id='emailCopy' aria-hidden='true' type='button' onclick="textToClipboard('aliasgerrasheed@outlook.ca')" ) aliasgerrasheed@outlook.ca
           li
             span.fad.fa-file-alt
             | take a look at my resume #[a.in-txt(href="assets/Aliasger_Rasheed_Resume.pdf") here] 
           li
             span.fab.fa-linkedin
-            | connect on
+            //- | connect on
             |#[a.in-txt(href="https://www.linkedin.com/in/aliasger-rasheed/") Linkedin]
   
           +faList("")(class="fab fa-instagram")    
             div
-              |assess my  #[a.in-txt(href="https://instagram.com/hisbeardedness") photography]
+              //- |assess my  
+              a.in-txt(href="https://instagram.com/hisbeardedness") Instagram
       
-          +faList("")(class="fab fa-instagram") 
+          //- +faList("")(class="fab fa-instagram") 
             div
               |get an insight through my #[a.in-txt(href="https://instagram.com/ar_experiments") design | photo-experiments]
-      section#references.grid
-        h3 Site references
-        ul
-          li.flex-b
-            span.fab.fa-osi
-            div I used open source typefaces #[a.space-g.in-txt(href="https://hanken.co/collections/free/products/hk-grotesk")  HK Grotesk] from <em>Hanken Design Co. </em> and #[a.mazius.in-txt(href="http://collletttivo.it/") Mazius Display] from <em>Colllectttivo</em>.
-          li.flex-b
-            span.fab.fa-font-awesome-alt
-            | Icons are from&nbsp;   
-            |#[a.in-txt(href="fontawesome.com/") Font Awesome]
-          +faList("")(class="fal fa-circle") 
-            div
-              | Some documentation images from 
-              |#[a.in-txt(href="/gakko.html") Gakko 2019]
-              | are taken from Gakko's image archive.
+      
         
     footer
-     include ./includes/footer1.pug  
+      include ./includes/footer1.pug  
+    
