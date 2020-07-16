@@ -4,13 +4,16 @@
 
 nav
     ul(id="nav-name")
+        li  
+            input(type="checkbox", name="modeToggle" id="adjust") 
+            label#modeLbl(for="adjust")                 
         li#nav-h1    
-            a.nav-item(href="/index.html") Aliasger Rasheed
+            a.nav-item(href="/index.html") AR
         li#nav-h2
             |#[a.in-txt(href=photolink) Photography]
-            | |
+            //- | |
             |#[a.in-txt(href=index) Design]
-            | |
+            //- | | 
             |#[a.in-txt(href=about) Info] 
     ul#nav-cont   
         
@@ -20,10 +23,11 @@ nav
         //-     |#[a.in-txt.nav-item.side-nav-child(href=index ) Design]
         //- li#top-placeholder
         //- li
-        li#middle-placeholder   
-        li  
-            input(type="checkbox", name="modeToggle" id="adjust") 
-            label#modeLbl(for="adjust")                 
         li 
             |#[a.fas.fa-angle-double-up.nav-item#side-nav(href="#")]
         li#middle-placeholder   
+        //- li#middle-placeholder   
+    //- ul#progress-bar
+        li context
+        li process
+        li deliverables   

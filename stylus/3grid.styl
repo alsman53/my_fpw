@@ -92,7 +92,7 @@ narrowerthan(var)
          
       h1,
       h2,h3  
-         grid-column: 2/span all
+         grid-column: 2/18
          margin 0
          align-self: end
          height: min-content
@@ -117,7 +117,7 @@ narrowerthan(var)
          .main-heading,#summary,h2,h3
                grid-column-start:1
          #summary,h2,h3
-               grid-column-end: span all
+               grid-column-end: 18
          #cover-image
                grid-column-end: -1  
                grid-column-start: 1
@@ -134,7 +134,7 @@ narrowerthan(var)
       +narrowerthan(900px) 
          grid-column-end: span 10 
       +narrowerthan(850px)
-         grid-column-end: span all
+         grid-column-end:  18
 
    h2,h3,h4,p,figure, #hierarchy div , div, ul,ol,iframe
       &.l-sect    
@@ -185,7 +185,7 @@ narrowerthan(var)
          &.mr-sect
          &.r-sect
             grid-column-start: 1
-            grid-column-end: span all
+            grid-column-end:  18
  
    .l-sect
    .r-sect
@@ -202,13 +202,13 @@ narrowerthan(var)
          .mr-sect
             grid-column-end: span 8
          .r-sect
-            grid-column-end: all
+            grid-column-end: 18
    +narrowerthan(1000px) 
          .l-sect
          .ml-sect
          .m-sect
          .mr-sect
-            grid-column-end: span 8
+            grid-column-end: span 10
 
 
     // +narrowerthan(1000px)
@@ -221,7 +221,7 @@ narrowerthan(var)
          grid-column-end: span 12
    +narrowerthan(650px)
       .l-sect, .ml-sect, .m-sect, .mr-sect, .r-sect
-         grid-column-end: span all
+         grid-column-end: 18
          padding-right: 1rem 
 
    figure, iframe 
@@ -234,13 +234,13 @@ narrowerthan(var)
          +narrowerthan(1080px)
             grid-column: 2/-2 
          +narrowerthan(650px)
-            grid-column-end: span 18
+            grid-column-end: 18
 
       &.lr-sect
          grid-column 2/-2
 
       &.mlmr-sect             
-         grid-column 4/-4
+         grid-column 4/16
 
          +narrowerthan(1080px)
             grid-column: 2/-2 

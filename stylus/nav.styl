@@ -13,10 +13,6 @@ nav
    font-weight: 300
    z-index 40
    z-index 500
-   .nav-item
-      // mix-blend-mode: difference
-   a.side-nav-child, #nav-h2
-      // opacity 0
    #side-nav
       margin-top: 2rem
       opacity 0 
@@ -26,26 +22,41 @@ nav
          color: var(--sy-col)
       z-index: inherit
 
-
+   li
+      line-height: initial 
+      padding 0
    #nav-name
       z-index: inherit
       text-align: center
       overflow-wrap: none
       white-space: nowrap;
       padding:0rem
-      margin 2rem
+      margin 3rem
       margin-bottom: 1em
       text-align: right 
-      display: flex
-      narrowerthan(500px)
-      margin: 1rem
+      display: flex 
+      justify-content: space-between 
+      +narrowerthan(500px)
+         margin: 1rem
+      // .nav-item
+      margin-left: 3vw
+      margin-right: 5vw
+      +narrowerthan(900px) 
+         margin-right 7vw    
+      +narrowerthan(700px)
+         margin-right 8vw  
+      +narrowerthan(550px)
+         margin-right 9vw      
+      +narrowerthan(450px)
+         margin-right 13vw    
+
       #nav-h1
          z-index: inherit
-
+         line-height: 0.9em
 
          a
             font-family: var(--p-std-font)
-            font-size: 1.3rem;
+            font-size: 3rem;
             +narrowerthan(600px)
                font-size: 1.1rem; 
             // font-weight: var(--s-bold-weight)
@@ -60,12 +71,12 @@ nav
       #nav-h2
          min-width 1rem
          // margin 1rem
-         margin-left: auto
-         font-size: 0.95rem
+         // margin-left: auto
          text-align: right 
          z-index: inherit
-
-
+         a
+            margin-left: .2rem
+            font-size: 0.95rem
 
    input#adjust[type=checkbox]
       display: none;  /* to hide the checkbox itself */
@@ -73,22 +84,22 @@ nav
    input[type=checkbox]#adjust+ label:before
       display: inline-block;
       transition: all ease-in .15s
-      letter-spacing: 10px;
+      letter-spacing: 7px;
       font-family: "Font Awesome 5 Brands";
       content: "\f1d1"
-      transform: rotate(90deg) 
+      // transform: rotate(90deg) 
       color: var(--txt-col)
       height: 1em
-      margin-bottom: .4rem
+      // margin-bottom: .4rem
 
       &:hover 
          color: var(--py-col)
          
    input[type=checkbox]#adjust:checked + label:before
-      letter-spacing: 5px 
+      letter-spacing: 7px 
       font-family: "Font Awesome 5 Brands";
       content: "\f50e"
-
+  
    input[type=checkbox]#adjust + label::after
       content: "Dark Side"
       transition: all ease-in .15s
@@ -111,7 +122,9 @@ nav
    label#modeLbl
       display: flex
       justify-content: space-between
-      font-size: .95em;
+      font-size: 0.95rem
+
+      // font-size: .95em;
  
  /*--------------positioning------------------*/
    *
@@ -136,13 +149,32 @@ nav
       max-height: 100vh
       max-width: 100%
       writing-mode: vertical-rl
+   #progress-bar
+      position: fixed
+      top: 0
+      left: 0
+      bottom: 0rem
+      margin 1rem
+      z-index: 300
+      
+      +narrowerthan(450px)
+         margin-right: 0.9rem
+      +narrowerthan(375px)
+         margin-right: 0.8rem
+
+      display: flex
+      align-items: center
+      justify-content: space-between
+      max-height: 100vh
+      max-width: 100%
+      writing-mode: vertical-rl
 
 #modeLbl 
-   text-shadow: 0px 0px .5em var(--txt-col), 0px 0px 0.4em var(--txt-col)
+   // text-shadow: 0px 0px .5em var(--txt-col), 0px 0px 0.4em var(--txt-col)
 
    // animation-name: alarmf;
    // animation-duration: 1s; 
    // animation-direction alternate;
    // animation-iteration-count: infinite;
-   &:hover
-      text-shadow: 0px 0px .5em var(--txt-col), 0px 0px .5em var(--txt-col), 0px 0px 0.5em var(--txt-col)
+   // &:hover
+   //    text-shadow: 0px 0px .5em var(--txt-col), 0px 0px .5em var(--txt-col), 0px 0px 0.5em var(--txt-col)

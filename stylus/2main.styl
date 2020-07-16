@@ -117,7 +117,7 @@ p,li
       font-size: 1rem
       line-height: 1.4rem
 
-
+   
 ul 
    padding-left: 0em;
    margin-top: 0.2rem
@@ -196,26 +196,28 @@ main
       height: 3rem     
 
 .in-txt
-   background:linear-gradient(to bottom, pycol 0%, tycol 100%);
-   background-position: 0 100%;
-   background-repeat: repeat-x;
-   background-size: 2.1px 2.1px;
-   text-decoration: none;
-   transition: background-size .15s ease-out
-   cursor: url(plus.svg) 22.5 23, auto
+   // background:linear-gradient(to bottom, pycol 0%, tycol 100%);
+   // background-position: 0 100%;
+   // background-repeat: repeat-x;
+   // background-size: 2.1px 2.1px;
+   // text-decoration: none;
+   transition: background-size .15s ease-out, background-color .15s ease-out,color .15s ease-out
+   // cursor: url(plus.svg) 22.5 23, auto
 
-   &:hover, &:focus, &.active
-      background-size: 2.1px 100%;
+   // &:hover, &:focus, &.active
+   //    background-size: 2.1px 100%;
 
-   &.nav-item
-      background:linear-gradient(to right, pycol 0%, tycol 100%);
-      background-size: 2.1px 2.1px;`
+   // &.nav-item
+   //    background:linear-gradient(to right, pycol 0%, tycol 100%);
+   //    background-size: 2.1px 2.1px;`
 
-      background-repeat: repeat-y
+   //    background-repeat: repeat-y
 
-      &:hover,&:focus&.active
-         background-size: 100% 2px;
-
+   //    &:hover,&:focus&.active
+   //       background-size: 100% 2px;
+   color: textcol 
+   &:hover
+      color: var(--sy-col) 
 
 .intra-page  
    background:linear-gradient(to bottom, pycol 0%, tycol 100%);
@@ -447,3 +449,5 @@ span
 
 .credits
    padding 0em 2.5rem 0.5em 0rem 
+
+// .img-flex

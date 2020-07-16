@@ -9,23 +9,21 @@ narrowerthan(var)
         {block}
 
 footer 
-  // background-color: var(--txt-col) 
   position: relative 
-  // border-style: 
-  border-top:  solid 1.5px  var(--txt-col)
   margin-top: 5rem
   +narrowerthan(500px)
     margin-top: 0
   +widerthan(1300px)
     margin-top: 2rem
-  padding-bottom: 1rem  
-  padding-top: 1rem
+  padding-bottom: 1rem   
+  padding-top: 3rem
+  margin-bottom: 1rem
   bottom: 0
   width: 100%
   text-align: center
   z-index: 1
   margin-right: 10vw
-  justify-content: center
+  justify-content: center 
   align-items: center
   ul 
     margin: 0 0.5rem 
@@ -35,7 +33,7 @@ footer
     z-index: inherit
     li
       z-index: inherit
-      font-size: 1rem 
+      font-size: .9rem 
       margin 0.5rem 
       +narrowerthan(500px)
         font-size: 0.95rem
@@ -69,6 +67,16 @@ footer
           margin .3rem .4rem 
           // padding-bottom: 1rem
 
+
+  hr
+    // height: 1px
+    // border invert(--txt-col) 
+    // mix-blend-mode: invert()/
+    border-top: 2px
+    opacity .5
+    // padding-bottom: 2rem
+    margin-top: 2rem
+    margin-bottom: 2rem  
 
 
   /* The snackbar - position it at the bottom and in the middle of the screen */
