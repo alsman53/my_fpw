@@ -1,15 +1,15 @@
 
-pycol = var(--py-col)
-sycol = var(--sy-col)
-tycol = var(--ty-col)
-textcol = var(--txt-col)
+pycol = var(--pcol)
+sycol = var(--scol)
+tycol = var(--tcol)
+textcol = var(--txtcol)
 
-pfont = var(--p-std-font)
-sfont = var(--s-std-font)
-tfont = var(--t-std-font)
-qfont = var(--q-std-font)
+pfont = var(--pfont)
+sfont = var(--sfont)
+tfont = var(--tfont)
+qfont = var(--qfont)
 
-py-col-rgb = var(--py-col-rgb)
+pcol-rgb = var(--pcol-rgb)
 
 /*------------------- MEDIA QUERY MIXINS -----------------*/
 widerthan(var)
@@ -22,14 +22,6 @@ narrowerthan(var)
    @media condition
       {block}
         
-/*------------------- ACCESSIBILITY -------------------*/
-.elmnt-invis 
-   position: absolute !important;
-   height: 1px; width: 1px; 
-   overflow: hidden;
-   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-   clip: rect(1px, 1px, 1px, 1px);
-
 
 /*
 ------------------- RESET DEFAULTS ------------------- */
@@ -47,75 +39,124 @@ button
 
 html
    scroll-behavior: smooth;
+   cursor: url(ex.svg) 16 16, auto
 
-* 
-   // cursor: url(http://cur.cursors-4u.net/cursors/cur-11/cur1054.cur), auto !important;
-   // cursor: url(http://cur.cursors-4u.net/cursors/cur-9/cur817.cur), auto !important;
-   // cursor: url(http://cur.cursors-4u.net/cursors/cur-6/cur568.cur), auto !important;
-   // cursor: url(/cursor.png), auto !important 
-   // cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur195.cur), auto !important;
-   font-family: sfont
+
+*
+   font-family: var(--sfont)
          
    margin: 0
    padding: 0 
    cursor: url(ex.svg) 16 16, auto
    box-sizing: border-box 
+   transition: background-color ease-out 400ms, color ease-out 400ms
 
-body, main, footer,header 
-   transition: background-color ease-out 400ms
-   background-color: var(--bg-col) 
-
+       
+body,footer,header 
+   background-color: var(--bgcol) 
    &::selection, &::-moz-selection
-      background-color var(--slct-col) 
+      background-color var(--slctcol) 
 
 
-.saturate
-   filter: sepia(2%)
-
-h1, h2, h3, h4, h5, h6, figcaption, p, li, a, button, #summary, small,label
+h1, h2, h3, h4, h5, h6, figcaption, p, li, a, button, #summary, small,label, mark, div, span
    color: textcol
-   transition: color ease-out 400ms
    
-h1,   h3 
-   font-family: var(--p-std-font), serif
-   font-weight: 400 
+h1,h2,h3,h4,h5,h6,.big, p,.med, li
+   // +narrowerthan(1200px)
+   opacity: 85% 
+   transition: opacity ease-out 200ms
+   &:hover,&:focus
+      opacity: 95% 
 
 p,li, a 
-   font-family: var(-s-std-font), sans-serif
-   font-weight: var(--s-std-weight)
-   // text-rendering: optimizeLegibility
+   font-weight: var(--s-std-weight) 
+   letter-spacing: .35px;
 
-h1 
-   font-size: 7.5rem
-h2
-   font-family: var(--q-std-font), serif
-   font-weight: 400 
-   font-size: 3.0rem
-h3
-   font-family: var(--p-std-font), serif
-   font-weight: 400 
-   line-height: 1.2em
-h4
-   font-family: var(-s-std-font), sans-serif
-   margin-bottom: 0.5rem
-   font-weight: var(--s-bold-weight)
-   font-size: 1.2rem
-   margin-top: 0
-   padding-top: 1rem
-small
-   font-size: 0.8em
-strong
-   font-weight: var(--s-bold-weight)
-   color: sycol  
-em
-   font-style:italic
-p,li
-   font-size 1.1rem
-   // font-we
-   line-height: var(--s-line-space)
+p
+   text-indent: 1rem
+   
+p,li,span
+   font-size 1.3rem
+   line-height: 1.5
    +narrowerthan(500px)
       font-size: 1rem
-      line-height: 1.4rem
+      line-height: 1.5 
+
+
+h1 
+   font-weight: 400 
+   font-family: var(--pfont), serif
+   font-size: 7.5rem
+h2
+   font-family: var(--qfont), serif
+   font-weight: 400 
+   font-size: 3.0rem
+   // text-transform: uppercase
+
+h3
+   font-family: var(--pfont), serif 
+   font-weight: 400 
+   line-height: 1.2
+   font-size: 5.063em
+
+   +narrowerthan(900px)
+      font-size: 2rem
+
+
+
+h4
+   font-family: var(--tfont), sans-serif
+   font-weight: var(--p-std-weight)
+   font-size 3.375rem
+
+   margin-bottom: 0.5rem
+   margin-top: 0
+   padding-top: 1rem
+
+h5
+   font-size: 2.25rem
+   font-family: var(--pfont), sans-serif
+   font-weight: 400 
+   line-height: 1.45
+   margin-bottom: .1em
+   margin-top: .2em
+
+
+h6
+   font-family: var(--sfont), sans-serif
+
+   font-size 1.5em
+
+small
+   font-size: 0.8em
+   max-width 50ch 
+
+figcaption
+   font-size: .9em
+   
+
+mark
+   // font-weight: var(--p-bold-weight)
+   transition all 300ms ease-in-out
+   transition-delay: .4s
+   background-color:var(--bgcol); 
+   border-radius: .3em
+   border-left solid var(--bgcol);
+   border-right solid var(--bgcol);
+   background-clip: padding-box;
+
++narrowerthan(1400px)
+   background-color:  rgba(210,41,235,.2); 
+   border-color rgba(210,41,235,.3);
+
+section:hover mark
+   
+   background-color:  rgba(210,41,235,.2); 
+   border-color rgba(210,41,235,.3);
+
+
+em
+   font-style italic
 
    
 ul 
@@ -123,101 +164,142 @@ ul
    margin-top: 0.2rem
    margin-bottom: 0.5rem
    list-style-type none 
-ol
-   padding-left: 0em;
-   margin-top: 0.2rem
-   margin-bottom: 0.5rem
-   margin-left: 1.3rem
+
+
+ol li
+   counter-increment: list;
+   list-style-type: none;
+   position: relative;
+   margin-left: 2ch
+   &:before 
+      color: sycol
+      content: counter(list) ".";
+      left: -3ch;
+      position: absolute;
+      text-align: right;
+      width: 2.5ch;
 
 li
    padding-bottom: 0.4rem
-      
-   span,i 
-      box-sizing: border-box
-      margin-right: 0rem   
-      min-width  2rem
 
-      &:before,&:after
-         width 40px
+
 img
    display block
+
 main
-   // margin-top: 2rem
    padding-bottom: 4rem
+   max-width 100vw
+   // width 100% 
 
-#project
-   h1
-      font-size: 9rem
-      z-index 2
 
-      +narrowerthan(1300px)  
-         font-size: 10vw     
+h1
+   font-size: 12vw
+   z-index 2 
 
-      +narrowerthan(800px)   
-         font-size: 13vw
+   +narrowerthan(1400px)  
+      font-size: 14vw     
 
-      +narrowerthan(500px)   
-         font-size: 15vw
+   +narrowerthan(500px)   
+      font-size: 19vw 
 
-   h2 
-      font-size:  3.25rem
-      +narrowerthan(900px)
-         font-size: 2.2rem
+.big  
+   text-indent: 0
+   strong 
+      font-weight: 700
+   font-size: 2.3rem 
+   line-height: 1.4
+   min-height: 0; 
+   min-width: 0;
+   max-width 60ch
+   font-weight: 400
+   margin 1em 0
+   +narrowerthan(500px)
+      margin: 1rem 0
+      // font-weight: bold 
+      font-size: 1.5rem
+      line-height: 1.3
 
-   h3
-      font-size: 2.25rem
-      +narrowerthan(900px)
-         font-size: 1.7rem
+   &.space
+      margin 1em 0
 
-   #summary   
-      font-size: 1.5em
 
-      line-height: 1.4em
-      min-height: 0; 
-      min-width: 0;
-      *
-         overflow: hidden; 
-         min-width: 0;      
-      +narrowerthan(550px)
-         font-size: 1.15rem
-         line-height: 1.3rem
-   #cover-image
-      figcaption
-         margin-top:  0.5rem
+.med
 
-      z-index 1
-      img
-         width 100%
-    
-.before-place-holder
-   &::before 
-      content: " "
-      width: 1px;
-      height: 3rem     
+   text-indent: 0
+   font-size: 1.8rem 
+   line-height: 1.4
+   min-height: 0; 
+   min-width: 0;
+   max-width 55ch 
+
+   margin 1em 0
+   // &.quote
+   //    opacity .85
+      // margin: 
+   +narrowerthan(500px)
+      margin: 1rem 0
+      font-weight: bold 
+      font-size: 1.25rem
+      line-height: 1.3
+
+
+ul
+   li
+      max-width 50ch
+      margin-bottom: .5em
+
+   
+      &.space
+         margin-bottom: 1em
+
+ol  
+   li
+      max-width 50ch 
+      &.big, &.med, &.small 
+         margin-left: 2ch
+
+   &.space
+      li
+         margin-bottom: .5em
+
+#cover-image
+   z-index 1
+   margin-top: 1rem
+   figcaption
+      margin-top:  0.5rem
+      padding-left: 1rem
+   img
+      width 100%
+      max-width 100vw
+
+#summary
+   padding .5em 0 
+
+hr
+   width 40vw
+   margin 3rem auto
+   border-color: var(--pcol)
+   &.small
+      width 15vw
+      border-color: var(--txtcol)
 
 .in-txt
-   // background:linear-gradient(to bottom, pycol 0%, tycol 100%);
-   // background-position: 0 100%;
-   // background-repeat: repeat-x;
-   // background-size: 2.1px 2.1px;
-   // text-decoration: none;
-   transition: background-size .15s ease-out, background-color .15s ease-out,color .15s ease-out
-   // cursor: url(plus.svg) 22.5 23, auto
+   border-radius: .3em
+   border solid transparent
+   border-width: medium 
+   background-clip: padding-box;
+   transition: background-color ease-out 200ms, border-color ease-out 200ms 
+   cursor: url(plus.svg) 22.5 23, auto
+       
+   &:hover, &&:focus
+      background-color: rgba(210,41,235,.3);
 
-   // &:hover, &:focus, &.active
-   //    background-size: 2.1px 100%;
+   &:after
+      content: "º"
+      color: pycol 
+      position relative
 
-   // &.nav-item
-   //    background:linear-gradient(to right, pycol 0%, tycol 100%);
-   //    background-size: 2.1px 2.1px;`
 
-   //    background-repeat: repeat-y
-
-   //    &:hover,&:focus&.active
-   //       background-size: 100% 2px;
-   color: textcol 
-   &:hover
-      color: var(--sy-col) 
 
 .intra-page  
    background:linear-gradient(to bottom, pycol 0%, tycol 100%);
@@ -231,108 +313,43 @@ main
    &:hover, &:active, &:focus
       background-size: 2px 1.25em;
 
-
-input[type=radio] + label 
-   padding 0.3rem .8rem
-   border solid 1.75px var(--py-col)
-   border-radius: .5em
-   margin: 0.5rem
-   // height 1.1em
-   // box-sizing: border-box
-   // background:linear-gradient(to bottom, pycol 0%, tycol 100%);
-   // background-position: 0 100%;
-   // background-repeat: repeat-x; 
-   // background-size: 2px 2px;
-   // text-decoration: none;
-   // transition: background-size .25s ease-out
-   transition: ease-out 350ms all 
-input[type=radio]:checked + label ,input[type=radio] + label:hover 
-   // background-size: 2px 1.25em;
-   background-color var(--py-col)
-   cursor: url(plus.svg) 22.5 23, auto
-
-
-.model-3d
-   margin auto, auto
-
-main#about
-   h1
-      line-height: 1em
-      
-   h2
-      font-size: 2.5rem
-
-
-
-[data-src].element-item::before 
-   content: '';
-   display: block;
-   padding-top: 80%;    
-
 ::selection
    background  tycol 
 
-.coll
-   transition: max-height 0.3s ease-out;
-   max-height: 0;
-   overflow: hidden
-   // color:
 .coll-button
    font-size: 1rem
-   color: var(--py-col) 
+   color: var(--pcol) 
 
-.toread{
-   overflow: hidden; 
-   height: 3.6rem;
-}
-input.read:checked + .toread {
-   height: auto;
-}
 
 #portfolioFilter
    p.break
-      line-height: 1.05em
+      line-height: 1.05
       margin 1rem 0
+
 img.lazy
    opacity: 0;
    &:not(.initial)
       transition: opacity 1s;
-
    &.initial,
    &.loaded,
    &.error 
-      opacity: 1;
-
-   &:not([src])
-      // visibility: hidden;
-
-#poweredby
-   margin-left: auto
-   margin-right: auto  
-   box-sizing: border-box
-   justify-content: center
-   flex-direction: column  
-// justify-items: center
+      opacity: 1
 
 a,button
    cursor: url(plus.svg)22.5 23, auto
 
    &.fa,&.fab,&.fad
       transition: color 200ms ease-out  
-      color: var(--txt-col)
-      // width 40px
-
+      color: var(--txtcol)
 
       &:after,&:before,&::before ,&:after
          vertical-align: middle 
 
-      &:hover
-         color: var(--py-col)
-   // &:hover
-   //    cursor: url(plus.svg) 12.02 12.02, auto
+      &:hover, &&:focus
+         color: var(--pcol)
 
-span
-   &.fa,&.fad,&.far,&.fab
+span, .email
+   &.fa,&.fad,&.fab,&.fas
       font-size: 1.1em
       padding-top: 0.2em 
       display: flex
@@ -340,35 +357,41 @@ span
       justify-items: center
       flex-shrink: 0
       width 2.5rem
+      padding-right: .5rem 
 
       &:after,&:before,&::before,&::after
-         display inline
-         
+         display inline 
          text-align: center
-         // vertical-align:  baseline
-         // align-items: baseline
-      // margin-left: auto
-      // margin-right: auto
-      
 
-.slick-next
+i
+   &.fa,&.fad,&.fab,&.fas
+      padding 0  5px
+
+@css {
+.slick-prev{
+   cursor: url(left.svg) -120 -17,crosshair;
+   }
+}
+
+@css {
+.slick-next{
+   cursor: url(right.svg) 120 -17,crosshair;
+   }
+}  
+
+.slick-next, .slick-prev
    font-size: 0
    font-family: "Font Awesome 5 Pro"
    width: 50%
    position absolute
    top: 0
-   right: 0
-   left auto
    z-index: 5
-   transition: all ease-out 100ms
+   transition: opacity ease-out 100ms
    background: black
-   height 100%
+   height calc(100% - 1.25rem)
    opacity 0  
-
    +narrowerthan(1400px)
       top: 50%
-      left: auto
-      right 0 
       z-index: 5
       border-radius: 0.3rem
       padding: 0.3rem
@@ -378,76 +401,61 @@ span
       font-weight: bold            
       padding: 0.3rem
       margin 0.3rem
-      transition: all ease-out 100ms
       
       &::after 
          font-size: .9rem
-         content ""  
          opacity 50%
          font-size: 2.2rem
-         color: var(--ty-col)
-         transition: all 150ms ease-out
-      &:hover::after
-         // font-size: 1.1em
+         color: var(--tcol)
+
+      &:hover::after , &&:focus:after
          opacity 100%
- 
-@css {
-.slick-prev{
-   cursor: url(left.svg) -120 -17,crosshair;
-   }
-}  
-@css {
-.slick-next{
-   cursor: url(right.svg) 120 -17,crosshair;
-   }
-}           
+
+.slick-next
+   right 0 
+   left auto
+
+   &::after 
+      content ""  
+
+
+
 .slick-prev
-     
-   font-size: 0
-   font-family: "Font Awesome 5 Pro"
-   width: 50%
-   position absolute
-   top: 0
    left: 0
    right auto
-   z-index: 5
-   transition: all ease-out 100ms
-   background: black
-   height 100%
-   opacity 0  
-   // &:active
-   //    cursor: grabbing, auto  
-
-   +narrowerthan(1400px)
-      width: 5rem
-      padding: 0.3rem
-      margin 0.3rem
-      border-radius: 0.3rem
-      height auto
-
-      background: transparent
-      &::after 
-         opacity 50%
-         // font-weight: 300      
-         font-size: .9rem
-         content ""
-         content ""
-         font-size: 2.2rem
-         color: var(--ty-col)
-         transition: all 150ms ease-out
-      &:hover::after
-         // font-size: 1.1em 
+   &::after 
+      content ""
+      
+.slick-dots
+   display: flex
+   justify-content: center
+   margin-top: -1.75em
+   position relative
+   li
+      font-size: 0
+      // vi
+      line-height: unset
+      margin: 0 1.25rem
+      &:before 
+         color: var(--pcol)
+         margin .25rem
+         font-size: 1rem 
+         font-family: "Font Awesome 5 Pro"
+         content "\f111"
+         // opacity 50% 
+         font-weight: 300
+      &.slick-active:before      
          opacity 100%
-.fourofour 
-   h1
-      line-height: 0
+         font-weight: 900
+         color: var(--pcol)
+
+
 
 .colorH
    color: textcol
-   &:hover
-      color: var(--py-col)
+
+   &:hover, &&:focus
+      color: var(--pcol)
 
 .credits
    padding 0em 2.5rem 0.5em 0rem 
-
-// .img-flex

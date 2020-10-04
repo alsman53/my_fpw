@@ -16,27 +16,63 @@ html(lang='en')
       include ./includes/head1.pug
       title Threads to Heaven - Ali Rasheed
 
-   body#darkregion 
+   body 
       header
          include ./includes/nav1.pug   
 
       main.grid#project
 
-         section#overview.x18c.grid 
+         section#overview.x20c.grid 
 
 
             h1.main-heading Threads to Heaven
-            p#summary                                             
-               //- |Gakko is an educational collective that runs annual summer camps created by a select group of mentors from fields ranging from design to theatre to disaster management. 
-               |A speculative and critical design project that questions the taboo nature of death in Western society, and whether one can choose and design their own "good death".  
+
+            p.big#summary
+               |A 
+               a(href="http://speculative.hr/en/introduction-to-speculative-design-practice/").in-txt speculative and critical design
+               |  project that questions the taboo nature of death in Western society, and whether one can choose and design their own “good death”.  
+
+   
             #cover-image.magenta-hover 
-               img(src="imgs/spec-design/cover.jpg", alt="venue of camp")
-               //- figcaption 
-        
-         section#skills-used.grid.x18c
-            h2.ml-sect Overview
-            h3.ml-sect Project Context
-            //- h4.ml-sect Summer 2019
+               img(src="imgs/projects/threads-cover.jpg", alt="venue of camp")
+
+               figcaption 3D model render part of final deliverables
+         
+         section.flex-s.points
+
+                div.flex-i
+                    h5 Contribution
+                    ol
+                        li 3D Design
+                        li Visual Design
+                        li Research 
+                        li Content Strategy 
+                        
+                div.flex-i
+                    h5 Tools
+                    ol
+                        li Figma
+                        li Blender
+                        li Notion
+
+
+    
+                div.flex-i
+                    h5 Team
+                    div.team
+                        +faList("David Gu")(class="fad fa-kiss-wink-heart")
+                        
+
+                        +faList("Ashley Tsang")(class="fad fa-paint-brush")
+                        
+
+                        +faList("Isaaca Tsang")(class="fad fa-palette")      
+
+
+         section.grid.x20c
+            h2.l-sect The Gist
+            h3.ml-sect Project Context 
+            h4.ml-sect Summer 2019
             p.ml-sect 
                em 
                   strong Vancouver, Canada - Spring 2020
@@ -61,7 +97,7 @@ html(lang='en')
             //-       .img
             //-          img(data-src=".jpg" alt="").lazy
 
-         section.grid.x18c
+         section.grid.x20c
             h2.l-sect Project Proposals
             p.ml-sect After choosing death as our provocation area, we proposed 3 concepts for our project
             figure.mlmr-sect
@@ -106,7 +142,7 @@ html(lang='en')
                   //-     img(data-src="imgs/arcy/persona-3.jpg" alt="Pre-purchase journey").lazy         
                //- figcaption Key Initial Insights
          
-         section.grid.x18c
+         section.grid.x20c
             h2.ml-sect Design Workbook
             figure.mlmr-sect
                .manual-swipe   
@@ -169,7 +205,7 @@ html(lang='en')
                   //- .img
                   //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_29.jpg" alt="a").lazy  
                figcaption Excerpts from Design Workbook
-         section.grid.x18c
+         section.grid.x20c
             h2.ml-sect Final Artefacts
             //- <iframe style="border: none;" class="mlmr-sect" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5IZL1IuzMVTuZeYEhT1pAY%2FThreads-to-Heaven-Websites%3Fnode-id%3D248%253A46%26viewport%3D864%252C472%252C0.06405032426118851%26scaling%3Dscale-down-width" allowfullscreen></iframe>
             iframe( class="lr-sect" src="https://www.youtube-nocookie.com/embed/EIM_rSjGAS8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen)
@@ -181,27 +217,10 @@ html(lang='en')
 
  
          
-         section.grid.x18c
+         section.grid.x20c
             h4.m-sect
                a(href="assets/Threads-to-Heaven_design-workbook.pdf", title="Threads to Heaven Design Workbook PDF" target="_blank").in-txt Download Design Workbook PDF
          
-         section.grid.x18c
-            h3.m-sect Team
-
-            div.m-sect
-               +faList("David Gu")(class="fad fa-kiss-wink-heart")
-                  //- div
-                        a(class="in-txt" href="https://aape.design").in-txt 
-               +faList("Ashley Tsang")(class="fad fa-paint-brush")
-                  //- div
-                        a(class="in-txt" href="https://traucy.com").in-txt Tracy Chen
-
-               +faList("Isaaca Tsang")(class="fad fa-palette")                
-                  //- div
-                        a(class="in-txt" href="https://www.yantimo.com/").in-txt Yan Tymoshenko
-
-            //- figure.ml-sect 
-            //-    img(data-src="imgs/gakko/team.jpeg").maskable.lazy
 
       footer 
          include ./includes/footer1.pug

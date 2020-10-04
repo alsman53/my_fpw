@@ -14,9 +14,10 @@ narrowerthan(var)
     flex-wrap: wrap
 .flex-b 
     display: flex
+    align-items: baseline
 .grid
     display: grid
-    box-sizing: border-box
+    // box-sizing: border-box
 .img-grid
     display: grid
     box-sizing: border-box
@@ -30,8 +31,10 @@ narrowerthan(var)
     grid-template-columns repeat(24,1fr)
 .x18c
     grid-template-columns repeat(18,minmax(0,1fr))
+.x20c
+    grid-template-columns repeat(20,minmax(5px,1fr))
 .x12c
-    grid-template-columns repeat(12,minmax(1fr,7%))
+    grid-template-columns repeat(12, 1fr)
 .span-col  
     grid-column: 1/ span all
 ._1rem 
@@ -96,3 +99,6 @@ narrowerthan(var)
         grid-row-end: 9  
     .r-10
         grid-row-end: 10
+    
+    .rspan2
+        grid-row-end span 2

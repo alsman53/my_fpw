@@ -3,31 +3,50 @@ html(lang='en')
   head
     include ./includes/head1.pug
     title Styleguide - Aliasger Rasheed
-  body#darkregion
+
+
+  body
     header
       include ./includes/nav1.pug
-    main.styl-gd.grid#project
-      h1.main-heading Styleguide
-      section#hierarchy.grid.x18c
-        h2.sect-h.m-sect Hierarchy
-        div.ml-sect
-          h1.main-heading Heading 1 
-          // error is coming due to use of h1 in styleguide
+    
+    main.grid#project
 
-          h2 Heading 2
-          h3 Heading 3
-          h4 Heading 4
-          //- h5 Heading 5
-          //- h6 Heading 6
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      section.x18c.grid
+      section#overview.x12c.grid
+
+        h1.main-heading Styleguide
+      
+      section.grid.x20c
+        h2.sect-h.m-sect Hierarchy
+        
+        h1.ml-sect Heading 1 
+        // error is coming due to use of h1 in styleguide
+
+        h2.ml-sect Heading 2
+        h3.ml-sect Heading 3
+        h4.ml-sect Heading 4
+        h5.ml-sect Heading 5
+        h6.ml-sect Heading 6 
+        
+        //- p.ml-sect
+          //- big Lorem ipsum dolor sit amet, consectetur adipiscing elit, se.ml-sectd do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+        
+        p.ml-sect Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        
+        //- p.ml-sect
+        //-   small Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        
+        
+          
+
+
+      section.x12c.grid
         h2.sect-h.ml-sect In-text link
         p.ml-sect Lorem ipsum dolor sit amet,   #[a(href="#" class="in-txt") consectetur] , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      //- section.x18c.grid
+      //- section.x20c.grid
       //-   h2.sect-h.ml-sect Image Hover
       //-   figure.m-sect.magenta-hover
       //-     img(src="https://via.placeholder.com/500x400", alt="placeholder image" )
-      section.x18c.grid
+      section.x20c.grid
         h2.sect-h.span-col Colour Palette
         #palette
           .pal-col 
@@ -38,15 +57,8 @@ html(lang='en')
           .pal-col
           .pal-col
           
-      //- section#intro-sect.x18c.grid
-        //- #cover-image.magenta-hover 
-        //-   img(src="https://via.placeholder.com/1600x900").maskable
-
-        //- h1.main-heading Project name
-        //- p#summary Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
       
-      
-      section.x18c.grid
+      section.x20c.grid
       
         h2.sect-h.l-sect Left Section
         p.l-sect 
@@ -60,7 +72,7 @@ html(lang='en')
           img(src="https://via.placeholder.com/1600x900" alt="placeholder image").maskable
 
       
-      section.x18c.grid
+      section.x20c.grid
         h2.sect-h.m-sect Middle Section
         p.m-sect 
           | When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy.
@@ -68,7 +80,7 @@ html(lang='en')
           img(src="https://via.placeholder.com/1600x900" alt="placeholder image").maskable
 
       
-      section.x18c.grid
+      section.x20c.grid
         h2.sect-h.ml-sect Middle Left Section
         h3.ml-sect Middle Left Sub Sect
 
@@ -77,7 +89,7 @@ html(lang='en')
         figure.magenta-hover.ml-sect.proj-img
           img(src="https://via.placeholder.com/1600x900" alt="placeholder image").maskable
 
-      section.x18c.grid
+      section.x20c.grid
         h2.sect-h.mr-sect Middle Right Section
         //- h4.mr-sect What an h4 looks like
         p.mr-sect 

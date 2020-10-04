@@ -1,170 +1,385 @@
 mixin faList(content)
-  li.flex-b
-    span()&attributes(attributes)
-    = content
-    block
+    li.flex-b
+        span()&attributes(attributes)
+        = content
+        block
+
+mixin img-ll(name,data)
+  a(class=name+" img-cont element-item" data-groups=data data-lightbox=data href="imgs/"+name+".jpg") 
+    img(class="lazy grid-image", data-src="imgs/"+name+".jpg", src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
+
+
+
 mixin rM()
   button.coll-button Read More
 
 
-doctype
-
+doctype html
 html(lang='en')
     head
         include ./includes/head1.pug
         title Arc'teryx - Ali Rasheed
 
-    body#darkregion 
+    body 
         header
             include ./includes/nav1.pug   
 
         main.grid#project
 
-            section#overview.x18c.grid
-
+            section#overview.x12c.grid
 
                 h1.main-heading Arc'teryx
-                p#summary 
-                    |This is a 14-week client-focused 
-                    strong project I am currently doing  
-                    |within a advanced interaction design course (IAT 333). A case study will be up once the project concludes. Till then 
-                    strong please check out the research we have done so far below.
+
+                p.big#summary
+                    | Dispelling product care misconceptions. 
+                    | Acheiving product longevity, sustainability and brand trust 
+
                 #cover-image.magenta-hover   
-                    img(src="imgs/arcy/reframe/1.jpg")
+                    //- img(src="imgs/arcy/arcy2.png")  
+                    img(src="imgs/arcy/arcy2.jpg") 
 
-            section.grid.x18c#context
-                h2.l-sect Overview
+            section.flex-s.points
+
+                div.flex-i
+                    h5 Contribution
+                    ol
+                        li Research and Ethnography
+                        li Interaction Design
+                        li Industrial Design
+                        li Product Strategy 
+                div.flex-i
+                    h5 Tools
+                    ol
+                        li Figma
+                        li Blender
+                        li Illustrator
+                        li Miro
+
+                div.flex-i
+                    h5 Team
+                    div.team
+                        +faList("")(class="fad fa-rabbit")
+                            a(href="https://traucy.com").in-txt Tracy Chen
+
+                        +faList("")(class="fad fa-ram")
+                            a(href="https://aape.design").in-txt Brendan Mckay
+
+                        +faList("")(class="fad fa-deer")                
+                            a(href="https://www.yantimo.com/").in-txt Yan Tymoshenko
+
+            hr
+
+
+            section.grid.x12c 
+                h2.l-sect The Gist
                 h3.ml-sect Project Context
-                p.ml-sect 
-                    em 
-                        strong Vancouver, Canada - Spring 2020
                 p.ml-sect
-                    |We are to work with a participant group, i.e. a Vancouver-based group or organization, performing design research -  such as ethnography and interviews - into the group and the people involved with it. Over the span of the project, a design focus is narrowed down upon, 
-                    strong finding areas for design interventions. 
-                    |Once identified and wholistically understood, this problem will designed for and presented as a proposal to the participant group.
+                    |For a senior design course at Simon Fraser University, our team was tasked with seeking a local Vancouver organization whose values we shared. 
+                    mark Arc’teryx’s philosophy as a design company and commitment to sustainability resonated with our team. 
+                    |We were fortunate to be able to work with the Kitsilano and Metrotown branches,  and senior executives from Arc'teryx HQ.
+
+                p.med.quote.ml-sect “To minimize our impact as much as possible and make sure that we build products to last a really, really long time”
+       
+                figure.ml-sect   
+                    img(data-src="imgs/arcy/kits.jpg" ).lazy        
                 
-                h3.ml-sect Personal Role
-                p.ml-sect The roles I am currently taking are 
-                    strong 
-                        |content strategy, 
-                        a(href="#research", title="title").intra-page 
-                            strong UX research
-                        |, copy-writing and visual design.
-                    //- | Tools used in our process were 
-                    //- span.fab.figma
-                    //- strong Figma
-                    //- |
-                    //- and
-
-                    //- | for prototyping, graphic design
-                 
-                h3.ml-sect The Client
-                p.ml-sect 
-                    a(href="https://arcteryx.com", title="title").in-txt Arc'teryx  
-                    |is an international outdoor clothing brand based in North Vancouver focusing on sustainabilty, good design and craftsmanship. As a brand, it is rooted in design philosophy, driven by a spirit of pioneering technology for people in the climate of the Pacific Northwest. Arc'teryx creates 
-                    strong high-performance clothing and gear for varying outdoor climate conditions as well as functional lifestyle wear
-                    | — allowing people to timelessly engage with the environment.
+            hr.small 
 
 
-            section.grid.x18c#research
-                h2.l-sect Initial Client Research
+            section.grid.x12c 
 
+
+
+                h3.ml-sect User Patterns 
+                p.ml-sect Based on our ethnographic research and user interviews, we identified common patterns around product care. You can read more about our process below. 
+                ol.ml-sect
+                    li.med 
+                        |Customers are 
+                        mark unaware of proper product care procedures
+                    li.med Customers are unaware of educational content
+                    li.med Customers believe it is damaging to machine wash or dry their garments
+                    li.med 
+                        |Customers believe that Arc’teryx’s reputation for quality and the high price point mean that 
+                        mark products do not need care.                    
+                    li.med Power users may recommend people not to wash their garments                   
+                    li.med  New and old customers both carry the same misconceptions when it comes to product care.
+          
+
+
+            section.callout#dgoals
+                h4 Design Goals
+                p.med 
+                   |To inform customers why regular product care is so important, making the instructions feel worth their attention.
+                p.med 
+                   |To dispell the misconceptions that garments don’t need regular care, and that washing and drying can ruin them.
+
+                p.med 
+                   |To design for customers who have limited touchpoints with product guides and Arc’teryx itself.
+
+            hr.small
+
+            section.grid.x12c#productcare
+                //- h3.ml-sect Product Care Journey 
+                p.ml-sect Our ethnography showed that customers valued and kept artifacts such as shopping bags, boxes and other packaging from brands like Arc'teryx.
                 p.ml-sect
-                    |During our initial interactions with the client and through preliminary secondary research we came away with insights regarding the brand, its values, their current audience, their target audience and the functioning of their various brand stores.
-                    br
-                    |We also 
-                    strong identified areas with potential for design opportunities, and thus where we might conduct further research.
-                figure.mlmr-sect
-                    img(data-src="imgs/arcy/part-group-poster_art-direction-2_comp.jpg", alt="alt").lazy
-                    figcaption Poster detailing initial research, and general insight into Arc'teryx.
-                
+                    |Our 
+                    |#[a(href="https://www.tandfonline.com/doi/full/10.1400/14606925.2018.1469331").in-txt secondary research]
+                    | showed us that product care behaviour resulted from the confluence of three factors:
+                ol.ml-sect
+                    li motivation (if people want to do it)
+                    li ability (if people can do it)
+                    li
+                        mark triggers (a stimulus that provokes them to do it)
+                p.ml-sect Through this knowledge, we created the 
+                h4.ml-sect Product Care Initiative:
+                figure.lr-sect
+                    img(data-src="imgs/arcy/pc.jpg", alt="alt").lazy
+ 
+            hr.small
+ 
+            section.grid.x12c#online
+  
+                h4.ml-sect The Online Experience
                 p.ml-sect
-                    |Of those insights, we identified key ones that
-                    | 
-                    strong helped us set an initial design direction
-                    |, and provided a lens through which to illustrate our findings as well as making design decisions.
+                    |For this project, we found
+                    mark  an opportunity to design for online buyers since there are no current online product care touchpoints
+                    |  through ordering on the Arc'teryx website.
+                p.ml-sect Customers are asked to choose a product care gift at checkout.
+                    
                 figure.mlmr-sect
                     .manual-swipe   
                         .img
-                            img(data-src="imgs/arcy/reframe/4.jpg" alt="Pre-purchase journey").lazy    
+                            img(data-src="imgs/arcy/000.jpg" ).lazy    
                         .img
-                            img(data-src="imgs/arcy/reframe/2.jpg" alt="Pre-purchase journey").lazy    
-                        //- .img
-                        //-     img(data-src="imgs/arcy/persona-3.jpg" alt="Pre-purchase journey").lazy         
-                    figcaption Key Initial Insights
+                            img(data-src="imgs/arcy/100.jpg" ).lazy  
+
+                p.ml-sect
+                    |An email with product care links will be sent to users who are expecting to receive their gift soon. We want users to have product care on their minds even before the product arrives as  
+                    mark washing and tumble-drying the jacket increases the DWR (Durable Water Repellent) coating's effectiveness.
 
 
-            section.grid.x18c
-                h2.l-sect Illustrating Findings
-                h3.ml-sect Ethnography
+            hr.small
+          
+          
+            section.grid.x12c#store
 
-                figure.lr-sect
-                    img(data-src="imgs/arcy/ethno-poster.jpg", alt="alt").lazy
-                    figcaption Poster outlining ethnography - design focus, research questions and results.
-                        
-                h3.ml-sect Initial Personas
-
-                figure.ml-sect
-                    .img-flex
-                        img(src="imgs/arcy/persona-1.jpg" alt=" ")                
-                    
-                        img(src="imgs/arcy/persona-2.jpg" alt=" ")    
-                    
-                        img(src="imgs/arcy/persona-3.jpg" alt=" ")         
-                    figcaption Initial Personas derived from ethnographic data, user research and qualitative interviews.
-
-                h3.ml-sect Journey Mapping
-                figure.lr-sect
-                    //- .single-item   
-                    //-     .img
-                    img(data-src="imgs/arcy/pre-journey-overview.jpg" alt="Pre-purchase journey").lazy 
-                        //- .img 
-                        //-     img(data-src="imgs/arcy/pre-journey-1.jpg" alt="Pre-purchase journey section 1").lazy
-                        //- .img
-                        //-     img(data-src="imgs/arcy/pre-journey-2.jpg" alt="Pre-purchase journey section 2").lazy
-                        //- .img
-                        //-     img(data-src="imgs/arcy/pre-journey-3.jpg" alt="Pre-purchase journey section 3").lazy
-                    figcaption User journey of a customer's first Arc'teryx purchasing experience.
-                figure.lr-sect
-                    //- .single-item   
-                    //-     .img
-                    img(data-src="imgs/arcy/post-journey-overview.jpg" alt="Post-purchase journey overview").lazy
-                        //- .img
-                        //-     img(data-src="imgs/arcy/post-journey-1.jpg" alt="post-purchase journey part 1").lazy
-                        //- .img
-                        //-     img(data-src="imgs/arcy/post-journey-2.jpg" alt="post-purchase journey part 2").lazy
-                        //- .img
-                        //-     img(data-src="imgs/arcy/post-journey-3.jpg" alt="post-purchase journey part 3").lazy
-                    figcaption User journey of Arc'teryx community member through the warranty repair/replace process.
-
-            section.grid.x18c
-                h2.l-sect Current Design Focus
-                p.ml-sect 
-                    |Based off of the research we have done, insights from Arc'teryx respresentatives from the marketing, sales and aftersales departments, we are working towards designing interventions through a refined focus.
-                    //- br
-                    //- | We also identified the value proposition for the  will be for a solution designed through this focus.
+                h4.ml-sect The In-store Experience
+                p.ml-sect Arc'teryx customers are able to choose a free product care gift upon purchasing an item in-store. 
                 figure.mlmr-sect
-                    .manual-swipe      
+                    img(data-src="imgs/arcy/instoreexperience.jpg", alt="alt").lazy 
+            hr.small  
+
+            section.grid.x12c#magnet
+                
+                h5.l-sect Product Care
+                h4.ml-sect Magnet
+                p.ml-sect
+                    |The magnet is a reflexive product care guide 
+                    mark made from Gore-tex fabric scraps from Arc'teryx clothes production
+                    |, an environmentally conscious decision. The grommet is 
+                    mark magnetic, allowing users to stick it on their laundry machines
+                    |. The magnet is versatile, with the grommet loop 
+                    mark also allowing people to hang the magnet on their coat hangers
+                    | or wall hooks in case users don't have laundry machines.
+
+                p.ml-sect.r4 With a product that lives in either the same place as Arc'teryx garments, or where they are supposed to be washed, 
+                    mark it acts as an indirect trigger.
+                figure.mlmr-sect
+                    .manual-swipe   
                         .img
-                            img(data-src="imgs/arcy/reframe/18.jpg" alt="design focus").lazy 
+                            img(data-src="imgs/arcy/mg.jpg" ).lazy    
                         .img
-                            img(data-src="imgs/arcy/reframe/19.jpg" alt="design focus").lazy 
-                    figcaption Refined Design Focus and Value Proposition
+                            img(data-src="imgs/arcy/wm.jpg" ).lazy   
+                        .img
+                            img(data-src="imgs/arcy/arcy2.jpg" ).lazy   
 
-            section.grid.x18c
-                h3.m-sect Team
-                div.m-sect
-                    +faList("")(class="fad fa-ram")
-                        div
-                            a(class="in-txt" href="https://aape.design").in-txt Brendan Mckay
-                    +faList("")(class="fad fa-rabbit")
-                        div
-                            a(class="in-txt" href="https://traucy.com").in-txt Tracy Chen
 
-                    +faList("")(class="fad fa-deer")                
-                        div
-                            a(class="in-txt" href="https://www.yantimo.com/").in-txt Yan Tymoshenko
+            section.grid.x12c#bandana
+                
+                h5.l-sect.r1 Product Care
+                h4.ml-sect.r2 Trail Bandana
+                p.ml-sect.r3 The Trail Bandana artifact has a local hiking trail pattern on the front and product care instructions on the back. As bandanas are regularly washed garments, 
+                    mark they are meant to act as a direct trigger for product care habits.
+                figure.mlmr-sect
+                    .manual-swipe   
+                        .img  
+                            img(data-src="imgs/arcy/rd.jpg" ).lazy
+                        .img    
+                            img(data-src="imgs/arcy/rfb.jpg" ).lazy   
+                        .img    
+                            img(data-src="imgs/arcy/box.jpg" ).lazy   
 
-            //- +faList("Aliasger Rasheed")(class="fad fa-cat") 
+           
+            section.grid.x12c#value
+                
+                h3.ml-sect.r1 The value
+                    p.ml-sect.big Longevity for garments that which brand trust and loyalty, and reduced environmental impact through fewer garment replacements                 
+                figure.mlmr-sect
+                    img(data-src="imgs/arcy/value.jpg" ).lazy       
+            
+            hr
+
+            section.grid.x12c#process
+                h2.l-sect Research
+                //- h3.ml-sect 
+
+                h3.ml-sect Initial Questions 
+                p.ml-sect To begin, we set the course for our research by asking ourselves:
+
+                p.ml-sect.med How does Arc’teryx’s design and philosophy fit in the context of urban lifestyle?
+                p.ml-sect.med Who are the people embedded in the Arc’teryx community whose behaviors and rituals best represent Arc’teryx enthusiasts?
+                p.ml-sect.med What rituals do people who purchase Arc’teryx practice at home, when browsing in store, or when outdoors with their gear? 
+
+            hr.small
+
+            section.grid.x12c#ethno
+                h3.ml-sect Ethnography and User Interviews
+
+                p.ml-sect  We began our research by visiting and 
+                    mark observing each store across the lower mainland to understand their unique programs
+                    |, while keeping in frequent contact with the store manager and marketing leads. During hour long sessions of undercover browsing, we took 
+                    mark field notes, photos, and conducted interviews with product guides regarding customer-employee interactions.
+
+                figure.mlmr-sect
+                    .manual-swipe   
+                        .img  
+                            img(data-src="imgs/arcy/2.jpg" ).lazy
+                        .img    
+                            img(data-src="imgs/arcy/4.jpg" ).lazy 
+
+            hr.small
+            section.grid.x12c#interviews
+
+                p.ml-sect To attain a nuanced and learned understanding of Arc’teryx customers, 
+                    mark we conducted 8 qualitative interviews seeking to understand motivations, behaviors, and rituals. 
+                    |We sought out the people who were best able to shed light on our questions which included athletes, outdoor enthusiasts, urban commuters, techwear fans, and casual shoppers. 
+                figure.mlmr-sect
+                    .manual-swipe   
+                        .img  
+                            img(data-src="imgs/arcy/11.jpg" ).lazy
+                        .img    
+                            img(data-src="imgs/arcy/12.jpg" ).lazy 
+
+            hr
+
+
+            section.grid.x12c#synthesis
+                h2.l-sect Data Synthesis
+
+                discrepancies 
+
+
+            section.grid.x12c#frustrations
+                h3.ml-sect Frustrations
+                p.ml-sect Frictions described by Arc’teryx customers confirmed for us that people’s experience with Arc’teryx is great — until they feel frustrated and betrayed by their product’s need for care. 
+
+                ul.ml-sect
+                    li.med.quote “I left Vancouver before I had a chance to bring it in. Fabric glue stopped working in London. Has really bothered me considering how good their products can be.”
+                    li.med.quote “In 2013, I was on a hunt for a jacket to climb Kilimanjaro but one that I can still wear in the city’s winter too. I learned the hard way that you're supposed to wash these jackets regularly/often to keep the waterproofness etc.  Basically something went wrong when I once washed my Beta AR...”
+
+                    li.med.quote “Once I figure out the fabric glue situation I’ll stand by them 100%. But if I’m paying this kinda money for a jacket I want it to stay strong for longer than a couple years.”
+
+            hr.small
+
+
+            section.grid.x12c#habits
+
+                h3.ml-sect Habits
+                p.ml-sect Our interviews also confirmed that customers care for their garments in unconventional and potentially damaging ways, listening to advice from friends and family over official resources.
+
+                ul.ml-sect
+                    li.med.quote “I use a hose to clean it, so it doesn’t remove coating, especially after I come back from camping. I make sure I air dry the jacket. I know heat is not good for the jacket, so I don’t put it near a heater or a dryer.”
+                    li.med.quote “At most, I go over it with wax cause it’s cotton.”
+                    li.med.quote “Just with dish soap, I wash it or dry clean.”
+            
+            
+            hr.small
+
+            section.grid.x12c#currentsolutions
+                      
+                figure.lr-sect
+                    img(data-src="imgs/arcy/current.jpg" ).lazy 
+
+            
+            hr.small
+
+            section.grid.x12c#discrepancies
+
+                h3.ml-sect Discrepancies
+
+                p.ml-sect  Through cross-referencing our discussions with Arc'teryx representatives and interviews with users, we were able to map the most typical journeys customers took when purchasing and then using Arc'teryx garments.
+  
+                p.ml-sect
+                    mark Discrepancies between 
+                        i.fas.fa-comment
+                        |Arc’teryx’s expectations and actual 
+                        i.fas.fa-head-side-brain
+                        |customer behavior confirmed for us that there was an opportunity to further leverage the current touchpoints. 
+
+                ul.ml-sect
+                    +faList(" Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase. ")(class="fas fa-comment")
+                    
+                    +faList(" Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase. ")(class="fas fa-head-side-brain space")
+
+                    +faList("Arc’teryx expects product care education to take place in-store, during the sales process.  ")(class="fas fa-comment ")
+                    
+                    +faList("Customers leave the store having forgotten product care information. ")(class="fas fa-head-side-brain space")
+
+                    +faList("The Arc’teryx website has product care information for customers to find. ")(class="fas fa-comment space")
+                    
+                    +faList(" Customers don’t seek product care information. ")(class="fas fa-head-side-brain space")
+
+                    
+
+            hr.small
+
+            section.grid.x12c#journey
+
+                h3.ml-sect Journey Maps
+                
+                p.ml-sect
+                    | From the information our team gathered, we created 2 
+                    mark journey maps that looked at the pre-purchase and post-purchase experiences of an Arc'teryx customers, through online and instore touchpoints.
+                    | We used this identify the design opportunities with the most potential.
+
+                p.ml-sect.med 
+                    |See the journey maps 
+                    |
+                    a(href="assets/Arc'teryx-journey-map.pdf").in-txt here
+            hr.small
+
+            section.grid.x12c#personas
+                h3.ml-sect Personas
+                p.ml-sect
+                    |We also created 
+                    mark three initial personas as a storytelling tool
+                    |to help us frame our problem as Arc'teryx had multiple primary user types. 
+                    |This included the online deal seeker, the in-store customer, and the warehouse sale customer. However our 
+                    mark final implementation was guided by a combined two personas
+                    |, a power-user purchasing from Arc'teryx's online store and a first-time customer buying in-store.
+                figure.lr-sect
+                    .manual-swipe   
+                        .img
+                            img(data-src="imgs/arcy/persona/persona-01.jpg" ).lazy    
+                        .img
+                            img(data-src="imgs/arcy/persona/persona-02.jpg" ).lazy    
+                        .img
+                            img(data-src="imgs/arcy/persona/persona-03.jpg" ).lazy    
+                        .img
+                            img(data-src="imgs/arcy/persona/persona-04.jpg" ).lazy    
+                        .img
+                            img(data-src="imgs/arcy/persona/persona-05.jpg" ).lazy    
+
+            hr
+
+
+            section.callout#dquestion
+                h4 Final Design Question
+                p.big 
+                    |How might we dispell misconceptions by 
+                    strong facilitating post-purchase self learning on why and how 
+                    |garments are cared for? 
+
+
         footer 
-            include ./includes/footer1.pug
+            include ./includes/footer1.pug 

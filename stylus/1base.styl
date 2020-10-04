@@ -3,86 +3,96 @@
 -------------------VARIABLES------------------
 */
 :root
-    --magenta:#FF2079
-    --magenta-light: #FF4B93
-    --magenta-dark: #C21359 
-    --purple:#d229eb
+//     --magenta:#FF2079
+//     --magenta-light: #FF4B93
+//     --magenta-dark: #C21359 
     --purple:#d229eb
     --purple-light:#ed6aff
     --purple-dark:#9b04b0
-    --purple-rgb:  rgb(210, 41, 235);
+    --purpler: 210;
+    --purpleg: 41;
+    --purpleb: 235;
 
+    --purpleh:292;
+    --purples:83;
+    --purplel 54;
     --grey:hsl(0,0%,20%)
     --light-white: #fff
     --light-white-rgb: 255,255,255;
     
     --light-black:#0B0B0B
-    --dark-white: #E5E5E5
-    --dark-black: #202020
-    --dark-black: #000000
-    --dark-black: #0c0c0c
+    --dark-white: #e2e2e2
+    --dark-black: #141414 
     --dark-black-rgb: 30,30,30;
 
+    
+    --purpleh:292;
+    --purples:83%; 
+    --purplel 54%;
+ 
+    // --pfont: "Krona one"
+    // --pfont: "League-Gothic"
+    --pfont: "Mazius Display Regular"
+    // --sfont: "HK Grotesk"
+    // --sfont: 'neue-haas-grotesk-display'
+    // --sfont: 'Open Sauce Sans'
+    --sfont: "Happy Times at the IKOB New Game Plus Edition" 
+    
 
-    --mobileP: 400px
-    --mobileL: 768px
-    --laptopMDPI: 1280px
-    --laptopHiDPI: 1440px
-  
-    --p-std-font: "Mazius Display Regular"
-    --s-std-font: "Happy Times at the IKOBNew Game"
-    --s-std-font: "HK Grotesk"
-    --s-std-font: "Open Sauce Sans"
-
-    --bg-col: var(--dark-black)
-    --bg-col-rgb: var(--dark-black-rgb)
-    --txt-col: var(--dark-white)   
-    --slct-col var(--purple)
-    --sy-col: var(--purple-light)
-    --ty-col: var(--purple-dark)
+    --pcol: var(--purple) 
+    --bgcol: var(--dark-black)
+    --bgcol-rgb: var(--dark-black-rgb)
+    --txtcol: var(--dark-white)    
+    --slctcol var(--purple)
+    --scol: var(--purple-light)
+    --tcol: var(--purple-dark)
     --s-std-weight: 300 
     --s-bold-weight: 500 
-    --s-line-space:  1.6em
 
+    --s-line-space:  1.61
 
+    --tfont: "Mazius Display Italic"
+    --qfont: "Mazius Display Extra Italic"
 
-    --t-std-font: "Mazius Display Italic"
-    --q-std-font: "Mazius Display Extra Italic"
-
-         
     --p-std-weight: normal 
-    // --s-line-space:  1.7em 
      
-    --py-col: var(--purple)
 
-
-    // --py-col-rgb: 255,32,121;
-
-    --fa-primary-color: var(--txt-col)
+    --fa-primary-color: var(--txtcol)
     --fa-secondary-color: var(--purple) 
     --fa-secondary-opacity: 1
-    --slct-col var(--purple-light)   
+    --slctcol var(--purple-light)   
+
+
     footer 
-        --fa-primary-color var(--bg-col)
+        --fa-primary-color var(--bgcol)
+
+@css {
+:root{
+    --purple-hsl: var(--purpleh),var(--purples),var(--purplel);
+    --purple-rgb: var(--purpler),var(--purpleg),var(--purpleb)
+}
+}
 
 /*------------DARK MODE------------*/
+
 [data-theme = "light"]
     --s-std-weight: 400
     --s-bold-weight: 600
-    --s-line-space:  1.55em 
-    --txt-col: var(--light-black)
-    --sy-col: var(--purple-dark)
-    --ty-col: var(--purple-light)
-    --bg-col: var(--light-white)
-    --bg-col-rgb: var(--light-white-rgb)
+    --s-line-space:  1.6 
+    --txtcol: var(--light-black)
+    --scol: var(--purple-dark)
+    --tcol: var(--purple-light)
+    --bgcol: var(--light-white)
+    --bgcol-rgb: var(--light-white-rgb)
 
-// @media screen and (prefers-color-scheme: dark)
-//     --bg-col: var(--dark-black)
-//     --bg-col-rgb: var(--dark-black-rgb)
-//     --txt-col: var(--dark-white)   
-//     --slct-col var(--purple)
-//     --s-std-weight: 300 
-//     --s-bold-weight: 500 
-//     --sy-col: var(--purple-light)
-//     --ty-col: var(--purple-dark)
-//     --s-line-space:  1.6em
+
+[data-font = "sans"]
+    --sfont: 'IBM Plex sans'
+    --pfont: 'Open Sauce Sans'
+
+
+html
+    content: "light"
+@media screen and (prefers-color-scheme: dark)
+    html
+        content: "dark"

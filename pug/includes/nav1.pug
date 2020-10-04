@@ -2,32 +2,34 @@
 - index ="/"
 - about ="/about"
 
-nav
-    ul(id="nav-name")
-        li  
-            input(type="checkbox", name="modeToggle" id="adjust") 
-            label#modeLbl(for="adjust")                 
-        li#nav-h1    
-            a.nav-item(href="/index.html") AR
-        li#nav-h2
-            |#[a.in-txt(href=photolink) Photography]
-            //- | |
-            |#[a.in-txt(href=index) Design]
-            //- | | 
-            |#[a.in-txt(href=about) Info] 
-    ul#nav-cont   
+nav#nav
+
+    input#menu-input(name="menu-input" type="checkbox")
+    label#menu-label(for="menu-input")
+     
+    
+    div.nav-holder
+        a#nav-home.name-link.name-expand(href="/index.html")
+            |Ali
+
+    #desk-nav   
+
+     
+        #nav-links
+            |#[a(href=index ) designs]
+            |#[a(href=photolink ) photographs]
+
+            |#[a(href=about) who?]
+
+        #nav-theme-toggle  
+            input(id="adjust", name="modeToggle", type="checkbox") 
+            label#modeLbl(for="adjust")      
+        //- div |
+        //- #nav-font-toggle
+            input(id="font", name="fontToggle", type="checkbox") 
+            label#fontLbl(for="font")     
+ 
         
-        //- li#side-nav         
-        //-     |#[a.in-txt.nav-item.side-nav-child(href=photolink) Photography]
-        //-     | |
-        //-     |#[a.in-txt.nav-item.side-nav-child(href=index ) Design]
-        //- li#top-placeholder
-        //- li
-        li 
-            |#[a.fas.fa-angle-double-up.nav-item#side-nav(href="#")]
-        li#middle-placeholder   
-        //- li#middle-placeholder   
-    //- ul#progress-bar
-        li context
-        li process
-        li deliverables   
+    #side-nav   
+        
+        a.fal.fa-angle-double-up.name-link#pull-up(href="#")  

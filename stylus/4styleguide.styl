@@ -8,7 +8,7 @@
     div
         h1.main-heading
             text-align: left 
-            color: var(--txt-col)
+            color: var(--txtcol)
     #palette
         box-sizing: border-box
         width: vqvw
@@ -31,9 +31,7 @@
 
         border solid grey 3px
         border-style: dashed
-        // min-width: 5rem
         height: 5rem;
-        // margin: 10px;
         flex-grow: 0
         flex-basis: 30%
         h1,h2,h3,h4,h5,h6
@@ -56,3 +54,9 @@
     #hierarchy
         h1, h2, h3, p
             margin-bottom 0.2em
+
+    section
+        opacity: 0;
+        transition: opacity 1s;
+        &.visible
+            opacity: 1;

@@ -1,0 +1,210 @@
+widerthan(var)
+    condition = 'screen and (min-width: %s)' % var
+    @media condition
+        {block}
+
+narrowerthan(var)
+    condition = 'screen and (max-width: %s)' % var
+    @media condition
+        {block}
+
+footer 
+  position: relative 
+  margin-top: 5rem
+  +narrowerthan(500px)
+    margin-top: 0
+  +widerthan(1300px)
+    margin-top: 2rem
+  padding-bottom: 1rem   
+  padding-top: 3rem
+  margin-bottom: 1rem
+  bottom: 0
+  width: 100%
+  text-align: center
+  z-index: 1
+  margin-right: 10vw
+  justify-content: center 
+  align-items: center
+  ul 
+
+    margin: 0 0.5rem 
+    display: flex 
+    justify-content:   center
+    flex-wrap: wrap
+    z-index: inherit
+    li
+      z-index: inherit
+      font-size: 1rem 
+      margin 0.5rem 
+      padding 0
+      +narrowerthan(500px)
+        font-size: 0.95rem
+        flex-basis: 100%
+        // margin: .3rem 
+      line-height: initial
+      flex-wrap: wrap
+      justify-content: center
+
+      em
+        color var(--pcol)  
+
+      
+      .fa,.fab,.fas
+        font-size: 1.5rem 
+        &:hover, &&:focus
+          color: var(--tcol) 
+
+      a,button
+        align-self: center
+        // color: var(--bgcol)
+        margin 0rem 1rem 
+
+        +narrowerthan(500px)
+          margin .3rem .4rem 
+
+a
+  &.fad, &.fas, &.fab
+    cursor: url(plus.svg) 22.5 23, auto
+
+
+  hr
+    // height: 1px
+    border-left: none 
+    // border-bottom: none 
+    border-right:  none 
+    
+    border-top: .5px solid var(--txtcol)
+    opacity .5
+    // padding-bottom: 2rem
+    margin-top: 2rem
+    margin-bottom: 0rem  
+    // height 2px  
+
+
+  small
+    opacity: .75
+
+@keyframes email-hover {
+  0% {
+
+    visibility: hidden;
+    opacity: 0;  }
+  100% {
+    // hover styles
+    visibility: visible;
+    opacity 100
+  }
+}
+
+
+@css{
+.popup{
+  background-color: hsl(var(--purpleh), var(--purples),70%);
+  background-color:#f4cefa;
+
+  }
+}   
+  
+  
+.email
+  position relative
+  display inline-block
+  cursor: url(plus.svg) 22.5 23, auto
+
+  &:after
+    content: "º"
+    color: pycol 
+    position relative
+
+  
+  .popup
+    // animation-name: email-hover;byi
+    // animation-duration: 1ms;
+    // animation-fill-mode: backwards;
+    // animation-play-state: paused;   
+    position absolute
+    left 0
+    right 0
+    bottom 0 
+    top 0
+    // visibility: hidden;
+    opacity: 0;     
+    transition: opacity 50ms 1s
+    // transition-delay: 0s
+
+
+
+
+    // *
+    //   color var(--bgcol)
+
+    // padding .1rem
+    border-radius: 5px
+    text-align: center
+    
+    width: auto
+    max-width 90vw
+    
+    +narrowerthan(500px)
+      display: flex
+      justify-content: space-around
+      left:50%; 
+      transform: translate(-50%, 0%)
+      min-width 65vw
+      
+    // margin-bottom: .2em
+    .fa
+      font-size: .9em
+    
+    span
+      font-size: inherit
+      display inline
+  
+  &:hover .popup, &:focus .popup , &:active .popup 
+    // animation-fill-mode: forwards;
+    // animation-play-state: running;
+    
+    // visibility: visible;
+    opacity 100
+    transition all 110ms 0s
+    // transition-delay: 0s
+
+
+  .tooltip    
+    text-decoration: underline   
+    margin: 0
+    line-height: 1
+  
+
+    span.fa
+      color: var(--pcol);
+ 
+  // .popup::after 
+  //   content: "";
+  //   position: absolute;
+  //   top: 100%;
+  //   left: 50%;
+  //   margin-left: -5px;
+  //   border-width: 10px;
+  //   border-style: solid;
+  //   border-color: var(--tcol) transparent transparent transparent
+  #mailto
+    &:focus
+      content: "new draft opened"
+      
+nav 
+  .popup
+
+    bottom  -1.5%    
+    top -1.5%
+
+
+.links
+  +narrowerthan(500px)
+    justify-content: space-around  
+
+.page-links
+  line-height: 1em
+
+textarea
+  display: none

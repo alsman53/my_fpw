@@ -8,6 +8,7 @@
         }
     ],
     "settings": {
-        "liveServer.settings.multiRootWorkspaceName": "ali-rasheed.github.io"
+        "liveServer.settings.multiRootWorkspaceName": "ali-rasheed.github.io",
+        "html-css-class-completion.enableEmmetSupport": true
     }
 }

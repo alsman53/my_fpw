@@ -9,172 +9,379 @@ narrowerthan(var)
         {block}
 
 
-nav 
-   font-weight: 300
-   z-index 40
-   z-index 500
-   #side-nav
+#side-nav
+   position: fixed
+   top: 0
+   right: 0
+   bottom: 0rem
+   margin 1rem
+   z-index: 300
+   
+   +narrowerthan(450px)
+      margin-right: 0.9rem
+   +narrowerthan(375px)
+      margin-right: 0.8rem
+
+   display: flex
+   
+   align-items: center
+   justify-content: space-between
+   max-height: 100vh
+   max-width: 100%
+   #pull-up
       margin-top: 2rem
       opacity 0 
-      transition: all .2s ease-out
-      font-size: 1.5rem
-      &:hover
-         color: var(--sy-col)
+      transition: color .2s ease-out
+      font-size: 2.5rem
+      &:hover,&:focus
+         color: var(--scol)
       z-index: inherit
 
-   li
-      line-height: initial 
-      padding 0
-   #nav-name
+
+nav 
+   font-weight: 300
+   z-index 500
+   margin-top: 1rem
+   margin-bottom: 3rem
+   margin 3rem 1rem 3rem 1rem
+   padding:0rem
+   display: grid
+   grid-template-rows: 1fr
+   // grid-template-columns: 1fr 1.5fr  
+   // grid-template: auto auto
+   display: flex
+    
+
+   justify-content: space-between
+   margin-left: 5vw
+   margin-right: 5vw
+
+   a
+      font-size: 01.05rem 
+   min-height: 1.5rem
+
+   .nav-holder
+      
+      align-items: last baseline
+      align-self: last baseline
       z-index: inherit
       text-align: center
       overflow-wrap: none
       white-space: nowrap;
-      padding:0rem
-      margin 3rem
-      margin-bottom: 1em
+      // text-align: right 
+      display: flex 
+      justify-content: space-between 
+
+   #nav-home   
+      // margin-right: 40vw 
+      // flex-basis 33%  
+      // margin-right: auto
+      z-index: inherit
+      color: var(--txtcol)
+      opacity 75%
+      transition: background-color 200ms ease-in
+      align-self: last baseline
+      line-height: 1.4
+      margin-right: .4em
+      height 100%
+
+      // &:hover,&&:focus
+      //    opacity 100%
+
+   #desk-nav
+      // flex-grow: 7
+      align-items: last baseline
+      align-self: last baseline
+      z-index: inherit
+      text-align: center
+      overflow-wrap: none
+      white-space: nowrap;
+      flex-grow: 2
       text-align: right 
       display: flex 
       justify-content: space-between 
-      +narrowerthan(500px)
-         margin: 1rem
-      // .nav-item
-      margin-left: 3vw
-      margin-right: 5vw
-      +narrowerthan(900px) 
-         margin-right 7vw    
-      +narrowerthan(700px)
-         margin-right 8vw  
-      +narrowerthan(550px)
-         margin-right 9vw      
-      +narrowerthan(450px)
-         margin-right 13vw    
 
-      #nav-h1
-         z-index: inherit
-         line-height: 0.9em
+      // align-content: center
+      // align-items: baseline
 
-         a
-            font-family: var(--p-std-font)
-            font-size: 3rem;
-            +narrowerthan(600px)
-               font-size: 1.1rem; 
-            // font-weight: var(--s-bold-weight)
-            text-align: left
-            transition: all ease-in .15s 
-            color: var(--txt-col)
-            opacity 80%
-            &:hover
-               // color: var(--sy-col)
-               opacity 100%
-               // transform: scale(2)
-      #nav-h2
+      #nav-links 
          min-width 1rem
-         // margin 1rem
-         // margin-left: auto
          text-align: right 
          z-index: inherit
+
          a
-            margin-left: .2rem
-            font-size: 0.95rem
+            line-height: 1.4
+            
+            // height: 1.1rem
+            color: var(--txtcol)
+            margin: .8rem 0
+
+            opacity 75%
+            transition: all  200ms ease-in
+            // &:hover,&&:focus
+            //    opacity 100%
+
+   #nav-home, #nav-links a, #nav-theme-toggle label
+
+      border-radius: .3em
+      border solid transparent
+      border-width: 3px 
+      background-clip: padding-box;
+      transition: background-color ease-out 200ms, border-color ease-out 250ms 
+         
+      &:hover, &&:focus, &.active
+         background-color: rgba(210,41,235,.3);
+
+      &:after
+         // content: "°"
+         font-feature-settings: "caps"
+         color: var(--scol)
+         // opacity 0
+         // transition: background-color ease-in 100ms
+         font-size: 1.2em  
+         position relative 
+         top: .2em
+         margin-left: 3px
+
+      // &:hover:after, &:focus:after, &:hover, &.active, &:focus
+      //    opacity 100%
+
+   #nav-theme-toggle
+   &:after
+      content: ""
+
+
+
+
+//theme
+
+   #nav-theme-toggle
+      height 100% 
+      display: flex 
+      
+      font-size: 01.05rem
+      // align-self: last baseline
+      &::after
+         top -.5em 
+         height 1em
+         position static !important  
+         margin-top: -.25rem  
+   
 
    input#adjust[type=checkbox]
+   input#mobile-input[type=checkbox]
       display: none;  /* to hide the checkbox itself */
 
-   input[type=checkbox]#adjust+ label:before
-      display: inline-block;
-      transition: all ease-in .15s
+   input[type=checkbox]#adjust+ label:after
+      display: inline;
+      transition: color ease-in .15s
       letter-spacing: 7px;
       font-family: "Font Awesome 5 Brands";
       content: "\f1d1"
-      // transform: rotate(90deg) 
-      color: var(--txt-col)
-      height: 1em
-      // margin-bottom: .4rem
-
-      &:hover 
-         color: var(--py-col)
+      color: var(--txtcol)
+      top 0
+      // height: 1.5em
+      // width 1em
          
-   input[type=checkbox]#adjust:checked + label:before
+   input[type=checkbox]#adjust:checked + label:after
       letter-spacing: 7px 
       font-family: "Font Awesome 5 Brands";
       content: "\f50e"
   
-   input[type=checkbox]#adjust + label::after
+   input[type=checkbox]#adjust + label::before
+      // margin-right: .25rem  
+      font-weight: var(--s-std-weight)
       content: "Dark Side"
-      transition: all ease-in .15s
-      color: var(--txt-col)
-      &:hover   
-         color: var(--py-col)
+      transition: color ease-in .15s
+      color: var(--txtcol)
 
-   input[type=checkbox]#adjust:checked + label::after
+   input[type=checkbox]#adjust:checked + label::before
       content: "Light Side"
-      &:hover 
-         color: var(--py-col)
-         // transform: scale(2)
-      
-   input[type=checkbox]#adjust:checked + label:hover::before ,  input[type=checkbox]#adjust:checked + label:hover::after
-   input[type=checkbox]#adjust + label:hover::before ,  input[type=checkbox]#adjust + label:hover::after
-      // color: var
-      // font-size: 1.3em
-
 
    label#modeLbl
-      display: flex
-      justify-content: space-between
-      font-size: 0.95rem
+      z-index 500
+      opacity 75%
+      font-size inherit
+      // height 1em
 
-      // font-size: .95em;
- 
- /*--------------positioning------------------*/
+      &:hover,&&:focus
+         opacity 100%
+      &:after
+         margin-right: -.5ch
+
+/*--------------positioning------------------*/
    *
-      box-sizing: border-box
+      box-sizing: border-box 
 
-   #nav-cont
-      position: fixed
-      top: 0
-      right: 0
-      bottom: 0rem
-      margin 1rem
-      z-index: 300
+nav #desk-nav
+   align-items: flex-start;
+   // line-height: 1
+   align-items: baseline
+   
+
+.name-link
+   cursor: url(plus.svg)22.5 23, auto
+
+
+   &:hover,&&:focus
+      cursor: url(plus.svg)22.5 23, auto
+   
+      .name-expand:after
+         width 5rem
+
+
+nav
+   
+   #menu-input
+      display: none
+   // #input:checked + label::before
       
-      +narrowerthan(450px)
-         margin-right: 0.9rem
-      +narrowerthan(375px)
-         margin-right: 0.8rem
+   #menu-label
+      display: none;
 
-      display: flex
-      align-items: center
-      justify-content: space-between
-      max-height: 100vh
-      max-width: 100%
-      writing-mode: vertical-rl
-   #progress-bar
-      position: fixed
-      top: 0
-      left: 0
-      bottom: 0rem
-      margin 1rem
-      z-index: 300
++narrowerthan(500px)
+   nav
+   
+      background-color: var(--bgcol)
+      display: block
+      position fixed
+      margin 0
+      padding 1rem 1rem 1rem
+      left 0
+      top 0
+
+      right 0
+      // bottom: 0
+      #menu-label
+
+         top: 1em;
+         right 1em
+         height 1rem
+         width 1.5rem
+         // border-style: 
+         border  outset 2.5px var(--bgcol) 
+         border-right-style: inset  
+         border-bottom-style: inset
+         border-top-color: var(--txtcol)
+         border-bottom-color: var(--txtcol)
+
+         background-color var(--bgcol)
+         transition: all 500ms ease-in-out
+         z-index 400
       
-      +narrowerthan(450px)
-         margin-right: 0.9rem
-      +narrowerthan(375px)
-         margin-right: 0.8rem
+         display: block
+         position absolute
+         top 1rem
+         right 1rem
+         opacity: 75%
+         transition: opacity 200 ease-in
 
-      display: flex
-      align-items: center
-      justify-content: space-between
-      max-height: 100vh
-      max-width: 100%
-      writing-mode: vertical-rl
+         &:hover, &:focus
+            opacity 100%
 
-#modeLbl 
-   // text-shadow: 0px 0px .5em var(--txt-col), 0px 0px 0.4em var(--txt-col)
+      #desk-nav
+         height 100vh
+         transition max-height .5s ease-in-out
+         position relative
+         max-height: 0
+         overflow: hidden
+         flex-direction: vertical
+         flex-wrap: wrap
+         bottom: 0 
+         // align-content: 
+         align-content: start
+         #nav-links, #nav-theme-toggle 
+            display: flex
+            flex-direction: vertical
+            flex-wrap: wrap
+            margin-top: 1rem
+            flex-basis: 100%
+            &:after
+               content: ""  
+            
+            a, label
+               font-family: var(--pfont)
+               margin-left: 0
+               padding 1rem 0
+               flex-basis: 100%
+               justify-self: left
+               text-align: left
+               font-size: 3.5rem   
+               &:after
+                  content: ""  
+      
+      input#menu-input:checked + #menu-label
+         height: 1.25rem
+         width: 1.25rem
+         border-radius: 50px
+         // background-color var(--txtcol)
+         border solid .125px var(--txtcol) 
+         border-top-width: 2.5px
+         border-bottom-width: 2.5px 
+         margin-right .125rem
+         margin-top: -.125rem
+         
 
-   // animation-name: alarmf;
-   // animation-duration: 1s; 
-   // animation-direction alternate;
-   // animation-iteration-count: infinite;
-   // &:hover
-   //    text-shadow: 0px 0px .5em var(--txt-col), 0px 0px .5em var(--txt-col), 0px 0px 0.5em var(--txt-col)
+      #menu-input:checked ~ #desk-nav   
+         max-height:200vh
+         // height min-content
+
+      #nav-theme-toggle
+         height min-content
+         label
+            padding-bottom: 1rem
+         
+      #nav-home
+         line-height: .9em
+         font-size: 1.5rem
+         transition: font-size .5s ease-in-out, opacity 200ms ease-in
+         // animation nav-home-expand  .5s reverse
+         animation-name: nav-home-expand;
+         animation-duration: .5s;
+         // animation-fill-mode: both
+         opacity: 75%
+         &:hover, &:focus
+            opacity 100%
+
+
+      #menu-input:checked ~ #nav-home   
+         padding-bottom: 1rem
+         font-size: 3.5rem
+         animation-name: nav-home-expand;
+         animation-duration: .5s;
+         animation-fill-mode: both
+         &:after
+            content: ""
+         // font-size: 3rem
+
+
+
+@keyframes nav-home-expand
+   0%
+      font-family: var(--sfont)
+   1%
+      font-family: var(--pfont)
+   100%
+      font-family: var(--pfont)
+
+// /* Font switch
+
+input[type=checkbox]#font
+   visibility hidden
+
+input[type=checkbox]#font:checked + label::after
+   content: "Serif"
+   // font-family: "IBM Plex Serif"
+   &:hover , &&:focus
+      color: var(--pcol)
+
+
+input[type=checkbox]#font + label::after
+   content: "Sans"
+   // font-family: "IBM Plex Sans"
+   transition: color ease-in .15s 
+   color: var(--txtcol)
+   &:hover   , &&:focus
+      color: var(--pcol) 
+ 
+

@@ -1,17 +1,17 @@
 //- ////////MIXINS/////////
 mixin img-lazyloaded-lg(name,sequence)
-  figure(class=name+" img-cont element-item" data-groups=name) 
-    img(class="lazy grid-image", data-src="imgs/photography-lg/"+name+"/"+sequence+".jpg", onerror='hideThis(this)', src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
+  a(class=name+" img-cont element-item" data-groups=name data-lightbox=name href="imgs/photography-lg/"+name+"/" + sequence +".jpg") 
+    img(class="lazy grid-image", data-src="imgs/photography-sm/"+name+"/"+sequence+".jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
 
 
-mixin img-folder-lazyloaded-lg(name,sequence,folder)
-  figure.img-cont 
-mixin img-cap-lazyloaded-lg(name,sequence,caption) 
-  figure.img-cont
-    img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"_"+sequence+"-1500.jpg", alt=name, onerror="hide()") 
-    figcaption = caption
+//- mixin img-folder-lazyloaded-lg(name,sequence,folder)
+//-   figure.img-cont 
+//- mixin img-cap-lazyloaded-lg(name,sequence,caption) 
+//-   figure.img-cont
+//-     img(class="lazy", data-groups=name, data-src="imgs/photography-lg/"+name+"_"+sequence+"-1500.jpg", alt=name, onerror="hide()")          
+//-     figcaption = caption
 
-//- ///////////ARRAYS///////// 
+//- ///////////ARRAYS/////////   
 doctype  
 html(lang='en')
   head
@@ -23,9 +23,16 @@ html(lang='en')
 
 
     main.gallery 
-      #portfolioFilter
-        input(type="radio", name="imgFltr", data-filter="*" checked="checked").current#all-categories 
+      #portfolioFilter   
+        //- #sizeBtns          
+        //-   button#add.colorH.fal.fa-search-plus
+          button#subtract.colorH.fal.fa-search-minus  
+        input(type="radio", name="imgFltr", data-filter="*" checked="checked").current#all-categories   
         label(for="all-categories") All Categories
+ 
+        input(type="radio", name="imgFltr",data-filter=".anthro")#anthro 
+        label(for="anthro" ) Anthropogenic Landscape
+
 
         input(type="radio", name="imgFltr",data-filter=".people")#human 
         label(for="human") Human
@@ -33,18 +40,13 @@ html(lang='en')
         input(type="radio", name="imgFltr",data-filter=".architectural")#architectural 
         label(for="architectural") Architectural  
       
-        input(type="radio", name="imgFltr",data-filter=".anthro")#anthro 
-        label(for="anthro") Anthropogenic Landscape
 
         input(type="radio", name="imgFltr",data-filter=".natural")#natural  
         label(for="natural") Natural Landscape
 
         input(type="radio", name="imgFltr",data-filter=".still-life")#still-life  
         label(for="still-life") Still Life
-
-        #sizeBtns
-          button#add.colorH +
-          button#subtract.colorH - 
+   
           
       section.photography-grid#portfolioContainer
         - for(var i=1; i<30; i++)
@@ -53,7 +55,7 @@ html(lang='en')
           +img-lazyloaded-lg("architectural",i)
           +img-lazyloaded-lg("still-life",i)
           +img-lazyloaded-lg("natural",i)
-          
+           
           
     footer
       include ./includes/footer2.pug

@@ -19,31 +19,29 @@ module.exports = function (grunt) {
 		stylus: {
 			compile: {
 				options: {
-					// sourcemap: {
-					// 	inline: true,
-					// 	comment: true
-					// },
+					sourcemap: {
+						inline: true,
+						comment: true 
+					},
 					// cwd: 'stylus',  // set working folder / root to copy
 					// src: '**/*', 
-					// expand: true,
+					expand: true,
 					// dest: 'ali-rasheed.github.io/css',
 					compress: true,
 					paths: ['stylus'],
-					import: [
-						'nib/*'
-				]
+				// 	import: [
+				// 		'nib/*'
+				// ]
 				},
 				files: {
 					'ali-rasheed.github.io/css/main.css': ['stylus/*.styl']
 				}
 			} 
 		},
-
-		// 'css_output_location': 'ali-rasheed.github.io/css',
-
+		
 		pug: {
 			compile: {
-				options: {
+				options: { 
 					pretty: true,
 					compress: true
 				},
@@ -56,27 +54,17 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-		purgecss: {
-			my_target: {
-				options: {
-					content: ['./src/**/*.html']
-				},
-				files: {
-					'dist/app.css': ['src/css/app.css']
-				}
-			}
-		},
 
 	});
 
 	// Load grunt plugins.
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	// grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.registerTask('default', ['watch']);
 	grunt.loadNpmTasks('grunt-contrib-pug');
+	// grunt.loadNpmTasks('grunt-uncss');
 	// grunt.loadNpmTasks('grunt-contrib-copy');
 	// grunt.registerTask(['copy']);
-	grunt.loadNpmTasks('grunt-purgecss');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-};
+	// grunt.loadNpmTasks('grunt-purgecss');
+	// grunt.loadNpmTasks('grunt-contrib-uglify');
+}; 

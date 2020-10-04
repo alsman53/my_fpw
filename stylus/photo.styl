@@ -11,27 +11,31 @@ narrowerthan(var)
 main.gallery
   display: grid
   justify-items: center 
+  margin-top: 5rem
   margin-left: 3rem
   margin-right: 3rem
-  // +widerthan(1200px)
+  +narrowerthan(800px)
+    margin-left: 1rem
+    margin-right: 1rem
   //   margin-top: -8rem
 
   section#portfolioContainer
-    figure
-      margin 2px   
+    a
+      // margin 2px   
       // transition: width 150ms ease
       // margin-right: 0 
       // margin-left: 0
       // width 30vmin  
       &.zoomable
         transition: transform 250ms ease
-        &:hover
+        &:hover, &&:focus
           // transform: scale(1.5);
           z-index 200
       max-width 95vmin
 
       img
         display: block
+        padding-bottom: 15px
         object-fit: cover   
    
         max-width:100%;
@@ -46,7 +50,7 @@ main.gallery
     display: flex
     margin-left: 0%
     margin-right: 0%
-    margin-top: 0rem
+    margin-bottom: .5rem
     flex-wrap: wrap
     justify-content: center
     input[type=radio] 
@@ -55,7 +59,7 @@ main.gallery
     label
       margin 0.3rem
       font-size: 0.9vw
-      +narrowerthan(1600px)
+      +narrowerthan(1500px)
         font-size: 1.05vw
       +narrowerthan(1400px)
         font-size: 1.3vw
@@ -80,17 +84,49 @@ main.gallery
 
 #sizeBtns
   display: flex
-  flex-direction: column
-  position: fixed
-  top: 0
-  left: 0
-  bottom: 0rem
-  margin 1rem
-  max-height: 100vh
-  align-items: center
-  align-content: center
-  flex-wrap: nowrap 
-  justify-content:center
-  font-size:3rem
-  button
-    width: 100%
+  // flex-direction: column
+  // position: fixed
+  // top: 0
+  // left: 0
+  // bottom: 0rem
+  // margin 1rem
+  // margin-top: 6rem
+  // max-height: 30vh
+  // align-items: center
+  // align-content: center
+  // flex-wrap: nowrap 
+  // justify-content:center
+  // z-index 5
+  button#add, button#subtract
+    padding 0.3rem .8rem
+
+    font-size:1rem
+    // padding: .75em
+
+
+input[type=radio] + label 
+  padding 0.3rem .8rem
+  //  border solid 1.75px var(--pcol)
+  //  border-radius: .5em
+
+  margin: 0.5rem
+  transition: ease-out 350ms all 
+  opacity: .75
+  border-radius: .3em
+  border solid  var(--pcol)
+  border-width: medium 
+  background-clip: padding-box;
+  border solid transparent
+  transition: background-color ease-out 200ms, border-color ease-out 200ms 
+
+input[type=radio]:checked + label ,input[type=radio] + label:hover, input[type=radio] + label:active 
+  // background-color var(--pcol)
+  cursor: url(plus.svg) 22.5 23, auto
+      
+  // &:hover
+  background-color: rgba(210,41,235,.3);
+
+
+  // text-decoration: underline double var(--pcol)
+  // opacity 1
+  // text-decoration-color: var(--pcol)

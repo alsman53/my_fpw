@@ -1,23 +1,32 @@
-//- hr 
 ul
-    li.flex-b 
-        a(href="assets/Aliasger_Rasheed_Resume.pdf" target="_blank").in-txt Résumé
- 
+    li.email  aliasgerrasheed@outlook.com
+        .popup  
+            a(href="mailto:aliasgerrasheed@outlook.com", onclick="mailtoF").tooltip    
+                span#mailto email app   
+                span#mPlane.fa-paper-plane.fa
+            |  or  
+            a(onclick="textToClipboard('aliasgerrasheed@outlook.com')").tooltip
+                span#copy copy it  
+                span#mCopy.fa-copy.fa 
+        
+    li.flex-b.links 
+
         a(href="https://www.linkedin.com/in/aliasger-rasheed/" target="_blank").fab.fa-linkedin        
         a(href="https://www.instagram.com/allegoraphy/" target="_blank").fab.fa-instagram
-        a(onclick="textToClipboard('aliasgerrasheed@outlook.com')").email aliasgerrasheed@outlook.com
         a(href="https://github.com/ali-rasheed/" target="_blank").fab.fa-github
         a(href="https://www.figma.com/@the_maker/" target="_blank").fab.fa-figma 
-        a(href="/references.html").in-txt Citations 
-    //- a    aliasgerrasheed@outlook.com
-    li.flex-b 
-        |Coded by  <strong>&nbsp;Me&nbsp;</strong> ⨯ Powered by servers somewhere  
-    //- <br> Copyright © 2019 Aliasger Rasheed
+    li.flex-b.page-links     
+        a(href="assets/Aliasger_Rasheed_Resume.pdf" target="_blank").in-txt Résumé
+        a(href="/references.html").in-txt Citations
+    //- li.flex-b.r10
+small 
+    |Coded by  <em>&nbsp;Me&nbsp;</em> ⨯ Powered by servers somewhere  
 
-<div id="snackbar">You have copied my email. Just paste it now. No annoying <em>mailto</em> nonsense :)</div> 
+//- <br> Copyright © 2019 Aliasger Rasheed
+
+//- <div id="snackbar">You have copied my email. Just paste it now. No annoying <em>mailto</em> nonsense :)</div> 
 
 include ./script-imports.pug
 include ./photo-imports.pug
 script(src="js/photog.js")
 script(src="js/main.js")
-  

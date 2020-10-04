@@ -1,6 +1,6 @@
 
 mixin img-cap-lazyloaded(name,path,caption) 
-  figure.img-cont
+  figure.ml-sect
     img(class="lazy", data-src="imgs/posterjam/"+path, alt=name, onerror="hide()") 
     figcaption=caption
 
@@ -10,19 +10,18 @@ html(lang='en')
   head
     include ./includes/head1.pug
     title Posterjam - Ali Rasheed
-  body#darkregion 
+  body 
     header
       include ./includes/nav1.pug 
 
-    main#posterjam
+    main.grid#project
 
-      section#overview.x18c.grid  
+      section#overview.x20c.grid  
       
         h1.main-heading Posterjam
-        p.ml-sect 
-            em 
-                strong September 2019 - Current        
-        p#summary
+        p.big.ml-sect 
+          em September 2019 - January 2020         
+        p.big#summary
           a(href="https://posterjam.ro/", title="Posterjam").in-txt Posterjam
           //- |  is a 
           //- strong monthly graphic design challenge hosted online.
@@ -31,39 +30,34 @@ html(lang='en')
           //- |, using it to design posters, with concept, technique and art-direction left to the designer’s interpretation. Designers compete to have their posters displayed in various locations in Bucharest, Romania, and have their work highlighted.
           |
           |is a monthly online graphic design challenge. Participants are given the constraint of a single word prompt for each month. Otherwise the poster's concept, technique and art-direction is left to the designer’s interpretation.
-      section.flex-b
-        h2 February  
-        h3 Prompt: time 
-        //- +img-cap-lazyloaded("","poster-7.jpg","")     
-        figure.img-cont
+      section.grid.x20c
+        h3.ml-sect February Prompt: time 
+        figure.ml-sect
           img(src="imgs/posterjam/poster-7.jpg" alt="screen printing activity")
           figcaption Figure A
-        h4 Figure A
-        p To visually represent time,  I was inspired the British TV show Doctor Who where they travel through a luminous time vortex.  The layering of the arcs forces the viewer to read the text through 
+        h6.ml-sect Figure A
+        p.ml-sect To visually represent time,  I was inspired the British TV show Doctor Who where they travel through a luminous time vortex.  The layering of the arcs forces the viewer to read the text through 
           a(href="https://www.creativebloq.com/graphic-design/gestalt-theory-10134960#03-closure").in-txt Gestalt closure
           |.
-      section.flex-b
-        h2 December-January  
-        h3 Prompt: suprise  
+      section.grid.x20c
+        h3.ml-sect December-January Prompt: suprise  
         +img-cap-lazyloaded("","poster-6.jpg","")
-        h4 Figure A
-        p I interpreted "surprise" as juxtaposition for this poster. Legendary graphic designer Massimo Vignelli's quote juxtaposes with the use of
+        h6.ml-sect Figure A
+        p.ml-sect I interpreted "surprise" as juxtaposition for this poster. Legendary graphic designer Massimo Vignelli's quote juxtaposes with the use of
           |
           em Comic Sans
           |, which most certainly is not not among the "few basic ones". My choice of grid also reflects Vignelli's strong use of grids in his graphic design. The transparency of the visible grid  directs the eye through the poster.
   
-      section.flex-b     
-        h2 October  
-        h3 Prompt: grid  
+      section.grid.x20c    
+        h3.ml-sect October Prompt: grid  
         +img-cap-lazyloaded("","poster-4.jpg","Figure A")  
         +img-cap-lazyloaded("","poster-5.jpg","Figure B")  
         h4 Figure A
         p This poster incorporates 2 interpretations of grids. The first is the unconventional but essential radial grid, which I decided to distort to radiate from a point to create a flow for the eye, where it collides with the second grid - the rows and columns that emerge from monospaced typography.
         h4 Figure B
         p
-      section.flex-b
-        h2 September 
-        h3 Prompt: 2    
+      section.grid.x20c
+        h3.ml-sect September Prompt: 2    
         
         +img-cap-lazyloaded("September","poster-1.png","Figure A")
 
