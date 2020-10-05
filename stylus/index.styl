@@ -68,8 +68,16 @@ narrowerthan(var)
                 opacity .75
 
 
+            // border-radius: .3em
+            // border solid transparent
+            // border-width: medium 
+            // background-clip: padding-box;
+            // transition: background-color ease-out 200ms, border-color ease-out 200ms 
+            // cursor: url(plus.svg) 22.5 23, auto
             &:hover,&:focus,&:active
-                            
+            // .grid-item
+                // background-color: rgba(210,41,235,.3);
+
                 .project-img::after
                     opacity 100%   
                 .proj-title,.genre
@@ -146,7 +154,7 @@ narrowerthan(var)
                         line-height: 1
                         padding-bottom: .1em
 
-                
+                --rad: 10px
                 &:nth-child(2n+1)
                     grid-column: span 4/-1
 
@@ -159,7 +167,8 @@ narrowerthan(var)
                     .project-img
                         grid-row 1/-1
                         grid-column: 4/-1
-
+                        border-top-right-radius: var(--rad)
+                        border-bottom-right-radius: var(--rad)
                     .genre    
                         grid-row 2/4
                         grid-column: 1/4
@@ -174,6 +183,8 @@ narrowerthan(var)
                         grid-column 1/-1
                         
                     .project-img
+                        border-top-left-radius: var(--rad)
+                        border-bottom-left-radius: var(--rad)
                         grid-column: 1/9
                         grid-row 1/-1
 

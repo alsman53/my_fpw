@@ -81,8 +81,9 @@ a
     // height 2px  
 
 
-  small
-    opacity: .75
+small
+  opacity: .75
+  margin-top: 1rem
 
 @keyframes email-hover {
   0% {
@@ -99,8 +100,9 @@ a
 
 @css{
 .popup{
-  background-color: hsl(var(--purpleh), var(--purples),70%);
-  background-color:#f4cefa;
+  background-color: hsl(var(--purpleh), var(--purples),var(--lum));
+  background-color: var(--tcol);
+
 
   }
 }   
@@ -168,13 +170,17 @@ a
     opacity 100
     transition all 110ms 0s
     // transition-delay: 0s
+    cursor: url(plus.svg) 22.5 23, auto
 
 
   .tooltip    
-    text-decoration: underline   
+    // text-decoration: underline   
     margin: 0
     line-height: 1
-  
+    &:hover ,&:focus ,&:active  
+
+      cursor: url(plus.svg) 22.5 23, auto
+
 
     span.fa
       color: var(--pcol);

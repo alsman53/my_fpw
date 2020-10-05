@@ -39,6 +39,7 @@ narrowerthan(var)
 
 
 nav 
+   transition: top 0.3s ease; /* Transition effect when sliding down (and up) */
    font-weight: 300
    z-index 500
    margin-top: 1rem
@@ -191,12 +192,12 @@ nav
    input[type=checkbox]#adjust + label::before
       // margin-right: .25rem  
       font-weight: var(--s-std-weight)
-      content: "Dark Side"
+      content: "dark side"
       transition: color ease-in .15s
       color: var(--txtcol)
 
    input[type=checkbox]#adjust:checked + label::before
-      content: "Light Side"
+      content: "light side"
 
    label#modeLbl
       z-index 500
@@ -302,8 +303,8 @@ nav
             a, label
                font-family: var(--pfont)
                margin-left: 0
-               padding 1rem 0
-               flex-basis: 100%
+               // padding 1rem 0
+               // flex-basis: 100%
                justify-self: left
                text-align: left
                font-size: 3.5rem   
@@ -353,6 +354,8 @@ nav
          &:after
             content: ""
          // font-size: 3rem
+      #modeLbl:after
+         margin-right: 0
 
 
 

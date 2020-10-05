@@ -61,7 +61,7 @@ body,footer,header
 h1, h2, h3, h4, h5, h6, figcaption, p, li, a, button, #summary, small,label, mark, div, span
    color: textcol
    
-h1,h2,h3,h4,h5,h6,.big, p,.med, li
+h1,h2,h3,h4,h5,h6,.big, p,.med, li,figcaption,.email
    // +narrowerthan(1200px)
    opacity: 85% 
    transition: opacity ease-out 200ms
@@ -92,6 +92,9 @@ h2
    font-weight: 400 
    font-size: 3.0rem
    // text-transform: uppercase
+   
+   +narrowerthan(900px)
+      font-size: 1.75rem
 
 h3
    font-family: var(--pfont), serif 
@@ -113,8 +116,11 @@ h4
    margin-top: 0
    padding-top: 1rem
 
+   +narrowerthan(900px)
+      font-size: 1.5rem
+
 h5
-   font-size: 2.25rem
+   font-size: 2rem
    font-family: var(--pfont), sans-serif
    font-weight: 400 
    line-height: 1.45
@@ -125,7 +131,7 @@ h5
 h6
    font-family: var(--sfont), sans-serif
 
-   font-size 1.5em
+   font-size 1.5rem
 
 small
    font-size: 0.8em
@@ -145,9 +151,11 @@ mark
    border-right solid var(--bgcol);
    background-clip: padding-box;
 
-+narrowerthan(1400px)
-   background-color:  rgba(210,41,235,.2); 
-   border-color rgba(210,41,235,.3);
+   +narrowerthan(1400px)
+      background-color:  rgba(210,41,235,.2); 
+      border-color rgba(210,41,235,.3);
+      transition-delay: 0s
+
 
 section:hover mark
    
@@ -170,14 +178,16 @@ ol li
    counter-increment: list;
    list-style-type: none;
    position: relative;
-   margin-left: 2ch
+   // left: -2ch;
    &:before 
+      margin-right: .5ch
       color: sycol
+      font-size: .9em
+      // font-family: "Verdana" 
       content: counter(list) ".";
-      left: -3ch;
-      position: absolute;
+      // position: absolute;
       text-align: right;
-      width: 2.5ch;
+      width: 3ch;
 
 li
    padding-bottom: 0.4rem
@@ -213,6 +223,8 @@ h1
    max-width 60ch
    font-weight: 400
    margin 1em 0
+   +narrowerthan(1400px)
+      font-size: 1.9rem
    +narrowerthan(500px)
       margin: 1rem 0
       // font-weight: bold 
@@ -232,11 +244,15 @@ h1
    min-width: 0;
    max-width 55ch 
 
-   margin 1em 0
+   margin  1rem 0
    // &.quote
    //    opacity .85
       // margin: 
+   +narrowerthan(1400px)
+      font-size: 1.6rem 
+
    +narrowerthan(500px)
+   
       margin: 1rem 0
       font-weight: bold 
       font-size: 1.25rem
@@ -254,10 +270,15 @@ ul
 
 ol  
    li
+      margin-left: 2ch
+      &:before
+         margin-left: -2ch
+
       max-width 50ch 
       &.big, &.med, &.small 
          margin-left: 2ch
-
+      &:before
+         margin-left: -2ch
    &.space
       li
          margin-bottom: .5em
@@ -350,13 +371,13 @@ a,button
 
 span, .email
    &.fa,&.fad,&.fab,&.fas
-      font-size: 1.1em
-      padding-top: 0.2em 
-      display: flex
+      font-size: .9em
+      // padding-top: 0.2em 
+      // display: flex
       justify-content: center
       justify-items: center
       flex-shrink: 0
-      width 2.5rem
+      width 2.75ch
       padding-right: .5rem 
 
       &:after,&:before,&::before,&::after
@@ -366,6 +387,12 @@ span, .email
 i
    &.fa,&.fad,&.fab,&.fas
       padding 0  5px
+
+p i
+   &.fa,&.fad,&.fab,&.fas
+      display: inline         
+
+
 
 @css {
 .slick-prev{

@@ -10,7 +10,7 @@ narrowerthan(var)
 
 main#about
     margin-top: 10rem  
-    grid-template-columns: 1fr 4fr 1fr
+    grid-template-columns: 1fr 9.5fr 1fr
     +widerthan(1200px)
         grid-template-columns: repeat(6, 1fr)
 
@@ -46,6 +46,7 @@ main#about
 
         +narrowerthan(1000px)
             grid-row 1/span 1
+            grid-column: 1/-1 
 
         figure
             display: flex
