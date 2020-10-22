@@ -1,325 +1,361 @@
 mixin faList(content)
-  li.flex-b
-    span()&attributes(attributes)
-    = content
-    block
+    li.flex-b
+        span()&attributes(attributes)
+        = content
+        block
+
+mixin img-ll(name,data)
+    a(class=name+" img-cont element-item" data-groups=data data-lightbox=data href="imgs/"+name+".jpg") 
+        img(class="lazy grid-image", data-src="imgs/"+name+".jpg", src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
+
+
 mixin rM()
   button.coll-button Read More
-
-mixin lazyImg(content)
-   img(data-src=content data-lazy=content alt="").lazy
 
 doctype html
 
 html(lang='en')
-   head
-      include ./includes/head1.pug
-      title Gakko - Ali Rasheed
+    head
+        include ./includes/head1.pug
+        title Gakko - Ali Rasheed
 
-   body 
-      header
-         include ./includes/nav1.pug   
+    body 
+        header
+            include ./includes/nav1.pug   
 
-      main.grid#project
+        main.grid#project
 
 
-         section#overview.x12c.grid 
-            h1.main-heading Gakko Camps
-            p.big#summary                                             
-               //- |Gakko is an educational collective that runs annual summer camps created by a select group of mentors from fields ranging from design to theatre to disaster management. 
-               |A summer camp focusing on visual design, technology, new media/film, and social innovation.
-            #cover-image.magenta-hover 
-               img(src="imgs/gakko/cover.jpg", alt="venue of camp")
-               figcaption Camp Location in Kanoya, Kagoshima, Japan
-            
+            section#overview.x12c.grid 
+                h1.main-heading Gakko Camps
+                p.big#summary
+                    |A summer camp focusing on visual design, new media/film, and social innovation.
+                #cover-image.magenta-hover 
+                    img(src="imgs/gakko/cover.jpg", alt="venue of camp")
+                    figcaption Camp Location in Kanoya, Kagoshima, Japan
+                    
  
-         section.flex-s.points
-            div.flex-i
-               h5 Tools
-               ol
-                  li Illustrator
-               h5 Time & Place
-               ul
-                  li Kagoshima + Fukuoka, Japan
-                  li Summer 2019
+            section.flex-s.points
+                div.flex-i
+                    h5 Skills
+                    ol
+                        li Visual Design
+                        li Educational Design
+                        li Art Direction
 
-            div.flex-i
-               h5 Sempai
-               .team
-                  +faList("Will Hochman")(class="fad fa-film-alt")
-                  ul
-                     +faList("Alexa Gantous")(class="fad fa-tree")
-                     +faList("Giordano Margaglio")(class="fad fa-globe-europe")
-                     +faList("Veronica Ma")(class="fad fa-book-reader") 
-                     +faList("")(class="fad fa-hand-holding-heart")
+                div.flex-i
+                    h5 Tools
+                    ul
+                        li Illustrator
+                    //- h5 Time & Place
+                    //- ul
+                    //-     li Kagoshima + Fukuoka, Japan
+                    //-     li Summer 2019
+
+                div.flex-i
+                    h5 Sempai
+                    .team                   
+                        +faList("Will Hochman")(class="fad fa-film-alt")
+
+                        +faList("Alexa Gantous")(class="fad fa-tree")
+                        
+                        +faList("Giordano Margaglio")(class="fad fa-globe-europe")
+                        
+                        +faList("Veronica Ma")(class="fad fa-book-reader") 
+                        
+                        +faList("")(class="fad fa-hand-holding-heart")
+                            a(class="in-txt" href="https://www.behance.net/liangkay" target="_blank").in-txt Kay Liang 
+
+
+
+
+                div.flex-i
+                    h5 Directors
+                    div.team
+                        +faList("Lilly Callahan")(class="fad fa-fireplace")
+                        +faList("Kenta Koga")(class="fad fa-wand-magic")
+                    h5 Coordinators
+                    div.team
+                        +faList("Ian Shimizu")(class="fad fa-tree-alt")
+                        +faList("Riku Kurosawa")(class="fad fa-leaf-heart")
+
+
+            hr
+
+            section.grid.x12c
+                h2.l-sect The Gist
+
+                h3.ml-sect Project Context
+                
+                p.ml-sect        
+                    |Gakko brought together a group of mentors from varying industries to Kagoshima, Japan to build from ground up a two-week summer camp experience. 
+                    //- This included
+                //- ul.ml-sect
+                //-     li.med.ml-sect Investigations: extensive workshops focusing on the mentors field of interest
+                //-     li.med.ml-sect   Acorns: skill-based workshops
+                //-     li.ml-sect.med art direction for the camp. 
+                //- Workshops were iterated through a series of design sprints; camp guidelines decided collectively. 
+             
+
+                figure.mlmr-sect
+                    img(data-src="imgs/gakko/image5.jpg").maskable.lazy
+                    figcaption "Welcome"
+    
+            section.grid.x12c
+                
+                h3.ml-sect Contribution
+                
+                div.ml-sect
+                p.ml-sect Beyond taking on roles that worked towards the greater functioning of the camp:
+                
+                ul.ml-sect
+                    +faList("")(class="fad fa-tshirt")    
                         div
-                           a(class="in-txt" href="https://www.behance.net/liangkay" target="_blank").in-txt Kay Liang 
+                            |I did the visual design for the  
+                            a(href="#visualdesign" class="in-txt") camp t-shirt and venue signage
+                    +faList("")(class="fad fa-text") 
+                        div
+                            |I designed a long-form investigative workshop,   
+                            a(href="#typography" class="in-txt") Typography: A Love Story
+                    +faList("")(class="fad fa-acorn") 
+                        div
+                            |I facilitated a number of 
+                            a(href="#acorns" class="in-txt")
+                                em acorns
+                            | - short skill-specific workshops.
+
+            hr
 
 
+            section.grid.x12c  
+                h2.l-sect#visualdesign Visual Design
+                h3.ml-sect T-shirt Decal
+                //- div.ml-sect 
+                p.ml-sect Each annual Gakko camp has a signature T-Shirt for that year. This year’s focus on environmentalism led to the design being screen-printed on existing t-shirts of the kohai and sempai rather than completely new shirts. This created the design constraint of a monochromatic decal.
+                figure.mlmr-sect
+                    .single-item    
+                        .img
+                            img(data-src="imgs/gakko/a06.jpg").lazy
+                        .img
+                            img(data-src="imgs/gakko/a05.jpg" alt="screen printing activity").lazy
 
+                        .img  
+                            img(data-src="imgs/gakko/woman-shirt.jpg" alt="screen printing activity").lazy
+                    figcaption Variations of screenprints using final design.
 
-            div.flex-i
-               h5 Directors
-               div.team
-                  +faList("Lilly Callahan")(class="fad fa-fireplace")
-                  +faList("Kenta Koga")(class="fad fa-wand-magic")
-               h5 Coordinators
-               div.team
-                  +faList("Ian Shimizu")(class="fad fa-tree-alt")
-                  +faList("Riku Kurosawa")(class="fad fa-leaf-heart")
-
-
-               div.credits
-                  h4  
-                  ul
-         hr
-
-         section.grid.x20c
-            h2.l-sect Overview
-            h3.ml-sect Project Context
-            //- h4.ml-sect Summer 2019
-            p.ml-sect        
-               |I was a part of a group of mentors -
-               em  Sempai
-               | - from varying fields brought to Kagoshima, Japan to build from ground up a two-week summer camp experience. This included extensive workshops called 
-               em Investigations
-               | focusing intensely on professional competencies and passion projects of the mentors, shorter skill-based workshops called
-               em Acorns 
-               |, and the spatial design for building the intended camp atmosphere. Workshops were iterated through a series of design sprints; camp guidelines decided collectively. 
-            h3.ml-sect Contribution
-            div.ml-sect
-               p Beyond taking on roles that worked towards the greater functioning of the camp:
-               ul
-               +faList("")(class="fad fa-tshirt")    
-                  div
-                     |I did the visual design for   
-                     a(href="#visualdesign" class="intra-page") camp t-shirt and signage
-               +faList("")(class="fad fa-text") 
-                  div
-                     |I designed a longer-term investigative workshop,   
-                     a(href="#typography" class="intra-page") Typography: A Love Story.
-               +faList("")(class="fad fa-acorn") 
-                  div
-                     |I facilitated a number of 
-                     a(href="#acorns" class="intra-page")
-                     em acorns
-                     |   short skill-specific workshops.
-
-            figure.mlmr-sect
-               img(data-src="imgs/gakko/image5.jpg").maskable.lazy
-               figcaption "Welcome"
-   
-         section.grid.x12c  
-            //- h2.l-sect 
-            h3.ml-sect Guiding Ethos
-            figure.magenta-hover.ml-sect
-               img(data-src="imgs/gakko/mindmap.jpg").maskable.lazy
-               figcaption Mind Map Portraits
-            p.ml-sect We created a set of values to guide our decisions. This established common ground on various ideas between sempai to help with creating collorative workshops for our students.
-            //- (workshops co-run by two sempai on a shared idea). It also served the purpose of deepening mutual understanding, which was essential towards running the camp smoothly.
-            //- p.ml-sect Progressing from the mind-maps, <mark>we chose a compass, values that would guide our decisions when solving problems</mark>, from during workshop development to space building. After a mass proposal of ideas, we used a process of elimination including checking commonalities among individuals, grouping ideas under various umbrellas and cutting non-essentials. We decided upon four values including:
-            figure.magenta-hover.mlmr-sect
-               img(src="imgs/gakko/compass.png") 
-               figcaption Our Compass of Values
-
-            //- figure.magenta-hover.mr-sect
-            //-   img(src="imgs/gakko/image24.jpg" alt="post design-sprint meeting").maskable
-            //-   figcaption Pre-sprint meeting on objectives of the day.
-
-         section.grid.x20c  
-            h2.l-sect#visualdesign.r1 Visual Design
-            h3.ml-sect.r2 T-shirt Decal
-            //- div.ml-sect 
-            p.ml-sect Every year’s Gakko camp has a signature T-Shirt with a custom decal. This year’s environmentalist approach led to 
-               mark the design being screen-printed on existing t-shirts 
-               |of the kohai and sempai. This created 
-               mark a constraint of having decal with a single colour.
-            //- Every year’s Gakko camp has a signature T-Shirt with a custom decal. This year’s environmentalist approach led to this year’s design being screen printed on existing t-shirts of the kohai and sempai. This created <mark>a constraint of having decal with a single colour.</mark> 
-            p.ml-sect The task of designing the shirt was open to all sempai at the start of prep however my enthusiasm and initiative to produce initial mockups led to me being assigned the task.  
-
-            figure.ml-sect  
-               img(src="imgs/gakko/logo-iterations.png" alt="screen printing activity").maskable
-               figcaption Initial Iterations
-
-            p.ml-sect
-               |I used previous years’ decal designs as precedent. They utilised Gakko’s 
-               a(href="https://medium.com/@mariogomes/analysis-of-the-ens%C5%8D-symbol-f200f0798692" class="in-txt" target="_blank")
-                  em Ensō 
-                  |logo
-               |   as a constraining structure. As opposed to abstract illustration, 
-               mark I focused more on iconography & imagery I found most uniquely signified the camp in 2019. 
-               | This included:
-
-            ul.ml-sect
-               +faList("The ocean around the venue.")(class="fad fa-water")
-               +faList("the active volcano Sakurajima visible on the horizon.")(class="fad fa-volcano ")
-               +faList("Japan where the camp was held. Most of the kohai had previously never been to Japan, for some it being their first international trip. This made it an important milestone for them.")(class="fad fa-globe-asia")
-
-            p.ml-sect
-               |Over the span of camp prep, I iterated on the decal, trying different approaches, but came full circle to a design somewhat similar to the initial direction.
-
-            figure.mlmr-sect
-               .single-item 
-                  .img
-                     img(data-src="imgs/gakko/gakko2019logo2.png" alt="").lazy
-                  .img
-                     img(data-src="imgs/gakko/color-palette.png" alt="screen printing activity").lazy
-               figcaption Final decal design and screenprint colour palette.
-            figure.lr-sect
-               .single-item    
-                  .img
-                     img(data-src="imgs/gakko/a06.png" alt="screen printing activity").lazy
-                  .img
-                     +lazyImg("imgs/gakko/a05.png")
-                  //-   img(data-src="imgs/gakko/a05.png" alt="screen printing activity").lazy
-                  .img
-                     img(data-src="imgs/gakko/woman-shirt.png" alt="screen printing activity").lazy
-               figcaption Variations of screenprints using final design.
-         
-         section.grid.x20c
-            h2.l-sect#typography Main Investigation: Typography - A Love Story 
-            //- h3.ml-sect Typography: A Love Story
-            p.ml-sect 
-               |This workshop focused on exploring typography, how it influences perception in subtle yet important ways and  how the intricate details and differences of a typeface defines its identity.
-            p.ml-sect I focused on how <mark>typography influences your decisions and perception in ways most people don’t realise</mark>, and how<mark> the intricacies of and accentuated differences within typefaces define their individual identity </mark>as well within greater culture.
-            figure.mlmr-sect
-               .single-item     
-                  .img
-                     img(data-src="imgs/gakko/slides/slide_01.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/slides/slide_02.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/slides/slide_03.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/slides/slide_04.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/slides/slide_05.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/slides/slide_06.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/slides/slide_07.jpg" alt="slide on typography").lazy
-                  .img 
-                     img(data-src="imgs/gakko/slides/slide_08.jpg" alt="slide on typography").lazy
-
-               figcaption Selection of slides from deck shown to kohai to provide context and knowledge to kohai
-
-            p.ml-sect All main investigations were put through <mark>a series of short design sprints </mark> over the 2 weeks of prep. We first defined what the investigations’ purposes were, how and what we expected kohai to receive at the end of the workshop, and how to keep engagement high throughout. Then time was spent individually exploring different avenues of how investigations could be experiences within the time slots the investigation was given. After developing mediums for the investigations - which was a presentation in the case of this investigation - we tested them in what we coined as <em>protos</em>. Sempai participate in 30 min test workshops and come out of them with feedback on what hooked them on, needed greater clarity and would enkindle further curiosity, etc.
-               
-            div.ml-sect 
-               p The feedback I received included:   
-               ol
-                  li Less teaching to them, more discussing with them so as to promote their own curiosity.
-                  li Utilise my own passion & curiosity, and to not let my limited experience with type design constrict what can be tried.
-                  li The moments where I inserted personal experiences were the most resonating, and therefore focus in on that.
-                  li Create a story arc to follow, as well as a more step by step process which builds upon itself.
-         
-            p.ml-sect 
-               |In order to move away from the  
-               a(href="https://www.brighthubeducation.com/teaching-methods-tips/5487-pros-and-cons-of-direct-teaching/" title="THe Pros and Cons of Direct Instruction" target="_blank").in-txt direct instruction
-               |  format I was using - that limited the types of engagement kohai could have with the subject matter - I looked at what areas of typography other sempai resonated with the most which were 
-               a(href="https://www.nickkolenda.com/font-psychology/", title="Font Psychology" target="_blank").in-txt perceptual and direct associations
-               //- |. I used this insight to create an investigation that focused on Kohai leveraging their own socio-cultural direct and perceptual associations to prompt discussion, promote empathy, and generate glyphs that best represented their perspective.
-               |. I used this insight to focus on 
-               mark having Kohai leverage their own socio-cultural direct and perceptual associations to prompt discussion, promote empathy across their varied cultures, through the lens of typography.
-
-            p.ml-sect
-               |In addition, of the various exercises I iterated through, those prompting the most enthusiasm were those focusing on sketching 
-               a(href="https://ilovetypography.com/typography-terms/typography-terms-g/" title="the shape given in a particular typeface to a specific grapheme or symbol. Most commonly glyphs are letters and numerals, but punctuation marks and symbols and shapes are also glyphs." target="_blank").in-txt glyphs
-               |. <mark> I expanded upon this making it a typeface making exercise, with everyone contributing one glyph each.</mark> This was intended to introduce collective responsibility along with allowing equal opportunity for expression.
-            figure.mlmr-sect
-               .single-item
-                  .img
-                     img(data-src="imgs/gakko/font/fontFrame01.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/font/fontFrame04.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/font/fontFrame02.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/font/fontFrame03.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/font/fontFrame05.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/font/fontFrame05-1.jpg" alt="slide on typography").lazy
-                  .img
-                     img(data-src="imgs/gakko/font/fontFrame05-2.jpg" alt="slide on typography").lazy
-               figcaption Sketches and final digitised versions of glyphs designed in the investigation
-
-
-            //- figure.magenta-hover.mr-sect.flex-b
-
-          
-         section.grid.x12c
-            figure.ml-sect
-               .single-item 
-                  .img
-                     img(data-src="imgs/gakko/image31.jpg" alt="abc").lazy
-                  .img
-                     img(data-src="imgs/gakko/image30.jpg" alt="sc").lazy
-                  .img
-                     img(data-src="imgs/gakko/image33.jpg" alt="sc").lazy
-         hr
-         section.grid.x12c
-
-            h2.l-sect#acorns Acorns
-            p.ml-sect Acorns were what we called short workshops spanning an hour each. They were run by pairs of sempai, with different topics that had a connecting thread. Along with Kay, a game and event designer, our acorns focused on <em>Tiny Worlds</em>, a concept exploring world-building and big ideas on small scales, and its greater impact.
-        
-            h3.ml-sect Jewelry Making
-            p.ml-sect 
-               |For this acorn, I decided to extrapolate from 20th century artist Marcel Duchamp's 
-               a(href="https://www.moma.org/collection/terms/44"  target="_blank" title="Museum of Modern Art's Objet Trouvé Collection").in-txt 
-                  em Objet Trouvé
-               |  Found Objects, an art-form where a work's identity is designated by the artist and the work's social history. Most of the pieces were centered around a found object picked from the nearby beach. This served the purpose of 
-               mark challenging what we consider valuable,
-               |  and the environmental consequences of devaluing plastic.
-
-            figure.mlmr-sect
-               .single-item   
-                  .img
-                     img(data-src="imgs/gakko/a04.jpg" alt=" ").lazy
-                  .img
-                     img(data-src="imgs/gakko/a03.jpg" alt=" ").lazy
-               figcaption Jewelry Acorn In-Progress
-
-
-            figure.mlmr-sect  
-               .single-item   
-                  .img
-                     img(img-src="imgs/gakko/ring-1.jpg").lazy
-                  .img
-                     img(img-src="imgs/gakko/ring-2.jpg").lazy
-                  .img
-                     img(img-src="imgs/gakko/ring-3.jpg").lazy
-
-               figcaption Rings made in the workshop 
-
-            h3.ml-sect Animation
-            p.ml-sect My personal knowledge and experience with animation is limited, especially in comparison to my partner Kay, so I took a more facilitative role for this acorn, coordinating the workshop, and helping with technical aspects such as scanning animation frames.
-            <iframe class="ml-sect" src="https://www.youtube-nocookie.com/embed/2Xj6dQSK8_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
-
-         section.grid.x20c
-            h2.l-sect.r1 Reflection
-            p.ml-sect
-
-               |From a higher level perspective, I think the camp was quite successful, from intention to execution. 
-               |This being my first experience in a positon of mentorship lead to moments of error in personal judgement, but it was an experience I greatly value, and has made me motivated to seek similar opportunities to mentor, and to be mentored myself, in the future.
+                p.ml-sect The task of designing the shirt was open to all sempai at the start of prep however my enthusiasm and initiative to produce initial mockups led to me being assigned the task.  
             
-            p.ml-sect
-               |Regarding my investigation into typography, Kohai responded afterwards that they developed  a greater appreciation for typography and its effect on visual communication. 
-               |If I were to do the investigation differently, I would have preferred more time alloted in educating kohai on the ins and out of actual type design and less focus on its daily impact; and provide marker constraints and narrower design focus. This would ideally lead to the final glyphs having marker cohesion, and less like a lettering project. 
-            p.ml-sect
-               |A personal goal I did fulfill was showing how small things, details, matter and make a difference, whether in type design, photography, jewellery making or anything else.
+            hr.small
 
-            figure.ml-sect 
-               img(data-src="imgs/gakko/image10.jpg").lazy
-               figcaption "Quiet Corridor"   
+            section.grid.x12c  
+
+                p.ml-sect
+                    |Over the span of camp prep, I iterated on the decal, trying different approaches, but came full circle to a design somewhat similar to the initial direction.
+                figure.ml-sect  
+                    img(src="imgs/gakko/logo-iterations.png" alt="screen printing activity").maskable
+                    figcaption Initial Iterations
+                p.ml-sect
+                    |I utilised Gakko’s 
+                    a(href="https://medium.com/@mariogomes/analysis-of-the-ens%C5%8D-symbol-f200f0798692" class="in-txt" target="_blank") Ensō-based
+                    |logo
+                    |   as a constraining structure. As opposed to abstract illustration, 
+                    mark I focused more on iconography & imagery I found most uniquely signified the camp in 2019. 
+                    | This included:
+                ul.ml-sect
+                    +faList("The ocean around the venue.")(class="fad fa-water")
+                    +faList("the active volcano Sakurajima visible on the horizon.")(class="fad fa-volcano ")
+                    +faList("Japan where the camp was held. Most of the kohai had previously never been to Japan, for some it being their first international trip. This made it an important milestone for them.")(class="fad fa-globe-asia")
+
+                figure.mlmr-sect
+                    .single-item 
+                        .img
+                            img(data-src="imgs/gakko/gakko2019logo2.png" alt="").lazy
+                        .img
+                            img(data-src="imgs/gakko/color-palette.png" alt="screen printing activity").lazy
+                    figcaption Final decal design and screenprint colour palette.
+            
+            section.grid.x12c
+                figure.mlmr-sect
+                    .single-item 
+                        .img
+                            img(data-src="imgs/gakko/image31.jpg" alt="abc").lazy
+                        .img
+                            img(data-src="imgs/gakko/image30.jpg" alt="sc").lazy
+                        .img
+                            img(data-src="imgs/gakko/image33.jpg" alt="sc").lazy
+
+            hr
+
+            
+            section.grid.x12c
+                h2.l-sect#typography Investigation 
+                h3.ml-sect Typography: A Love Story
+                //- p.ml-sect 
+                    |This workshop focused on exploring how typogrpahy influences perception in subtle yet important ways and  how the intricate details of and differences between typefaces defines their characteristics identity.
+                p.ml-sect I focused on how typography influences your decisions and perception in ways most people don’t realise, and how the intricacies of and accentuated differences between typefaces define their identity within our visual culture.
+
+                figure.mlmr-sect
+                    .single-item
+                        .img
+                            img(data-src="imgs/gakko/font/fontFrame01.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/font/fontFrame04.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/font/fontFrame02.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/font/fontFrame03.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/font/fontFrame05.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/font/fontFrame05-1.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/font/fontFrame05-2.jpg" alt="slide on typography").lazy
+                    figcaption Sketches and final digitised versions of glyphs designed in the investigation
+
+
+                p.ml-sect Our investigations were put through 
+                    mark short design sprints over the 2 weeks of prep.
+                    | We first defined the investigations’ purpose, what we expected kohai to learn at the end, and how to keep engagement high throughout.
+                    //- | Then time was spent individually exploring different avenues of how investigations could be experiences within the time slots the investigation was given. 
+                    mark After developing mediums for the investigations - which was a presentation in the case of this investigation - we had Sempai repeatedly user-test them in 30 min test workshops.
+                    //- | what hooked them on, needed greater clarity and would enkindle further curiosity, etc.
+                
+                div.ml-sect 
+                    p The feedback I received included:   
+                    ol
+                        li Less teaching to them, more discussing with them so as to promote their own curiosity.
+                        li Do not let my limited experience with type design constrict what can be tried.
+                        li The sharing of personal experiences with type were the most resonating.
+                        li Needs a story arc to follow.
+            
+                p.ml-sect 
+                    |In order to move away from the  
+                    a(href="https://www.brighthubeducation.com/teaching-methods-tips/5487-pros-and-cons-of-direct-teaching/" title="THe Pros and Cons of Direct Instruction" target="_blank").in-txt direct instruction
+                    |  format I was using - that limited the types of engagement kohai could have with the subject matter - I looked at what areas of typography other sempai resonated with the most which were 
+                    a(href="https://www.nickkolenda.com/font-psychology/", title="Font Psychology" target="_blank").in-txt perceptual and direct associations
+                    //- |. I used this insight to create an investigation that focused on Kohai leveraging their own socio-cultural direct and perceptual associations to prompt discussion, promote empathy, and generate glyphs that best represented their perspective.
+                    |. I used this insight to focus on 
+                    mark having Kohai leverage their own socio-cultural direct and perceptual associations to prompt discussion, promote empathy across their varied cultures, through the lens of typography.
+
+                figure.mlmr-sect
+                    .single-item     
+                        .img
+                            img(data-src="imgs/gakko/slides/slide_01.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/slides/slide_02.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/slides/slide_03.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/slides/slide_04.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/slides/slide_05.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/slides/slide_06.jpg" alt="slide on typography").lazy
+                        .img
+                            img(data-src="imgs/gakko/slides/slide_07.jpg" alt="slide on typography").lazy
+                        .img 
+                            img(data-src="imgs/gakko/slides/slide_08.jpg" alt="slide on typography").lazy
+
+                    figcaption Selection of slides from deck shown to kohai to provide context and knowledge to kohai
+
+                p.ml-sect
+                    |In addition, of the various exercises I iterated through, those prompting the most enthusiasm were those focusing on sketching 
+                    a(href="https://ilovetypography.com/typography-terms/typography-terms-g/" title="the shape given in a particular typeface to a specific grapheme or symbol. Most commonly glyphs are letters and numerals, but punctuation marks and symbols and shapes are also glyphs." target="_blank").in-txt glyphs
+                    |. <mark> I expanded upon this making it a typeface making exercise, with everyone contributing one glyph each.</mark> This was intended to introduce collective responsibility along with allowing equal opportunity for expression.
+
+
+            hr
+            section.grid.x12c
+
+                h2.l-sect#acorns Acorns
+                p.ml-sect Short workshops spanning an hour each; they were run by pairs of sempai. Along with Kay, a game and event designer, the connecting thread of our acorns was 
+                    mark Tiny Worlds -exploring world-building and big ideas on small scales, and its greater impact.
+                    |
+                    |  Below are artefacts from a few of them:
+            
+                h3.ml-sect Jewelry Making
+                p.ml-sect 
+                    |For this acorn, I decided to extrapolate from 20th century artist Marcel Duchamp's 
+                    a(href="https://www.moma.org/collection/terms/44"  target="_blank" title="Museum of Modern Art's Objet Trouvé Collection").in-txt 
+                        em Objet Trouvé
+                    |  Found Objects, an art-form where a work's identity is designated by the artist and the work's social history. Most of the pieces were centered around a found object picked from the nearby beach. This served the purpose of 
+                    mark challenging what we consider valuable,
+                    |  and the environmental consequences of devaluing plastic.
+
+                figure.mlmr-sect
+                    .single-item   
+                        .img
+                            img(data-src="imgs/gakko/a04.jpg" alt=" ").lazy
+                        .img
+                            img(data-src="imgs/gakko/a03.jpg" alt=" ").lazy
+                    figcaption Jewelry Acorn In-Progress
+
+
+                figure.mlmr-sect  
+                    .single-item   
+                        .img
+                            img(data-src="imgs/gakko/ring.jpg").lazy
+                        .img
+                            img(data-src="imgs/gakko/ring-2.jpg").lazy
+                        .img
+                            img(data-src="imgs/gakko/ring-3.jpg").lazy
+
+                    figcaption Rings made in the workshop 
+
+            hr.small
+            section.grid.x12c  
+
+                h3.ml-sect Animation
+                p.ml-sect My personal knowledge and experience with animation is limited, especially in comparison to my partner Kay, so I took a more facilitative role for this acorn, coordinating the workshop, and helping with technical aspects such as scanning animation frames.
+                <iframe class="mlmr-sect" src="https://www.youtube-nocookie.com/embed/2Xj6dQSK8_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            
+            hr
+
+
+            section.grid.x12c  
+                //- h2.l-sect 
+                h2.l-sect Guiding Ethos
+                //- figure.magenta-hover.ml-sect
+                //-     img(data-src="imgs/gakko/mindmap.jpg").maskable.lazy
+                    figcaption Mind Map Portraits
+                p.ml-sect We created a set of values to guide our decisions. This established common ground on various ideas between sempai to help with creating collorative workshops for our students.
+                //- (workshops co-run by two sempai on a shared idea). It also served the purpose of deepening mutual understanding, which was essential towards running the camp smoothly.
+                //- p.ml-sect Progressing from the mind-maps, <mark>we chose a compass, values that would guide our decisions when solving problems</mark>, from during workshop development to space building. After a mass proposal of ideas, we used a process of elimination including checking commonalities among individuals, grouping ideas under various umbrellas and cutting non-essentials. We decided upon four values including:
+                figure.magenta-hover.mlmr-sect
+                    img(src="imgs/gakko/compass.png") 
+                    figcaption Our Compass of Values
+
+
+            hr
+
+            section.grid.x12c
+                h2.l-sect Reflection
+                p.ml-sect
+
+                    //- |From a higher level perspective, I think the camp was quite successful, from intention to execution. 
+                    mark This was my first experience in a mentorship role.
+                    | My inexperience lead to moments of error in personal judgement, but it was an experience I greatly value,
+                    mark motivating me to seek similar opportunities in the future.
+                
+                p.ml-sect
+                    |Regarding my typography investigation, Kohai responded positively, saying they had developed a greater appreciation for typography and its impact on visual communication. 
+                    mark If I were to do the investigation differently,
+                    | I would have alloted more time drilling deeper into the ins and out of actual type design and less focus on its daily impact; and 
+                    mark provide clearer constraints and a narrower design focus.
+
+                p.ml-sect
+                    |A personal goal I did fulfill was 
+                    mark showcasing how small things - details - matter and make a difference, whether in type design, photography, jewellery making or anything else.
+
+                figure.ml-sect 
+                    img(data-src="imgs/gakko/image10.jpg").lazy
+                    figcaption "Quiet Corridor"   
 
 
 
-            figure.ml-sect 
-               img(data-src="imgs/gakko/team.jpeg").maskable.lazy
+                //- figure.ml-sect 
+                //-     img(data-src="imgs/gakko/team.jpeg").maskable.lazy
 
-      footer 
-         include ./includes/footer1.pug
+        footer 
+            include ./includes/footer1.pug

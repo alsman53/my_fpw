@@ -1,20 +1,19 @@
 mixin faList(content)
     li.flex-b
         span()&attributes(attributes)
-        = content
+            = content
         block
 
 mixin img-ll(name,data)
-  a(class=name+" img-cont element-item" data-groups=data data-lightbox=data href="imgs/"+name+".jpg") 
-    img(class="lazy grid-image", data-src="imgs/"+name+".jpg", src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
-
+    a(class=name+" img-cont element-item" data-groups=data data-lightbox=data href="imgs/"+name+".jpg") 
+        img(class="lazy grid-image", data-src="imgs/"+name+".jpg", src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
 
 
 mixin rM()
   button.coll-button Read More
 
-
 doctype html
+
 html(lang='en')
     head
         include ./includes/head1.pug
@@ -133,8 +132,8 @@ html(lang='en')
                     li ability (if people can do it)
                     li
                         mark triggers (a stimulus that provokes them to do it)
-                p.ml-sect Through this knowledge, we created the 
-                h4.ml-sect Product Care Initiative:
+                p.ml-sect Through this knowledge, we created 
+                h3.ml-sect Arc'teryx Product Care:
                 figure.lr-sect
                     img(data-src="imgs/arcy/pc.jpg", src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" alt="alt").lazy
  
@@ -269,9 +268,6 @@ html(lang='en')
             section.grid.x12c#synthesis
                 h2.l-sect Data Synthesis
 
-                discrepancies 
-
-
             section.grid.x12c#frustrations
                 h3.ml-sect Frustrations
                 p.ml-sect Frictions described by Arc’teryx customers confirmed for us that people’s experience with Arc’teryx is great — until they feel frustrated and betrayed by their product’s need for care. 
@@ -322,8 +318,8 @@ html(lang='en')
                         i.fas.fa-head-side-brain
                         |customer behavior confirmed for us that there was an opportunity to further leverage the current touchpoints. 
 
-                ul.ml-sect
-                    +faList("Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase")(class="fas fa-comment")
+                ul.ml-sect.med
+                    +faList("Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase")(class="fas   fa-comment")
                     
                     +faList("Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase")(class="fas fa-head-side-brain space")
 
@@ -386,6 +382,23 @@ html(lang='en')
                     strong facilitating post-purchase self learning on why and how 
                     |garments are cared for? 
 
+
+            hr
+
+
+            section#reflection.grid.x12c
+                h2.l-sect Reflection
+
+                p.ml-sect I think trust was a consistently emerging theme throughout the project for me. 
+                    mark The undefined nature of the project emphasised the uncertainty that is essential to the design process, 
+                    | which I have always found personally unintuitive. I've therefore always needed to push myself into it, and this project really made me work on that, and as our professor Dr.Ron Wakkary, kept reminding us, 
+                    mark trust the process.
+
+                p.ml-sect Trust was also key to successfully designing with all of our stakeholders in mind - designing a solution that maintained, if not increased, the trust customers have in Arc'teryx and creating products that were inline with Arc'teryx's sustainability mission.
+
+                p.ml-sect Most important was trusting the team process, being able to delegate work while believing in the competency of each others skills and abilities. I think this was key in our success, as we recognised where we each excelled, and provided the space for us to grow where we didn't.
+                figure.lr-sect
+                    img(data-src="imgs/arcy/arcy-team.jpg",src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 2'%3E%3C/svg%3E").lazy 
 
         footer 
             include ./includes/footer1.pug 

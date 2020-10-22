@@ -73,10 +73,14 @@ p,li, a
    letter-spacing: .35px;
 
 p
-   text-indent: 1rem
-   
+   // text-indent: 1rem
+   margin-bottom: 1rem   
+   max-width 50ch
+
 p,li,span
    font-size 1.3rem
+   // font-size 1.1rem
+   // font-weight: 600
    line-height: 1.5
    +narrowerthan(500px)
       font-size: 1rem
@@ -108,7 +112,7 @@ h3
 
 
 h4
-   font-family: var(--tfont), sans-serif
+   font-family: var(--pfont), sans-serif
    font-weight: var(--p-std-weight)
    font-size 3.375rem
 
@@ -133,7 +137,7 @@ h6
 
    font-size 1.5rem
 
-small
+small 
    font-size: 0.8em
    max-width 50ch 
 
@@ -152,15 +156,15 @@ mark
    background-clip: padding-box;
 
    +narrowerthan(1400px)
-      background-color:  rgba(210,41,235,.2); 
-      border-color rgba(210,41,235,.3);
+      background-color:  rgba(210,41,235,.25); 
+      border-color rgba(210,41,235,.25);
       transition-delay: 0s
 
 
 section:hover mark
    
-   background-color:  rgba(210,41,235,.2); 
-   border-color rgba(210,41,235,.3);
+   background-color:  rgba(210,41,235,.25); 
+   border-color rgba(210,41,235,.25);
 
 
 em
@@ -171,7 +175,7 @@ ul
    padding-left: 0em;
    margin-top: 0.2rem
    margin-bottom: 0.5rem
-   list-style-type none 
+//    list-style-type none 
 
 
 ol li
@@ -261,7 +265,7 @@ h1
 
 ul
    li
-      max-width 50ch
+      max-width 50ch 
       margin-bottom: .5em
 
    
