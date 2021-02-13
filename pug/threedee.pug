@@ -1,0 +1,23 @@
+//- ////////MIXINS/////////
+mixin threedee-lazyloaded-lg(name1,name2)
+  a(class=name1+" img-cont element-item" data-groups=name1 data-lightbox="threedee" href="imgs/threedee/"+name2) 
+    img(class="lazy grid-image", data-src="imgs/threedee-sm/"+name1 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
+
+doctype  
+html(lang='en')
+  head
+    include ./includes/head1.pug
+    title 3d visualisations - Ali Rasheed
+  body 
+    header.gallery
+      include ./includes/nav1.pug  
+
+
+    main.gallery 
+
+          
+      section.photography-grid#portfolioContainer
+        +threedee-lazyloaded-lg("wtrmln.png","wtrmln.mp4")
+          
+    footer
+      include ./includes/footer2.pug

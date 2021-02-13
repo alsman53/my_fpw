@@ -18,7 +18,11 @@ main.gallery
     margin-left: 1rem
     margin-right: 1rem
   //   margin-top: -8rem
-
+  img.grid-image
+    &:hover
+        cursor: url(trg.svg) 16 16, auto
+        // filter contrast(1.2)
+        transition: filter ease-out 200ms 
   section#portfolioContainer
     a
       // margin 2px   
@@ -121,7 +125,7 @@ input[type=radio] + label
 
 input[type=radio]:checked + label ,input[type=radio] + label:hover, input[type=radio] + label:active 
   // background-color var(--pcol)
-  cursor: url(plus.svg) 22.5 23, auto
+  cursor: url(trg.svg) 22.5 23, auto
       
   // &:hover
   background-color: rgba(210,41,235,.3);

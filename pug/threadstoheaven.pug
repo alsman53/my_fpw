@@ -12,36 +12,34 @@ mixin lazyImg(content)
 doctype
 
 html(lang='en')
-   head
-      include ./includes/head1.pug
-      title Threads to Heaven - Ali Rasheed
+    head
+        include ./includes/head1.pug
+        title Threads to Heaven - Ali Rasheed
 
-   body 
-      header
-         include ./includes/nav1.pug   
+    body 
+        header
+            include ./includes/nav1.pug   
 
-      main.grid#project
+        main.grid#project
 
-         section#overview.x20c.grid 
+            section#overview.x12c.grid 
 
 
-            h1.main-heading Threads to Heaven
+                h1.main-heading Threads to Heaven
 
-            p.big#summary
-               |A 
-               a(href="http://speculative.hr/en/introduction-to-speculative-design-practice/").in-txt speculative and critical design
-               |  project that questions the taboo nature of death in Western society, and whether one can choose and design their own “good death”.  
+                p.big#summary
+                    |A 
+                    a(href="http://speculative.hr/en/introduction-to-speculative-design-practice/").in-txt speculative and critical design
+                    |  project that questions the taboo nature of death in Western society, and whether one can choose and design their own “good death”.  
 
-   
-            #cover-image.magenta-hover 
-               img(src="imgs/spec-design/cover.jpg", alt="venue of camp")
+    
+                #cover-image.magenta-hover 
+                    img(src="imgs/spec-design/cover.jpg")
 
-               //- figcaption 3D model render part of final deliverables
-         
-         section.flex-s.points
+            section.flex-s.points
 
                 div.flex-i
-                    h5 Contribution
+                    h5 Responsibilities
                     ol
                         li 3D Design
                         li Visual Design 
@@ -66,153 +64,215 @@ html(lang='en')
 
                         +faList("Isaaca Tsang")(class="fad fa-palette")      
 
+            hr
 
-         section.grid.x12c
-            h2.l-sect The Gist
-            h3.ml-sect Project Context 
-            p.ml-sect        
-               //- |Death comes for us all, but the emphasis on prolonging life in Western society has led us to shy away from talking about and preparing for death. By facing death, not only can we live with passion, but also pass with passion.
-               //- br
-               //- |We explore how one’s relationship with both life and death would change by living with this fungi. We question whether death should be such a taboo topic in the Western society, and whether one can choose and design their own "good death".
-               //- br
-               //- |This 
-               //- |As one maintains and feeds the fungi with bits of oneself, such as nails, hair, and dead skin, one can also feed on the fruiting mushrooms. The fungi can then be used to return one's body to earth, cleansing and decomposing one's body to more seamlessly become part of nature. 
-               |In Spring 2020, as part of IAT 431 Speculative Design, my final month-long project explored a lengthy and involved process of 
-               mark preparing for one's own death in a symbiotic relationship with another living organism, fungi. 
-                my final project explored the emergent conversations and rituals around the fungi, and how this affects one’s relationship with death.
+            section.grid.x12c
+                h2.l-sect The Gist
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9dX4ImkhJeM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lr-sect"></iframe>
 
-         hr.small
+                h3.ml-sect Contribution 
+                p.ml-sect  I
+                    mark co-designed and copy-wrote our design workbook
+                    
+                    |, which was a visual documentation of our speculative design process. I helped 
+                    mark direct our content strategy for designing artefacts
+                    |  that would convey our proposal effectively.
+                    | I also designed the 3D render of the final diaroma demonstrating our concept
+            
+            hr.small 
 
-         section.grid.x12c
-            h3.ml-sect Project Artefacts
-            //- <iframe style="border: none;" class="mlmr-sect" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5IZL1IuzMVTuZeYEhT1pAY%2FThreads-to-Heaven-Websites%3Fnode-id%3D248%253A46%26viewport%3D864%252C472%252C0.06405032426118851%26scaling%3Dscale-down-width" allowfullscreen></iframe>
-            iframe( class="lr-sect" src="https://www.youtube-nocookie.com/embed/EIM_rSjGAS8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen)
+            section.grid.x12c 
 
-            figure.lr-sect
-               img(data-src="imgs/spec-design/processing-vid/slide_43.jpg"
-               
-               ,src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 2'%3E%3C/svg%3E").lazy  
-         //- section.grid.x20c
-            h2.l-sect Project Proposals
-            p.ml-sect After choosing death as our provocation area, we proposed 3 concepts for our project
-            figure.mlmr-sect
-               .manual-swipe   
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_01.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_02.jpg" alt="b").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_03.jpg" alt="c").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_04.jpg" alt="d").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_05.jpg" alt="e").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_06.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_07.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_08.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_09.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_10.jpg" alt="a").lazy    
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_11.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_12.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_13.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_14.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_15.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_16.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_17.jpg" alt="a").lazy   
-                  .img
-                     img(data-src="imgs/spec-design/3-concepts/concepts_18.jpg" alt="a").lazy  
-                  //- .img 
-                  //-     img(data-src="imgs/arcy/persona-3.jpg" alt="Pre-purchase journey").lazy         
-               //- figcaption Key Initial Insights
-         
-         section.grid.x20c
-            h2.ml-sect Design Workbook
-            p.ml-sect This design workbook is a visual journal of our design process for this project, showing our precedent studies, inspirations, iterations and final implementation.
-            figure.mlmr-sect
-               .manual-swipe   
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_01.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_02.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_03.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_04.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_05.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_06.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_07.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_08.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_09.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_10.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_11.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_12.jpg" alt="a").lazy  
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_13.jpg" alt="a").lazy  
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_14.jpg" alt="a").lazy  
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_15.jpg" alt="a").lazy  
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_16.jpg" alt="a").lazy  
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_17.jpg" alt="a").lazy  
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_18.jpg" alt="a").lazy  
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_19.jpg" alt="a").lazy  
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_20.jpg" alt="a").lazy   
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_21.jpg" alt="a").lazy   
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_22.jpg" alt="a").lazy   
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_23.jpg" alt="a").lazy   
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_24.jpg" alt="a").lazy   
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_25.jpg" alt="a").lazy   
-                  .img
-                     img(data-src="imgs/spec-design/design-workbook/design-workbook_26.jpg" alt="a").lazy   
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_27.jpg" alt="a").lazy   
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_28.jpg" alt="a").lazy   
-                  //- .img
-                  //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_29.jpg" alt="a").lazy  
-               figcaption Excerpts from Design Workbook
+                h3.ml-sect Project Context 
+                p.ml-sect        
+                    |In Spring 2020, as part of IAT 431 Speculative Design, my final month-long project explored the emergent conversations and rituals around
+                    mark preparing for one's own death in a symbiotic relationship with another living organism, fungi. 
+                    | and how this affects one’s relationship with death.
 
- 
 
-                      
+                figure.mlmr-sect
+                    img(data-src="imgs/spec-design/statement.jpg" ,src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 2'%3E%3C/svg%3E").lazy  
+            hr  
 
-         section.grid.x12c
+            section.grid.x12c
+                h2.l-sect Project Artefacts
+                figure.mlmr-sect
+
+                    img(data-src="imgs/spec-design/design-workbook/design-workbook_26.jpg",src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E").lazy
+
+            //- section.grid.x12c
+                h3.ml-sect Ad Video
+
+                
+                
+            hr.small
+            section.grid.x12c
+                h3.ml-sect Website Prototypes
+                h4.ml-sect Mycelium & Me Website
+
+                p.ml-sect The website provides the official positioning of the fictional company 
+                    i Mycelium & Me. 
+                    
+                    |The site also includes interviews and other scenario building
+                    
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5IZL1IuzMVTuZeYEhT1pAY%2FThreads-to-Heaven-Websites%3Fnode-id%3D528%253A201%26scaling%3Dmin-zoom" class="lr-sect" allowfullscreen></iframe>
+                
+            hr.small
+            section.grid.x12c
+                h4.ml-sect Reddit Page
+                p.ml-sect Reddit post showing reactions and stories from hypothetical users after seeing images of lonely deaths combined with our 
+                    i Threads To Heaven product
+                    |  in this speculative world
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5IZL1IuzMVTuZeYEhT1pAY%2FThreads-to-Heaven-Websites%3Fnode-id%3D527%253A208%26scaling%3Dmin-zoom" class="lr-sect" allowfullscreen></iframe>
+
+                
+            hr.small
+            section.grid.x12c
+      
+                h3.ml-sect
+                    |Visualisations
+                p.ml-sect
+                    |Closeups of the 3d visualisations and illustration of our concept in action 
+                figure.mlmr-sect
+                    img(data-src="imgs/projects/threads-cover.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E").lazy
+
+                    figcaption 3D visualisation of room where an elder's body is being consumed by the fungi
+            
+
+
+
+                figure.mlmr-sect
+                    img(data-src="imgs/spec-design/processing-vid/slide_19.jpg"  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" ).lazy
+                    figcaption Sketched visualisation of mushrooms growing on corpse.
+
+
+            //- section.grid.x12c
+                h3.ml-sect Mycelium&Me Website Prototype
+                iframe(style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5IZL1IuzMVTuZeYEhT1pAY%2FThreads-to-Heaven-Websites%3Fnode-id%3D528%253A201%26scaling%3Dcontain" allowfullscreen).lr-sect
+                //- section.grid.x20c
+                    h2.l-sect Project Proposals
+                    p.ml-sect After choosing death as our provocation area, we proposed 3 concepts for our project
+                    figure.mlmr-sect
+                    .manual-swipe   
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_01.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_02.jpg" alt="b").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_03.jpg" alt="c").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_04.jpg" alt="d").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_05.jpg" alt="e").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_06.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_07.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_08.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_09.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_10.jpg" alt="a").lazy    
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_11.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_12.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_13.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_14.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_15.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_16.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_17.jpg" alt="a").lazy   
+                        .img
+                            img(data-src="imgs/spec-design/3-concepts/concepts_18.jpg" alt="a").lazy  
+                        //- .img 
+                        //-     img(data-src="imgs/arcy/persona-3.jpg" alt="Pre-purchase journey").lazy         
+                            //- figcaption Key Initial Insights
+                    
+            section.grid.x20c
+                
+                h2.l-sect Process
+                h3.ml-sect Design Workbook
+
+                p.ml-sect This design workbook is a visual journal of our design process for this project, showing our precedent studies, inspirations, iterations and final implementation.
+                figure.mlmr-sect
+                    .manual-swipe   
+                        .img
+                           img(data-src="imgs/spec-design/design-workbook/design-workbook_01.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_02.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_03.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_04.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_05.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_06.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_07.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_08.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_09.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_10.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_11.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_12.jpg" alt="a").lazy  
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_13.jpg" alt="a").lazy  
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_14.jpg" alt="a").lazy  
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_15.jpg" alt="a").lazy  
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_16.jpg" alt="a").lazy  
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_17.jpg" alt="a").lazy  
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_18.jpg" alt="a").lazy  
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_19.jpg" alt="a").lazy  
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_20.jpg" alt="a").lazy   
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_21.jpg" alt="a").lazy   
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_22.jpg" alt="a").lazy   
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_23.jpg" alt="a").lazy   
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_24.jpg" alt="a").lazy   
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_25.jpg" alt="a").lazy   
+                        .img
+                            img(data-src="imgs/spec-design/design-workbook/design-workbook_26.jpg" alt="a").lazy   
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_27.jpg" alt="a").lazy   
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_28.jpg" alt="a").lazy   
+                        //- .img
+                        //-    img(data-src="imgs/spec-design/design-workbook/design-workbook_29.jpg" alt="a").lazy  
+                    figcaption Excerpts from Design Workbook
+
+
+
+                        
+
+        section.grid.x12c
    
             p.ml-sect.med 
-               |Download the complete design workbook PDF 
-               a(href="assets/Threads-to-Heaven_design-workbook.pdf", title="Threads to Heaven Design Workbook PDF" target="_blank").in-txt here
+                |Download the complete design workbook PDF 
+                a(href="assets/Threads-to-Heaven_design-workbook.pdf", title="Threads to Heaven Design Workbook PDF" target="_blank").in-txt here
          
 
-      footer 
-         include ./includes/footer1.pug
-         <script src="https://player.vimeo.com/api/player.js"></script> 
+    footer 
+        include ./includes/footer1.pug
+        //- <script src="https://player.vimeo.com/api/player.js"></script> 

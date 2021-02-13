@@ -7,76 +7,97 @@ mixin faList(content)
 
 doctype html
 html(lang='en')
-  head
-    include ./includes/head1.pug
-    title Me - Ali Rasheed
-  body
-    header
-      include ./includes/nav1.pug
-    main#about.grid.x2c
-      section.profile
-        figure
-          img(src="imgs/crop2.jpeg").tilt
-           //- figcaption Me being awkward in front of a camera
-          figcaption Photographer - a person who would rather be behind the camera than in front...
+    head
+        include ./includes/head1.pug
+        title Me - Ali Rasheed
+    body
+        header
+        include ./includes/nav1.pug
+        main#about.grid.x2c
+            section.profile
+                figure
+                    img(src="imgs/crop2.jpeg").tilt
+                    //- figcaption Me being awkward in front of a camera
+                    figcaption Photographer - a person who would rather be behind the camera than in front...
 
-      section#intro.about-copy
-        h1 Hi
-        p 
-          |My name's Aliasger Rasheed, but I prefer Ali. I'm a designer, photographer and maker studying at 
-          |<a class="in-txt" href="https://www.youtube.com/user/Nerdwriter1" title="Simon Fraser University">SFU</a> 
-          |in Vancouver.
-          |I'm currently 
-          mark looking for internship opportunities, especially in the educational design and digital tool design industries.
-          |contact me at 
-          
-        span.email  aliasgerrasheed@outlook.com
-          .popup  
-            a(href="mailto:aliasgerrasheed@outlook.com", onclick="mailtoF").tooltip    
-              span#mailto email app   
-              span#mPlane.fa-paper-plane.fa
-            |  or  
-            a(onclick="textToClipboard('aliasgerrasheed@outlook.com')").tooltip
-              span#copy copy it  
-              span#mCopy.fa-copy.fa 
-              
+            section#intro.about-copy
+                h1 Hi 
+                        
+                p
+                    |My name's Aliasger Rasheed, but I prefer Ali. I'm a designer, photographer and maker studying at 
+                    |<a class="in-txt" href="https://www.youtube.com/user/Nerdwriter1" title="Simon Fraser University">SFU</a> 
+                    |in Vancouver.
+                    |I'm currently 
+                    mark looking for internship opportunities, especially in the educational design and digital tool design industries.
+                //- h5.about Contact me at
+                //-     |  
+                //-     |   
+                ul.list
+                    //- li.email.med    aliasgerrasheed@outlook.com
+                    //-     .popup  
+                    //-         a(href="mailto:aliasgerrasheed@outlook.com", onclick="mailtoF").tooltip    
+                    //-             span#mailto email app   
+                    //-             span#mPlane.fa-paper-plane.fa
+                    //-         |  or  
+                    //-         a(onclick="textToClipboard('aliasgerrasheed@outlook.com')").tooltip
+                    //-             span#copy copy it  
+                    //-             span#mCopy.fa-copy.fa 
+
+                    li.med
+                        span.fa-paper-plane.fad
+                        a(href="mailto:aliasgerrasheed@outlook.com").in-txt aliasgerrasheed@outlook.com 
+
+                    li.med
+                        span.fab.fa-linkedin
+                        a(href="https://www.linkedin.com/in/aliasger-rasheed/" target="_blank").in-txt LinkedIn
+                    //-     a(href="https://www.instagram.com/allegoraphy/" target="_blank").fab.fa-instagram Instagram
+                    li.med
+                        span.fab.fa-github
+                        a(href="https://github.com/ali-rasheed/" target="_blank").in-txt Github
+                    li.med
+                        span.fab.fa-figma
+                        a(href="https://www.figma.com/@the_maker/" target="_blank").in-txt Figma
+
+            section.grid.about-copy
+                h5 Stuff about me
+                ul 
+                    +faList(" I design with the intent to create cherished, sustainable beautiful things")(class="fad fa-hands-heart")
+                    +faList("I like organising my brain with lists")(class="fad fa-list")
+                    +faList("I am passionate about systems that enable the  development of self-regulated learning and behaviors")(class="fad fa-award")
+                    +faList("")(class="fad fa-font")
+                        div
+                            | I am obsessed with well set type and good quality typefaces - often open-source ones (
+                            a(href="https://www.notion.so/alirasheed/Ali-s-Type-Resources-593ddd3a908f4475b6e73c39cf080aed", title="Foundries, Typefaces & Tools!").in-txt my resource collection
+                            |)
+                    +faList("I want to make anything and everything, and learn how to make the things I can't yet (my current muse is photorealistic renders + music)")(class="fad fa-grin-beam-sweat ")
+
+            //- section.grid.about-copy
+            //-     h5 I  design things that
+            //-     ul 
+            //-         +faList(" are cherished")(class="fad fa-hands-heart")
+
+            //-         +faList(" are beautiful")(class="fad fa-atom")
+                        
+            //-         +faList(" are long-lasting and sustainable")(class="fad fa-hourglass-half")
 
 
-      section.grid.about-copy
-        h5 I  design things that
-        ul
-          +faList(" are cherished")(class="fad fa-hands-heart")
+            //- section.grid.about-copy
+            //-     h5 I enjoy...
+            //-     ul
 
-          +faList(" are beautiful")(class="fad fa-atom")
-              
-          +faList(" are long-lasting and sustainable")(class="fad fa-hourglass-half")
+            //-         //- +faList("")(class="fad fa-film-alt")
+            //-             div
+            //-             |understanding <a class="in-txt" href="https://www.youtube.com/user/everyframeapainting" title=" A video-essay writing duo called Every Frame A Painting">intentionality</a>,
+            //-             |<a class="in-txt" href="https://www.youtube.com/user/Nerdwriter1" title="A video-essay writer called The Nerdwriter ">themes</a>
+            //-             | in live-action &amp; animated cinema
+                
+            //-         //- +faList("exploring how photography and editing can manipulate memory.")(class="fad fa-sliders-h")
 
-          +faList("enable people to develop self-regulated learning and self-regulated behaviors")(class="fad fa-award")
-  
-      section.grid.about-copy
-        h2 I enjoy...
-        ul
-          +faList("organising with lists")(class="fad fa-list")
-          +faList("")(class="fad fa-font")
-            div
-              |promoting well set type and good quality typefaces - often open-source ones (
-              a(href="https://www.notion.so/alirasheed/Ali-s-Type-Resources-593ddd3a908f4475b6e73c39cf080aed", title="Foundries, Typefaces & Tools!").in-txt my resource collection
-              |)
-          +faList("Making anything and everything, and learning how to make the things I can't yet (my current muse is photorealistic renders + music)")(class="fad fa-grin-beam-sweat ")
+            //-         +faList("learning about Quasars, Neutron Stars and other astrophysical phenomena.")(class="fad fa-star")
 
-          //- +faList("")(class="fad fa-film-alt")
-            div
-              |understanding <a class="in-txt" href="https://www.youtube.com/user/everyframeapainting" title=" A video-essay writing duo called Every Frame A Painting">intentionality</a>,
-              |<a class="in-txt" href="https://www.youtube.com/user/Nerdwriter1" title="A video-essay writer called The Nerdwriter ">themes</a>
-              | in live-action &amp; animated cinema
-     
-          //- +faList("exploring how photography and editing can manipulate memory.")(class="fad fa-sliders-h")
+                    //- +faList("learning different writing systems, fictional and otherwise, and the orthography behind them.")(class="fad fa-feather-alt")
 
-          +faList("learning about Quasars, Neutron Stars and other astrophysical phenomena.")(class="fad fa-star")
-
-          //- +faList("learning different writing systems, fictional and otherwise, and the orthography behind them.")(class="fad fa-feather-alt")
-
-        
-    footer
-      include ./includes/footer1.pug  
+                
+        footer
+            include ./includes/footer1.pug  
     

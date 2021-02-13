@@ -1,82 +1,76 @@
+mixin grid-item(title,link,desc,tiltm,image)
+    //- - var link = "arcteryx" + end    
+    a(href=link data-tilt data-tilt-startX=tiltm).grid-item.tilt&attributes(attributes)= name
+        .proj-title
+            h1=title
+        .project-img
+            img(src=image, alt="").maskable
+        .genre=desc
+        
 doctype html
 html(lang='en')
-  head
-    include ./includes/head1.pug
-    title Aliasger Rasheed
-  body.index
-    - var end = ".html"
-    header
-      include ./includes/nav1.pug   
-    main
-      - var link = "arcteryx" + end    
-      a(href=link).grid-item.tilt 
-        .proj-title
-          h1 Arc'teryx
-        .project-img
-          img(src="imgs/projects/arcy2"+".jpg", alt="").maskable
-        .genre A UX research and design project for product care
-           
-           
-      - var link = "gakko" + end   
-      a(href=link).grid-item
-        .proj-title 
-          h1 Gakko Camps 
-        .project-img
-          img(src="imgs/projects/gakko"+".jpg").maskable
-        .genre A summer camp focusing on visual design, new media/film, and social innovation
- 
+    head
+        include ./includes/head1.pug
+        title Aliasger Rasheed
+    body.index
+        - var end = ".html"
+        header
+            include ./includes/nav1.pug   
+        main
+            -var tiltp="8"
+            -var tilts="8"
+            +grid-item("Arcteryx","arcteryx.html","A user research and service design project on product care",tiltp,"imgs/arcy/cover.jpg")
 
-      - var link = "threadstoheaven"    + end       
-      a(href=link).grid-item
-        .proj-title
-          h1 Threads to Heaven 
-        .project-img
-          img(src="imgs/projects/spec"+".jpg").maskable
-        .genre A speculative design project exploring the choice of a "good death"
 
-      - var link = "posterjam" + end
-      a(href=link).grid-item
-        .proj-title
-          h1 Posterjam
-        .project-img
-          img(src="imgs/projects/posterjam"+".png").maskable     
-        .genre An online monthly graphic design challenge
+            +grid-item("Thread To Heaven","threadstoheaven.html","A speculative design project exploring the choice of a 'good death'",tiltp,"imgs/projects/spec.jpg")
 
-      - var link = "javascript:;"       
-      a(href=link).grid-item.in-progress
-        .proj-title
-          h1 Bagsket 
-        .project-img
-          img(src="imgs/projects/bagsket"+".jpg").maskable
-        .genre Our in-progress UX/UI and Industrial Design submission to OpenIDEO's Bag Challenge  
+            +grid-item("Gakko","gakko.html","A summer camp focusing on visual design, new media/film, and social innovation",tilts,"imgs/projects/gakko.jpg")
+
+            +grid-item("Posterjam","posterjam.html","An online monthly graphic design challenge",tilts,"imgs/projects/posterjam.png")
+
+            //- - var link = "arcteryx" + end    
+            //- a(href=link).grid-item.tilt  
+            //-     .proj-title
+            //-         h1 Arc'teryx
+            //-     .project-img
+            //-         img(src="imgs/projects/arcy2"+".jpg", alt="").maskable
+            //-     .genre A user research and service design project on product care
+            
+            - var link = "javascript:;"       
+            a(href=link).grid-item.in-progress
+                .proj-title
+                    h1 Bagsket 
+                .project-img
+                    img(src="imgs/projects/bagsket"+".jpg").maskable
+                .genre Our in-progress UX/UI and Industrial Design submission to OpenIDEO's Bag Challenge  
+                
+                
+            //- - var link = "charette"    + end       
+            //- section.grid-item
+            //-   a(href=link).project-img
+            //-     img(src="imgs/charette/hearth-underlit"+".jpg", alt=" Hearth Model").maskable
+            //-   a(href=link).proj-title
+            //-     h1 Hearth 
+            //-   ul.genre
+            //-     li Photography
+            //-     li 3D Modelling
+            //-     li Model Making
+
+            //- - var link = "headset" + end
+
+            //- section.grid-item#headset 
+            //-   a(href=link).project-img
+            //-     img(src="imgs/projects/headset"+".jpg", alt=" Kamishibai Headset title").maskable.saturate
+            //-   a(href=link).proj-title
+            //-     h1 Kamishibai
+            //-   ul.genre 
+            //-     li A VR headset designed for experiencing 
+            //-     li traditional Japanese Kabuki Theatre
+                //- li Industrial Design
+                //- li 3D Modelling
+
+        footer
+            include ./includes/footer1.pug 
+
         
-           
-      //- - var link = "charette"    + end       
-      //- section.grid-item
-      //-   a(href=link).project-img
-      //-     img(src="imgs/charette/hearth-underlit"+".jpg", alt=" Hearth Model").maskable
-      //-   a(href=link).proj-title
-      //-     h1 Hearth 
-      //-   ul.genre
-      //-     li Photography
-      //-     li 3D Modelling
-      //-     li Model Making
-
-      //- - var link = "headset" + end
-
-      //- section.grid-item#headset 
-      //-   a(href=link).project-img
-      //-     img(src="imgs/projects/headset"+".jpg", alt=" Kamishibai Headset title").maskable.saturate
-      //-   a(href=link).proj-title
-      //-     h1 Kamishibai
-      //-   ul.genre 
-      //-     li A VR headset designed for experiencing 
-      //-     li traditional Japanese Kabuki Theatre
-          //- li Industrial Design
-          //- li 3D Modelling
-
-    footer
-      include ./includes/footer1.pug 
-
-      
-      
+        

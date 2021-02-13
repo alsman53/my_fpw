@@ -23,7 +23,8 @@ main#about
         // +widerthan()
         margin-bottom: 1rem
         grid-row-end:  span 1  
-
+        ul div a
+            display inline 
 
 
     h1 
@@ -37,8 +38,15 @@ main#about
         max-width 55ch 
     ul 
         list-style-position: inside;
+        list-style: none
         li
             line-height: 1.5
+            margin .25rem
+
+
+        &.custom-list li
+            &:before 
+                content: "→"; 
     
     .profile
         grid-row 1/5
@@ -66,5 +74,20 @@ main#about
 
     .email
         // font-size: 
-        line-height: 1.45
+        line-height: 1.5
+        // display inline
+        margin: 0
     
+p.about
+    margin: 0  
+    display inline-block
+
+.list
+    display: grid
+    grid-template-columns: 1fr
+    // flex-direction: column 
+
+    .email,.fab
+        // flex-shrink: 2
+        // display inline-block
+        justify-self: start

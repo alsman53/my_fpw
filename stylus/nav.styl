@@ -8,6 +8,7 @@ narrowerthan(var)
     @media condition
         {block}
 
+opa = 100% 
 
 #side-nav
    position: fixed
@@ -30,7 +31,7 @@ narrowerthan(var)
    max-width: 100%
    #pull-up
       margin-top: 2rem
-      opacity 0 
+    //   opacity 0 
       transition: color .2s ease-out
       font-size: 2.5rem
       &:hover,&:focus
@@ -79,7 +80,7 @@ nav
       // margin-right: auto
       z-index: inherit
       color: var(--txtcol)
-      opacity 75%
+      opacity opa
       transition: background-color 200ms ease-in
       align-self: last baseline
       line-height: 1.4
@@ -115,9 +116,9 @@ nav
             
             // height: 1.1rem
             color: var(--txtcol)
-            margin: .8rem 0
+            margin: .9rem 0
 
-            opacity 75%
+            opacity opa
             transition: all  200ms ease-in
             // &:hover,&&:focus
             //    opacity 100%
@@ -126,7 +127,7 @@ nav
 
       border-radius: .3em
       border solid transparent
-      border-width: 3px 
+      border-width: 4px 
       background-clip: padding-box;
       transition: background-color ease-out 200ms, border-color ease-out 250ms 
          
@@ -139,7 +140,7 @@ nav
          color: var(--scol)
          // opacity 0
          // transition: background-color ease-in 100ms
-         font-size: 1.2em  
+         font-size: 1.0em  
          position relative 
          top: .2em
          margin-left: 3px
@@ -201,7 +202,7 @@ nav
 
    label#modeLbl
       z-index 500
-      opacity 75%
+      opacity opa
       font-size inherit
       // height 1em
 
@@ -221,11 +222,11 @@ nav #desk-nav
    
 
 .name-link
-   cursor: url(plus.svg)22.5 23, auto
+   cursor: url(trg.svg)22.5 23, auto
 
 
    &:hover,&&:focus
-      cursor: url(plus.svg)22.5 23, auto
+      cursor: url(trg.svg)22.5 23, auto
    
       .name-expand:after
          width 5rem
@@ -274,7 +275,7 @@ nav
          position absolute
          top 1rem
          right 1rem
-         opacity: 75%
+         opacity: opa
          transition: opacity 200 ease-in
 
          &:hover, &:focus
@@ -340,7 +341,7 @@ nav
          animation-name: nav-home-expand;
          animation-duration: .5s;
          // animation-fill-mode: both
-         opacity: 75%
+         opacity: opa
          &:hover, &:focus
             opacity 100%
 

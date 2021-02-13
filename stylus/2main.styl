@@ -43,13 +43,13 @@ html
 
 
 *
-   font-family: var(--sfont)
-         
-   margin: 0
-   padding: 0 
-   cursor: url(ex.svg) 16 16, auto
-   box-sizing: border-box 
-   transition: background-color ease-out 400ms, color ease-out 400ms
+    font-family: var(--sfont), "Palatino Linotype" ,serif
+    font-display: swap
+    margin: 0
+    padding: 0 
+    cursor: url(ex.svg) 16 16, auto
+    box-sizing: border-box 
+    transition: background-color ease-out 400ms, color ease-out 400ms
 
        
 body,footer,header 
@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6, figcaption, p, li, a, button, #summary, small,label, mar
    
 h1,h2,h3,h4,h5,h6,.big, p,.med, li,figcaption,.email
    // +narrowerthan(1200px)
-   opacity: 85% 
+   opacity: 90% 
    transition: opacity ease-out 200ms
    &:hover,&:focus
       opacity: 95% 
@@ -78,7 +78,7 @@ p
    max-width 50ch
 
 p,li,span
-   font-size 1.3rem
+   font-size 1.1rem
    // font-size 1.1rem
    // font-weight: 600
    line-height: 1.5
@@ -98,7 +98,7 @@ h2
    // text-transform: uppercase
    
    +narrowerthan(900px)
-      font-size: 1.75rem
+      font-size: 1.7rem
 
 h3
    font-family: var(--pfont), serif 
@@ -107,13 +107,13 @@ h3
    font-size: 5.063em
 
    +narrowerthan(900px)
-      font-size: 2rem
+      font-size: 2.27rem
 
 
 
 h4
-   font-family: var(--pfont), sans-serif
-   font-weight: var(--p-std-weight)
+   font-family: var(--tfont), "Times New Roman" serif
+   font-weight: 400
    font-size 3.375rem
 
    margin-bottom: 0.5rem
@@ -121,7 +121,7 @@ h4
    padding-top: 1rem
 
    +narrowerthan(900px)
-      font-size: 1.5rem
+      font-size: 1.75rem
 
 h5
    font-size: 2rem
@@ -151,8 +151,8 @@ mark
    transition-delay: .4s
    background-color:var(--bgcol); 
    border-radius: .3em
-   border-left solid var(--bgcol);
-   border-right solid var(--bgcol);
+   border-left  var(--bgcol);
+   border-right  var(--bgcol);
    background-clip: padding-box;
 
    +narrowerthan(1400px)
@@ -160,11 +160,11 @@ mark
       border-color rgba(210,41,235,.25);
       transition-delay: 0s
 
-
-section:hover mark
-   
    background-color:  rgba(210,41,235,.25); 
    border-color rgba(210,41,235,.25);
+
+// section:hover mark
+   
 
 
 em
@@ -207,20 +207,20 @@ main
 
 
 h1
-   font-size: 12vw
+   font-size: 9vw
    z-index 2 
 
    +narrowerthan(1400px)  
-      font-size: 14vw     
+      font-size: 12vw     
 
    +narrowerthan(500px)   
-      font-size: 19vw 
+      font-size: 15vw 
 
 .big  
    text-indent: 0
    strong 
       font-weight: 700
-   font-size: 2.3rem 
+   font-size: 2rem 
    line-height: 1.4
    min-height: 0; 
    min-width: 0;
@@ -232,7 +232,7 @@ h1
    +narrowerthan(500px)
       margin: 1rem 0
       // font-weight: bold 
-      font-size: 1.5rem
+      font-size: 1.2rem
       line-height: 1.3
 
    &.space
@@ -258,7 +258,8 @@ h1
    +narrowerthan(500px)
    
       margin: 1rem 0
-      font-weight: bold 
+      font-weight:   var(--s-bold-weight)
+ 
       font-size: 1.25rem
       line-height: 1.3
 
@@ -314,7 +315,7 @@ hr
    border-width: medium 
    background-clip: padding-box;
    transition: background-color ease-out 200ms, border-color ease-out 200ms 
-   cursor: url(plus.svg) 22.5 23, auto
+   cursor: url(trg.svg) 22.5 23, auto
        
    &:hover, &&:focus
       background-color: rgba(210,41,235,.3);
@@ -333,7 +334,7 @@ hr
    background-size: 2px 2px;
    text-decoration: none;
    transition: background-size .25s ease-out
-   cursor: url(plus.svg) 22.5 23, auto
+   cursor: url(trg.svg) 22.5 23, auto
 
    &:hover, &:active, &:focus
       background-size: 2px 1.25em;
@@ -361,7 +362,7 @@ img.lazy
       opacity: 1
 
 a,button
-   cursor: url(plus.svg)22.5 23, auto
+   cursor: url(trg.svg)22.5 23, auto
 
    &.fa,&.fab,&.fad
       transition: color 200ms ease-out  
@@ -466,11 +467,11 @@ p i
       font-size: 0
       // vi
       line-height: unset
-      margin: 0 1.25rem
+      margin: 0 .75rem
       &:before 
          color: var(--pcol)
          margin .25rem
-         font-size: 1rem 
+         font-size: .9rem 
          font-family: "Font Awesome 5 Pro"
          content "\f111"
          // opacity 50% 

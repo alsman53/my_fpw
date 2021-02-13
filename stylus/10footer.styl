@@ -64,7 +64,7 @@ footer
 
 a
   &.fad, &.fas, &.fab
-    cursor: url(plus.svg) 22.5 23, auto
+    cursor: url(trg.svg) 22.5 23, auto
 
 
   hr
@@ -109,17 +109,27 @@ small
   
   
 .email
-  position relative
-  display inline-block
-  cursor: url(plus.svg) 22.5 23, auto
-
-  &:after
-    content: "º"
-    color: pycol 
     position relative
+    display inline-block
+    cursor: url(trg.svg) 22.5 23, auto
 
-  
-  .popup
+    &:after
+        content: "º"
+        color: pycol 
+        position relative
+
+    
+    &:hover .popup, &:focus .popup , &:active .popup 
+        // animation-fill-mode: forwards;
+        // animation-play-state: running;
+        
+        // visibility: visible;
+        opacity 100
+        transition all 110ms 0s
+        // transition-delay: 0s
+        cursor: url(trg.svg) 22.5 23, auto
+
+.popup
     // animation-name: email-hover;byi
     // animation-duration: 1ms;
     // animation-fill-mode: backwards;
@@ -128,7 +138,7 @@ small
     left 0
     right 0
     bottom 0 
-    top 0
+    // top 0
     // visibility: hidden;
     opacity: 0;     
     transition: opacity 50ms 1s
@@ -148,66 +158,56 @@ small
     max-width 90vw
     
     +narrowerthan(500px)
-      display: flex
-      justify-content: space-around
-      left:50%; 
-      transform: translate(-50%, 0%)
-      min-width 65vw
-      
+        display: flex
+        justify-content: space-around
+        left:50%; 
+        transform: translate(-50%, 0%)
+        min-width 65vw
+        
     // margin-bottom: .2em
     .fa
-      font-size: .9em
+        font-size: .9em
     
     span
-      font-size: inherit
-      display inline
-  
-  &:hover .popup, &:focus .popup , &:active .popup 
-    // animation-fill-mode: forwards;
-    // animation-play-state: running;
-    
-    // visibility: visible;
-    opacity 100
-    transition all 110ms 0s
-    // transition-delay: 0s
-    cursor: url(plus.svg) 22.5 23, auto
+        font-size: inherit
+        display inline
 
 
-  .tooltip    
+.tooltip    
     // text-decoration: underline   
     margin: 0
     line-height: 1
     &:hover ,&:focus ,&:active  
 
-      cursor: url(plus.svg) 22.5 23, auto
+        cursor: url(trg.svg) 22.5 23, auto
 
 
     span.fa
-      color: var(--pcol);
- 
-  // .popup::after 
-  //   content: "";
-  //   position: absolute;
-  //   top: 100%;
-  //   left: 50%;
-  //   margin-left: -5px;
-  //   border-width: 10px;
-  //   border-style: solid;
-  //   border-color: var(--tcol) transparent transparent transparent
-  #mailto
-    &:focus
-      content: "new draft opened"
-      
-nav 
-  .popup
+        color: var(--pcol);
 
-    bottom  -1.5%    
-    top -1.5%
+    // .popup::after 
+    //   content: "";
+    //   position: absolute;
+    //   top: 100%;
+    //   left: 50%;
+    //   margin-left: -5px;
+    //   border-width: 10px;
+    //   border-style: solid;
+    //   border-color: var(--tcol) transparent transparent transparent
+#mailto
+    &:focus
+        content: "new draft opened"
+        
+nav 
+    .popup
+
+        bottom  -1.5%    
+        top -1.5%
 
 
 .links
-  +narrowerthan(500px)
-    justify-content: space-around  
+    +narrowerthan(500px)
+        justify-content: space-around  
 
 .page-links
   line-height: 1em

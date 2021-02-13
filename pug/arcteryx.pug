@@ -1,7 +1,7 @@
 mixin faList(content)
     li.flex-b
         span()&attributes(attributes)
-            = content
+        = content
         block
 
 mixin img-ll(name,data)
@@ -23,7 +23,7 @@ html(lang='en')
         header
             include ./includes/nav1.pug   
 
-        main.grid#project
+        main.grid#project 
 
             section#overview.x12c.grid
 
@@ -35,12 +35,12 @@ html(lang='en')
 
                 #cover-image.magenta-hover   
                     //- img(src="imgs/arcy/arcy2.png")  
-                    img(src="imgs/arcy/arcy2.jpg") 
+                    img(src="imgs/arcy/cover.jpg") 
 
             section.flex-s.points
 
                 div.flex-i
-                    h5 Contribution
+                    h5 Responsibilities
                     ol
                         li Research and Ethnography
                         li Interaction Design
@@ -91,6 +91,15 @@ html(lang='en')
 
             section.grid.x12c 
 
+                h3.ml-sect Contribution 
+                p.ml-sect I performed ethnographic and secondary research over a 6 week period to understand the client and reframe the problem space. I led our 4-week iterative process of designing our physical artefacts and executing the renders of their final iterations. I co-designed our weekly posters, using information design to communicate our research results, problem-framing and design solutions.
+
+            
+            hr.small 
+
+
+            section.grid.x12c 
+
 
 
                 h3.ml-sect User Patterns 
@@ -109,7 +118,7 @@ html(lang='en')
 
 
             section.callout#dgoals
-                h4 Design Goals
+                h3 Design Goals
                 p.med 
                    |To inform customers why regular product care is so important, making the instructions feel worth their attention.
                 p.med 
@@ -130,8 +139,7 @@ html(lang='en')
                 ol.ml-sect
                     li motivation (if people want to do it)
                     li ability (if people can do it)
-                    li
-                        mark triggers (a stimulus that provokes them to do it)
+                    li #[mark triggers (a stimulus that provokes them to do it)]
                 p.ml-sect Through this knowledge, we created 
                 h3.ml-sect Arc'teryx Product Care:
                 figure.lr-sect
@@ -319,7 +327,7 @@ html(lang='en')
                         |customer behavior confirmed for us that there was an opportunity to further leverage the current touchpoints. 
 
                 ul.ml-sect.med
-                    +faList("Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase")(class="fas   fa-comment")
+                    +faList("Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase")(class="fas fa-comment")
                     
                     +faList("Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase")(class="fas fa-head-side-brain space")
 
