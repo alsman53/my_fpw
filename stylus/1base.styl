@@ -3,9 +3,6 @@
 -------------------VARIABLES------------------
 */
 :root
-//     --magenta:#FF2079
-//     --magenta-light: #FF4B93
-//     --magenta-dark: #C21359 
     --purple:#d229eb
     --purple-light:#ed6aff
     --purple-dark:#9b04b0
@@ -21,6 +18,8 @@
     --light-white-rgb: 255,255,255;
     
     --light-black:#0B0B0B
+    --light-black:#000
+    
     --dark-white: #e2e2e2
     --dark-black: #141414 
     --dark-black-rgb: 30,30,30;
@@ -32,22 +31,23 @@
  
     // --pfont: "Krona one"
     --pfont: "Mazius Display Regular"
+    // --pfont: "Almarena Display"
     // --sfont: "HK Grotesk"
-    // --sfont: 'neue-haas-grotesk-display'
-    --sfont: "Happy Times at the IKOB New Game Plus Edition" 
+    // // --sfont: 'neue-haas-grotesk-display'
+    // --sfont: "Happy Times at the IKOB New Game Plus Edition" 
     --sfont: "Piazzolla"
-    // --sfont: 'Open Sauce Sans'
+    // --sfont: 'Almarena'
     // --sfont: 'Open Sauce Sans' 
     // --sfont: "Comprehension" 
     
 
     --pcol: var(--purple) 
     --bgcol: var(--dark-black)
-    --bgcol-rgb: var(--dark-black-rgb)
-    --txtcol: var(--dark-white)    
     --slctcol var(--purple)
     --scol: var(--purple-light)
     --tcol: var(--purple-dark)
+    --bgcol-rgb: var(--dark-black-rgb)
+    --txtcol: var(--dark-white)    
     --s-std-weight: 300 
     --s-bold-weight: 600 
 
@@ -60,11 +60,21 @@
      
 
     --fa-primary-color: var(--txtcol)
-    --fa-secondary-color: var(--purple) 
+    --fa-secondary-color: var(--pcol) 
     --fa-secondary-opacity: 1
     --slctcol var(--purple-light)   
 
     --lum: 30%;
+
+    --magenta:#FF2079
+    --magenta-light: #FF4B93
+    --magenta-dark: #C21359 
+    --magenta-hlight: rgba(242, 41, 85,.3)
+    --pcol: var(--magenta) 
+    --slctcol var(--magenta)
+    --scol: var(--magenta-light)
+    --tcol: var(--magenta-dark)
+
     footer 
         --fa-primary-color var(--bgcol)
 
@@ -82,14 +92,18 @@
     --s-bold-weight: 700
     --s-line-space:  1.6 
     --txtcol: var(--light-black)
-    --scol: var(--purple-dark)
-    --tcol: var(--purple-light)
     --bgcol: var(--light-white)
     --bgcol-rgb: var(--light-white-rgb)
     --lum: 70%;  
 
+    --scol: var(--purple-dark)
+    --tcol: var(--purple-light)
+    --scol: var(--magenta-dark)
+    --tcol: var(--magenta-light)
+
+
 [data-font = "sans"]
-    --sfont: 'IBM Plex sans'
+    --sfont: 'Verdana'
     --pfont: 'Open Sauce Sans'
 
 

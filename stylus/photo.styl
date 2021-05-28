@@ -1,4 +1,4 @@
-widerthan(var)
+arcwiderthan(var)
    condition = 'screen and (min-width: %s)' % var
    @media condition
       {block}
@@ -20,10 +20,11 @@ main.gallery
   //   margin-top: -8rem
   img.grid-image
     &:hover
-        cursor: url(trg.svg) 16 16, auto
+        cursor: url(ex.svg) 30 30, auto
         // filter contrast(1.2)
         transition: filter ease-out 200ms 
-  section#portfolioContainer
+  section#portfolioContainer, section#threedeeCont
+
     a
       // margin 2px   
       // transition: width 150ms ease
@@ -39,7 +40,7 @@ main.gallery
 
       img
         display: block
-        padding-bottom: 15px
+        padding 10px     
         object-fit: cover   
    
         max-width:100%;
@@ -125,10 +126,11 @@ input[type=radio] + label
 
 input[type=radio]:checked + label ,input[type=radio] + label:hover, input[type=radio] + label:active 
   // background-color var(--pcol)
-  cursor: url(trg.svg) 22.5 23, auto
+  cursor: url(ex.svg) 30 30 , auto
       
   // &:hover
-  background-color: rgba(210,41,235,.3);
+  background-color: var(--magenta-hlight);
+
 
 
   // text-decoration: underline double var(--pcol)

@@ -1,6 +1,6 @@
 //- ////////MIXINS/////////
-mixin threedee-lazyloaded-lg(name1,name2)
-  a(class=name1+" img-cont element-item" data-groups=name1 data-lightbox="threedee" href="imgs/threedee/"+name2) 
+mixin threedee-lazyloaded-lg(name1,name2,caption)
+  a(class=name1+" img-cont element-item p-tilt" data-groups=name1 data-lightbox="threedee" data-title=caption href="imgs/threedee/"+name2)  
     img(class="lazy grid-image", data-src="imgs/threedee-sm/"+name1 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
 
 doctype  
@@ -16,8 +16,12 @@ html(lang='en')
     main.gallery 
 
           
-      section.photography-grid#portfolioContainer
-        +threedee-lazyloaded-lg("wtrmln.png","wtrmln.mp4")
+      section.threedee-grid#threedeeCont
+        +threedee-lazyloaded-lg("nebula-sm.png","nebula.png","Procedurally-generated Nebula full of star-dust!") 
+        +threedee-lazyloaded-lg("Curator.jpg","Curator.png","Procedurally-generated Nebula full of star-dust!")
+        +threedee-lazyloaded-lg("wtrmln.png","wtrmln.gif","Procedurally generated and textured watermelon")
+        +threedee-lazyloaded-lg("bed.jpg","bed.jpg","")
+        //- +threedee-lazyloaded-lg("wtrmln.png","wtrmln.gif")
           
     footer
       include ./includes/footer2.pug

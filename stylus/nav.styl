@@ -31,12 +31,11 @@ opa = 100%
    max-width: 100%
    #pull-up
       margin-top: 2rem
-    //   opacity 0 
-      transition: color .2s ease-out
+      transition: color .2s ease- 
       font-size: 2.5rem
       &:hover,&:focus
          color: var(--scol)
-      z-index: inherit
+      z-index: inherit 
 
 
 nav 
@@ -45,7 +44,7 @@ nav
    z-index 500
    margin-top: 1rem
    margin-bottom: 3rem
-   margin 3rem 1rem 3rem 1rem
+   margin rem 1rem 3rem 1rem
    padding:0rem
    display: grid
    grid-template-rows: 1fr
@@ -132,7 +131,7 @@ nav
       transition: background-color ease-out 200ms, border-color ease-out 250ms 
          
       &:hover, &&:focus, &.active
-         background-color: rgba(210,41,235,.3);
+         background-color: var(--magenta-hlight);
 
       &:after
          // content: "°"
@@ -171,6 +170,7 @@ nav
    
 
    input#adjust[type=checkbox]
+   input#font[type=checkbox]
    input#mobile-input[type=checkbox]
       display: none;  /* to hide the checkbox itself */
 
@@ -193,12 +193,12 @@ nav
    input[type=checkbox]#adjust + label::before
       // margin-right: .25rem  
       font-weight: var(--s-std-weight)
-      content: "dark side"
+      content: "Dark side"
       transition: color ease-in .15s
       color: var(--txtcol)
 
    input[type=checkbox]#adjust:checked + label::before
-      content: "light side"
+      content: "Light side"
 
    label#modeLbl
       z-index 500
@@ -209,7 +209,7 @@ nav
       &:hover,&&:focus
          opacity 100%
       &:after
-         margin-right: -.5ch
+        //  margin-right: -.5ch
 
 /*--------------positioning------------------*/
    *
@@ -222,11 +222,11 @@ nav #desk-nav
    
 
 .name-link
-   cursor: url(trg.svg)22.5 23, auto
+   cursor: url(ex.svg)30 30, auto
 
 
    &:hover,&&:focus
-      cursor: url(trg.svg)22.5 23, auto
+      cursor: url(ex.svg)30 30, auto
    
       .name-expand:after
          width 5rem
@@ -374,15 +374,15 @@ input[type=checkbox]#font
    visibility hidden
 
 input[type=checkbox]#font:checked + label::after
-   content: "Serif"
+   content: "Sans"
    // font-family: "IBM Plex Serif"
    &:hover , &&:focus
       color: var(--pcol)
 
 
 input[type=checkbox]#font + label::after
-   content: "Sans"
-   // font-family: "IBM Plex Sans"
+   content: "Serif"
+se   // font-family: "IBM Plex Sans"
    transition: color ease-in .15s 
    color: var(--txtcol)
    &:hover   , &&:focus
