@@ -9,110 +9,120 @@ narrowerthan(var)
       {block}
 
 main.gallery
-  display: grid
-  justify-items: center 
-  margin-top: 5rem
-  margin-left: 3rem
-  margin-right: 3rem
-  +narrowerthan(800px)
-    margin-left: 1rem
-    margin-right: 1rem
-  //   margin-top: -8rem
-  img.grid-image
-    &:hover
-        cursor: url(ex.svg) 30 30, auto
-        // filter contrast(1.2)
-        transition: filter ease-out 200ms 
-  section#portfolioContainer, section#threedeeCont
+    // display: grid
+    justify-items: center 
+    margin-top: 5rem
+    margin-left: 3rem
+    margin-right: 3rem
+    +narrowerthan(800px)
+        margin-left: 1rem
+        margin-right: 1rem
+    //   margin-top: -8rem
+    img.grid-image
+        &:hover
+            cursor: url(ex.svg) 30 30, auto
+            // filter contrast(1.2) 
+            transition: filter ease-out 200ms
 
-    a
-      // margin 2px   
-      // transition: width 150ms ease
-      // margin-right: 0 
-      // margin-left: 0
-      // width 30vmin  
-      &.zoomable
-        transition: transform 250ms ease
-        &:hover, &&:focus
-          // transform: scale(1.5);
-          z-index 200
-      max-width 95vmin
+    section
+        &#portfolioContainer
+            a
+                margin-bottom: 10px 
+        &#threedeeCont
+            max-width: 90vw
+            max-width: 1200px
+            margin-left: auto
+            margin-right: auto
+    section#portfolioContainer, section#threedeeCont, section#gdCont
+        // max-width 95vw
+        a
+            display: block
+            // max-width 95vmin
+            width: 25%
+            height: auto
+            // width: 300px
+            // min-height: 200px 
+            // min-width: 25vw
+            &.w-reg
+                width 25%
+            &.w-double
+                width 50%  
+            &.w-triple 
+                width 75%
+               
+            // margin 2px   
+            // transition: width 150ms ease
+            // margin-right: 0 
+            // margin-left: 0
+            // width 30vmin  
+                
+            &.zoomable
+                transition: transform 250ms ease
+                &:hover, &&:focus
+                    z-index 200
+        img
 
-      img
-        display: block
-        padding 10px     
-        object-fit: cover   
-   
-        max-width:100%;
-        max-height:100%;
-  #portfolioFilter
-    box-sizing: border-box
-    // position: sticky
-    z-index: 35
-    top: 3rem 
-    padding-top: 0.2rem
-    padding-bottom: 0.2rem
-    display: flex
-    margin-left: 0%
-    margin-right: 0%
-    margin-bottom: .5rem
-    flex-wrap: wrap
-    justify-content: center
-    input[type=radio] 
-      // margin 1rem
-      display: none 
-    label
-      margin 0.3rem
-      font-size: 0.9vw
-      +narrowerthan(1500px)
-        font-size: 1.05vw
-      +narrowerthan(1400px)
-        font-size: 1.3vw
-      +narrowerthan(1200px)
-        font-size: 1.4vw 
-        font-size: 0.9rem
+            display: block
+            padding 0     
+            object-fit: cover   
+            // width: 100%
+            // height auto
+            max-width:100%;
+            max-height:100%;
+            &:not([src]):not([srcset])
+                 visibility: hidden;
 
-  #slider-cont
-    padding: 0.5rem
-    margin: 1rem 0rem 0.5rem 0rem 
-    z-index: 35
-    justify-content: center
-    align-content: center
-    display: flex
-    #col-slider
-      position: inherit
-      width: 50vw
-      +narrowerthan(800px)
-        width: 80vw
-      +narrowerthan(500px)
-        width: 100%
+    #portfolioFilter
+        box-sizing: border-box
+        // position: sticky
+        z-index: 35
+        top: 3rem 
+        padding-top: 0.2rem
+        padding-bottom: 0.2rem
+        display: flex
+        margin-left: 0%
+        margin-right: 0%
+        margin-bottom: .5rem
+        flex-wrap: wrap
+        justify-content: center
+        input[type=radio] 
+        // margin 1rem
+            display: none 
+        label
+            margin 0.3rem
+            font-size: 0.9vw
+            +narrowerthan(1500px)
+                font-size: 1.05vw
+            +narrowerthan(1400px)
+                font-size: 1.3vw
+            +narrowerthan(1200px)
+                font-size: 1.4vw 
+                font-size: 0.9rem
+
+    #slider-cont
+        padding: 0.5rem
+        margin: 1rem 0rem 0.5rem 0rem 
+        z-index: 35
+        justify-content: center
+        align-content: center
+        display: flex
+        #col-slider
+            position: inherit
+            width: 50vw
+            +narrowerthan(800px)
+                width: 80vw
+            +narrowerthan(500px) 
+                width: 100%
 
 #sizeBtns
   display: flex
-  // flex-direction: column
-  // position: fixed
-  // top: 0
-  // left: 0
-  // bottom: 0rem
-  // margin 1rem
-  // margin-top: 6rem
-  // max-height: 30vh
-  // align-items: center
-  // align-content: center
-  // flex-wrap: nowrap 
-  // justify-content:center
-  // z-index 5
   button#add, button#subtract
     padding 0.3rem .8rem
-
     font-size:1rem
-    // padding: .75em
 
 
 input[type=radio] + label 
   padding 0.3rem .8rem
-  //  border solid 1.75px var(--pcol)
-  //  border-radius: .5em
 
   margin: 0.5rem
   transition: ease-out 350ms all 
@@ -130,9 +140,3 @@ input[type=radio]:checked + label ,input[type=radio] + label:hover, input[type=r
       
   // &:hover
   background-color: var(--magenta-hlight);
-
-
-
-  // text-decoration: underline double var(--pcol)
-  // opacity 1
-  // text-decoration-color: var(--pcol)

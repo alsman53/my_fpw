@@ -25,13 +25,14 @@ narrowerthan(var)
             .proj-title
                 grid-row 2/3
                 z-index: 5
-                font-size: 3.5rem
+                font-size: 2rem
                 // opacity .75
 
                 transition: all 300ms ease-out
 
                 h1
                     font-size: inherit
+                    font-family: var(--qfont)
                     margin: 0
                     line-height: 1
                     padding-bottom: .1em
@@ -61,11 +62,15 @@ narrowerthan(var)
 
 
             .genre    
-                grid-row 3/4
+                grid-row 3/4 
                 font-size: 1rem
-                line-height: 1.3
+                line-height: 1.2
                 margin: .2em
                 // opacity .75
+                font-size: inherit
+                display:inline list-item
+                font-family: var(--pfont)
+
 
             &:hover,&:focus,&:active
 
@@ -76,33 +81,46 @@ narrowerthan(var)
 
     +widerthan(500px)
         main
-            margin 1rem .5rem 0rem 2rem
+            // margin 1rem .5rem 0rem 1rem
             // grid-gap: 7rem
+            grid-template-columns: 1fr 1fr 1fr
             .grid-item
                 grid-template-columns: .5fr 6fr 9fr 6fr .5fr  
+                margin: 0
                 grid-row 1fr 1fr 1fr
+                grid-row-gap: 0rem
+                align-content: start;    
 
+                &:nth-child(2n+1)
+                    grid-column: 1/3
+                    // margin-top: -5rem
+                    
+                &:nth-child(2n+2)
+                    grid-column: -3/-1
+                    
+                
+                
                 .project-img  
-
-                    grid-column: 3/5   
-                    grid-row 1/2
-                    min-height: 15rem
+                    grid-column: 1/-1
+                    // grid-row 1/2
+                    // min-height: 15rem
                     align-content: center
 
                     img
-                        height: auto
-                        // max-height: 50v
+                        // height: 39vh
+                        max-height: 45vh
                         width: 100%
 
                 .proj-title
-                    grid-row 1/2
-                    grid-column: 1/3
-                    font-size: 5rem
+                    // grid-row 1/2
+                    grid-column: 1/-1
+                    font-size: 2rem
                     // margin-top: -.7em
+                    padding 0 1.5rem
 
                 .genre
-                    grid-row 2/3
-                    grid-column: 2/4
+                    // grid-row 2/3
+                    grid-column: 1/-1
 
 
 
@@ -110,21 +128,27 @@ narrowerthan(var)
         main
             margin-top: 10rem
             display: grid
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+            grid-template-columns: 1fr 1fr 1fr  1fr 1fr 1fr
             grid-row repeat(auto,auto)
-            grid-row-gap 15rem
-            margin 0 5vw
+            grid-row-gap 2rem 
+            grid-column-gap: 8rem
+            margin 0 0vw
              
 
             .grid-item
+            
                 margin 0rem 
                 display: grid
                 grid-template-columns: repeat(11,1fr)
                 grid-template-rows:repeat(4, min-content)
 
+                    margin-top: 15rem
+
                 .project-img
+                    grid-column: 1/-1   
+
                     display: grid
-                    height: 27.5rem  
+                    height: 18rem  
                     // min-height: 45vh
                     justify-content: center
                     align-content: center
@@ -134,15 +158,17 @@ narrowerthan(var)
                         object-fit: cover
                         justify-self: center
                         align-self: center
+                        max-height: 55vh
+
 
                 .genre
                     margin: .2em
                     margin-top .6em
-                    font-size: 1.2rem 
+                    // font-size: 1.2rem 
  
                 .proj-title
                     z-index: 5
-                    font-size: 4rem
+                    font-size: 3.5rem 
                     // margin-top: -1em 
                     h1 
                         margin: 0
@@ -150,56 +176,23 @@ narrowerthan(var)
                         padding-bottom: .1em
 
                 --rad: 0px
-                &:nth-child(2n+1)
-                    grid-column: span all/-1
+                grid-column-end: span 5
 
-                    .proj-title
-                        grid-row 2/3 
-                        grid-column: 5/-1
-                        text-align: left 
-                        
-                      
-                    .project-img
-                        grid-row 1/2
-                        grid-column: 5/-1
-                        border-top-right-radius: var(--rad)
-                        border-bottom-right-radius: var(--rad)
-                    .genre    
-                        grid-row 3/4
-                        grid-column: 5/-1
-                        padding-right: 1rem
+                &:nth-child(2n+1)
+                    grid-column: 1/4
+                    
 
                 &:nth-child(2n+2)
-                    grid-column: 1/span all
+                    grid-column: -4/-1
+                    margin-top: 13rem
         
-                    .proj-title
-                        text-align: left
-                        grid-row 2/3
-                        grid-column 1/8
-                        align-content: left
-                        padding-left: 1rem
-                        
-                    .project-img
-                        border-top-left-radius: var(--rad)
-                        border-bottom-left-radius: var(--rad)
-                        grid-column: 1/8
-                        grid-row 1/2
-
-                    .genre
-                        padding-left: 1rem      
-                        grid-row 3/4
-                        grid-column: 1/8
-                        align-content: left
 
 
     +widerthan(1400px)
         main
             margin-top: 10rem
             display: grid
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr
             grid-row repeat(auto,auto)
-            grid-row-gap 15rem
-            margin 0 8vw
              
 .in-progress
     *

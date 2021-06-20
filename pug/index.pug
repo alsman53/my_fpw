@@ -1,11 +1,11 @@
-mixin grid-item(title,link,desc,tiltm,image)
+mixin grid-item(title,link,desc,tiltm,image,name)
     //- - var link = "arcteryx" + end    
     a(href=link data-tilt data-tilt-startX=tiltm).grid-item.tilt&attributes(attributes)= name
         .proj-title
             h1=title
+                .genre=desc
         .project-img
             img(src=image, alt="").maskable
-        .genre=desc
         
 doctype html
 html(lang='en')
@@ -19,14 +19,18 @@ html(lang='en')
         main
             -var tiltp="8"
             -var tilts="-8"
-            +grid-item("Arc'teryx","arcteryx.html","A user research and service design project on product care",tiltp,"imgs/arcy/cover.jpg")
+            +grid-item("TPR Conception des Impresarios","tpr.html","digital intentions behind physical productions",tiltp,"imgs/arcy/cover.jpg",arcy)
 
+            +grid-item("UNESCO Lodestar","unesco.html","Rethinking education through World Heritage",tiltp,"imgs/arcy/cover.jpg",arcy)
 
-            +grid-item("Threads To Heaven","threadstoheaven.html","A speculative design project exploring the choice of a 'good death'",tilts,"imgs/projects/spec.jpg")
+            +grid-item("Arc'teryx Fulcrum","arcteryx.html","service design for product care",tiltp,"imgs/arcy/cover.jpg",arcy)
 
-            +grid-item("Gakko","gakko.html","A summer camp focusing on visual design, new media/film, and social innovation",tiltp,"imgs/projects/gakko.jpg")
+            +grid-item("Threads To Heaven","threadstoheaven.html","speculative design exploring the choice of a 'good death'",tilts,"imgs/projects/spec.jpg")
 
-            +grid-item("Posterjam","posterjam.html","An online monthly graphic design challenge",tilts,"imgs/projects/posterjam.png")
+            +grid-item("Gakko 2019","gakko.html","summer camp focusing on design & new media",tiltp,"imgs/projects/gakko.jpg")
+            
+
+            +grid-item("graphic design et al","posterjam.html","",tilts,"imgs/projects/posterjam.png")
 
             //- - var link = "arcteryx" + end    
             //- a(href=link).grid-item.tilt  
@@ -39,10 +43,10 @@ html(lang='en')
             - var link = "javascript:;"       
             a(href=link).grid-item.in-progress
                 .proj-title
-                    h1 Bagsket 
+                    h1 OpenIDEO Bagsket 
+                        .genre smart bag UX/UI & industrial design submission 
                 .project-img
-                    img(src="imgs/projects/bagsket"+".jpg").maskable
-                .genre Our in-progress UX/UI and Industrial Design submission to OpenIDEO's Bag Challenge  
+                    img(src="imgs/projects/bagsket"+".jpg").maskable 
                 
                 
             //- - var link = "charette"    + end       

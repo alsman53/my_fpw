@@ -134,15 +134,15 @@ nav
          background-color: var(--magenta-hlight);
 
       &:after
-         // content: "°"
-         font-feature-settings: "caps"
-         color: var(--scol)
-         // opacity 0
-         // transition: background-color ease-in 100ms
-         font-size: 1.0em  
-         position relative 
-         top: .2em
-         margin-left: 3px
+        // content: "°"
+        font-feature-settings: "caps"
+        //  color: var(--scol)
+        // opacity 0
+        // transition: background-color ease-in 100ms
+        font-size: 1.0em  
+        //  position relative 
+        top: 0.2em
+        //  margin-left: 3px
 
       // &:hover:after, &:focus:after, &:hover, &.active, &:focus
       //    opacity 100%
@@ -241,151 +241,162 @@ nav
    #menu-label
       display: none;
 
-+narrowerthan(500px)
-   nav
++narrowerthan(800px)
+    nav
    
-      background-color: var(--bgcol)
-      display: block
-      position fixed
-      margin 0
-      padding 1rem 1rem 1rem
-      left 0
-      top 0
+        background-color: var(--bgcol)
+        display: block
+        position fixed
+        margin 0
+        padding 1rem 1rem 1rem
+        left 0
+        top 0
 
-      right 0
-      // bottom: 0
-      #menu-label
+        right 0
+        // bottom: 0
+        .nav-holder
+            font-family: var(--qfont)
+        #menu-label
 
-         top: 1em;
-         right 1em
-         height 1rem
-         width 1.5rem
-         // border-style: 
-         border  outset 2.5px var(--bgcol) 
-         border-right-style: inset  
-         border-bottom-style: inset
-         border-top-color: var(--txtcol)
-         border-bottom-color: var(--txtcol)
+            margin: .2rem
 
-         background-color var(--bgcol)
-         transition: all 500ms ease-in-out
-         z-index 400
-      
-         display: block
-         position absolute
-         top 1rem
-         right 1rem
-         opacity: opa
-         transition: opacity 200 ease-in
+            top: 1em;
+            right 1em
+            height 1rem
+            width 1.5rem
+            // border-style: 
+            border  outset 2.5px var(--bgcol) 
+            border-bottom-style: inset
+            border-top-color: var(--txtcol)
+            border-bottom-color: var(--txtcol)
 
-         &:hover, &:focus
-            opacity 100%
+            background-color var(--bgcol)
+            transition: all 500ms ease-in-out
+            z-index 400
+        
+            display: block
+            position absolute
+            top 1rem
+            right 1rem
+            // opacity: opa
+            transition: opacity 200 ease-in
 
-      #desk-nav
-         height 100vh
-         transition max-height .5s ease-in-out
-         position relative
-         max-height: 0
-         overflow: hidden
-         flex-direction: vertical
-         flex-wrap: wrap
-         bottom: 0 
-         // align-content: 
-         align-content: start
-         #nav-links, #nav-theme-toggle 
-            display: flex
+            &:hover, &:focus
+                opacity 100%
+
+        #desk-nav
+            height 100vh
+            transition max-height .5s ease-in-out
+            position relative
+            max-height: 0
+            overflow: hidden
             flex-direction: vertical
             flex-wrap: wrap
-            margin-top: 1rem
-            flex-basis: 100%
-            &:after
-               content: ""  
-            
-            a, label
-               font-family: var(--pfont)
-               margin-left: 0
-               // padding 1rem 0
-               // flex-basis: 100%
-               justify-self: left
-               text-align: left
-               font-size: 3.5rem   
-               &:after
-                  content: ""  
+            bottom: 0 
+            // align-content: 
+            align-content: start
+            #nav-links, #nav-theme-toggle 
+                display: flex
+                flex-direction: vertical
+                flex-wrap: wrap
+                margin-top: 1rem
+                flex-basis: 100%
+                &:after
+                    content: ""  
+                
+                a, label
+                    font-family: var(--pfont)
+                    margin-left: 0
+                    // padding 1rem 0
+                    // flex-basis: 100%
+                    justify-self: left
+                    text-align: left
+                    font-size: 3rem   
+                    &:after
+                        content: ""  
       
-      input#menu-input:checked + #menu-label
-         height: 1.25rem
-         width: 1.25rem
-         border-radius: 50px
-         // background-color var(--txtcol)
-         border solid .125px var(--txtcol) 
-         border-top-width: 2.5px
-         border-bottom-width: 2.5px 
-         margin-right .125rem
-         margin-top: -.125rem
-         
+    input#menu-input:checked + #menu-label
+        height: 1.25rem
+        width: 1.25rem
+        border-radius: 50px
+        // background-color var(--txtcol)
+        border solid .125px var(--txtcol) 
+        border-top-width: 2.5px
+        border-bottom-width: 2.5px 
+        margin-right .125rem
+        margin-top: -.125rem
+        
 
-      #menu-input:checked ~ #desk-nav   
-         max-height:200vh
-         // height min-content
+    #menu-input:checked ~ #desk-nav   
+        max-height:200vh
+        // height min-content
 
-      #nav-theme-toggle
-         height min-content
-         label
+    #nav-theme-toggle
+        height min-content
+        label
             padding-bottom: 1rem
          
-      #nav-home
-         line-height: .9em
-         font-size: 1.5rem
-         transition: font-size .5s ease-in-out, opacity 200ms ease-in
-         // animation nav-home-expand  .5s reverse
-         animation-name: nav-home-expand;
-         animation-duration: .5s;
-         // animation-fill-mode: both
-         opacity: opa
-         &:hover, &:focus
+    .nav-holder #nav-home
+        font-family: var(--pfont)
+        line-height: .9em
+        font-size: 1.5rem
+        transition: font-size .5s ease-in-out, opacity 200ms ease-in
+        animation nav-home-expand  .5s reverse
+        animation-name: nav-home-expand;
+        animation-duration: .5s;
+        animation-fill-mode: both
+        // opacity: opa
+        &:hover, &:focus
             opacity 100%
 
 
-      #menu-input:checked ~ #nav-home   
-         padding-bottom: 1rem
-         font-size: 3.5rem
-         animation-name: nav-home-expand;
-         animation-duration: .5s;
-         animation-fill-mode: both
-         &:after
-            content: ""
+    #menu-input:checked ~ .nav-holder #nav-home   
+        padding-bottom: 1rem
+        font-size: 3rem
+        animation-name: nav-home-expand;
+        animation-duration: .5s;
+        animation-fill-mode: both
+        &:after
+            content: "asger Rasheed"
          // font-size: 3rem
-      #modeLbl:after
-         margin-right: 0
+        #modeLbl:after
+            margin-right: 0
 
 
 
 @keyframes nav-home-expand
-   0%
-      font-family: var(--sfont)
-   1%
-      font-family: var(--pfont)
-   100%
-      font-family: var(--pfont)
+    0%
+        &:after
+            content: ""
+
+        // font-family: var(--sfont)
+    70%
+        &:after
+            content: "asger"
+        // font-family: var(--pfont)
+    100%
+        &:after
+            content: "asger"
+        // font-family: var(--pfont)
 
 // /* Font switch
 
 input[type=checkbox]#font
-   visibility hidden
+    visibility hidden
 
 input[type=checkbox]#font:checked + label::after
-   content: "Sans"
-   // font-family: "IBM Plex Serif"
-   &:hover , &&:focus
-      color: var(--pcol)
+    content: "Sans"
+    // font-family: "IBM Plex Serif"
+    &:hover , &&:focus
+        color: var(--pcol)
 
 
 input[type=checkbox]#font + label::after
-   content: "Serif"
-   // font-family: "IBM Plex Sans"
-   transition: color ease-in .15s 
-   color: var(--txtcol)
-   &:hover   , &&:focus
-      color: var(--pcol) 
+    content: "Serif"
+    // font-family: "IBM Plex Sans"
+    transition: color ease-in .15s 
+    color: var(--txtcol)
+    &:hover   , &&:focus
+        color: var(--pcol) 
  
 
