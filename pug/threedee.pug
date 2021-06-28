@@ -1,11 +1,11 @@
 //- ////////MIXINS/////////
-mixin threedee-lazyloaded-lg(name1,name2,caption,cname)
-  a(class=cname+" img-cont element-item p-tilt" data-groups=name1 data-lightbox="threedee" data-title=caption href="imgs/threedee/"+name2)  
+mixin threedee-lazyloaded-lg(name1,name2,caption,cname,type)
+  a(class=cname+" mfp-"+type+"   l-threedee img-cont p-tilt" title=caption href="imgs/threedee/"+name2)  
     img(class=" lazy grid-image", data-src="imgs/threedee-sm/"+name1 ,   
     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E"
      ) 
     //-  src="imgs/threedee-sm/"+name1
-
+ 
 doctype  
 html(lang='en')
   head
@@ -15,17 +15,28 @@ html(lang='en')
     header.gallery
       include ./includes/nav1.pug  
 
-
+ 
     main.gallery 
-
+ 
           
-      section.threedee-grid#threedeeCont
+      section.threedee-grid#threedeeCont 
         //- +threedee-lazyloaded-lg("bed.jpg","bed.jpg","","w-reg") /
-        +threedee-lazyloaded-lg("bed.jpg","bed.jpg","","w-triple") 
-        +threedee-lazyloaded-lg("wtrmln.png","wtrmln.gif","Procedurally generated and textured watermelon","w-double")
-        +threedee-lazyloaded-lg("Curator.png","Curator.png","Procedurally-generated Nebula full of star-dust!","w-reg")
-        +threedee-lazyloaded-lg("nebula.png","nebula.png","Procedurally-generated Nebula full of star-dust!","w-reg")  
-        +threedee-lazyloaded-lg("dancer.png","dancer.png","","w-reg")  
+        +threedee-lazyloaded-lg("tet.jpg","https://vimeo.com/568222219","","w-double","iframe") 
+
+        +threedee-lazyloaded-lg("nevarro.jpg","nevarro.jpg","","w-reg","image") 
+
+        +threedee-lazyloaded-lg("openingsequence.png","openingsequence.mp4","","w-double","image")  
+
+        +threedee-lazyloaded-lg("bed.jpg","bed.jpg","","w-double","image")  
+
+        +threedee-lazyloaded-lg("wtrmln.png","wtrmln.gif","Procedurally generated and textured watermelon","w-reg","image") 
+
+        +threedee-lazyloaded-lg("Curator.png","Curator.png","Procedurally-generated Nebula full of star-dust!","w-half","image")
+        
+        +threedee-lazyloaded-lg("nebula.png","nebula.png","Procedurally-generated Nebula full of star-dust!","w-reg","image")  
+        
+        +threedee-lazyloaded-lg("dancer.png","dancer.png","","w-half","image")  
+        +threedee-lazyloaded-lg("tea.jpg","tea.jpg","Procedurally-generated Nebula full of star-dust!","w-half","image")
         //- +threedee-lazyloaded-lg("wtrmln.png","wtrmln.gif")
           
     footer

@@ -214,20 +214,19 @@ h2,h3,h4
       margin-top: 2em 
    
 .flex-s 
-   display: flex
-   flex-wrap: wrap
-   &.points
-      
-      justify-content: space-evenly
+    display: flex
+    flex-wrap: wrap
+    &.points
+        
+        justify-content: space-evenly
 
-      +narrowerthan(500px)
-         .flex-i
-            flex-basis: 100%
- 
-      li,a,p
-         font-size: 1.3rem 
-         opacity: 80% 
-         &:hover, &:focus
-            opacity: 100%
-   +narrowerthan(500px)
-      margin 0 calc(100vw/12) 
+        +narrowerthan(500px)
+            .flex-i
+                flex-basis: 100%
+    
+        li,a,p
+            font-size: 1.1rem 
+            &:hover, &:focus
+                opacity: 100%
+    +narrowerthan(500px) 
+        margin 0 calc(100vw/12) 

@@ -28,12 +28,17 @@ main.gallery
         &#portfolioContainer
             a
                 margin-bottom: 10px 
-        &#threedeeCont
-            max-width: 90vw
-            max-width: 1200px
+        &#threedeeCont, &#gd-cont
+            width: 90vw
+            max-width: 1440px
             margin-left: auto
             margin-right: auto
-    section#portfolioContainer, section#threedeeCont, section#gdCont
+        &#gd-cont
+            a
+                padding .2rem
+                img 
+                    box-shadow 1px 1px 2px #999;    
+    section#portfolioContainer, section#threedeeCont, section#gd-cont
         // max-width 95vw
         a
             display: block
@@ -43,8 +48,15 @@ main.gallery
             // width: 300px
             // min-height: 200px 
             // min-width: 25vw
+            
+            &.w-quart
+                width 6.25%
+            &.w-half
+                width 12.5% 
             &.w-reg
                 width 25%
+            &.w-reg-plus
+                width 37.5%  
             &.w-double
                 width 50%  
             &.w-triple 
@@ -140,3 +152,8 @@ input[type=radio]:checked + label ,input[type=radio] + label:hover, input[type=r
       
   // &:hover
   background-color: var(--magenta-hlight);
+
+#gd-cont
+    img.mfp-img
+        padding: 
+            1rem 0 1rem

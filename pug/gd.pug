@@ -1,0 +1,142 @@
+
+mixin img-cap-lazyloaded(name,path,caption) 
+  figure.ml-sect
+    img(class="lazy", data-src="imgs/gd/"+path, alt=name, onerror="hide()") 
+    figcaption=caption
+
+mixin gd-ll-lg(name1,name2,caption,cname,type)
+    a(class=cname+" mfp-"+type+"  l-gd img-cont p-tilt" title=caption href="imgs/gd/"+name2)  
+        img(class=" lazy grid-image", data-src="imgs/gd/"+name1 ,   
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E"
+            ) 
+    //-  src="imgs/threedee-sm/"+name1
+ 
+
+doctype
+html(lang='en')
+    head
+        include ./includes/head1.pug
+        title GD - Ali Rasheed
+    body 
+        header
+            include ./includes/nav1.pug 
+
+        main.gallery 
+
+            //- section#overview.x12c.grid  
+            
+            //-     h1.main-heading Graphic design et al.
+            //-     //- p.big.ml-sect 
+            //-     //-   em September 2019 - January 2020      
+
+
+            //-     p.big#summary
+                    | graphic design projects I've done for professional and personal projects, and for online challenges such as                    
+                    a(href="https://posterjam.ro/", title="Posterjam").in-txt Posterjam 
+
+            section#gd-cont.gd-cont 
+
+
+                +gd-ll-lg("tpr0.png","tpr0.png","Concept poster for Theatre Populaire Romand. <strong>Art direction:</strong> Procedural generation of grids to prompt surprise and Slicing and weaving to disrupt the flow of content.","w-reg-plus","image") 
+
+                +gd-ll-lg("_tpr0.png","_tpr0.png","Concept poster for Theatre Populaire Romand. <strong>Art direction:</strong> Procedural generation of grids to prompt surprise and Slicing and weaving to disrupt the flow of content.","w-reg","image") 
+
+                +gd-ll-lg("_tpr1.png","_tpr1.png","Concept poster for Theatre Populaire Romand. <strong>Art direction:</strong> Procedural generation of grids to prompt surprise and Slicing and weaving to disrupt the flow of content.","w-reg","image") 
+
+                +gd-ll-lg("tpr2.png","tpr2.png","Concept poster for Theatre Populaire Romand. <strong>Art direction:</strong> Procedural generation of grids to prompt surprise and Slicing and weaving to disrupt the flow of content.","w-half","image") 
+
+                
+                +gd-ll-lg("tpr1.png","tpr1.png","Concept poster for Theatre Populaire Romand. <strong>Art direction:</strong> Procedural generation of grids to prompt surprise and Slicing and weaving to disrupt the flow of content.","w-half","image") 
+                
+                +gd-ll-lg("tpr3.png","tpr3.png","Concept poster for Theatre Populaire Romand. <strong>Art direction:</strong> Procedural generation of grids to prompt surprise and Slicing and weaving to disrupt the flow of content.","w-half","image")
+
+
+                +gd-ll-lg("poster-1.jpg","poster-1.jpg","","w-reg","image")
+
+                +gd-ll-lg("cookie_05.png","cookie_05.png",
+                "Color Exploration for <strong>Posterjam: Cookie Policy</strong> ","w-reg","image") 
+
+
+                +gd-ll-lg("poster-2.jpg","poster-2.jpg","","w-half","image")
+
+                +gd-ll-lg("poster-3.jpg","poster-3.jpg","<strong>Posterjam: Two</strong> I utilized the concept of a Antichthon - planets in the same orbit but on opposing ends of the orbital ellipse. The noisy spheres are used to create visual interest, and similar lines are used create unity.","w-half","image") 
+
+                +gd-ll-lg("poster-7.jpg","poster-7.jpg","<strong>Posterjam: Time</strong>  To visually represent time,  I was inspired the British TV show Doctor Who where they travel through a luminous time vortex. The layering of the arcs forces the viewer to read the text through Gestalt closure","w-half","image")  
+
+                +gd-ll-lg("poster-6.jpg","poster-6.jpg","<strong>Posterjam: Suprise</strong> I interpret 'surprise' as juxtaposition. The use of graphic designer Massimo Vignelli's quote juxtaposes with the use of Comic Sans. It is definitely not among the 'few basic ones'. My choice of grid also reflects Vignelli's signature use of grids in his work. The transparency guides the eye through the composition","w-half","image") 
+
+
+                +gd-ll-lg("poster-5.png","poster-5.png","","w-half","image") 
+
+
+                
+                //- +gd-ll-lg("cookie_01.jpg","cookie_01.jpg",
+                //- "Color Exploration for <strong>Posterjam: Cookie Policy</strong> ","w-half","image") 
+
+                
+                +gd-ll-lg("cookie_02.jpg","cookie_02.jpg",
+                "Color Exploration for <strong>Posterjam: Cookie Policy</strong> ","w-quart","image") 
+                
+                +gd-ll-lg("cookie_03.jpg","cookie_03.jpg",
+                "Color Exploration for <strong>Posterjam: Cookie Policy</strong> ","w-half","image") 
+                
+                +gd-ll-lg("cookie_04.jpg","cookie_04.jpg",
+                "Color Exploration for <strong>Posterjam: Cookie Policy</strong> ","w-quart","image") 
+                
+                
+   
+ 
+        //- section.grid.x12c
+        //-     h2.l-sect December-January Prompt: suprise  
+        //-     //- +img-cap-lazyloaded("","poster-6.jpg","")
+            
+ 
+
+        //- section.grid.x12c    
+        //-     h2.l-sect October Prompt: grid  
+            
+        //-     figure.ml-sect   
+        //-         img(data-src="imgs/posterjam/poster-4.jpg",src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E").lazy 
+
+        //-         //- figcaption fig. B     
+        //-     p.ml-sect This poster incorporates 2 grids formats. The first is a radial grid, which I decided to ripple from a point to create a flow for the eye, where it collides with the second grid - the rows and columns that emerge from monospaced typography.
+
+        //- hr.small
+
+
+        //- section.grid.x12c    
+
+        //-     figure.ml-sect   
+        //-         img(data-src="imgs/posterjam/poster-5.jpg",src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E").lazy        
+        //-         //- figcaption fig. A
+
+        //-     //- h4.ml-sect Figure A
+        //-     //- h4 Figure B
+        //-     //- p
+        //- hr    
+
+        //- section.grid.x12c
+        //-     h2.ml-sect September Prompt: 2    
+            
+        //-     //- +img-cap-lazyloaded("September","poster-1.png","Figure A")
+        //-     figure.ml-sect   
+        //-         img(data-src="imgs/posterjam/poster-1.jpg",src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E").lazy     
+
+        //-     p.ml-sect '2' reminded me of a photograph I took of 2 school-children, and a quote by a uthor C.S Lewis: 
+        //-     p.med.quote.ml-sect “Friendship is born at that moment when one person says to another: ‘What! You too? I thought I was the only one”. 
+        //-     p.ml-sect
+        //-         mark I experimented with alignment, using graphical elements as compositional supports, and textures till I came to this composition. 
+
+        //- hr.small
+
+        //- section.grid.x12c
+
+        //-     figure.ml-sect   
+        //-         img(data-src="imgs/posterjam/poster-2.jpg",src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E").lazy     
+
+        //-     p.ml-sect A no.2 pencil = ubiquitous “2”. Another opportunity to explore using texture; I attempted to replicate  lined paper, albeit with a underlaid pencil. I also reused the photograph from my previous poster, using the children' outline to create a counterbalance to the pencil.
+
+        //- hr.small
+
+        footer 
+            include ./includes/footer2.pug  

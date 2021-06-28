@@ -18,11 +18,12 @@ nav#nav
 
      
         #nav-links
-            |#[a(href=index ) design]
-            |#[a(href=photolink ) photo]
-            //- |#[a(href=threedee ) 3D-Vis]
+            |#[a(href=index class="nav-tilt" data-tilt data-tilt-scale="1.1"  data-tilt-axis="x") design]
 
-            |#[a(href=about) who?]
+            |#[a(href=photolink  class="nav-tilt" data-tilt-axis="x") photo]
+            |#[a(href=threedee ) threedee]
+
+            |#[a(href=about  class="nav-tilt") who?]
 
         #nav-theme-toggle  
             input(id="adjust", name="modeToggle", type="checkbox") 
@@ -33,6 +34,6 @@ nav#nav
         //- #nav-font-toggle
  
         
-    #side-nav   
+    #side-nav    
         
-        a.fal.fa-angle-double-up.name-link#pull-up(href="#")  
+        a.fal.fa-angle-double-up.nav-tilt.name-link#pull-up(href="#")   

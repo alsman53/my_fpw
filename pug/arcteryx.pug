@@ -5,7 +5,7 @@ mixin faList(content)
         block
 
 mixin img-ll(name,data)
-    a(class=name+" img-cont element-item" data-groups=data data-lightbox=data href="imgs/"+name+".jpg") 
+    a(class=name+" img-cont" data-groups=data data-lightbox=data href="imgs/"+name+".jpg") 
         img(class="lazy grid-image", data-src="imgs/"+name+".jpg", src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E") 
 
 
@@ -25,22 +25,26 @@ html(lang='en')
 
         main.grid#project 
 
+
             section#overview.x12c.grid
 
                 h1.main-heading Arc'teryx Fulcrum
 
                 p.big#summary
                     | Dispelling product care misconceptions. 
-                    | Acheiving product longevity, sustainability and brand trust 
+                    | Achieving product longevity, sustainability and brand trust 
 
                 #cover-image.magenta-hover   
                     //- img(src="imgs/arcy/arcy2.png")  
                     img(src="imgs/arcy/cover.jpg") 
 
+            section.grid.x12c 
+                h2.l-sect The Gist 
+
             section.flex-s.points
 
                 div.flex-i
-                    h5 Responsibilities
+                    h5 Skills
                     ol
                         li Research and Ethnography
                         li Interaction Design
@@ -66,11 +70,18 @@ html(lang='en')
                         +faList("")(class="fad fa-deer")                
                             a(href="https://www.yantimo.com/").in-txt Yan Tymoshenko
 
-            hr
 
-
+            
             section.grid.x12c 
-                h2.l-sect The Gist
+
+                h3.l-sect Contribution 
+                p.ml-sect Conducted in-person ethnography, user-research and interviews, and 
+                    mark led our 4-week iterative process of designing our product care  artefacts
+                    |  and 
+                    mark executing their final visualisations. Co-designed our weekly posters & slide decks. 
+                    |Designed online experience for receiving product care knowledge.
+
+            
                 
                 h3.l-sect Project Context
                 
@@ -87,24 +98,15 @@ html(lang='en')
                 figure.ml-sect   
                     img(data-src="imgs/arcy/kits.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" ).lazy        
                 
-            hr.small 
+            //- hr.small 
+
+
+            hr
+
+            //- hr.small 
 
 
             section.grid.x12c 
-
-                h3.l-sect Contribution 
-                p.ml-sect Conducted in-person ethnography, user-research and interviews, and 
-                    mark led our 4-week iterative process of designing our product care  artefacts
-                    |  and 
-                    mark executing their final visualisations. Co-designed our weekly posters & slide decks. 
-                    |Designed online experience for receiving product care knowledge.
-
-            
-            hr.small 
-
-
-            section.grid.x12c 
-
 
 
                 h3.l-sect Insights  
@@ -157,14 +159,7 @@ html(lang='en')
                             img(data-src="imgs/arcy/persona/persona-05.jpg" ).lazy    
 
             hr
-
-
-            section.callout#dquestion
-                h4 Final Design Question
-                p.big 
-                    |How might we dispell misconceptions by 
-                    strong facilitating post-purchase self learning on why and how 
-                    |garments are cared for? 
+            
 
 
             section.grid.x12c#productcare
@@ -267,6 +262,7 @@ html(lang='en')
                     img(data-src="imgs/arcy/value.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" ).lazy       
             
             hr
+            
 
             section.grid.x12c#process
                 h2.l-sect Research
@@ -310,6 +306,7 @@ html(lang='en')
                             img(data-src="imgs/arcy/12.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E").lazy 
 
             hr
+            
 
 
             section.grid.x12c#synthesis
@@ -368,7 +365,7 @@ html(lang='en')
                 ul.ml-sect.med
                     +faList("Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase")(class="fas fa-comment")
                     
-                    +faList("Arc’teryx expects customers to have consulted product care resources, and to perform maintenance on garments as needed after purchase")(class="fas fa-head-side-brain space")
+                    +faList("Customers avoid washing and drying, fearing it may damage their garment.")(class="fas fa-head-side-brain space")
 
                     +faList("Arc’teryx expects product care education to take place in-store, during the sales process")(class="fas fa-comment ")
                     
@@ -396,8 +393,15 @@ html(lang='en')
                     |
                     a(href="assets/Arc'teryx-journey-map.pdf").in-txt here
             hr.small
+            section.callout#dquestion
+                h4 Final Design Question
+                p.big 
+                    |How might we dispell misconceptions by 
+                    strong facilitating post-purchase self learning on why and how 
+                    |garments are cared for? 
 
             hr
+ 
 
 
             section#reflection.grid.x12c
